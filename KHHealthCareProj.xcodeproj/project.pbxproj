@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E9B48E61C81A3C30067B403 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E51C81A3C30067B403 /* main.m */; };
+		7E9B48E91C81A3C30067B403 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E81C81A3C30067B403 /* AppDelegate.m */; };
+		7E9B48EC1C81A3C30067B403 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48EB1C81A3C30067B403 /* ViewController.m */; };
+		7E9B48EF1C81A3C30067B403 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B48ED1C81A3C30067B403 /* Main.storyboard */; };
+		7E9B48F21C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48F01C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld */; };
+		7E9B48F41C81A3C30067B403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B48F31C81A3C30067B403 /* Assets.xcassets */; };
+		7E9B48F71C81A3C30067B403 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B48F51C81A3C30067B403 /* LaunchScreen.storyboard */; };
+		7E9B49021C81A3C30067B403 /* KHHealthCareProjTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B49011C81A3C30067B403 /* KHHealthCareProjTests.m */; };
+		7E9B490D1C81A3C30067B403 /* KHHealthCareProjUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B490C1C81A3C30067B403 /* KHHealthCareProjUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E9B48FE1C81A3C30067B403 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E9B48D91C81A3C30067B403 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E9B48E01C81A3C30067B403;
+			remoteInfo = KHHealthCareProj;
+		};
+		7E9B49091C81A3C30067B403 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E9B48D91C81A3C30067B403 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E9B48E01C81A3C30067B403;
+			remoteInfo = KHHealthCareProj;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7E9B48E11C81A3C30067B403 /* KHHealthCareProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KHHealthCareProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E9B48E51C81A3C30067B403 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7E9B48E71C81A3C30067B403 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7E9B48E81C81A3C30067B403 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7E9B48EA1C81A3C30067B403 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7E9B48EB1C81A3C30067B403 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7E9B48EE1C81A3C30067B403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7E9B48F11C81A3C30067B403 /* KHHealthCareProj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KHHealthCareProj.xcdatamodel; sourceTree = "<group>"; };
+		7E9B48F31C81A3C30067B403 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E9B48F61C81A3C30067B403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E9B48F81C81A3C30067B403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E9B48FD1C81A3C30067B403 /* KHHealthCareProjTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KHHealthCareProjTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E9B49011C81A3C30067B403 /* KHHealthCareProjTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KHHealthCareProjTests.m; sourceTree = "<group>"; };
+		7E9B49031C81A3C30067B403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E9B49081C81A3C30067B403 /* KHHealthCareProjUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KHHealthCareProjUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E9B490C1C81A3C30067B403 /* KHHealthCareProjUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KHHealthCareProjUITests.m; sourceTree = "<group>"; };
+		7E9B490E1C81A3C30067B403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E9B48DE1C81A3C30067B403 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E9B48FA1C81A3C30067B403 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E9B49051C81A3C30067B403 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E9B48D81C81A3C30067B403 = {
+			isa = PBXGroup;
+			children = (
+				7E9B48E31C81A3C30067B403 /* KHHealthCareProj */,
+				7E9B49001C81A3C30067B403 /* KHHealthCareProjTests */,
+				7E9B490B1C81A3C30067B403 /* KHHealthCareProjUITests */,
+				7E9B48E21C81A3C30067B403 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E9B48E21C81A3C30067B403 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E9B48E11C81A3C30067B403 /* KHHealthCareProj.app */,
+				7E9B48FD1C81A3C30067B403 /* KHHealthCareProjTests.xctest */,
+				7E9B49081C81A3C30067B403 /* KHHealthCareProjUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E9B48E31C81A3C30067B403 /* KHHealthCareProj */ = {
+			isa = PBXGroup;
+			children = (
+				7E9B48E71C81A3C30067B403 /* AppDelegate.h */,
+				7E9B48E81C81A3C30067B403 /* AppDelegate.m */,
+				7E9B48EA1C81A3C30067B403 /* ViewController.h */,
+				7E9B48EB1C81A3C30067B403 /* ViewController.m */,
+				7E9B48ED1C81A3C30067B403 /* Main.storyboard */,
+				7E9B48F31C81A3C30067B403 /* Assets.xcassets */,
+				7E9B48F51C81A3C30067B403 /* LaunchScreen.storyboard */,
+				7E9B48F81C81A3C30067B403 /* Info.plist */,
+				7E9B48F01C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld */,
+				7E9B48E41C81A3C30067B403 /* Supporting Files */,
+			);
+			path = KHHealthCareProj;
+			sourceTree = "<group>";
+		};
+		7E9B48E41C81A3C30067B403 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E9B48E51C81A3C30067B403 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E9B49001C81A3C30067B403 /* KHHealthCareProjTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E9B49011C81A3C30067B403 /* KHHealthCareProjTests.m */,
+				7E9B49031C81A3C30067B403 /* Info.plist */,
+			);
+			path = KHHealthCareProjTests;
+			sourceTree = "<group>";
+		};
+		7E9B490B1C81A3C30067B403 /* KHHealthCareProjUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7E9B490C1C81A3C30067B403 /* KHHealthCareProjUITests.m */,
+				7E9B490E1C81A3C30067B403 /* Info.plist */,
+			);
+			path = KHHealthCareProjUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E9B48E01C81A3C30067B403 /* KHHealthCareProj */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E9B49111C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProj" */;
+			buildPhases = (
+				7E9B48DD1C81A3C30067B403 /* Sources */,
+				7E9B48DE1C81A3C30067B403 /* Frameworks */,
+				7E9B48DF1C81A3C30067B403 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KHHealthCareProj;
+			productName = KHHealthCareProj;
+			productReference = 7E9B48E11C81A3C30067B403 /* KHHealthCareProj.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E9B48FC1C81A3C30067B403 /* KHHealthCareProjTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E9B49141C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProjTests" */;
+			buildPhases = (
+				7E9B48F91C81A3C30067B403 /* Sources */,
+				7E9B48FA1C81A3C30067B403 /* Frameworks */,
+				7E9B48FB1C81A3C30067B403 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E9B48FF1C81A3C30067B403 /* PBXTargetDependency */,
+			);
+			name = KHHealthCareProjTests;
+			productName = KHHealthCareProjTests;
+			productReference = 7E9B48FD1C81A3C30067B403 /* KHHealthCareProjTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7E9B49071C81A3C30067B403 /* KHHealthCareProjUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E9B49171C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProjUITests" */;
+			buildPhases = (
+				7E9B49041C81A3C30067B403 /* Sources */,
+				7E9B49051C81A3C30067B403 /* Frameworks */,
+				7E9B49061C81A3C30067B403 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E9B490A1C81A3C30067B403 /* PBXTargetDependency */,
+			);
+			name = KHHealthCareProjUITests;
+			productName = KHHealthCareProjUITests;
+			productReference = 7E9B49081C81A3C30067B403 /* KHHealthCareProjUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E9B48D91C81A3C30067B403 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Ryan Lu";
+				TargetAttributes = {
+					7E9B48E01C81A3C30067B403 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					7E9B48FC1C81A3C30067B403 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 7E9B48E01C81A3C30067B403;
+					};
+					7E9B49071C81A3C30067B403 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 7E9B48E01C81A3C30067B403;
+					};
+				};
+			};
+			buildConfigurationList = 7E9B48DC1C81A3C30067B403 /* Build configuration list for PBXProject "KHHealthCareProj" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7E9B48D81C81A3C30067B403;
+			productRefGroup = 7E9B48E21C81A3C30067B403 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E9B48E01C81A3C30067B403 /* KHHealthCareProj */,
+				7E9B48FC1C81A3C30067B403 /* KHHealthCareProjTests */,
+				7E9B49071C81A3C30067B403 /* KHHealthCareProjUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E9B48DF1C81A3C30067B403 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E9B48F71C81A3C30067B403 /* LaunchScreen.storyboard in Resources */,
+				7E9B48F41C81A3C30067B403 /* Assets.xcassets in Resources */,
+				7E9B48EF1C81A3C30067B403 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E9B48FB1C81A3C30067B403 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E9B49061C81A3C30067B403 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E9B48DD1C81A3C30067B403 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E9B48F21C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld in Sources */,
+				7E9B48EC1C81A3C30067B403 /* ViewController.m in Sources */,
+				7E9B48E91C81A3C30067B403 /* AppDelegate.m in Sources */,
+				7E9B48E61C81A3C30067B403 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E9B48F91C81A3C30067B403 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E9B49021C81A3C30067B403 /* KHHealthCareProjTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E9B49041C81A3C30067B403 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E9B490D1C81A3C30067B403 /* KHHealthCareProjUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E9B48FF1C81A3C30067B403 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E9B48E01C81A3C30067B403 /* KHHealthCareProj */;
+			targetProxy = 7E9B48FE1C81A3C30067B403 /* PBXContainerItemProxy */;
+		};
+		7E9B490A1C81A3C30067B403 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E9B48E01C81A3C30067B403 /* KHHealthCareProj */;
+			targetProxy = 7E9B49091C81A3C30067B403 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7E9B48ED1C81A3C30067B403 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E9B48EE1C81A3C30067B403 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7E9B48F51C81A3C30067B403 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E9B48F61C81A3C30067B403 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E9B490F1C81A3C30067B403 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7E9B49101C81A3C30067B403 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E9B49121C81A3C30067B403 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KHHealthCareProj/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProj;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7E9B49131C81A3C30067B403 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KHHealthCareProj/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProj;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7E9B49151C81A3C30067B403 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KHHealthCareProjTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProjTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KHHealthCareProj.app/KHHealthCareProj";
+			};
+			name = Debug;
+		};
+		7E9B49161C81A3C30067B403 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KHHealthCareProjTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProjTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KHHealthCareProj.app/KHHealthCareProj";
+			};
+			name = Release;
+		};
+		7E9B49181C81A3C30067B403 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KHHealthCareProjUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProjUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KHHealthCareProj;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		7E9B49191C81A3C30067B403 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KHHealthCareProjUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProjUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KHHealthCareProj;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E9B48DC1C81A3C30067B403 /* Build configuration list for PBXProject "KHHealthCareProj" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E9B490F1C81A3C30067B403 /* Debug */,
+				7E9B49101C81A3C30067B403 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E9B49111C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProj" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E9B49121C81A3C30067B403 /* Debug */,
+				7E9B49131C81A3C30067B403 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7E9B49141C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProjTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E9B49151C81A3C30067B403 /* Debug */,
+				7E9B49161C81A3C30067B403 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7E9B49171C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProjUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E9B49181C81A3C30067B403 /* Debug */,
+				7E9B49191C81A3C30067B403 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7E9B48F01C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7E9B48F11C81A3C30067B403 /* KHHealthCareProj.xcdatamodel */,
+			);
+			currentVersion = 7E9B48F11C81A3C30067B403 /* KHHealthCareProj.xcdatamodel */;
+			path = KHHealthCareProj.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7E9B48D91C81A3C30067B403 /* Project object */;
+}
