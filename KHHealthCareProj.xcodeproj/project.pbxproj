@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E2E90CE1C84024E00BB92E9 /* dataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E90CD1C84024E00BB92E9 /* dataModel.m */; };
+		7E2E90D11C84045C00BB92E9 /* userDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E90D01C84045C00BB92E9 /* userDataModel.m */; };
 		7E9B48E61C81A3C30067B403 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E51C81A3C30067B403 /* main.m */; };
 		7E9B48E91C81A3C30067B403 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E81C81A3C30067B403 /* AppDelegate.m */; };
 		7E9B48EC1C81A3C30067B403 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48EB1C81A3C30067B403 /* ViewController.m */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E2E90CC1C84024E00BB92E9 /* dataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataModel.h; sourceTree = "<group>"; };
+		7E2E90CD1C84024E00BB92E9 /* dataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dataModel.m; sourceTree = "<group>"; };
+		7E2E90CF1C84045C00BB92E9 /* userDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userDataModel.h; sourceTree = "<group>"; };
+		7E2E90D01C84045C00BB92E9 /* userDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userDataModel.m; sourceTree = "<group>"; };
 		7E9B48E11C81A3C30067B403 /* KHHealthCareProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KHHealthCareProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9B48E51C81A3C30067B403 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7E9B48E71C81A3C30067B403 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,9 +86,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E2E90C91C83FCF700BB92E9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7E2E90CC1C84024E00BB92E9 /* dataModel.h */,
+				7E2E90CD1C84024E00BB92E9 /* dataModel.m */,
+				7E2E90CF1C84045C00BB92E9 /* userDataModel.h */,
+				7E2E90D01C84045C00BB92E9 /* userDataModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7E2E90CA1C83FD0900BB92E9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7E2E90CB1C83FD0F00BB92E9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		7E9B48D81C81A3C30067B403 = {
 			isa = PBXGroup;
 			children = (
+				7E2E90CB1C83FD0F00BB92E9 /* Controllers */,
+				7E2E90CA1C83FD0900BB92E9 /* Views */,
+				7E2E90C91C83FCF700BB92E9 /* Models */,
 				7E9B48E31C81A3C30067B403 /* KHHealthCareProj */,
 				7E9B49001C81A3C30067B403 /* KHHealthCareProjTests */,
 				7E9B490B1C81A3C30067B403 /* KHHealthCareProjUITests */,
@@ -274,6 +308,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E9B48F21C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld in Sources */,
+				7E2E90CE1C84024E00BB92E9 /* dataModel.m in Sources */,
+				7E2E90D11C84045C00BB92E9 /* userDataModel.m in Sources */,
 				7E9B48EC1C81A3C30067B403 /* ViewController.m in Sources */,
 				7E9B48E91C81A3C30067B403 /* AppDelegate.m in Sources */,
 				7E9B48E61C81A3C30067B403 /* main.m in Sources */,
@@ -500,6 +536,7 @@
 				7E9B49131C81A3C30067B403 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E9B49141C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProjTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +545,7 @@
 				7E9B49161C81A3C30067B403 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E9B49171C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProjUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +554,7 @@
 				7E9B49191C81A3C30067B403 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
