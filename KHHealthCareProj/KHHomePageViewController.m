@@ -7,6 +7,8 @@
 //
 
 #import "KHHomePageViewController.h"
+#import "VaccineListModel.h"
+#import "CancerListModel.h"
 
 @implementation KHHomePageViewController
 
@@ -22,6 +24,11 @@
     
     
     // initialize vaccine array by pulling from server
+    VaccineListModel *vaccineModel = [VaccineListModel sharedModel];
+    
+    
+    // initialize cancer array by pulling from server
+    CancerListModel *cancerModel = [CancerListModel sharedModel];
     
     
 }

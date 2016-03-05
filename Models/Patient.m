@@ -7,6 +7,8 @@
 //
 
 #import "Patient.h"
+#import "VaccineListModel.h"
+#import "CancerListModel.h"
 
 @implementation Patient
 
@@ -17,7 +19,13 @@
     
     if (self) {
         
-        // instantiate array
+        // instantiate vaccine array
+        VaccineListModel *vaccineModel = [VaccineListModel sharedModel];
+        self.vaccineList = [NSArray arrayWithArray:vaccineModel.vaccineList];
+        
+        // instantiate cancer array
+        CancerListModel *cancerModel = [CancerListModel sharedModel];
+        self.cancerList = [NSArray arrayWithArray:cancerModel.cancerList];
         
         
     }

@@ -10,4 +10,8 @@
 
 @interface VaccineListModel : NSObject
 
+@property (nonatomic, strong) NSArray *vaccineList;
+
++(instancetype) sharedModel;
+
 @end

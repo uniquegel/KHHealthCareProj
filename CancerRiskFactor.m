@@ -7,7 +7,24 @@
 //
 
 #import "CancerRiskFactor.h"
+#import "CancerListModel.h"
 
 @implementation CancerRiskFactor
+
+- (instancetype)init
+{
+    
+    self = [super init];
+    
+    if (self) {
+        
+        // instantiate array
+        CancerListModel *cancerModel = [CancerListModel sharedModel];
+        self.cancerList = [NSArray arrayWithArray:cancerModel.cancerList];
+        
+    }
+    
+    return self;
+}
 
 @end

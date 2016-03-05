@@ -20,8 +20,8 @@
     if (self) {
         
         // instantiate array
-        VaccineListModel *sharedModel = [VaccineListModel sharedModel];
-        self.vaccineList = [NSArray arrayWithArray:sharedModel.vaccineList];
+        VaccineListModel *vaccineModel = [VaccineListModel sharedModel];
+        self.vaccineList = [NSArray arrayWithArray:vaccineModel.vaccineList];
         
     }
     

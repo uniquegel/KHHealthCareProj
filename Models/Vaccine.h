@@ -20,5 +20,4 @@ typedef enum status {
 @property (nonatomic, strong) NSString *name;
 
 
-
 @end

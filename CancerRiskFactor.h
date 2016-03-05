@@ -10,4 +10,8 @@
 
 @interface CancerRiskFactor : NSObject
 
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSArray *cancerList;
+
 @end

@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum status {
+    Indicated,
+    Recommended,
+    Contraindicated,
+    Ask
+} Status;
+
 @interface Cancer : NSObject
+
+@property (nonatomic, strong) NSString *name;
 
 @end

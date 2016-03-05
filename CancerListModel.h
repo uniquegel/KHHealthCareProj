@@ -10,4 +10,8 @@
 
 @interface CancerListModel : NSObject
 
+@property (nonatomic, strong) NSArray *cancerList;
+
++(instancetype) sharedModel;
+
 @end
