@@ -18,6 +18,9 @@
 		7E9B48F71C81A3C30067B403 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B48F51C81A3C30067B403 /* LaunchScreen.storyboard */; };
 		7E9B49021C81A3C30067B403 /* KHHealthCareProjTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B49011C81A3C30067B403 /* KHHealthCareProjTests.m */; };
 		7E9B490D1C81A3C30067B403 /* KHHealthCareProjUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B490C1C81A3C30067B403 /* KHHealthCareProjUITests.m */; };
+		EAD7BC461C869D26002AEBC8 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD7BC451C869D26002AEBC8 /* Patient.m */; };
+		EAD7BC491C86A26B002AEBC8 /* Vaccine.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD7BC481C86A26B002AEBC8 /* Vaccine.m */; };
+		EAD7BC4C1C86A320002AEBC8 /* RiskFactor.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD7BC4B1C86A320002AEBC8 /* RiskFactor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,12 @@
 		7E9B49081C81A3C30067B403 /* KHHealthCareProjUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KHHealthCareProjUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9B490C1C81A3C30067B403 /* KHHealthCareProjUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KHHealthCareProjUITests.m; sourceTree = "<group>"; };
 		7E9B490E1C81A3C30067B403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAD7BC441C869D26002AEBC8 /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Patient.h; path = Models/Patient.h; sourceTree = "<group>"; };
+		EAD7BC451C869D26002AEBC8 /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Models/Patient.m; sourceTree = "<group>"; };
+		EAD7BC471C86A26B002AEBC8 /* Vaccine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vaccine.h; path = Models/Vaccine.h; sourceTree = "<group>"; };
+		EAD7BC481C86A26B002AEBC8 /* Vaccine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vaccine.m; path = Models/Vaccine.m; sourceTree = "<group>"; };
+		EAD7BC4A1C86A320002AEBC8 /* RiskFactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RiskFactor.h; path = Models/RiskFactor.h; sourceTree = "<group>"; };
+		EAD7BC4B1C86A320002AEBC8 /* RiskFactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RiskFactor.m; path = Models/RiskFactor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +102,12 @@
 				7E2E90CD1C84024E00BB92E9 /* dataModel.m */,
 				7E2E90CF1C84045C00BB92E9 /* userDataModel.h */,
 				7E2E90D01C84045C00BB92E9 /* userDataModel.m */,
+				EAD7BC441C869D26002AEBC8 /* Patient.h */,
+				EAD7BC451C869D26002AEBC8 /* Patient.m */,
+				EAD7BC471C86A26B002AEBC8 /* Vaccine.h */,
+				EAD7BC481C86A26B002AEBC8 /* Vaccine.m */,
+				EAD7BC4A1C86A320002AEBC8 /* RiskFactor.h */,
+				EAD7BC4B1C86A320002AEBC8 /* RiskFactor.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -309,8 +324,11 @@
 			files = (
 				7E9B48F21C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld in Sources */,
 				7E2E90CE1C84024E00BB92E9 /* dataModel.m in Sources */,
+				EAD7BC4C1C86A320002AEBC8 /* RiskFactor.m in Sources */,
+				EAD7BC461C869D26002AEBC8 /* Patient.m in Sources */,
 				7E2E90D11C84045C00BB92E9 /* userDataModel.m in Sources */,
 				7E9B48EC1C81A3C30067B403 /* ViewController.m in Sources */,
+				EAD7BC491C86A26B002AEBC8 /* Vaccine.m in Sources */,
 				7E9B48E91C81A3C30067B403 /* AppDelegate.m in Sources */,
 				7E9B48E61C81A3C30067B403 /* main.m in Sources */,
 			);
