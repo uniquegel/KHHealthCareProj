@@ -12,6 +12,18 @@
 
 @implementation Patient
 
+// singleton
++(instancetype) sharedModel{
+    static Patient *_sharedModel = nil;
+    
+    static dispatch_once_t onceToken;
+    
+    dispatch_once (&onceToken, ^{
+        _sharedModel = [[self alloc] init];
+    });
+    return _sharedModel;
+}
+
 - (instancetype)init
 {
     
@@ -26,6 +38,10 @@
         // instantiate cancer array
         CancerListModel *cancerModel = [CancerListModel sharedModel];
         self.cancerList = [NSArray arrayWithArray:cancerModel.cancerList];
+        
+        // instantiate risk factor arrays
+        self.cancerRiskFactorList = [[NSMutableArray alloc] init];
+        self.vaccineRiskFactorList = [[NSMutableArray alloc] init];
         
         
     }

@@ -10,8 +10,14 @@
 
 @interface VaccineRiskFactor : NSObject
 
+// risk factor info
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *type;
+
+// risk factor status
+@property (nonatomic, assign) BOOL active;
+
+// vaccine list
 @property (nonatomic, strong) NSArray *vaccineList;
 
 @end
