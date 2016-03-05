@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		637AA2011C8B8BDD005107AC /* KHHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2001C8B8BDD005107AC /* KHHomePageViewController.m */; };
 		7E2E90CE1C84024E00BB92E9 /* dataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E90CD1C84024E00BB92E9 /* dataModel.m */; };
 		7E2E90D11C84045C00BB92E9 /* userDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E90D01C84045C00BB92E9 /* userDataModel.m */; };
 		7E9B48E61C81A3C30067B403 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E51C81A3C30067B403 /* main.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		637AA1FF1C8B8BDD005107AC /* KHHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHHomePageViewController.h; path = KHHealthCareProj/KHHomePageViewController.h; sourceTree = "<group>"; };
+		637AA2001C8B8BDD005107AC /* KHHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHHomePageViewController.m; path = KHHealthCareProj/KHHomePageViewController.m; sourceTree = "<group>"; };
 		7E2E90CC1C84024E00BB92E9 /* dataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataModel.h; sourceTree = "<group>"; };
 		7E2E90CD1C84024E00BB92E9 /* dataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dataModel.m; sourceTree = "<group>"; };
 		7E2E90CF1C84045C00BB92E9 /* userDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userDataModel.h; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 		7E2E90CB1C83FD0F00BB92E9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				637AA1FF1C8B8BDD005107AC /* KHHomePageViewController.h */,
+				637AA2001C8B8BDD005107AC /* KHHomePageViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				7E2E90D11C84045C00BB92E9 /* userDataModel.m in Sources */,
 				7E9B48EC1C81A3C30067B403 /* ViewController.m in Sources */,
 				EAD7BC491C86A26B002AEBC8 /* Vaccine.m in Sources */,
+				637AA2011C8B8BDD005107AC /* KHHomePageViewController.m in Sources */,
 				7E9B48E91C81A3C30067B403 /* AppDelegate.m in Sources */,
 				7E9B48E61C81A3C30067B403 /* main.m in Sources */,
 			);

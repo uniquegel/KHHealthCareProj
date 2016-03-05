@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RiskFactor : NSObject
+@interface VaccineRiskFactor : NSObject
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSArray *vaccineList;
 
 @end

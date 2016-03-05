@@ -1,14 +1,16 @@
 //
-//  Patient.m
+//  RiskFactor.m
 //  KHHealthCareProj
 //
 //  Created by Ke Luo on 3/1/16.
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
-#import "Patient.h"
+#import "VaccineRiskFactor.h"
+#import "VaccineListModel.h"
 
-@implementation Patient
+
+@implementation VaccineRiskFactor
 
 - (instancetype)init
 {
@@ -18,7 +20,8 @@
     if (self) {
         
         // instantiate array
-        
+        VaccineListModel *sharedModel = [VaccineListModel sharedModel];
+        self.vaccineList = [NSArray arrayWithArray:sharedModel.vaccineList];
         
     }
     

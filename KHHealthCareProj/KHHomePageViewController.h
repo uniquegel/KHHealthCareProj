@@ -10,4 +10,6 @@
 
 @interface KHHomePageViewController : UIViewController
 
+@property (nonatomic, strong) NSArray *vaccineList;
+
 @end

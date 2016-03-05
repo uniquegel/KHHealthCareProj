@@ -10,4 +10,20 @@
 
 @implementation KHHomePageViewController
 
+-(void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    [self initializeArray];
+    
+}
+
+-(void)initializeArray {
+    
+    
+    // initialize vaccine array by pulling from server
+    
+    
+}
+
 @end

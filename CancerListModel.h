@@ -1,13 +1,13 @@
 //
-//  userDataModel.h
+//  CancerListModel.h
 //  KHHealthCareProj
 //
-//  Created by Ryan Lu on 2/28/16.
+//  Created by David Richardson on 3/5/16.
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface userDataModel : NSObject
+@interface CancerListModel : NSObject
 
 @end
