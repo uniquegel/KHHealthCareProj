@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630569BB1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */; };
+		630569BE1C8C03D2001E8CB5 /* KHCardiometabolicScreeningResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569BD1C8C03D2001E8CB5 /* KHCardiometabolicScreeningResultsViewController.m */; };
+		630569C71C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569C61C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m */; };
+		630569CA1C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569C91C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m */; };
 		637AA2011C8B8BDD005107AC /* KHHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2001C8B8BDD005107AC /* KHHomePageViewController.m */; };
 		637AA2041C8B8E77005107AC /* KHVaccineListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2031C8B8E77005107AC /* KHVaccineListModel.m */; };
 		637AA20E1C8B9348005107AC /* KHCancerListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA20D1C8B9348005107AC /* KHCancerListModel.m */; };
@@ -49,6 +53,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		630569B91C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerScreeningResultsViewController.h; sourceTree = "<group>"; };
+		630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHCancerScreeningResultsViewController.m; sourceTree = "<group>"; };
+		630569BC1C8C03D2001E8CB5 /* KHCardiometabolicScreeningResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCardiometabolicScreeningResultsViewController.h; sourceTree = "<group>"; };
+		630569BD1C8C03D2001E8CB5 /* KHCardiometabolicScreeningResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHCardiometabolicScreeningResultsViewController.m; sourceTree = "<group>"; };
+		630569C51C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHVaccinationScreeningResultsTableViewController.h; sourceTree = "<group>"; };
+		630569C61C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHVaccinationScreeningResultsTableViewController.m; sourceTree = "<group>"; };
+		630569C81C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHNutritionSuggestionResultsTableViewController.h; sourceTree = "<group>"; };
+		630569C91C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHNutritionSuggestionResultsTableViewController.m; sourceTree = "<group>"; };
 		637AA1FF1C8B8BDD005107AC /* KHHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHHomePageViewController.h; path = KHHealthCareProj/KHHomePageViewController.h; sourceTree = "<group>"; };
 		637AA2001C8B8BDD005107AC /* KHHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHHomePageViewController.m; path = KHHealthCareProj/KHHomePageViewController.m; sourceTree = "<group>"; };
 		637AA2021C8B8E77005107AC /* KHVaccineListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHVaccineListModel.h; sourceTree = "<group>"; };
@@ -172,13 +184,21 @@
 			name = "Home Page";
 			sourceTree = "<group>";
 		};
-		637AA21C1C8BFD47005107AC /* Results Page */ = {
+		637AA21C1C8BFD47005107AC /* Results */ = {
 			isa = PBXGroup;
 			children = (
 				637AA2151C8B9F40005107AC /* KHResultsPageViewController.h */,
 				637AA2161C8B9F40005107AC /* KHResultsPageViewController.m */,
+				630569B91C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.h */,
+				630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */,
+				630569BC1C8C03D2001E8CB5 /* KHCardiometabolicScreeningResultsViewController.h */,
+				630569BD1C8C03D2001E8CB5 /* KHCardiometabolicScreeningResultsViewController.m */,
+				630569C51C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.h */,
+				630569C61C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m */,
+				630569C81C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.h */,
+				630569C91C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m */,
 			);
-			name = "Results Page";
+			name = Results;
 			sourceTree = "<group>";
 		};
 		637AA21D1C8BFD51005107AC /* Sign In Page */ = {
@@ -227,7 +247,7 @@
 			children = (
 				637AA21E1C8BFDAD005107AC /* Questions */,
 				637AA21D1C8BFD51005107AC /* Sign In Page */,
-				637AA21C1C8BFD47005107AC /* Results Page */,
+				637AA21C1C8BFD47005107AC /* Results */,
 				637AA21B1C8BFD38005107AC /* Home Page */,
 			);
 			name = Controllers;
@@ -426,13 +446,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630569CA1C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m in Sources */,
 				637AA2171C8B9F40005107AC /* KHResultsPageViewController.m in Sources */,
 				637AA21A1C8BD1A1005107AC /* KHRiskFactorModel.m in Sources */,
 				7E9B48F21C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld in Sources */,
 				637AA20E1C8B9348005107AC /* KHCancerListModel.m in Sources */,
+				630569BB1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m in Sources */,
 				EAD7BC4C1C86A320002AEBC8 /* KHVaccineRiskFactor.m in Sources */,
 				EAD7BC461C869D26002AEBC8 /* KHPatient.m in Sources */,
 				637AA2141C8B9530005107AC /* KHCancerRiskFactor.m in Sources */,
+				630569C71C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m in Sources */,
 				EAD7BC491C86A26B002AEBC8 /* KHVaccine.m in Sources */,
 				637AA2011C8B8BDD005107AC /* KHHomePageViewController.m in Sources */,
 				637AA2271C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m in Sources */,
@@ -441,6 +464,7 @@
 				637AA2211C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m in Sources */,
 				7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */,
 				7E9B48E61C81A3C30067B403 /* main.m in Sources */,
+				630569BE1C8C03D2001E8CB5 /* KHCardiometabolicScreeningResultsViewController.m in Sources */,
 				637AA2111C8B93A9005107AC /* KHCancer.m in Sources */,
 				7E4484A81C8BE61200850E58 /* KHSignInViewController.m in Sources */,
 			);

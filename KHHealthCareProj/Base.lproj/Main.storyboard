@@ -372,7 +372,7 @@
         <!--Item-->
         <scene sceneID="nI0-yi-VLT">
             <objects>
-                <tableViewController id="zcN-iN-UEJ" sceneMemberID="viewController">
+                <tableViewController id="zcN-iN-UEJ" customClass="KHVaccinationScreeningResultsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EaL-WR-hBN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -401,7 +401,7 @@
         <!--Item-->
         <scene sceneID="PsZ-bz-xeo">
             <objects>
-                <viewController id="92W-1i-Qkf" sceneMemberID="viewController">
+                <viewController id="92W-1i-Qkf" customClass="KHCardiometabolicScreeningResultsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OTF-d4-VUN"/>
                         <viewControllerLayoutGuide type="bottom" id="hXb-qf-eij"/>
@@ -420,7 +420,7 @@
         <!--Item-->
         <scene sceneID="Q8X-z4-zjh">
             <objects>
-                <viewController id="yxc-cx-t2U" sceneMemberID="viewController">
+                <viewController id="yxc-cx-t2U" customClass="KHCancerScreeningResultsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ypn-CC-BZB"/>
                         <viewControllerLayoutGuide type="bottom" id="Shs-He-zIL"/>
@@ -439,7 +439,7 @@
         <!--Item-->
         <scene sceneID="eb4-Mj-Z5O">
             <objects>
-                <tableViewController id="Zns-le-oaf" sceneMemberID="viewController">
+                <tableViewController id="Zns-le-oaf" customClass="KHNutritionSuggestionResultsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="STE-Gk-vie">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
