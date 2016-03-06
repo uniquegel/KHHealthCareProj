@@ -21,3 +21,4 @@
 @property (nonatomic, strong) NSArray *vaccineList;
 
 @end
+	
