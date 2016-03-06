@@ -25,7 +25,7 @@
         NSMutableArray *tempList = [[NSMutableArray alloc] init];
         for(int i = 0 ; i < 5; i++) {
             VaccineRiskFactor *vaccineRiskFactor = [[VaccineRiskFactor alloc]
-                                                    initWithName:@"New Vaccine RiskFactor"
+                                                    initWithName:[NSString stringWithFormat:@"%d", i]
                                                     andType:@"New Type"];
             [tempList addObject:vaccineRiskFactor];
         }

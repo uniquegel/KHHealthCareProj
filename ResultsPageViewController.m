@@ -46,16 +46,23 @@
 // matrix algorithm
 -(void)calculateResults {
     
-    NSInteger numVaccineRiskFactors = [self.vaccineRiskFactorList count];
     
+    NSInteger numVaccineRiskFactors = [self.vaccineRiskFactorList count];
+    NSLog(@"Num risk factors = %ld\n", (long)numVaccineRiskFactors);
+
     // vaccine risk factor list
     for(int i = 0; i < numVaccineRiskFactors; i++) {
         
         // current vaccine risk factor
         VaccineRiskFactor *vaccineRiskFactor = [self.vaccineRiskFactorList objectAtIndex:i];
         
+        NSLog(@"Risk factor name = %@\n", vaccineRiskFactor.name);
+        
         // if vaccine risk factor is active, compare with patient's vaccine list
         if(vaccineRiskFactor.isActive) {
+            
+            // increment numRiskFactors
+            self.patient->numRiskFactors++;
             
             NSArray *checkVaccineList = vaccineRiskFactor.vaccineList;
             NSArray *patientVaccineList = self.patient.vaccineList;
@@ -68,15 +75,18 @@
                 Vaccine *checkVaccine = [checkVaccineList objectAtIndex:j];
                 Vaccine *patientVaccine = [patientVaccineList objectAtIndex:j];
                 
+                
                 // compare vaccine values
                 Status newStatus = [self getStatusWithCheckVaccine:checkVaccine
                                                  andPatientVaccine:patientVaccine];
                 
                 // update patient vaccine value
                 patientVaccine->status = newStatus;
+                
+                NSLog(@"Vaccine status = %u\n", patientVaccine->status);
             }
             
-
+            
             
         }
         
@@ -93,7 +103,9 @@
     
     // return max priority status
     if(checkStatus == Recommended || patientStatus == Recommended) {
-        newStatus = Recommended;
+        // check if recommended should become indicated
+        if(self.patient->numRiskFactors > 1)
+            newStatus = Indicated;
     }
     if(checkStatus == Indicated || patientStatus == Indicated) {
         checkStatus = Indicated;

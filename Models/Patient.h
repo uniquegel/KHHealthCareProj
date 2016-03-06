@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Vaccine.h"
 
-@interface Patient : NSObject
+@interface Patient : NSObject{
+    @public NSInteger numRiskFactors;
+}
 
 // info
 @property (nonatomic, strong) NSString *name;

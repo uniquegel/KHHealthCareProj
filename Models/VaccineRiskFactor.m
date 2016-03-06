@@ -21,7 +21,7 @@
         
         self.name = newName;
         self.type = newType;
-        self.isActive = false;
+        self.isActive = true;
         
         // instantiate array
         VaccineListModel *vaccineModel = [VaccineListModel sharedModel];
