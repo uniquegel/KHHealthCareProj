@@ -294,9 +294,11 @@
                         <outlet property="birthdayTF" destination="3VZ-lJ-t9H" id="42c-m4-qUT"/>
                         <outlet property="datePicker" destination="9wY-cz-u63" id="CRx-ri-KeY"/>
                         <outlet property="ethnicityPicker" destination="H7Y-RT-7jH" id="TlZ-Ev-cgO"/>
+                        <outlet property="femaleButtonOutlet" destination="kHt-U7-HGh" id="TuL-Tb-cZ2"/>
                         <outlet property="firstNameTF" destination="II6-fY-4zv" id="odj-DP-A14"/>
                         <outlet property="lastNameTF" destination="7Js-ul-xnf" id="dtz-Dh-c8T"/>
-                        <segue destination="SiX-59-6vV" kind="show" id="f6g-2R-gEo"/>
+                        <outlet property="maleButtonOutlet" destination="mj7-zF-x9B" id="GJF-Jj-p4Z"/>
+                        <segue destination="SiX-59-6vV" kind="show" identifier="basicQuestionToOccuRiskFactors" id="f6g-2R-gEo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggs-1E-AMq" userLabel="First Responder" sceneMemberID="firstResponder"/>

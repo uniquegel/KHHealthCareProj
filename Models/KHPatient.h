@@ -14,9 +14,11 @@
 }
 
 // info
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *firstName;
+@property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *gender;
 @property (nonatomic, strong) NSNumber *age;
+@property (nonatomic, strong) NSString *ethnicty;
 @property (nonatomic, strong) NSNumber *heightInch;
 @property (nonatomic, strong) NSNumber *heightFeet;
 @property (nonatomic, strong) NSNumber *weight;
