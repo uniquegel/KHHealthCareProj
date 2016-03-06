@@ -12,7 +12,8 @@ typedef enum {
     Contraindicated,
     Ask,
     Indicated,
-    Recommended
+    Recommended,
+    Nothing
 } Status;
 
 @interface Vaccine : NSObject{
@@ -20,6 +21,10 @@ typedef enum {
 }
 
 @property (nonatomic, strong) NSString *name;
+
+// methods
+-(instancetype)initWithName:(NSString *)newName;
+-(instancetype)initWithName:(NSString *)newName andStatus:(Status)newStatus;
 
 
 @end

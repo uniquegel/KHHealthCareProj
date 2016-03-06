@@ -12,12 +12,16 @@
 
 @implementation VaccineRiskFactor
 
-- (instancetype)init
+- (instancetype)initWithName:(NSString *)newName andType:(NSString *)newType
 {
     
     self = [super init];
     
     if (self) {
+        
+        self.name = newName;
+        self.type = newType;
+        self.isActive = false;
         
         // instantiate array
         VaccineListModel *vaccineModel = [VaccineListModel sharedModel];

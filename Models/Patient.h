@@ -23,10 +23,6 @@
 @property (nonatomic, strong) NSArray *vaccineList;
 @property (nonatomic, strong) NSArray *cancerList;
 
-// risk factor lists
-@property (nonatomic, strong) NSMutableArray *vaccineRiskFactorList;
-@property (nonatomic, strong) NSMutableArray *cancerRiskFactorList;
-
 // singleton
 +(instancetype)sharedModel;
 

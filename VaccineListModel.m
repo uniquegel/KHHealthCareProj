@@ -7,6 +7,7 @@
 //
 
 #import "VaccineListModel.h"
+#import "Vaccine.h"
 
 @implementation VaccineListModel
 
@@ -18,6 +19,13 @@
     if (self) {
         // initialize vaccine array by pulling from server
         
+        // TEMPORARY - initialize with dummy data
+        NSMutableArray *tempList = [[NSMutableArray alloc] init];
+        for(int i = 0 ; i < 5; i++) {
+            Vaccine *vaccine = [[Vaccine alloc] initWithName:@"New Vaccine"];
+            [tempList addObject:vaccine];
+        }
+        self.vaccineList = tempList;
     }
     
     return self;

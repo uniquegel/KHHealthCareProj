@@ -39,7 +39,7 @@
     RiskFactorModel *riskFactorModel = [RiskFactorModel sharedModel];
     
     self.vaccineRiskFactorList = riskFactorModel.vaccineRiskFactorList;
-    self.cancerRiskFactorList = riskFactorModel.cancerRiskFactorList;
+    //self.cancerRiskFactorList = riskFactorModel.cancerRiskFactorList;
     
 }
 

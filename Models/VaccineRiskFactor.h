@@ -20,5 +20,8 @@
 // vaccine list
 @property (nonatomic, strong) NSArray *vaccineList;
 
+// methods
+-(instancetype)initWithName:(NSString *)newName andType:(NSString *)newType;
+
 @end
 	

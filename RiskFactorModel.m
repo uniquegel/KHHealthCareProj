@@ -7,6 +7,7 @@
 //
 
 #import "RiskFactorModel.h"
+#import "VaccineRiskFactor.h"
 
 @implementation RiskFactorModel
 
@@ -20,6 +21,15 @@
         // initialize riskFactorList by pulling from server
         
         
+        // TEMPORARY - initialize with dummy data
+        NSMutableArray *tempList = [[NSMutableArray alloc] init];
+        for(int i = 0 ; i < 5; i++) {
+            VaccineRiskFactor *vaccineRiskFactor = [[VaccineRiskFactor alloc]
+                                                    initWithName:@"New Vaccine RiskFactor"
+                                                    andType:@"New Type"];
+            [tempList addObject:vaccineRiskFactor];
+        }
+        self.vaccineRiskFactorList = tempList;
     }
     
     return self;

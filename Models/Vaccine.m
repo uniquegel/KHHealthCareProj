@@ -10,6 +10,35 @@
 
 @implementation Vaccine
 
+-(instancetype)initWithName:(NSString *)newName {
+    
+    self = [super init];
+    
+    if (self) {
+        
+        self.name = newName;
+        
+        self->status = Nothing;
 
+    }
+    
+    return self;
+    
+}
+
+-(instancetype)initWithName:(NSString *)newName andStatus:(Status)newStatus {
+    
+    self = [super init];
+    
+    if (self) {
+        
+        self.name = newName;
+        self->status = newStatus;
+        
+    }
+    
+    return self;
+    
+}
 
 @end

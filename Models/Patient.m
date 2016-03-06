@@ -27,12 +27,7 @@
         // instantiate cancer array
         CancerListModel *cancerModel = [CancerListModel sharedModel];
         self.cancerList = [NSArray arrayWithArray:cancerModel.cancerList];
-        
-        // instantiate risk factor arrays
-        self.cancerRiskFactorList = [[NSMutableArray alloc] init];
-        self.vaccineRiskFactorList = [[NSMutableArray alloc] init];
-        
-        
+                
     }
     
     return self;
