@@ -86,7 +86,7 @@
 
 -(Status)getStatusWithCheckVaccine:(Vaccine *)checkVaccine andPatientVaccine:(Vaccine *)patientVaccine {
     
-    Status newStatus;
+    Status newStatus = Nothing;
     
     Status checkStatus = checkVaccine->status;
     Status patientStatus = patientVaccine->status;
