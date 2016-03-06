@@ -10,5 +10,6 @@
 
 @interface KHMedicalConditionQuestionsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+- (IBAction)nextPageButton:(id)sender;
 
 @end

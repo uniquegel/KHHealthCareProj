@@ -33,7 +33,20 @@
         UIView *newSubView = [[UIView alloc] initWithFrame:CGRectMake(0, i*50, 200, 50)];
         UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, 100, 20)];
         KHVaccineRiskFactor *vaccineRiskFactor=_riskFactors.vaccineRiskFactorList[i];
-        riskFactorTitleLable = vaccineRiskFactor.name;
+//        riskFactorTitleLable = vaccineRiskFactor.name;
+//        UISwitch switch = [[UISwitch alloc] initwith
+         UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(150, 15, 30,30 )];
+        
+        [newSubView addSubview:mySwitch];
+        [newSubView addSubview:riskFactorTitleLable];
+        [_checkBoxArray addObject:mySwitch];
+        
+        [self.scrollView addSubview:newSubView];
+        
+        
+        
+        
+    
         
     }
     

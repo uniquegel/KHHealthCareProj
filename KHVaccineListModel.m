@@ -22,7 +22,7 @@
         // TEMPORARY - initialize with dummy data
         NSMutableArray *tempList = [[NSMutableArray alloc] init];
         for(int i = 0 ; i < 5; i++) {
-            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:@"New Vaccine" andStatus:Recommended];
+            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:@"New Vaccine" andStatus:Indicated];
             [tempList addObject:vaccine];
         }
         self.vaccineList = tempList;

@@ -10,4 +10,5 @@
 
 @interface KHVaccinationScreeningResultsTableViewController : UITableViewController
 
+
 @end
