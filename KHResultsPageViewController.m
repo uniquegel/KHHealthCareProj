@@ -6,21 +6,21 @@
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
-#import "ResultsPageViewController.h"
-#import "Patient.h"
-#import "RiskFactorModel.h"
-#import "VaccineRiskFactor.h"
-#import "Vaccine.h"
+#import "KHResultsPageViewController.h"
+#import "KHPatient.h"
+#import "KHRiskFactorModel.h"
+#import "KHVaccineRiskFactor.h"
+#import "KHVaccine.h"
 
-@interface ResultsPageViewController()
+@interface KHResultsPageViewController()
 
-@property (nonatomic, strong) Patient *patient;
+@property (nonatomic, strong) KHPatient *patient;
 @property (nonatomic, strong) NSArray *vaccineRiskFactorList;
 @property (nonatomic, strong) NSArray *cancerRiskFactorList;
 
 @end
 
-@implementation ResultsPageViewController
+@implementation KHResultsPageViewController
 
 -(void)viewDidLoad {
     
@@ -34,9 +34,9 @@
 
 -(void)initializing {
     
-    self.patient = [Patient sharedModel];
+    self.patient = [KHPatient sharedModel];
 
-    RiskFactorModel *riskFactorModel = [RiskFactorModel sharedModel];
+    KHRiskFactorModel *riskFactorModel = [KHRiskFactorModel sharedModel];
     
     self.vaccineRiskFactorList = riskFactorModel.vaccineRiskFactorList;
     //self.cancerRiskFactorList = riskFactorModel.cancerRiskFactorList;
@@ -54,7 +54,7 @@
     for(int i = 0; i < numVaccineRiskFactors; i++) {
         
         // current vaccine risk factor
-        VaccineRiskFactor *vaccineRiskFactor = [self.vaccineRiskFactorList objectAtIndex:i];
+        KHVaccineRiskFactor *vaccineRiskFactor = [self.vaccineRiskFactorList objectAtIndex:i];
         
         NSLog(@"Risk factor name = %@\n", vaccineRiskFactor.name);
         
@@ -72,8 +72,8 @@
             // iterate over vaccine lists
             for(int j = 0; j < numVaccines; j++) {
                 
-                Vaccine *checkVaccine = [checkVaccineList objectAtIndex:j];
-                Vaccine *patientVaccine = [patientVaccineList objectAtIndex:j];
+                KHVaccine *checkVaccine = [checkVaccineList objectAtIndex:j];
+                KHVaccine *patientVaccine = [patientVaccineList objectAtIndex:j];
                 
                 
                 // compare vaccine values
@@ -94,7 +94,7 @@
 
 }
 
--(Status)getStatusWithCheckVaccine:(Vaccine *)checkVaccine andPatientVaccine:(Vaccine *)patientVaccine {
+-(Status)getStatusWithCheckVaccine:(KHVaccine *)checkVaccine andPatientVaccine:(KHVaccine *)patientVaccine {
     
     Status newStatus = Nothing;
     

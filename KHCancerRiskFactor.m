@@ -6,10 +6,10 @@
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
-#import "CancerRiskFactor.h"
-#import "CancerListModel.h"
+#import "KHCancerRiskFactor.h"
+#import "KHCancerListModel.h"
 
-@implementation CancerRiskFactor
+@implementation KHCancerRiskFactor
 
 - (instancetype)init
 {
@@ -19,7 +19,7 @@
     if (self) {
         
         // instantiate array
-        CancerListModel *cancerModel = [CancerListModel sharedModel];
+        KHCancerListModel *cancerModel = [KHCancerListModel sharedModel];
         self.cancerList = [NSArray arrayWithArray:cancerModel.cancerList];
         
     }

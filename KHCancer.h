@@ -15,7 +15,7 @@ typedef enum status {
     Ask
 } Status;
 
-@interface Cancer : NSObject
+@interface KHCancer : NSObject
 
 @property (nonatomic, strong) NSString *name;
 

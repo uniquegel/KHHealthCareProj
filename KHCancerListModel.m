@@ -6,9 +6,9 @@
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
-#import "CancerListModel.h"
+#import "KHCancerListModel.h"
 
-@implementation CancerListModel
+@implementation KHCancerListModel
 
 -(instancetype)init {
     
@@ -25,7 +25,7 @@
 
 +(instancetype)sharedModel {
     
-    static CancerListModel *_sharedModel = nil;
+    static KHCancerListModel *_sharedModel = nil;
     
     static dispatch_once_t onceToken;
     

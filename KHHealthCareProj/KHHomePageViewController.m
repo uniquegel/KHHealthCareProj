@@ -7,10 +7,10 @@
 //
 
 #import "KHHomePageViewController.h"
-#import "VaccineListModel.h"
-#import "CancerListModel.h"
-#import "RiskFactorModel.h"
-#import "Patient.h"
+#import "KHVaccineListModel.h"
+#import "KHCancerListModel.h"
+#import "KHRiskFactorModel.h"
+#import "KHPatient.h"
 
 @implementation KHHomePageViewController
 
@@ -27,26 +27,45 @@
 -(void)initializing {
     
     // initialize vaccine array by pulling from server
-    VaccineListModel *vaccineModel = [VaccineListModel sharedModel];
+    KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];
     
     
     // initialize cancer array by pulling from server
-    CancerListModel *cancerModel = [CancerListModel sharedModel];
+    KHCancerListModel *cancerModel = [KHCancerListModel sharedModel];
     
     // initialize riskFactorList by pulling from server
-    RiskFactorModel *riskFactorModel = [RiskFactorModel sharedModel];
+    KHRiskFactorModel *riskFactorModel = [KHRiskFactorModel sharedModel];
     
 }
 
 -(void)initializeDummyData {
     
     // initialize patient
-    Patient *patient = [Patient sharedModel];
+    KHPatient *patient = [KHPatient sharedModel];
     
 
     
 }
 
+
+// Quick Checkup
+- (IBAction)quickExamButton:(id)sender {
+    
+}
+
+
+// Complete Exam
 - (IBAction)fullExamButton:(id)sender {
+    
 }
+
+
+
+
+
+
+
+
+
+
 @end

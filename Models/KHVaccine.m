@@ -6,9 +6,9 @@
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
-#import "Vaccine.h"
+#import "KHVaccine.h"
 
-@implementation Vaccine
+@implementation KHVaccine
 
 -(instancetype)initWithName:(NSString *)newName {
     

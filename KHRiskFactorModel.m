@@ -6,10 +6,10 @@
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
-#import "RiskFactorModel.h"
-#import "VaccineRiskFactor.h"
+#import "KHRiskFactorModel.h"
+#import "KHVaccineRiskFactor.h"
 
-@implementation RiskFactorModel
+@implementation KHRiskFactorModel
 
 
 -(instancetype)init {
@@ -24,7 +24,7 @@
         // TEMPORARY - initialize with dummy data
         NSMutableArray *tempList = [[NSMutableArray alloc] init];
         for(int i = 0 ; i < 5; i++) {
-            VaccineRiskFactor *vaccineRiskFactor = [[VaccineRiskFactor alloc]
+            KHVaccineRiskFactor *vaccineRiskFactor = [[KHVaccineRiskFactor alloc]
                                                     initWithName:[NSString stringWithFormat:@"%d", i]
                                                     andType:@"New Type"];
             [tempList addObject:vaccineRiskFactor];
@@ -38,7 +38,7 @@
 
 +(instancetype)sharedModel {
     
-    static RiskFactorModel *_sharedModel = nil;
+    static KHRiskFactorModel *_sharedModel = nil;
     
     static dispatch_once_t onceToken;
     

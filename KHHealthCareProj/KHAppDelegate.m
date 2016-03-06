@@ -6,13 +6,13 @@
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "KHAppDelegate.h"
 
-@interface AppDelegate ()
+@interface KHAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation KHAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

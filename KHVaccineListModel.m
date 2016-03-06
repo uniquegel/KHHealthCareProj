@@ -6,10 +6,10 @@
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
-#import "VaccineListModel.h"
-#import "Vaccine.h"
+#import "KHVaccineListModel.h"
+#import "KHVaccine.h"
 
-@implementation VaccineListModel
+@implementation KHVaccineListModel
 
 
 -(instancetype)init {
@@ -22,7 +22,7 @@
         // TEMPORARY - initialize with dummy data
         NSMutableArray *tempList = [[NSMutableArray alloc] init];
         for(int i = 0 ; i < 5; i++) {
-            Vaccine *vaccine = [[Vaccine alloc] initWithName:@"New Vaccine" andStatus:Recommended];
+            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:@"New Vaccine" andStatus:Recommended];
             [tempList addObject:vaccine];
         }
         self.vaccineList = tempList;
@@ -34,7 +34,7 @@
 
 +(instancetype)sharedModel {
     
-    static VaccineListModel *_sharedModel = nil;
+    static KHVaccineListModel *_sharedModel = nil;
     
     static dispatch_once_t onceToken;
     

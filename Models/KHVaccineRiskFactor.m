@@ -6,11 +6,11 @@
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
-#import "VaccineRiskFactor.h"
-#import "VaccineListModel.h"
+#import "KHVaccineRiskFactor.h"
+#import "KHVaccineListModel.h"
 
 
-@implementation VaccineRiskFactor
+@implementation KHVaccineRiskFactor
 
 - (instancetype)initWithName:(NSString *)newName andType:(NSString *)newType
 {
@@ -24,7 +24,7 @@
         self.isActive = true;
         
         // instantiate array
-        VaccineListModel *vaccineModel = [VaccineListModel sharedModel];
+        KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];
         self.vaccineList = [NSArray arrayWithArray:vaccineModel.vaccineList];
         
     }

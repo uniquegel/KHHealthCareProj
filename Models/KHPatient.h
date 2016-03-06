@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Vaccine.h"
+#import "KHVaccine.h"
 
-@interface Patient : NSObject{
+@interface KHPatient : NSObject{
     @public NSInteger numRiskFactors;
 }
 

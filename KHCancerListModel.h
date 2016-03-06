@@ -1,5 +1,5 @@
 //
-//  VaccineListModel.h
+//  CancerListModel.h
 //  KHHealthCareProj
 //
 //  Created by David Richardson on 3/5/16.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface VaccineListModel : NSObject
+@interface KHCancerListModel : NSObject
 
-@property (nonatomic, strong) NSArray *vaccineList;
+@property (nonatomic, strong) NSArray *cancerList;
 
 +(instancetype) sharedModel;
 

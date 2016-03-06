@@ -16,7 +16,7 @@ typedef enum {
     Nothing
 } Status;
 
-@interface Vaccine : NSObject{
+@interface KHVaccine : NSObject{
     @public Status status;
 }
 

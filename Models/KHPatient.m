@@ -6,11 +6,11 @@
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
-#import "Patient.h"
-#import "VaccineListModel.h"
-#import "CancerListModel.h"
+#import "KHPatient.h"
+#import "KHVaccineListModel.h"
+#import "KHCancerListModel.h"
 
-@implementation Patient
+@implementation KHPatient
 
 
 - (instancetype)init
@@ -21,11 +21,11 @@
     if (self) {
         
         // instantiate vaccine array
-        VaccineListModel *vaccineModel = [VaccineListModel sharedModel];
+        KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];
         self.vaccineList = [NSArray arrayWithArray:vaccineModel.vaccineList];
         
         // instantiate cancer array
-        CancerListModel *cancerModel = [CancerListModel sharedModel];
+        KHCancerListModel *cancerModel = [KHCancerListModel sharedModel];
         self.cancerList = [NSArray arrayWithArray:cancerModel.cancerList];
                 
     }
@@ -36,7 +36,7 @@
 
 // singleton
 +(instancetype) sharedModel{
-    static Patient *_sharedModel = nil;
+    static KHPatient *_sharedModel = nil;
     
     static dispatch_once_t onceToken;
     
