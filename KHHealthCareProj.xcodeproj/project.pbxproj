@@ -14,6 +14,8 @@
 		637AA2141C8B9530005107AC /* CancerRiskFactor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2131C8B9530005107AC /* CancerRiskFactor.m */; };
 		637AA2171C8B9F40005107AC /* ResultsPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2161C8B9F40005107AC /* ResultsPageViewController.m */; };
 		637AA21A1C8BD1A1005107AC /* RiskFactorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2191C8BD1A1005107AC /* RiskFactorModel.m */; };
+		7E4484A81C8BE61200850E58 /* KHSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484A71C8BE61200850E58 /* KHSignInViewController.m */; };
+		7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */; };
 		7E9B48E61C81A3C30067B403 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E51C81A3C30067B403 /* main.m */; };
 		7E9B48E91C81A3C30067B403 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E81C81A3C30067B403 /* AppDelegate.m */; };
 		7E9B48EF1C81A3C30067B403 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B48ED1C81A3C30067B403 /* Main.storyboard */; };
@@ -59,6 +61,10 @@
 		637AA2161C8B9F40005107AC /* ResultsPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsPageViewController.m; sourceTree = "<group>"; };
 		637AA2181C8BD1A1005107AC /* RiskFactorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskFactorModel.h; sourceTree = "<group>"; };
 		637AA2191C8BD1A1005107AC /* RiskFactorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskFactorModel.m; sourceTree = "<group>"; };
+		7E4484A61C8BE61200850E58 /* KHSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignInViewController.h; sourceTree = "<group>"; };
+		7E4484A71C8BE61200850E58 /* KHSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignInViewController.m; sourceTree = "<group>"; };
+		7E4484AC1C8BEB4B00850E58 /* KHBasicQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBasicQuestionViewController.h; sourceTree = "<group>"; };
+		7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHBasicQuestionViewController.m; sourceTree = "<group>"; };
 		7E9B48E11C81A3C30067B403 /* KHHealthCareProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KHHealthCareProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9B48E51C81A3C30067B403 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7E9B48E71C81A3C30067B403 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -176,6 +182,10 @@
 				637AA2001C8B8BDD005107AC /* KHHomePageViewController.m */,
 				637AA2151C8B9F40005107AC /* ResultsPageViewController.h */,
 				637AA2161C8B9F40005107AC /* ResultsPageViewController.m */,
+				7E4484A61C8BE61200850E58 /* KHSignInViewController.h */,
+				7E4484A71C8BE61200850E58 /* KHSignInViewController.m */,
+				7E4484AC1C8BEB4B00850E58 /* KHBasicQuestionViewController.h */,
+				7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -385,8 +395,10 @@
 				637AA2011C8B8BDD005107AC /* KHHomePageViewController.m in Sources */,
 				637AA2041C8B8E77005107AC /* VaccineListModel.m in Sources */,
 				7E9B48E91C81A3C30067B403 /* AppDelegate.m in Sources */,
+				7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */,
 				7E9B48E61C81A3C30067B403 /* main.m in Sources */,
 				637AA2111C8B93A9005107AC /* Cancer.m in Sources */,
+				7E4484A81C8BE61200850E58 /* KHSignInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

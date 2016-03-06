@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="KHSignInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -33,18 +33,27 @@
                                 <state key="normal" title="Skip for now">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="skipSigninButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZH0-7Q-0jc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="riB-ti-YSz">
                                 <rect key="frame" x="394" y="377" width="83" height="30"/>
                                 <state key="normal" title="LOG IN">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mFB-mu-7O2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxI-xu-llP">
                                 <rect key="frame" x="130" y="377" width="85" height="30"/>
                                 <state key="normal" title="SIGN UP">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ee-F3-NP6"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4je-tq-sB3">
                                 <rect key="frame" x="104" y="254" width="393" height="30"/>
@@ -55,17 +64,19 @@
                         <color key="backgroundColor" red="0.21960784310000001" green="0.87058823529999996" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <segue destination="J4H-9y-LGI" kind="show" id="cQt-NJ-bIY"/>
+                        <outlet property="passwordTF" destination="4je-tq-sB3" id="awT-Jc-pl5"/>
+                        <outlet property="usernameTF" destination="q6J-2K-Lxr" id="EXD-fa-VpV"/>
+                        <segue destination="J4H-9y-LGI" kind="show" identifier="signInToHomePage" id="cQt-NJ-bIY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="68" y="-253"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Page View Controller-->
         <scene sceneID="bgm-Xz-1KA">
             <objects>
-                <viewController id="J4H-9y-LGI" sceneMemberID="viewController">
+                <viewController id="J4H-9y-LGI" customClass="KHHomePageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wGy-bh-2jQ"/>
                         <viewControllerLayoutGuide type="bottom" id="m85-5j-WTA"/>
@@ -75,7 +86,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHZ-DF-BAL">
-                                <rect key="frame" x="0.0" y="179" width="600" height="129"/>
+                                <rect key="frame" x="0.0" y="179" width="600" height="139"/>
                                 <state key="normal" title="Quick Checkup">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -84,10 +95,13 @@
                                 <rect key="frame" x="180" y="53" width="240" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZe-P4-FLd">
-                                <rect key="frame" x="0.0" y="316" width="600" height="137"/>
+                                <rect key="frame" x="0.0" y="326" width="600" height="156"/>
                                 <state key="normal" title="Complete Exam">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="fullExamButton:" destination="J4H-9y-LGI" eventType="touchUpInside" id="wP8-Vc-wyN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2196078431372549" green="0.87058823529411766" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
@@ -100,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="748" y="-253"/>
         </scene>
-        <!--View Controller-->
+        <!--Basic Question View Controller-->
         <scene sceneID="e4U-Vq-9oe">
             <objects>
-                <viewController id="b27-Km-thy" sceneMemberID="viewController">
+                <viewController id="b27-Km-thy" customClass="KHBasicQuestionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YnS-fi-5wW"/>
                         <viewControllerLayoutGuide type="bottom" id="ECP-27-fCR"/>
@@ -113,7 +127,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7Y-RT-7jH">
-                                <rect key="frame" x="63" y="293" width="474" height="158"/>
+                                <rect key="frame" x="63" y="306" width="474" height="122"/>
                             </pickerView>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9wY-cz-u63">
                                 <rect key="frame" x="0.0" y="384" width="600" height="216"/>
@@ -137,6 +151,9 @@
                                 <state key="normal" title="Male">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="isMaleButton:" destination="b27-Km-thy" eventType="touchUpInside" id="4Nw-NW-U3P"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Js-ul-xnf">
                                 <rect key="frame" x="328" y="78" width="97" height="30"/>
@@ -148,6 +165,9 @@
                                 <state key="normal" title="Female">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="isFemaleButton:" destination="b27-Km-thy" eventType="touchUpInside" id="qfY-t1-Snx"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3VZ-lJ-t9H">
                                 <rect key="frame" x="231" y="190" width="141" height="30"/>
@@ -158,12 +178,14 @@
                         <color key="backgroundColor" red="0.21960784310000001" green="0.87058823529999996" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="firstNameTF" destination="II6-fY-4zv" id="odj-DP-A14"/>
+                        <outlet property="lastNameTF" destination="7Js-ul-xnf" id="dtz-Dh-c8T"/>
                         <segue destination="SiX-59-6vV" kind="show" id="f6g-2R-gEo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggs-1E-AMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="95"/>
+            <point key="canvasLocation" x="1463" y="95"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6N0-W0-DHT">
@@ -195,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNm-Yz-jGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2051" y="95"/>
+            <point key="canvasLocation" x="2122" y="95"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bGJ-df-Mje">
