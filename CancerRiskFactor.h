@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSString *type;
 
 // risk factor status
-@property (nonatomic, assign) BOOL active;
+@property (nonatomic, assign) BOOL isActive;
 
 // cancer list
 @property (nonatomic, strong) NSArray *cancerList;

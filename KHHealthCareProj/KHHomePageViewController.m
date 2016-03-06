@@ -9,6 +9,7 @@
 #import "KHHomePageViewController.h"
 #import "VaccineListModel.h"
 #import "CancerListModel.h"
+#import "RiskFactorModel.h"
 
 @implementation KHHomePageViewController
 
@@ -30,6 +31,8 @@
     // initialize cancer array by pulling from server
     CancerListModel *cancerModel = [CancerListModel sharedModel];
     
+    // initialize riskFactorList by pulling from server
+    RiskFactorModel *riskFactorModel = [RiskFactorModel sharedModel];
     
 }
 

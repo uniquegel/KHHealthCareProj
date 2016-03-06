@@ -10,6 +10,18 @@
 
 @implementation CancerListModel
 
+-(instancetype)init {
+    
+    self = [super init];
+    
+    if (self) {
+        // initialize cancer array by pulling from server
+        
+    }
+    
+    return self;
+    
+}
 
 +(instancetype)sharedModel {
     
@@ -18,11 +30,6 @@
     static dispatch_once_t onceToken;
     
     dispatch_once (&onceToken, ^{
-        
-        // initialize cancer array by pulling from server
-        
-        
-        
         _sharedModel = [[self alloc] init];
     });
     return _sharedModel;

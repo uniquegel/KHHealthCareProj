@@ -13,6 +13,7 @@
 		637AA2111C8B93A9005107AC /* Cancer.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2101C8B93A9005107AC /* Cancer.m */; };
 		637AA2141C8B9530005107AC /* CancerRiskFactor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2131C8B9530005107AC /* CancerRiskFactor.m */; };
 		637AA2171C8B9F40005107AC /* ResultsPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2161C8B9F40005107AC /* ResultsPageViewController.m */; };
+		637AA21A1C8BD1A1005107AC /* RiskFactorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2191C8BD1A1005107AC /* RiskFactorModel.m */; };
 		7E9B48E61C81A3C30067B403 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E51C81A3C30067B403 /* main.m */; };
 		7E9B48E91C81A3C30067B403 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E81C81A3C30067B403 /* AppDelegate.m */; };
 		7E9B48EF1C81A3C30067B403 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B48ED1C81A3C30067B403 /* Main.storyboard */; };
@@ -56,6 +57,8 @@
 		637AA2131C8B9530005107AC /* CancerRiskFactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancerRiskFactor.m; sourceTree = "<group>"; };
 		637AA2151C8B9F40005107AC /* ResultsPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsPageViewController.h; sourceTree = "<group>"; };
 		637AA2161C8B9F40005107AC /* ResultsPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsPageViewController.m; sourceTree = "<group>"; };
+		637AA2181C8BD1A1005107AC /* RiskFactorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskFactorModel.h; sourceTree = "<group>"; };
+		637AA2191C8BD1A1005107AC /* RiskFactorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskFactorModel.m; sourceTree = "<group>"; };
 		7E9B48E11C81A3C30067B403 /* KHHealthCareProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KHHealthCareProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9B48E51C81A3C30067B403 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7E9B48E71C81A3C30067B403 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 				EAD7BC4B1C86A320002AEBC8 /* VaccineRiskFactor.m */,
 				637AA2121C8B9530005107AC /* CancerRiskFactor.h */,
 				637AA2131C8B9530005107AC /* CancerRiskFactor.m */,
+				637AA2181C8BD1A1005107AC /* RiskFactorModel.h */,
+				637AA2191C8BD1A1005107AC /* RiskFactorModel.m */,
 			);
 			name = RiskFactor;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				637AA2171C8B9F40005107AC /* ResultsPageViewController.m in Sources */,
+				637AA21A1C8BD1A1005107AC /* RiskFactorModel.m in Sources */,
 				7E9B48F21C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld in Sources */,
 				637AA20E1C8B9348005107AC /* CancerListModel.m in Sources */,
 				EAD7BC4C1C86A320002AEBC8 /* VaccineRiskFactor.m in Sources */,

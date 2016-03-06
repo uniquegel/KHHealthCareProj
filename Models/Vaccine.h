@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum status {
-    Indicated,
-    Recommended,
+typedef enum {
     Contraindicated,
-    Ask
+    Ask,
+    Indicated,
+    Recommended
 } Status;
 
-@interface Vaccine : NSObject
+@interface Vaccine : NSObject{
+    @public Status status;
+}
 
 @property (nonatomic, strong) NSString *name;
 
