@@ -177,7 +177,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="b27-Km-thy" kind="show" id="XIf-bB-AtE"/>
+                        <segue destination="b27-Km-thy" kind="show" identifier="basicQuestionSegue" id="XIf-bB-AtE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8d-Oj-oVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -196,28 +196,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7Y-RT-7jH">
-                                <rect key="frame" x="63" y="306" width="474" height="122"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7Y-RT-7jH">
+                                <rect key="frame" x="140" y="290.5" width="320" height="216"/>
                             </pickerView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9wY-cz-u63">
-                                <rect key="frame" x="0.0" y="384" width="600" height="216"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9wY-cz-u63">
+                                <rect key="frame" x="140" y="462.5" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="478908540.93322003">
                                     <!--2016-03-05 22:09:00 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is your ethnicity?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5M-rf-qKm">
-                                <rect key="frame" x="214" y="277" width="174" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your ethnicity?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5M-rf-qKm">
+                                <rect key="frame" x="213" y="250" width="174" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="II6-fY-4zv">
-                                <rect key="frame" x="175" y="78" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="II6-fY-4zv">
+                                <rect key="frame" x="100" y="80" width="180" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mj7-zF-x9B">
-                                <rect key="frame" x="236" y="129" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mj7-zF-x9B">
+                                <rect key="frame" x="247" y="130" width="33" height="30"/>
                                 <state key="normal" title="Male">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -225,13 +225,13 @@
                                     <action selector="isMaleButton:" destination="b27-Km-thy" eventType="touchUpInside" id="4Nw-NW-U3P"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Js-ul-xnf">
-                                <rect key="frame" x="328" y="78" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Js-ul-xnf">
+                                <rect key="frame" x="320" y="80" width="180" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHt-U7-HGh">
-                                <rect key="frame" x="307" y="129" width="64" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHt-U7-HGh">
+                                <rect key="frame" x="320" y="130" width="50" height="30"/>
                                 <state key="normal" title="Female">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -239,13 +239,56 @@
                                     <action selector="isFemaleButton:" destination="b27-Km-thy" eventType="touchUpInside" id="qfY-t1-Snx"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3VZ-lJ-t9H">
-                                <rect key="frame" x="231" y="190" width="141" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3VZ-lJ-t9H">
+                                <rect key="frame" x="120" y="190" width="360" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnn-nS-p2R">
+                                <rect key="frame" x="300" y="300" width="0.0" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="VFo-sv-QmT"/>
+                                    <constraint firstAttribute="height" id="tZ4-ku-vJL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.87058823529999996" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y5M-rf-qKm" firstAttribute="centerX" secondItem="yY1-75-Irf" secondAttribute="centerX" id="C8c-nr-D1Q"/>
+                            <constraint firstItem="hnn-nS-p2R" firstAttribute="leading" secondItem="II6-fY-4zv" secondAttribute="trailing" constant="20" id="FUE-er-mDD"/>
+                            <constraint firstItem="3VZ-lJ-t9H" firstAttribute="top" secondItem="kHt-U7-HGh" secondAttribute="bottom" constant="30" id="GEa-kt-Mkd"/>
+                            <constraint firstItem="7Js-ul-xnf" firstAttribute="leading" secondItem="3VZ-lJ-t9H" secondAttribute="trailing" constant="20" id="HTn-Ty-qru"/>
+                            <constraint firstItem="kHt-U7-HGh" firstAttribute="top" secondItem="7Js-ul-xnf" secondAttribute="bottom" constant="20" id="N29-WJ-6d1"/>
+                            <constraint firstItem="kHt-U7-HGh" firstAttribute="leading" secondItem="3VZ-lJ-t9H" secondAttribute="trailing" id="SUP-CJ-X4t"/>
+                            <constraint firstItem="kHt-U7-HGh" firstAttribute="leading" secondItem="hnn-nS-p2R" secondAttribute="trailing" constant="20" id="Tv6-gm-O29"/>
+                            <constraint firstItem="H7Y-RT-7jH" firstAttribute="centerX" secondItem="yY1-75-Irf" secondAttribute="centerX" id="UDE-7f-V6G"/>
+                            <constraint firstItem="hnn-nS-p2R" firstAttribute="leading" secondItem="mj7-zF-x9B" secondAttribute="trailing" constant="20" id="Wxl-rV-4X9"/>
+                            <constraint firstItem="3VZ-lJ-t9H" firstAttribute="leading" secondItem="mj7-zF-x9B" secondAttribute="trailing" id="dFh-vO-Eko"/>
+                            <constraint firstItem="H7Y-RT-7jH" firstAttribute="top" secondItem="Y5M-rf-qKm" secondAttribute="bottom" constant="20" id="eLO-v7-wjF"/>
+                            <constraint firstItem="7Js-ul-xnf" firstAttribute="top" secondItem="YnS-fi-5wW" secondAttribute="bottom" constant="60" id="fA8-0f-LvC"/>
+                            <constraint firstItem="3VZ-lJ-t9H" firstAttribute="leading" secondItem="II6-fY-4zv" secondAttribute="trailing" constant="-40" id="fhc-z7-jaW"/>
+                            <constraint firstItem="II6-fY-4zv" firstAttribute="top" secondItem="YnS-fi-5wW" secondAttribute="bottom" constant="60" id="hnw-Y5-IXX"/>
+                            <constraint firstItem="3VZ-lJ-t9H" firstAttribute="width" secondItem="yY1-75-Irf" secondAttribute="width" multiplier="0.6" id="jYi-oG-zD2"/>
+                            <constraint firstItem="mj7-zF-x9B" firstAttribute="top" secondItem="II6-fY-4zv" secondAttribute="bottom" constant="20" id="kmU-pv-w4f"/>
+                            <constraint firstItem="9wY-cz-u63" firstAttribute="top" secondItem="H7Y-RT-7jH" secondAttribute="bottom" constant="-44" id="qkP-A4-Z1w"/>
+                            <constraint firstItem="9wY-cz-u63" firstAttribute="centerX" secondItem="yY1-75-Irf" secondAttribute="centerX" id="r0q-If-rGx"/>
+                            <constraint firstItem="hnn-nS-p2R" firstAttribute="centerY" secondItem="yY1-75-Irf" secondAttribute="centerY" id="r9g-Gs-qq6"/>
+                            <constraint firstItem="Y5M-rf-qKm" firstAttribute="top" secondItem="3VZ-lJ-t9H" secondAttribute="bottom" constant="30" id="tPQ-39-48H"/>
+                            <constraint firstItem="7Js-ul-xnf" firstAttribute="width" secondItem="yY1-75-Irf" secondAttribute="width" multiplier="0.3" id="uWw-fi-1YK"/>
+                            <constraint firstItem="7Js-ul-xnf" firstAttribute="leading" secondItem="hnn-nS-p2R" secondAttribute="trailing" constant="20" id="uzE-pS-J0X"/>
+                            <constraint firstItem="hnn-nS-p2R" firstAttribute="centerX" secondItem="yY1-75-Irf" secondAttribute="centerX" id="xpu-xf-Jha"/>
+                            <constraint firstItem="3VZ-lJ-t9H" firstAttribute="centerX" secondItem="yY1-75-Irf" secondAttribute="centerX" id="xrN-tI-sQd"/>
+                            <constraint firstItem="II6-fY-4zv" firstAttribute="width" secondItem="yY1-75-Irf" secondAttribute="width" multiplier="0.3" id="zgN-bD-Xb0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dFh-vO-Eko"/>
+                                <exclude reference="fhc-z7-jaW"/>
+                                <exclude reference="HTn-Ty-qru"/>
+                                <exclude reference="SUP-CJ-X4t"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="birthdayTF" destination="3VZ-lJ-t9H" id="42c-m4-qUT"/>

@@ -51,6 +51,8 @@
 // Quick Checkup
 - (IBAction)quickExamButton:(id)sender {
     
+    [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
+    
 }
 
 
