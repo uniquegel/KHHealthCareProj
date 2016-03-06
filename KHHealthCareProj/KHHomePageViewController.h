@@ -11,5 +11,6 @@
 @interface KHHomePageViewController : UIViewController
 
 @property (nonatomic, strong) NSArray *vaccineList;
+- (IBAction)fullExamButton:(id)sender;
 
 @end

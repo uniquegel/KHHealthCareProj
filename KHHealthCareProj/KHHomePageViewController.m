@@ -38,6 +38,7 @@
     
 }
 
+<<<<<<< HEAD
 -(void)initializeDummyData {
     
     // initialize patient
@@ -47,4 +48,8 @@
     
 }
 
+=======
+- (IBAction)fullExamButton:(id)sender {
+}
+>>>>>>> b8d82e85d329f108ce91a2663633b0e116475403
 @end
