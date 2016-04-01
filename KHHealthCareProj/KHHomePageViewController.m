@@ -18,6 +18,10 @@
     
     [super viewDidLoad];
     
+    //pull from database, asynchrously
+    
+    
+    
     [self initializing];
     
     [self initializeDummyData];

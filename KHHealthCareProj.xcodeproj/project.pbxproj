@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CDB65DFDB30713257F38A22 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA82389F63B1AFD5B3C9AA63 /* libPods.a */; };
 		630569BB1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */; };
 		630569BE1C8C03D2001E8CB5 /* KHCardiometabolicScreeningResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569BD1C8C03D2001E8CB5 /* KHCardiometabolicScreeningResultsViewController.m */; };
 		630569C71C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569C61C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m */; };
@@ -101,12 +102,14 @@
 		7E9B49081C81A3C30067B403 /* KHHealthCareProjUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KHHealthCareProjUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9B490C1C81A3C30067B403 /* KHHealthCareProjUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KHHealthCareProjUITests.m; sourceTree = "<group>"; };
 		7E9B490E1C81A3C30067B403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA82389F63B1AFD5B3C9AA63 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD7BC441C869D26002AEBC8 /* KHPatient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHPatient.h; path = Models/KHPatient.h; sourceTree = "<group>"; };
 		EAD7BC451C869D26002AEBC8 /* KHPatient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHPatient.m; path = Models/KHPatient.m; sourceTree = "<group>"; };
 		EAD7BC471C86A26B002AEBC8 /* KHVaccine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHVaccine.h; path = Models/KHVaccine.h; sourceTree = "<group>"; };
 		EAD7BC481C86A26B002AEBC8 /* KHVaccine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHVaccine.m; path = Models/KHVaccine.m; sourceTree = "<group>"; };
 		EAD7BC4A1C86A320002AEBC8 /* KHVaccineRiskFactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHVaccineRiskFactor.h; path = Models/KHVaccineRiskFactor.h; sourceTree = "<group>"; };
 		EAD7BC4B1C86A320002AEBC8 /* KHVaccineRiskFactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHVaccineRiskFactor.m; path = Models/KHVaccineRiskFactor.m; sourceTree = "<group>"; };
+		F436FCC6A7280DC2F9723567 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CDB65DFDB30713257F38A22 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +280,8 @@
 				7E9B49001C81A3C30067B403 /* KHHealthCareProjTests */,
 				7E9B490B1C81A3C30067B403 /* KHHealthCareProjUITests */,
 				7E9B48E21C81A3C30067B403 /* Products */,
+				FC36CCF84935F1F547BBD6F6 /* Pods */,
+				769CBE6E65ADD54891A594A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -329,6 +335,15 @@
 			path = KHHealthCareProjUITests;
 			sourceTree = "<group>";
 		};
+		FC36CCF84935F1F547BBD6F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7BB90ACF2BBBB12D060234F3 /* Pods.debug.xcconfig */,
+				F436FCC6A7280DC2F9723567 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -336,9 +351,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E9B49111C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProj" */;
 			buildPhases = (
+				5B56A7310E8D834829F4A704 /* Check Pods Manifest.lock */,
 				7E9B48DD1C81A3C30067B403 /* Sources */,
 				7E9B48DE1C81A3C30067B403 /* Frameworks */,
 				7E9B48DF1C81A3C30067B403 /* Resources */,
+				99615C9615F017F5D388E103 /* Embed Pods Frameworks */,
+				960984A3219888CD3D660A0F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -453,6 +471,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5B56A7310E8D834829F4A704 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		960984A3219888CD3D660A0F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99615C9615F017F5D388E103 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7E9B48DD1C81A3C30067B403 /* Sources */ = {
@@ -618,6 +684,7 @@
 		};
 		7E9B49121C81A3C30067B403 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BB90ACF2BBBB12D060234F3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KHHealthCareProj/Info.plist;
@@ -629,6 +696,7 @@
 		};
 		7E9B49131C81A3C30067B403 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F436FCC6A7280DC2F9723567 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KHHealthCareProj/Info.plist;

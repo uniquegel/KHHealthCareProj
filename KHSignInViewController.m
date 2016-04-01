@@ -7,16 +7,31 @@
 //
 
 #import "KHSignInViewController.h"
+#import <Foundation/Foundation.h>
+#import <Firebase/Firebase.h>
 
 @interface KHSignInViewController ()
-
+@property NSDictionary *dict;
 @end
 
 @implementation KHSignInViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://pocdoc.firebaseio.com"];
+    [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        
+        
+        
+//        NSLog(@" json: %@", snapshot.value);
+        _dict =[[NSDictionary alloc] initWithDictionary: snapshot.value];
+        NSLog(@" haha: %@", _dict);
+//        NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
+    }];
+
+
 }
 
 - (void)didReceiveMemoryWarning {
