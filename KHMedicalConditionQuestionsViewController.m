@@ -17,6 +17,9 @@
 @property (nonatomic, strong) KHPatient *patient;
 @property (nonatomic, strong) NSArray *vaccineRiskFactorList;
 @property (nonatomic, strong) NSArray *cancerRiskFactorList;
+@property KHRiskFactorModel *riskFactors;
+@property NSMutableArray *checkBoxArray;
+
 -(void)calculateResults;
 -(Status)getStatusWithCheckVaccine:(KHVaccine *)checkVaccine andPatientVaccine:(KHVaccine *)patientVaccine;
 
@@ -31,8 +34,34 @@
     
     [super viewDidLoad];
     
+    _patient = [KHPatient sharedModel];
+    _riskFactors = [KHRiskFactorModel sharedModel];
+    
+    [self UISetup];
 
     
+}
+
+- (void)UISetup {
+    
+    _checkBoxArray = [[NSMutableArray alloc] init];
+    for (int i = 0; i < [_riskFactors.vaccineRiskFactorList count] ; i++) {
+        
+        CGFloat width = self.view.frame.size.width;
+        
+        UIView *newSubView = [[UIView alloc] initWithFrame:CGRectMake(0, 200 + i*50, width, 50)];
+        UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(40, 15, width - 80, 20)];
+        KHVaccineRiskFactor *vaccineRiskFactor=_riskFactors.vaccineRiskFactorList[i];
+        riskFactorTitleLable.text = vaccineRiskFactor.name;
+        UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 80, 15, 30,30 )];
+        
+        [newSubView addSubview:mySwitch];
+        [newSubView addSubview:riskFactorTitleLable];
+        [_checkBoxArray addObject:mySwitch];
+        
+        [self.scrollView addSubview:newSubView];
+        
+    }
 }
 
 -(void)initializing {
@@ -125,8 +154,11 @@
 
 
 - (IBAction)nextPageButton:(id)sender {
+    
+    
     [self initializing];
     
+    // begin calculating results
     [self calculateResults];
     
     

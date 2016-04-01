@@ -17,25 +17,34 @@
 @end
 
 @implementation KHOccupationalLifestyleQuestionsViewController
+
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _patient = [KHPatient sharedModel];
     _riskFactors = [KHRiskFactorModel sharedModel];
     
+    [self UISetup];
+    
+}
+
+- (void)UISetup {
     
     UISwipeGestureRecognizer *gestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeHandler:)];
     [gestureRecognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
     [self.view addGestureRecognizer:gestureRecognizer];
-    
+
     _checkBoxArray = [[NSMutableArray alloc] init];
     for (int i = 0; i < [_riskFactors.vaccineRiskFactorList count] ; i++) {
-        UIView *newSubView = [[UIView alloc] initWithFrame:CGRectMake(0, 200 + i*50, 200, 50)];
-        UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, 100, 20)];
+        
+        CGFloat width = self.view.frame.size.width;
+        
+        UIView *newSubView = [[UIView alloc] initWithFrame:CGRectMake(0, 200 + i*50, width, 50)];
+        UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(40, 15, width - 80, 20)];
         KHVaccineRiskFactor *vaccineRiskFactor=_riskFactors.vaccineRiskFactorList[i];
-//        riskFactorTitleLable = vaccineRiskFactor.name;
-//        UISwitch switch = [[UISwitch alloc] initwith
-         UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(50, 15, 30,30 )];
+        riskFactorTitleLable.text = vaccineRiskFactor.name;
+        UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 80, 15, 30,30 )];
         
         [newSubView addSubview:mySwitch];
         [newSubView addSubview:riskFactorTitleLable];
@@ -43,15 +52,7 @@
         
         [self.scrollView addSubview:newSubView];
         
-        
-        
-        
-    
-        
     }
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,14 +63,13 @@
 
 
 -(void)swipeHandler:(UISwipeGestureRecognizer *)recognizer {
+    
     //check if all fields full, in not alert view
 
     
-    
-    
-    
-    
-    
     //if yes set data to patient, then segue
+    
 }
+
+
 @end
