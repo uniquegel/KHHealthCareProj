@@ -21,24 +21,28 @@
 
 
 @implementation KHVaccinationScreeningResultsTableViewController
+
+
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     _patient = [KHPatient sharedModel];
     
-    
     _indicatedVacArray = [[NSMutableArray alloc] init];
-        _consultPhyiscianVacArray = [[NSMutableArray alloc] init];
-        _contraindicatedVacArray = [[NSMutableArray alloc] init];
-    
-    
+    _consultPhyiscianVacArray = [[NSMutableArray alloc] init];
+    _contraindicatedVacArray = [[NSMutableArray alloc] init];
+
     
     NSLog(@"ABOUT TO DIVIDE INTO CATE");
     NSLog(@"patient vac count: %lu", _patient.vaccineList.count);
+    
+    
     for (int i  =0; i< [_patient.vaccineList count]; i++) {
+        
         _vaccine = _patient.vaccineList[i];
         
         NSLog(@" vaccine status: %u",  _vaccine->status);
-        if (_vaccine->status == 4 ) {
+        if (_vaccine->status == 4) {
             [_indicatedVacArray addObject:_vaccine];
         }
         else if (_vaccine->status == Contraindicated) {
@@ -49,9 +53,11 @@
         }
         
     }
+    
+    
     NSLog(@" ask Count: %lu /n", (unsigned long)_consultPhyiscianVacArray.count);
-        NSLog(@" contra Count: %lu /n", (unsigned long)_contraindicatedVacArray.count);
-        NSLog(@" indic Count: %lu /n", (unsigned long)_indicatedVacArray.count);
+    NSLog(@" contra Count: %lu /n", (unsigned long)_contraindicatedVacArray.count);
+    NSLog(@" indic Count: %lu /n", (unsigned long)_indicatedVacArray.count);
     
     
     
@@ -62,7 +68,6 @@
     switch (section) {
         case 0:
         {
-            
             return _indicatedVacArray.count;
             break;
         }
@@ -82,31 +87,34 @@
     switch (section) {
         case 0:
         {
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 100)];
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 200, 50)];
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
             label.text = @"Indicated Vaccine";
+            label.textColor = [UIColor whiteColor];
             [view addSubview:label];
-            view.backgroundColor = [UIColor blueColor];
+            view.backgroundColor = [UIColor colorWithRed:52.0f/255.0f green:219.0f/255.0f blue:139.0f/255.0f alpha:1.0f];
             return view;
             break;
         }
         case 1:
         {
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 100)];
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 200, 50)];
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
             label.text = @"ContraIndicated Vaccine";
+            label.textColor = [UIColor whiteColor];
             [view addSubview:label];
-            view.backgroundColor = [UIColor blueColor];
+            view.backgroundColor = [UIColor colorWithRed:52.0f/255.0f green:219.0f/255.0f blue:139.0f/255.0f alpha:1.0f];
             return view;
             break;
         }
         case 2:
         {
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 100)];
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 200, 50)];
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
             label.text = @"Ask your physician Vaccine";
+            label.textColor = [UIColor whiteColor];
             [view addSubview:label];
-            view.backgroundColor = [UIColor blueColor];
+            view.backgroundColor = [UIColor colorWithRed:52.0f/255.0f green:219.0f/255.0f blue:139.0f/255.0f alpha:1.0f];
             return view;
             break;
         }
@@ -156,7 +164,6 @@
         }
         
 
-            
         default:
         {
             cell.textLabel.text = @"nil";

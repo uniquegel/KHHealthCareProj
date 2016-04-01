@@ -59,6 +59,11 @@
 // Complete Exam
 - (IBAction)fullExamButton:(id)sender {
     
+    // have checker to see if complete exam is being taken throughout flow
+        // if true, add additional questions at the end
+    
+    [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
+    
 }
 
 

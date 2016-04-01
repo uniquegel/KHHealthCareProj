@@ -11,7 +11,6 @@
 @interface KHSignInViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *usernameTF;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;
-- (IBAction)signupButton:(id)sender;
 - (IBAction)loginButton:(id)sender;
 - (IBAction)skipSigninButton:(id)sender;
 
