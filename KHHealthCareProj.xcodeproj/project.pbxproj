@@ -20,6 +20,7 @@
 		637AA21A1C8BD1A1005107AC /* KHRiskFactorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2191C8BD1A1005107AC /* KHRiskFactorModel.m */; };
 		637AA2211C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2201C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m */; };
 		637AA2271C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2261C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m */; };
+		63926AC91CAE4375003A0C86 /* KHSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63926AC81CAE4375003A0C86 /* KHSignUpViewController.m */; };
 		7E4484A81C8BE61200850E58 /* KHSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484A71C8BE61200850E58 /* KHSignInViewController.m */; };
 		7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */; };
 		7E9B48E61C81A3C30067B403 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E51C81A3C30067B403 /* main.m */; };
@@ -79,6 +80,8 @@
 		637AA2201C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHOccupationalLifestyleQuestionsViewController.m; sourceTree = "<group>"; };
 		637AA2251C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHMedicalConditionQuestionsViewController.h; sourceTree = "<group>"; };
 		637AA2261C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHMedicalConditionQuestionsViewController.m; sourceTree = "<group>"; };
+		63926AC71CAE4375003A0C86 /* KHSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignUpViewController.h; sourceTree = "<group>"; };
+		63926AC81CAE4375003A0C86 /* KHSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignUpViewController.m; sourceTree = "<group>"; };
 		7E4484A61C8BE61200850E58 /* KHSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignInViewController.h; sourceTree = "<group>"; };
 		7E4484A71C8BE61200850E58 /* KHSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignInViewController.m; sourceTree = "<group>"; };
 		7E4484AC1C8BEB4B00850E58 /* KHBasicQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBasicQuestionViewController.h; sourceTree = "<group>"; };
@@ -223,6 +226,15 @@
 			name = Questions;
 			sourceTree = "<group>";
 		};
+		63926AC61CAE4363003A0C86 /* Sign Up Page */ = {
+			isa = PBXGroup;
+			children = (
+				63926AC71CAE4375003A0C86 /* KHSignUpViewController.h */,
+				63926AC81CAE4375003A0C86 /* KHSignUpViewController.m */,
+			);
+			name = "Sign Up Page";
+			sourceTree = "<group>";
+		};
 		7E2E90C91C83FCF700BB92E9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +257,7 @@
 		7E2E90CB1C83FD0F00BB92E9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				63926AC61CAE4363003A0C86 /* Sign Up Page */,
 				637AA21E1C8BFDAD005107AC /* Questions */,
 				637AA21D1C8BFD51005107AC /* Sign In Page */,
 				637AA21C1C8BFD47005107AC /* Results */,
@@ -455,6 +468,7 @@
 				EAD7BC4C1C86A320002AEBC8 /* KHVaccineRiskFactor.m in Sources */,
 				EAD7BC461C869D26002AEBC8 /* KHPatient.m in Sources */,
 				637AA2141C8B9530005107AC /* KHCancerRiskFactor.m in Sources */,
+				63926AC91CAE4375003A0C86 /* KHSignUpViewController.m in Sources */,
 				630569C71C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m in Sources */,
 				EAD7BC491C86A26B002AEBC8 /* KHVaccine.m in Sources */,
 				637AA2011C8B8BDD005107AC /* KHHomePageViewController.m in Sources */,
