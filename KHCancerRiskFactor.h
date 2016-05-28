@@ -18,6 +18,9 @@
 @property (nonatomic, assign) BOOL isActive;
 
 // cancer list
-@property (nonatomic, strong) NSArray *cancerList;
+@property (nonatomic, strong) NSMutableArray *cancerList;
+
+// methods
+-(instancetype)initWithName:(NSString *)newName andType:(NSString *)newType;
 
 @end

@@ -1,36 +1,44 @@
 //
-//  KHOccupationalLifestyleQuestionsViewController.m
+//  KHCancerEFLQuestionViewController.m
 //  KHHealthCareProj
 //
-//  Created by David Richardson on 3/5/16.
+//  Created by Ryan Lu on 5/27/16.
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
-#import "KHOccupationalLifestyleQuestionsViewController.h"
+#import "KHCancerEFLQuestionViewController.h"
 #import "KHPatient.h"
 #import "KHRiskFactorModel.h"
-#import "KHVaccineRiskFactor.h"
-@interface KHOccupationalLifestyleQuestionsViewController()
+#import "KHCancerListModel.h"
+#import "KHCancerRiskFactor.h"
+@interface KHCancerEFLQuestionViewController ()
 @property KHPatient *patient;
 @property KHRiskFactorModel *riskFactors;
 
 @property NSMutableArray *checkBoxArray;
-@property NSMutableArray *occuRiskFactorArray;
+@property NSMutableArray *EFLRiskFactorArray;
 
-- (IBAction)nextButtonAction:(id)sender;
 @end
 
-@implementation KHOccupationalLifestyleQuestionsViewController
+
+
+@implementation KHCancerEFLQuestionViewController
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     _patient = [KHPatient sharedModel];
     _riskFactors = [KHRiskFactorModel sharedModel];
     
     [self UISetup];
-    
+    // Do any additional setup after loading the view.
+}
+
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)UISetup {
@@ -38,20 +46,20 @@
     UISwipeGestureRecognizer *gestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeHandler:)];
     [gestureRecognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
     [self.view addGestureRecognizer:gestureRecognizer];
-
-    NSLog(@"vacctineRiskFactor list: %@", _riskFactors.AllRFListForVaccine);
-    _occuRiskFactorArray = [[NSMutableArray alloc] init];
+    
+    NSLog(@"cancerRF list: %@", _riskFactors.AllRFListForCancer);
+    _EFLRiskFactorArray = [[NSMutableArray alloc] init];
     //get Occu risk factors only
-    for (KHVaccineRiskFactor *rf in _riskFactors.AllRFListForVaccine) {
-        if ([rf.type isEqualToString:@"Occupational slush Lifestyle"] ) {
-            [_occuRiskFactorArray addObject:rf];
+    for (KHCancerRiskFactor *rf in _riskFactors.AllRFListForCancer) {
+        if ([rf.type isEqualToString:@"Ethnicity Family Lifestyle"] ) {
+            [_EFLRiskFactorArray addObject:rf];
         }
     }
     
     _checkBoxArray = [[NSMutableArray alloc] init];
-    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _occuRiskFactorArray.count*50)];
+    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _EFLRiskFactorArray.count*50)];
     
-    for (int i = 0; i < [_occuRiskFactorArray count] ; i++) {
+    for (int i = 0; i < [_EFLRiskFactorArray count] ; i++) {
         
         CGFloat width = self.view.frame.size.width;
         
@@ -59,12 +67,12 @@
         UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(40, 15, width - 80, 40)];
         riskFactorTitleLable.numberOfLines = 2;
         riskFactorTitleLable.textColor = [UIColor whiteColor];
-        KHVaccineRiskFactor *vaccineRiskFactor=_occuRiskFactorArray[i];
+        KHCancerRiskFactor *vaccineRiskFactor=_EFLRiskFactorArray[i];
         NSLog(@"got vaccine!");
         NSLog(@"name of riskfa: %@", vaccineRiskFactor.name);
         riskFactorTitleLable.text = vaccineRiskFactor.name;
         
-//        riskFactorTitleLable.text = @"NEW RISK FACTOR";
+        //        riskFactorTitleLable.text = @"NEW RISK FACTOR";
         UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 80, 15, 30,30 )];
         
         
@@ -79,42 +87,27 @@
     _scrollView.contentSize = contentView.frame.size;
     
 }
+/*
+*/
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
--(void)swipeHandler:(UISwipeGestureRecognizer *)recognizer {
-    
-    //check if all fields full, in not alert view
-
-    
-    //if yes set data to patient, then segue
-    
-}
-
-
-- (IBAction)nextButtonAction:(id)sender {
+- (IBAction)nextButton:(id)sender {
     //check which switch is on
     for(int i=0; i<_checkBoxArray.count ; i++)
     {
         if ([_checkBoxArray[i] isOn]) {
             //update riskfactor status
             
-//            NSMutableArray *tempMutableArray = [_riskFactors. mutableCopy];
-            KHVaccineRiskFactor *riskFactor = _occuRiskFactorArray[i];
+            //            NSMutableArray *tempMutableArray = [_riskFactors. mutableCopy];
+            KHCancerRiskFactor *riskFactor = _EFLRiskFactorArray[i];
             riskFactor.isActive = YES;
-            NSUInteger index = [_riskFactors.AllRFListForVaccine indexOfObject:riskFactor];
+            NSUInteger index = [_riskFactors.AllRFListForCancer indexOfObject:riskFactor];
             
-            [_riskFactors.AllRFListForVaccine replaceObjectAtIndex:index withObject:riskFactor];
+            [_riskFactors.AllRFListForCancer replaceObjectAtIndex:index withObject:riskFactor];
         }
     }
     
-    for (int i = 0; i<_riskFactors.AllRFListForVaccine.count; i++) {
-        KHVaccineRiskFactor *rf =_riskFactors.AllRFListForVaccine[i];
+    for (int i = 0; i<_riskFactors.AllRFListForCancer.count; i++) {
+        KHCancerRiskFactor *rf =_riskFactors.AllRFListForCancer[i];
         if (rf.isActive == YES) {
             NSLog(@"active occu rf: %@", rf.name);
         }
@@ -122,12 +115,9 @@
     
     
     //segue
-    [self performSegueWithIdentifier:@"LifeStyleRFToMedicalCondRFSegue" sender:self];
-    
+    [self performSegueWithIdentifier:@"CancerEFLRFToMedicalCondRFSegue" sender:self];
 }
 @end
-
-
 
 
 

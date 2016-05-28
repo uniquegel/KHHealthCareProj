@@ -9,8 +9,11 @@
 #import "KHVaccinationScreeningResultsTableViewController.h"
 #import "KHPatient.h"
 #import "KHVaccine.h"
+#import "KHRiskFactorModel.h"
+#import "KHVaccineRiskFactor.h"
 @interface KHVaccinationScreeningResultsTableViewController()
 @property KHPatient *patient;
+@property KHRiskFactorModel *rfModel;
 @property NSMutableArray *indicatedVacArray;
 @property NSMutableArray *contraindicatedVacArray;
 @property NSMutableArray *consultPhyiscianVacArray;
@@ -27,6 +30,18 @@
     
     [super viewDidLoad];
     _patient = [KHPatient sharedModel];
+    _rfModel = [KHRiskFactorModel sharedModel];
+    
+    for (int i = 0; i<_rfModel.AllRFListForVaccine.count; i++) {
+        KHVaccineRiskFactor *rf =_rfModel.AllRFListForVaccine[i];
+        if (rf.isActive == YES) {
+            NSLog(@"AAA: active rf: %@", rf.name);
+        }
+        else if (rf.isActive == NO) {
+            NSLog(@"III: Inavtive rf: %@", rf.name);
+        }
+    }
+    
     
     _indicatedVacArray = [[NSMutableArray alloc] init];
     _consultPhyiscianVacArray = [[NSMutableArray alloc] init];
@@ -42,29 +57,31 @@
         _vaccine = _patient.vaccineList[i];
         
         NSLog(@" vaccine status: %u",  _vaccine->status);
-        if (_vaccine->status == 4) {
+        //indicated
+        if (_vaccine->status == 2) {
             [_indicatedVacArray addObject:_vaccine];
         }
-        else if (_vaccine->status == Contraindicated) {
+        //contra indicated
+        else if (_vaccine->status == 0) {
             [_contraindicatedVacArray addObject:_vaccine];
         }
-        else if (_vaccine->status == Ask) {
+        //consult
+        else if (_vaccine->status == 1) {
             [_consultPhyiscianVacArray addObject:_vaccine];
         }
         
     }
     
     
-    NSLog(@" ask Count: %lu /n", (unsigned long)_consultPhyiscianVacArray.count);
+    NSLog(@" ask Count: %lu ", (unsigned long)_consultPhyiscianVacArray.count);
     NSLog(@" contra Count: %lu /n", (unsigned long)_contraindicatedVacArray.count);
     NSLog(@" indic Count: %lu /n", (unsigned long)_indicatedVacArray.count);
-    
-    
-    
-    
 }
 
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"about to get rows in sec!");
     switch (section) {
         case 0:
         {
@@ -83,7 +100,10 @@
     }
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSLog(@"about to get header");
     switch (section) {
         case 0:
         {
@@ -124,12 +144,14 @@
     }
 }
 
+
 -(NSInteger)numberOfSectionsInTableView: (UITableView *)tableView {
     return 3;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -138,7 +160,8 @@
     }
     
     // Configure the cell.
-
+    
+    NSLog(@"about to configure cells!");
     switch (indexPath.section) {
 
         case 0:
@@ -150,14 +173,14 @@
         }
         case 1:
         {
-            KHVaccine *vaccine = _indicatedVacArray[indexPath.row];
+            KHVaccine *vaccine = _contraindicatedVacArray[indexPath.row];
             cell.textLabel.text = vaccine.name;
 
             break;
         }
         case 2:
         {
-            KHVaccine *vaccine = _indicatedVacArray[indexPath.row];
+            KHVaccine *vaccine = _consultPhyiscianVacArray[indexPath.row];
             
             cell.textLabel.text = vaccine.name;
             break;

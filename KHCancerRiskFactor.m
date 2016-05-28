@@ -11,16 +11,20 @@
 
 @implementation KHCancerRiskFactor
 
-- (instancetype)init
+- (instancetype)initWithName:(NSString *)newName andType:(NSString *)newType
 {
     
     self = [super init];
     
     if (self) {
         
+        self.name = newName;
+        self.type = newType;
+        self.isActive = NO;
+        
         // instantiate array
-        KHCancerListModel *cancerModel = [KHCancerListModel sharedModel];
-        self.cancerList = [NSArray arrayWithArray:cancerModel.cancerList];
+        KHCancerListModel *cancerListModel = [KHCancerListModel sharedModel];
+        self.cancerList = [NSArray arrayWithArray:cancerListModel.cancerList];
         
     }
     

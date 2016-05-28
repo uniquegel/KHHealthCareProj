@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    Contraindicated,
-    Ask,
-    Indicated,
-    Recommended,
-    Nothing
+    Contraindicated, //0
+    Ask, //1
+    Indicated,//2
+    Recommended, //3
+    Nothing  //4
 } Status;
 
 @interface KHVaccine : NSObject{

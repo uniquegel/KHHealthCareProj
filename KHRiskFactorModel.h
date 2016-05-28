@@ -10,8 +10,18 @@
 
 @interface KHRiskFactorModel : NSObject
 
-@property (nonatomic, strong) NSArray *vaccineRiskFactorList;
+@property (nonatomic, strong) NSMutableArray *vaccineAgeRiskFactorList;
+@property (nonatomic, strong) NSMutableArray *vaccineMedRiskFactorList;
+@property (nonatomic, strong) NSMutableArray *vaccineOccuRiskFactorList;
+
+@property (nonatomic, strong) NSMutableArray *AllRFListForVaccine;
+@property (nonatomic, strong) NSMutableArray *AllRFListForCancer;
+
+@property (nonatomic, strong) NSArray *perRiskFactorVaccineList;
 @property (nonatomic, strong) NSArray *cancerRiskFactorList;
+
+- (instancetype) init;
+- (void) initWithDict;
 
 +(instancetype) sharedModel;
 

@@ -36,9 +36,9 @@
     
     self.patient = [KHPatient sharedModel];
 
-    KHRiskFactorModel *riskFactorModel = [KHRiskFactorModel sharedModel];
+//    KHRiskFactorModel *riskFactorModel = [KHRiskFactorModel sharedModel];
     
-    self.vaccineRiskFactorList = riskFactorModel.vaccineRiskFactorList;
+//    self.vaccineRiskFactorList = riskFactorModel.vaccineRiskFactorList;
     //self.cancerRiskFactorList = riskFactorModel.cancerRiskFactorList;
     
 }

@@ -7,16 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KHVaccine.h"
 
-typedef enum status {
-    Indicated,
-    Recommended,
-    Contraindicated,
-    Ask
-} Status;
-
-@interface KHCancer : NSObject
+@interface KHCancer : NSObject{
+@public Status status;
+}
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *condition;
+@property (nonatomic, strong) NSString *frequency;
+
+// methods
+-(instancetype)initWithName:(NSString *)newName;
+-(instancetype)initWithName:(NSString *)newName andStatus:(Status)newStatus;
 
 @end

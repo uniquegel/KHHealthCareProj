@@ -21,7 +21,7 @@
         
         self.name = newName;
         self.type = newType;
-        self.isActive = true;
+        self.isActive = NO;
         
         // instantiate array
         KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];

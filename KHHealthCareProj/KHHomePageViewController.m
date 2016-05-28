@@ -19,12 +19,16 @@
     [super viewDidLoad];
     
     //pull from database, asynchrously
+    KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];
+    KHRiskFactorModel *rfModel = [KHRiskFactorModel sharedModel];
+
+    NSLog(@"got vaccine rf in homepage view: %@", rfModel.vaccineMedRiskFactorList);
     
     
     
-    [self initializing];
+//    [self initializing];
     
-    [self initializeDummyData];
+//    [self initializeDummyData];
     
 }
 
@@ -38,7 +42,7 @@
     KHCancerListModel *cancerModel = [KHCancerListModel sharedModel];
     
     // initialize riskFactorList by pulling from server
-    KHRiskFactorModel *riskFactorModel = [KHRiskFactorModel sharedModel];
+//    KHRiskFactorModel *riskFactorModel = [KHRiskFactorModel sharedModel];
     
 }
 

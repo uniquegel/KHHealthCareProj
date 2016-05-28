@@ -19,6 +19,8 @@
 
 - (IBAction)isMaleButton:(id)sender;
 - (IBAction)isFemaleButton:(id)sender;
+- (IBAction)datePickerAction:(id)sender;
+- (IBAction)startQuestionButtonAction:(id)sender;
 
 
 @end

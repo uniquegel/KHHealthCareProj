@@ -18,7 +18,7 @@
 @property (nonatomic, assign) BOOL isActive;
 
 // vaccine list
-@property (nonatomic, strong) NSArray *vaccineList;
+@property (nonatomic, strong) NSMutableArray *vaccineList;
 
 // methods
 -(instancetype)initWithName:(NSString *)newName andType:(NSString *)newType;

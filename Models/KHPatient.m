@@ -22,11 +22,14 @@
         
         // instantiate vaccine array
         KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];
-        self.vaccineList = [NSArray arrayWithArray:vaccineModel.vaccineList];
+        self.vaccineList = [NSMutableArray arrayWithArray:vaccineModel.vaccineList];
         
         // instantiate cancer array
         KHCancerListModel *cancerModel = [KHCancerListModel sharedModel];
         self.cancerList = [NSArray arrayWithArray:cancerModel.cancerList];
+        
+        //
+        
                 
     }
     
