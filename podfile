@@ -1,2 +1,9 @@
-source 'https://github.com/CocoaPods/Specs.git'
-pod 'Firebase', '>= 2.5.1'
+use_frameworks!
+platform :ios, '7.0'
+pod 'Firebase/Core'
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
+pod 'FirebaseUI'
+
+target 'KHHealthCareProj' do
+end

@@ -12,11 +12,15 @@
 #import "KHvaccine.h"
 #import "KHCancer.h"
 #import <Firebase/Firebase.h>
+@import Firebase;
 
 @interface KHRiskFactorModel ()
 @property NSDictionary *dict;
+@property(strong, nonatomic) FIRDatabaseReference *ref;
+
 @end
 @implementation KHRiskFactorModel
+
 
 
 - (instancetype)init {
@@ -27,35 +31,44 @@
         
         // initialize riskFactorList by pulling from server
         
-        Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://pocdoc.firebaseio.com"];
-        [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        
+        self.ref = [[FIRDatabase database] reference];
+        
+        
+        [_ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
             
             
-            //        NSLog(@" json: %@", snapshot.value);
+            NSLog(@" json: %@", snapshot.value);
             _dict =[[NSDictionary alloc] initWithDictionary: snapshot.value];
             
             _AllRFListForVaccine = [[NSMutableArray alloc] init];
+            _AllRFListForCancer = [[NSMutableArray alloc] init];
             
             
             //Vaccine Risk factors
             //Getting categories
             NSMutableDictionary *dictForCateKeys = [[NSMutableDictionary alloc] init];
-            dictForCateKeys = _dict[@"RiskFactors"][@"RiskFactors"];
+            dictForCateKeys = _dict[@"Vaccine"][@"RiskFactors"];
             NSArray *arrayForAllCateKeys = [[NSArray alloc] initWithArray:dictForCateKeys.allKeys];
             
             
-            NSLog(@"Getting categories!");
+            NSLog(@"Getting vaccine categories!: %@", dictForCateKeys);
             
+            //For Each Catagory:
             for (int k = 0; k< arrayForAllCateKeys.count; k++) {
                 //getting all risk factors under this category
                 //                NSLog(@"Getting all rf under cate 1!");
                 
                 NSMutableDictionary *dictForAllRFUnderOneCategory = [[NSMutableDictionary alloc] init];
-                dictForAllRFUnderOneCategory = _dict[@"RiskFactors"][@"RiskFactors"][arrayForAllCateKeys[k]];
+                dictForAllRFUnderOneCategory = _dict[@"Vaccine"][@"RiskFactors"][arrayForAllCateKeys[k]];
+                
+                //FIXIT: added this
+                NSLog(@"dict for all vaccine rf under one cate: %@", dictForAllRFUnderOneCategory);
+                
                 NSArray *RFKeysForOneCategoryArray = [[NSArray alloc] init];
                 RFKeysForOneCategoryArray = dictForAllRFUnderOneCategory.allKeys;
                 
-                //                NSLog(@"Getting all rf under cate 2!");
+                //For each Risk Factor under this category
                 for (int i =0; i<RFKeysForOneCategoryArray.count; i++) {
                     //instantiate risk factor then add to list
                     //                    NSLog(@"instantiate a risk factor 1!");
@@ -66,13 +79,13 @@
                     
                     //add per risk factor list of vaccines
                     NSDictionary *perRFVaccinesDict = [[NSDictionary alloc] init];
-                    perRFVaccinesDict = _dict[@"RiskFactors"][@"RiskFactors"][arrayForAllCateKeys[k]][RFKeysForOneCategoryArray[i]][@"Vaccines"];
+                    perRFVaccinesDict = _dict[@"Vaccine"][@"RiskFactors"][arrayForAllCateKeys[k]][RFKeysForOneCategoryArray[i]][@"Vaccines"];
                     NSArray *perRFAllValuesArray = [perRFVaccinesDict allKeys];
                     //                    NSLog(@"just got all vaccines under risk factor!");
                     
                     for (int l = 0; l<perRFAllValuesArray.count; l++) {
                         //getting all vaccines under risk factor
-                        //                        NSLog(@"getting all vaccines and status!! %@", [perRFVaccinesDict[perRFAllValuesArray[l]] objectForKey:@"Value"]);
+                        NSLog(@"getting all vaccines and status!! %@", [perRFVaccinesDict[perRFAllValuesArray[l]] objectForKey:@"Value"]);
                         
                         if ([[perRFVaccinesDict[perRFAllValuesArray[l]] objectForKey:@"Value"] isEqualToString:@"N"]) {
                             KHVaccine *vaccine = [[KHVaccine alloc] initWithName:perRFAllValuesArray[l] andStatus:Nothing];
@@ -101,7 +114,7 @@
                     
                     
                     [_AllRFListForVaccine addObject:rf];
-                    NSLog(@"done adding rf to list!");
+                    NSLog(@"done adding rf to RF list for vaccine!");
                     
                 }
                 
@@ -111,31 +124,38 @@
             
             
             //CANCER
-        
+            
             //Getting categories
             NSMutableDictionary *dictForCancerCateKeys = [[NSMutableDictionary alloc] init];
             dictForCancerCateKeys = _dict[@"Cancer"][@"RiskFactors"];
-            NSArray *arrayForAllCancerCateKeys = [[NSArray alloc] initWithArray:dictForCateKeys.allKeys];
+            NSArray *arrayForAllCancerCateKeys = [[NSArray alloc] initWithArray:dictForCancerCateKeys.allKeys];
             
             
-            NSLog(@"Getting categories!");
+            NSLog(@"all cate keys: %@", arrayForAllCancerCateKeys);
+            NSLog(@"trial print 1: %@", _dict[@"Cancer"][@"RiskFactors"][arrayForAllCancerCateKeys[1]]);
+            NSLog(@"trial print 2: %@", _dict[@"Cancer"][@"RiskFactors"][arrayForAllCancerCateKeys[2]]);
+            NSLog(@"Getting Cancer RF categories!: %@", dictForCancerCateKeys);
             
             for (int k = 0; k< arrayForAllCancerCateKeys.count; k++) {
                 //getting all risk factors under this category
                 //                NSLog(@"Getting all rf under cate 1!");
                 
                 NSMutableDictionary *dictForAllCancerRFUnderOneCategory = [[NSMutableDictionary alloc] init];
-                dictForAllCancerRFUnderOneCategory = _dict[@"RiskFactors"][@"RiskFactors"][arrayForAllCancerCateKeys[k]];
+                dictForAllCancerRFUnderOneCategory = _dict[@"Cancer"][@"RiskFactors"][arrayForAllCancerCateKeys[k]];
+                
+                // !!!: added
+                NSLog(@"dict for all can under one cate: %@", dictForAllCancerRFUnderOneCategory);
+                
                 NSArray *CancerRFKeysForOneCategoryArray = [[NSArray alloc] init];
                 CancerRFKeysForOneCategoryArray = dictForAllCancerRFUnderOneCategory.allKeys;
                 
                 //                NSLog(@"Getting all rf under cate 2!");
                 for (int i =0; i<CancerRFKeysForOneCategoryArray.count; i++) {
                     //instantiate risk factor then add to list
-                    //                    NSLog(@"instantiate a risk factor 1!");
+                                        NSLog(@"instantiate a risk factor 1!");
                     KHCancerRiskFactor *rf= [[KHCancerRiskFactor alloc] initWithName:CancerRFKeysForOneCategoryArray[i] andType:arrayForAllCancerCateKeys[k]];
-
-
+                    
+                    
                     //TODO
                     rf.cancerList = [[NSMutableArray alloc] init];
                     
@@ -176,25 +196,14 @@
                     
                     
                     [_AllRFListForCancer addObject:rf];
-                    NSLog(@"done adding rf to Cancer list!");
+                    NSLog(@"done adding rf to RF list for cancer!");
                     
                 }
             }
-            //        NSLog(@" NEWDICT: %@", newDict);
             
-            
-            //            NSLog(@" test alkeys 1: %@", _vaccineAgeRiskFactorList);
-            //            newDict = _dict[@"RiskFactors"][@"RiskFactors"][@"Occupational slush Lifestyle"];
-            //            _vaccineOccuRiskFactorList = newDict.allKeys;
-            ////            NSLog(@" test alkeys 2: %@", _vaccineOccuRiskFactorList);
-            //            newDict = _dict[@"RiskFactors"][@"RiskFactors"][@"Medical Condition"];
-            //            _vaccineMedRiskFactorList = newDict.allKeys;
-            ////            NSLog(@" test alkeys 3: %@", _vaccineMedRiskFactorList);
-            
-            
-            
-            NSLog(@"ALL risk factors: %@", _AllRFListForVaccine);
-            NSLog(@"Got dict from FIREBASE!");
+            NSLog(@"ALL risk factors for Vaccine: %@", _AllRFListForVaccine);
+            NSLog(@"ALL risk factors for Cancer : %@", _AllRFListForCancer);
+            NSLog(@"Done getting and sorting dict from FIREBASE!");
         }];
     }
     

@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <Firebase/Firebase.h>
 #import "KHRiskFactorModel.h"
+@import Firebase;
 
 @interface KHSignInViewController ()
 @property NSDictionary *dict;
@@ -17,9 +18,13 @@
 @property NSArray *medicalRiskFactors;
 @property NSArray *ageRangeRiskFactors;
 @property KHRiskFactorModel *rfModel;
+@property(strong, nonatomic) FIRDatabaseReference *ref;
+
 @end
 
 @implementation KHSignInViewController
+
+FIRDatabaseHandle _refHandle;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,15 +35,25 @@
     
 //    _rfModel = [KHRiskFactorModel sharedModel];
     
-    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://pocdoc.firebaseio.com"];
-    [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//    self.ref = [[FIRDatabase database] reference];
+//    _refHandle = [_ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+//        NSDictionary *postDict = snapshot.value;
+//        NSLog(@"print snapshotvalue: %@", postDict);
+//        
+//        // ...
+//    }];
+    
+    
+    
+    
+    /* [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         
         
 //        NSLog(@" json: %@", snapshot.value);
         _dict =[[NSDictionary alloc] initWithDictionary: snapshot.value];
-        NSLog(@" haha: %@", _dict);
-        NSLog(@" dict count: %lu", (unsigned long)_dict.count);
-//        
+//        NSLog(@" haha: %@", _dict);
+//        NSLog(@" dict count: %lu", (unsigned long)_dict.count);
+//
 //        newDict = _dict[@"RiskFactors"][@"RiskFactors"];
 //        NSArray *testArray = [[NSArray alloc] init];
 //        testArray = newDict.allValues;
@@ -55,7 +70,7 @@
         
         
 //        NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
-    }];
+    }]; */
     
 
 
