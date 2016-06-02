@@ -21,6 +21,7 @@
 @property NSMutableArray *checkBoxArray;
 
 @property NSMutableArray *medRiskFactorArray;
+- (IBAction)backButtonAction:(id)sender;
 
 -(void)calculateResults;
 -(Status)getStatusWithCheckVaccine:(KHVaccine *)checkVaccine andPatientVaccine:(KHVaccine *)patientVaccine;
@@ -130,6 +131,8 @@
     //self.cancerRiskFactorList = riskFactorModel.cancerRiskFactorList;
     
 }
+
+
 
 -(void)calculateResults {
     
@@ -246,6 +249,14 @@
     NSLog(@"got new stat!: %u", newStatus);
     return newStatus;
 }
+
+
+
+
+- (IBAction)backButtonAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 - (IBAction)nextPageButton:(id)sender {
     for(int i=0; i<_checkBoxArray.count ; i++)

@@ -7,9 +7,12 @@
 //
 
 #import "KHAppDelegate.h"
+#import "KHSignInViewController.h"
+
 @import Firebase;
 
 @interface KHAppDelegate ()
+@property UINavigationController *navController;
 
 @end
 
@@ -18,7 +21,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //Firebase Configuration
     [FIRApp configure];
+    
+    _navController=[[UINavigationController alloc] init];
+    KHSignInViewController *firstController=[[KHSignInViewController alloc] init];
+    [_navController pushViewController:firstController animated:NO];
+    [self.window addSubview: _navController.view];
+    
+    
     
     return YES;
 }

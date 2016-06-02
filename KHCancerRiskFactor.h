@@ -24,3 +24,4 @@
 -(instancetype)initWithName:(NSString *)newName andType:(NSString *)newType;
 
 @end
+

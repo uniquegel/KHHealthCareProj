@@ -10,9 +10,13 @@
 #import "KHPatient.h"
 #import "KHRiskFactorModel.h"
 
+
 @interface KHBasicQuestionViewController ()
 @property KHPatient *patient;
 @property NSArray *pickerData;
+- (IBAction)bgButtonAction:(id)sender;
+- (IBAction)backButton:(id)sender;
+
 @end
 
 @implementation KHBasicQuestionViewController
@@ -219,11 +223,39 @@
         
         
         
-        [self performSegueWithIdentifier:@"basicQuestionToOccuRiskFactors" sender:self];
-    }
-    else{
         
+        NSLog(@"SCRTYPE: %lu", (unsigned long)_screeningType);
+        
+        
+        switch (_screeningType) {
+            case kScreenTypeVaccine:
+            {
+                [self performSegueWithIdentifier:@"basicQuestionToVacccineOccuRiskFactors" sender:self];
+                break;
+            }
+            case kScreenTypeCancer:
+            {
+                [self performSegueWithIdentifier:@"basicQuestionToCancerEFLQuestions" sender:self];
+                break;
+            }
+            case kScreenTypeCardio:{
+                
+                
+                
+                break;
+            }
+            default:
+                break;
+        }
     }
+}
+
+- (IBAction)bgButtonAction:(id)sender {
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+}
+
+- (IBAction)backButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
 

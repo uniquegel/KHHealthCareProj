@@ -10,12 +10,15 @@
 #import "KHPatient.h"
 #import "KHRiskFactorModel.h"
 #import "KHVaccineRiskFactor.h"
+#import <QuartzCore/QuartzCore.h>
+
 @interface KHOccupationalLifestyleQuestionsViewController()
 @property KHPatient *patient;
 @property KHRiskFactorModel *riskFactors;
 
 @property NSMutableArray *checkBoxArray;
 @property NSMutableArray *occuRiskFactorArray;
+- (IBAction)BackButtonAction:(id)sender;
 
 - (IBAction)nextButtonAction:(id)sender;
 @end
@@ -75,6 +78,10 @@
         
         
     }
+//    _scrollView.layer.cornerRadius=8.0f;
+    _scrollView.layer.masksToBounds=YES;
+    _scrollView.layer.borderColor=[[UIColor whiteColor]CGColor];
+    _scrollView.layer.borderWidth= 1.0f;
     [_scrollView addSubview:contentView];
     _scrollView.contentSize = contentView.frame.size;
     
@@ -96,6 +103,10 @@
     
 }
 
+
+- (IBAction)BackButtonAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (IBAction)nextButtonAction:(id)sender {
     //check which switch is on

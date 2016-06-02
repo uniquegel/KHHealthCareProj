@@ -10,6 +10,7 @@
 #import "KHVaccineListModel.h"
 #import "KHCancerListModel.h"
 #import "KHRiskFactorModel.h"
+#import "KHBasicQuestionViewController.h"
 #import "KHPatient.h"
 
 @implementation KHHomePageViewController
@@ -46,41 +47,36 @@
     
 }
 
--(void)initializeDummyData {
-    
-    // initialize patient
-    KHPatient *patient = [KHPatient sharedModel];
-    
-
-    
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"basicQuestionSegue"])
+    {
+        // Get reference to the destination view controller
+         KHBasicQuestionViewController *vc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+        vc.screeningType = _scrType;
+        
+    }
 }
 
 
-// Quick Checkup
-- (IBAction)quickExamButton:(id)sender {
-    
+- (IBAction)vacScreenButtonAction:(id)sender {
+    _scrType = kScreenTypeVaccine;
+    NSLog(@"Screen type: %lu", (unsigned long)_scrType);
     [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
-    
 }
 
-
-// Complete Exam
-- (IBAction)fullExamButton:(id)sender {
-    
-    // have checker to see if complete exam is being taken throughout flow
-        // if true, add additional questions at the end
-    
+- (IBAction)cancerScreenButtonAction:(id)sender {
+    _scrType = kScreenTypeCancer;
+    NSLog(@"Screen type: %lu", (unsigned long)_scrType);
     [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
-    
 }
 
-
-
-
-
-
-
-
-
-
+- (IBAction)cardDisScreenButtonAction:(id)sender {
+    _scrType = kScreenTypeCardio;
+    NSLog(@"Screen type: %lu", (unsigned long)_scrType);
+//    [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
+}
 @end

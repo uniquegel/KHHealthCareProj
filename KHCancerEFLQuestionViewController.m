@@ -17,6 +17,7 @@
 
 @property NSMutableArray *checkBoxArray;
 @property NSMutableArray *EFLRiskFactorArray;
+- (IBAction)backButtonAction:(id)sender;
 
 @end
 
@@ -57,15 +58,16 @@
     }
     
     _checkBoxArray = [[NSMutableArray alloc] init];
-    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _EFLRiskFactorArray.count*50)];
+    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _EFLRiskFactorArray.count*60)];
     
     for (int i = 0; i < [_EFLRiskFactorArray count] ; i++) {
         
         CGFloat width = self.view.frame.size.width;
         
-        UIView *newSubView = [[UIView alloc] initWithFrame:CGRectMake(0, i*50, width, 100)];
-        UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(40, 15, width - 80, 40)];
+        UIView *newSubView = [[UIView alloc] initWithFrame:CGRectMake(0, i*60, width, 60)];
+        UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, width - 80, 50)];
         riskFactorTitleLable.numberOfLines = 2;
+        riskFactorTitleLable.lineBreakMode = NSLineBreakByWordWrapping;
         riskFactorTitleLable.textColor = [UIColor whiteColor];
         KHCancerRiskFactor *vaccineRiskFactor=_EFLRiskFactorArray[i];
         NSLog(@"got vaccine!");
@@ -73,7 +75,7 @@
         riskFactorTitleLable.text = vaccineRiskFactor.name;
         
         //        riskFactorTitleLable.text = @"NEW RISK FACTOR";
-        UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 80, 15, 30,30 )];
+        UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 60, 15, 30,30 )];
         
         
         [newSubView addSubview:mySwitch];
@@ -116,34 +118,13 @@
     
     //segue
     [self performSegueWithIdentifier:@"CancerEFLRFToMedicalCondRFSegue" sender:self];
+    
+}
+- (IBAction)backButtonAction:(id)sender {
+    
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
