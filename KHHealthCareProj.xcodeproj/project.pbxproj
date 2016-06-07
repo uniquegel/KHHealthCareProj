@@ -1,868 +1,2374 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		630569BB1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */; };
-		630569C71C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569C61C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m */; };
-		630569CA1C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569C91C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m */; };
-		637AA2011C8B8BDD005107AC /* KHHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2001C8B8BDD005107AC /* KHHomePageViewController.m */; };
-		637AA2041C8B8E77005107AC /* KHVaccineListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2031C8B8E77005107AC /* KHVaccineListModel.m */; };
-		637AA20E1C8B9348005107AC /* KHCancerListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA20D1C8B9348005107AC /* KHCancerListModel.m */; };
-		637AA2111C8B93A9005107AC /* KHCancer.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2101C8B93A9005107AC /* KHCancer.m */; };
-		637AA2141C8B9530005107AC /* KHCancerRiskFactor.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2131C8B9530005107AC /* KHCancerRiskFactor.m */; };
-		637AA21A1C8BD1A1005107AC /* KHRiskFactorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2191C8BD1A1005107AC /* KHRiskFactorModel.m */; };
-		637AA2211C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2201C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m */; };
-		637AA2271C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2261C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m */; };
-		63926AC91CAE4375003A0C86 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		7E0637841CFE6C1000866D07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E0637831CFE6C1000866D07 /* GoogleService-Info.plist */; };
-		7E067DD11D0529800095BE71 /* KHTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E067DD01D0529800095BE71 /* KHTabBarViewController.m */; };
-		7E4484A81C8BE61200850E58 /* KHSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484A71C8BE61200850E58 /* KHSignInViewController.m */; };
-		7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */; };
-		7E5AD01F1CF90C5000368E69 /* KHCancerMedQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5AD01E1CF90C5000368E69 /* KHCancerMedQuestionViewController.m */; };
-		7E5AD0221CF90C6600368E69 /* KHCancerEFLQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5AD0211CF90C6600368E69 /* KHCancerEFLQuestionViewController.m */; };
-		7E7614141D06A20500B1E6E0 /* KHCardiometabolicScreeningResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7614131D06A20500B1E6E0 /* KHCardiometabolicScreeningResultsTableViewController.m */; };
-		7E9B48E61C81A3C30067B403 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E51C81A3C30067B403 /* main.m */; };
-		7E9B48E91C81A3C30067B403 /* KHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E81C81A3C30067B403 /* KHAppDelegate.m */; };
-		7E9B48EF1C81A3C30067B403 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B48ED1C81A3C30067B403 /* Main.storyboard */; };
-		7E9B48F21C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48F01C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld */; };
-		7E9B48F41C81A3C30067B403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B48F31C81A3C30067B403 /* Assets.xcassets */; };
-		7E9B48F71C81A3C30067B403 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B48F51C81A3C30067B403 /* LaunchScreen.storyboard */; };
-		7E9B49021C81A3C30067B403 /* KHHealthCareProjTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B49011C81A3C30067B403 /* KHHealthCareProjTests.m */; };
-		7E9B490D1C81A3C30067B403 /* KHHealthCareProjUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B490C1C81A3C30067B403 /* KHHealthCareProjUITests.m */; };
-		7EDBB60C1CC61D2400407498 /* KHBasicQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */; };
-		8E20E945F6139522147C66A6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC2700DDC84D5A1A9A56060 /* Pods.framework */; };
-		EAD7BC461C869D26002AEBC8 /* KHPatient.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD7BC451C869D26002AEBC8 /* KHPatient.m */; };
-		EAD7BC491C86A26B002AEBC8 /* KHVaccine.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD7BC481C86A26B002AEBC8 /* KHVaccine.m */; };
-		EAD7BC4C1C86A320002AEBC8 /* KHVaccineRiskFactor.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD7BC4B1C86A320002AEBC8 /* KHVaccineRiskFactor.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		7E9B48FE1C81A3C30067B403 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E9B48D91C81A3C30067B403 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E9B48E01C81A3C30067B403;
-			remoteInfo = KHHealthCareProj;
-		};
-		7E9B49091C81A3C30067B403 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E9B48D91C81A3C30067B403 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E9B48E01C81A3C30067B403;
-			remoteInfo = KHHealthCareProj;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		630569B91C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerScreeningResultsViewController.h; sourceTree = "<group>"; };
-		630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHCancerScreeningResultsViewController.m; sourceTree = "<group>"; };
-		630569C51C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHVaccinationScreeningResultsTableViewController.h; sourceTree = "<group>"; };
-		630569C61C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHVaccinationScreeningResultsTableViewController.m; sourceTree = "<group>"; };
-		630569C81C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHNutritionSuggestionResultsTableViewController.h; sourceTree = "<group>"; };
-		630569C91C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHNutritionSuggestionResultsTableViewController.m; sourceTree = "<group>"; };
-		637AA1FF1C8B8BDD005107AC /* KHHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHHomePageViewController.h; path = KHHealthCareProj/KHHomePageViewController.h; sourceTree = "<group>"; };
-		637AA2001C8B8BDD005107AC /* KHHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHHomePageViewController.m; path = KHHealthCareProj/KHHomePageViewController.m; sourceTree = "<group>"; };
-		637AA2021C8B8E77005107AC /* KHVaccineListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHVaccineListModel.h; sourceTree = "<group>"; };
-		637AA2031C8B8E77005107AC /* KHVaccineListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHVaccineListModel.m; sourceTree = "<group>"; };
-		637AA20C1C8B9348005107AC /* KHCancerListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerListModel.h; sourceTree = "<group>"; };
-		637AA20D1C8B9348005107AC /* KHCancerListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHCancerListModel.m; sourceTree = "<group>"; };
-		637AA20F1C8B93A9005107AC /* KHCancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancer.h; sourceTree = "<group>"; };
-		637AA2101C8B93A9005107AC /* KHCancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHCancer.m; sourceTree = "<group>"; };
-		637AA2121C8B9530005107AC /* KHCancerRiskFactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerRiskFactor.h; sourceTree = "<group>"; };
-		637AA2131C8B9530005107AC /* KHCancerRiskFactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHCancerRiskFactor.m; sourceTree = "<group>"; };
-		637AA2181C8BD1A1005107AC /* KHRiskFactorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHRiskFactorModel.h; sourceTree = "<group>"; };
-		637AA2191C8BD1A1005107AC /* KHRiskFactorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHRiskFactorModel.m; sourceTree = "<group>"; };
-		637AA21F1C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHOccupationalLifestyleQuestionsViewController.h; sourceTree = "<group>"; };
-		637AA2201C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHOccupationalLifestyleQuestionsViewController.m; sourceTree = "<group>"; };
-		637AA2251C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHMedicalConditionQuestionsViewController.h; sourceTree = "<group>"; };
-		637AA2261C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHMedicalConditionQuestionsViewController.m; sourceTree = "<group>"; };
-		7BB90ACF2BBBB12D060234F3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		7E0637831CFE6C1000866D07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		7E067DCF1D0529800095BE71 /* KHTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHTabBarViewController.h; sourceTree = "<group>"; };
-		7E067DD01D0529800095BE71 /* KHTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHTabBarViewController.m; sourceTree = "<group>"; };
-		7E4484A61C8BE61200850E58 /* KHSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignInViewController.h; sourceTree = "<group>"; };
-		7E4484A71C8BE61200850E58 /* KHSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignInViewController.m; sourceTree = "<group>"; };
-		7E4484AC1C8BEB4B00850E58 /* KHBasicQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBasicQuestionViewController.h; sourceTree = "<group>"; };
-		7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHBasicQuestionViewController.m; sourceTree = "<group>"; };
-		7E5AD01D1CF90C5000368E69 /* KHCancerMedQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerMedQuestionViewController.h; sourceTree = "<group>"; };
-		7E5AD01E1CF90C5000368E69 /* KHCancerMedQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHCancerMedQuestionViewController.m; sourceTree = "<group>"; };
-		7E5AD0201CF90C6600368E69 /* KHCancerEFLQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerEFLQuestionViewController.h; sourceTree = "<group>"; };
-		7E5AD0211CF90C6600368E69 /* KHCancerEFLQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHCancerEFLQuestionViewController.m; sourceTree = "<group>"; };
-		7E7614121D06A20500B1E6E0 /* KHCardiometabolicScreeningResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCardiometabolicScreeningResultsTableViewController.h; sourceTree = "<group>"; };
-		7E7614131D06A20500B1E6E0 /* KHCardiometabolicScreeningResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHCardiometabolicScreeningResultsTableViewController.m; sourceTree = "<group>"; };
-		7E9B48E11C81A3C30067B403 /* KHHealthCareProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KHHealthCareProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E9B48E51C81A3C30067B403 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7E9B48E71C81A3C30067B403 /* KHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KHAppDelegate.h; sourceTree = "<group>"; };
-		7E9B48E81C81A3C30067B403 /* KHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KHAppDelegate.m; sourceTree = "<group>"; };
-		7E9B48EE1C81A3C30067B403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7E9B48F11C81A3C30067B403 /* KHHealthCareProj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KHHealthCareProj.xcdatamodel; sourceTree = "<group>"; };
-		7E9B48F31C81A3C30067B403 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7E9B48F61C81A3C30067B403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7E9B48F81C81A3C30067B403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E9B48FD1C81A3C30067B403 /* KHHealthCareProjTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KHHealthCareProjTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E9B49011C81A3C30067B403 /* KHHealthCareProjTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KHHealthCareProjTests.m; sourceTree = "<group>"; };
-		7E9B49031C81A3C30067B403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E9B49081C81A3C30067B403 /* KHHealthCareProjUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KHHealthCareProjUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E9B490C1C81A3C30067B403 /* KHHealthCareProjUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KHHealthCareProjUITests.m; sourceTree = "<group>"; };
-		7E9B490E1C81A3C30067B403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EAD7BC441C869D26002AEBC8 /* KHPatient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHPatient.h; path = Models/KHPatient.h; sourceTree = "<group>"; };
-		EAD7BC451C869D26002AEBC8 /* KHPatient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHPatient.m; path = Models/KHPatient.m; sourceTree = "<group>"; };
-		EAD7BC471C86A26B002AEBC8 /* KHVaccine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHVaccine.h; path = Models/KHVaccine.h; sourceTree = "<group>"; };
-		EAD7BC481C86A26B002AEBC8 /* KHVaccine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHVaccine.m; path = Models/KHVaccine.m; sourceTree = "<group>"; };
-		EAD7BC4A1C86A320002AEBC8 /* KHVaccineRiskFactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHVaccineRiskFactor.h; path = Models/KHVaccineRiskFactor.h; sourceTree = "<group>"; };
-		EAD7BC4B1C86A320002AEBC8 /* KHVaccineRiskFactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHVaccineRiskFactor.m; path = Models/KHVaccineRiskFactor.m; sourceTree = "<group>"; };
-		F436FCC6A7280DC2F9723567 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		FCC2700DDC84D5A1A9A56060 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		7E9B48DE1C81A3C30067B403 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8E20E945F6139522147C66A6 /* Pods.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E9B48FA1C81A3C30067B403 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E9B49051C81A3C30067B403 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		637AA2051C8B9218005107AC /* Vaccine */ = {
-			isa = PBXGroup;
-			children = (
-				EAD7BC471C86A26B002AEBC8 /* KHVaccine.h */,
-				EAD7BC481C86A26B002AEBC8 /* KHVaccine.m */,
-				637AA2021C8B8E77005107AC /* KHVaccineListModel.h */,
-				637AA2031C8B8E77005107AC /* KHVaccineListModel.m */,
-			);
-			name = Vaccine;
-			sourceTree = "<group>";
-		};
-		637AA2061C8B9221005107AC /* Patient */ = {
-			isa = PBXGroup;
-			children = (
-				EAD7BC441C869D26002AEBC8 /* KHPatient.h */,
-				EAD7BC451C869D26002AEBC8 /* KHPatient.m */,
-			);
-			name = Patient;
-			sourceTree = "<group>";
-		};
-		637AA2071C8B922A005107AC /* RiskFactor */ = {
-			isa = PBXGroup;
-			children = (
-				EAD7BC4A1C86A320002AEBC8 /* KHVaccineRiskFactor.h */,
-				EAD7BC4B1C86A320002AEBC8 /* KHVaccineRiskFactor.m */,
-				637AA2121C8B9530005107AC /* KHCancerRiskFactor.h */,
-				637AA2131C8B9530005107AC /* KHCancerRiskFactor.m */,
-				637AA2181C8BD1A1005107AC /* KHRiskFactorModel.h */,
-				637AA2191C8BD1A1005107AC /* KHRiskFactorModel.m */,
-			);
-			name = RiskFactor;
-			sourceTree = "<group>";
-		};
-		637AA2081C8B9250005107AC /* Cancer */ = {
-			isa = PBXGroup;
-			children = (
-				637AA20C1C8B9348005107AC /* KHCancerListModel.h */,
-				637AA20D1C8B9348005107AC /* KHCancerListModel.m */,
-				637AA20F1C8B93A9005107AC /* KHCancer.h */,
-				637AA2101C8B93A9005107AC /* KHCancer.m */,
-			);
-			name = Cancer;
-			sourceTree = "<group>";
-		};
-		637AA21B1C8BFD38005107AC /* Home Page */ = {
-			isa = PBXGroup;
-			children = (
-				637AA1FF1C8B8BDD005107AC /* KHHomePageViewController.h */,
-				637AA2001C8B8BDD005107AC /* KHHomePageViewController.m */,
-			);
-			name = "Home Page";
-			sourceTree = "<group>";
-		};
-		637AA21C1C8BFD47005107AC /* Results */ = {
-			isa = PBXGroup;
-			children = (
-				7E067DCF1D0529800095BE71 /* KHTabBarViewController.h */,
-				7E067DD01D0529800095BE71 /* KHTabBarViewController.m */,
-				630569C51C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.h */,
-				630569C61C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m */,
-				630569B91C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.h */,
-				630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */,
-				7E7614121D06A20500B1E6E0 /* KHCardiometabolicScreeningResultsTableViewController.h */,
-				7E7614131D06A20500B1E6E0 /* KHCardiometabolicScreeningResultsTableViewController.m */,
-				630569C81C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.h */,
-				630569C91C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m */,
-			);
-			name = Results;
-			sourceTree = "<group>";
-		};
-		637AA21D1C8BFD51005107AC /* Sign In Page */ = {
-			isa = PBXGroup;
-			children = (
-				7E4484A61C8BE61200850E58 /* KHSignInViewController.h */,
-				7E4484A71C8BE61200850E58 /* KHSignInViewController.m */,
-			);
-			name = "Sign In Page";
-			sourceTree = "<group>";
-		};
-		637AA21E1C8BFDAD005107AC /* Questions */ = {
-			isa = PBXGroup;
-			children = (
-				7E76140E1D06A11E00B1E6E0 /* Nutrition Flow */,
-				7E76140D1D06A10D00B1E6E0 /* Cardiometabolic Flow */,
-				7E4484AC1C8BEB4B00850E58 /* KHBasicQuestionViewController.h */,
-				7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */,
-				7E5AD0191CF90C0700368E69 /* Cancer Flow */,
-				7E5AD0181CF90C0100368E69 /* Vaccine Flow */,
-			);
-			name = Questions;
-			sourceTree = "<group>";
-		};
-		769CBE6E65ADD54891A594A1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FCC2700DDC84D5A1A9A56060 /* Pods.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7E2E90C91C83FCF700BB92E9 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				637AA2081C8B9250005107AC /* Cancer */,
-				637AA2071C8B922A005107AC /* RiskFactor */,
-				637AA2061C8B9221005107AC /* Patient */,
-				637AA2051C8B9218005107AC /* Vaccine */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		7E2E90CA1C83FD0900BB92E9 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				7E9B48ED1C81A3C30067B403 /* Main.storyboard */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		7E2E90CB1C83FD0F00BB92E9 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				637AA21E1C8BFDAD005107AC /* Questions */,
-				637AA21D1C8BFD51005107AC /* Sign In Page */,
-				637AA21C1C8BFD47005107AC /* Results */,
-				637AA21B1C8BFD38005107AC /* Home Page */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		7E5AD0181CF90C0100368E69 /* Vaccine Flow */ = {
-			isa = PBXGroup;
-			children = (
-				637AA21F1C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.h */,
-				637AA2201C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m */,
-				637AA2251C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.h */,
-				637AA2261C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m */,
-			);
-			name = "Vaccine Flow";
-			sourceTree = "<group>";
-		};
-		7E5AD0191CF90C0700368E69 /* Cancer Flow */ = {
-			isa = PBXGroup;
-			children = (
-				7E5AD01D1CF90C5000368E69 /* KHCancerMedQuestionViewController.h */,
-				7E5AD01E1CF90C5000368E69 /* KHCancerMedQuestionViewController.m */,
-				7E5AD0201CF90C6600368E69 /* KHCancerEFLQuestionViewController.h */,
-				7E5AD0211CF90C6600368E69 /* KHCancerEFLQuestionViewController.m */,
-			);
-			name = "Cancer Flow";
-			sourceTree = "<group>";
-		};
-		7E76140D1D06A10D00B1E6E0 /* Cardiometabolic Flow */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Cardiometabolic Flow";
-			sourceTree = "<group>";
-		};
-		7E76140E1D06A11E00B1E6E0 /* Nutrition Flow */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Nutrition Flow";
-			sourceTree = "<group>";
-		};
-		7E9B48D81C81A3C30067B403 = {
-			isa = PBXGroup;
-			children = (
-				7E2E90CB1C83FD0F00BB92E9 /* Controllers */,
-				7E2E90CA1C83FD0900BB92E9 /* Views */,
-				7E2E90C91C83FCF700BB92E9 /* Models */,
-				7E9B48E31C81A3C30067B403 /* KHHealthCareProj */,
-				7E9B49001C81A3C30067B403 /* KHHealthCareProjTests */,
-				7E9B490B1C81A3C30067B403 /* KHHealthCareProjUITests */,
-				7E9B48E21C81A3C30067B403 /* Products */,
-				FC36CCF84935F1F547BBD6F6 /* Pods */,
-				769CBE6E65ADD54891A594A1 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		7E9B48E21C81A3C30067B403 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7E9B48E11C81A3C30067B403 /* KHHealthCareProj.app */,
-				7E9B48FD1C81A3C30067B403 /* KHHealthCareProjTests.xctest */,
-				7E9B49081C81A3C30067B403 /* KHHealthCareProjUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		7E9B48E31C81A3C30067B403 /* KHHealthCareProj */ = {
-			isa = PBXGroup;
-			children = (
-				7E9B48F51C81A3C30067B403 /* LaunchScreen.storyboard */,
-				7E9B48E71C81A3C30067B403 /* KHAppDelegate.h */,
-				7E9B48E81C81A3C30067B403 /* KHAppDelegate.m */,
-				7E9B48F31C81A3C30067B403 /* Assets.xcassets */,
-				7E9B48F81C81A3C30067B403 /* Info.plist */,
-				7E9B48F01C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld */,
-				7E0637831CFE6C1000866D07 /* GoogleService-Info.plist */,
-				7E9B48E41C81A3C30067B403 /* Supporting Files */,
-			);
-			path = KHHealthCareProj;
-			sourceTree = "<group>";
-		};
-		7E9B48E41C81A3C30067B403 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7E9B48E51C81A3C30067B403 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7E9B49001C81A3C30067B403 /* KHHealthCareProjTests */ = {
-			isa = PBXGroup;
-			children = (
-				7E9B49011C81A3C30067B403 /* KHHealthCareProjTests.m */,
-				7E9B49031C81A3C30067B403 /* Info.plist */,
-			);
-			path = KHHealthCareProjTests;
-			sourceTree = "<group>";
-		};
-		7E9B490B1C81A3C30067B403 /* KHHealthCareProjUITests */ = {
-			isa = PBXGroup;
-			children = (
-				7E9B490C1C81A3C30067B403 /* KHHealthCareProjUITests.m */,
-				7E9B490E1C81A3C30067B403 /* Info.plist */,
-			);
-			path = KHHealthCareProjUITests;
-			sourceTree = "<group>";
-		};
-		FC36CCF84935F1F547BBD6F6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7BB90ACF2BBBB12D060234F3 /* Pods.debug.xcconfig */,
-				F436FCC6A7280DC2F9723567 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		7E9B48E01C81A3C30067B403 /* KHHealthCareProj */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7E9B49111C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProj" */;
-			buildPhases = (
-				5B56A7310E8D834829F4A704 /* Check Pods Manifest.lock */,
-				7E9B48DD1C81A3C30067B403 /* Sources */,
-				7E9B48DE1C81A3C30067B403 /* Frameworks */,
-				7E9B48DF1C81A3C30067B403 /* Resources */,
-				99615C9615F017F5D388E103 /* Embed Pods Frameworks */,
-				960984A3219888CD3D660A0F /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = KHHealthCareProj;
-			productName = KHHealthCareProj;
-			productReference = 7E9B48E11C81A3C30067B403 /* KHHealthCareProj.app */;
-			productType = "com.apple.product-type.application";
-		};
-		7E9B48FC1C81A3C30067B403 /* KHHealthCareProjTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7E9B49141C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProjTests" */;
-			buildPhases = (
-				7E9B48F91C81A3C30067B403 /* Sources */,
-				7E9B48FA1C81A3C30067B403 /* Frameworks */,
-				7E9B48FB1C81A3C30067B403 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7E9B48FF1C81A3C30067B403 /* PBXTargetDependency */,
-			);
-			name = KHHealthCareProjTests;
-			productName = KHHealthCareProjTests;
-			productReference = 7E9B48FD1C81A3C30067B403 /* KHHealthCareProjTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		7E9B49071C81A3C30067B403 /* KHHealthCareProjUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7E9B49171C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProjUITests" */;
-			buildPhases = (
-				7E9B49041C81A3C30067B403 /* Sources */,
-				7E9B49051C81A3C30067B403 /* Frameworks */,
-				7E9B49061C81A3C30067B403 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7E9B490A1C81A3C30067B403 /* PBXTargetDependency */,
-			);
-			name = KHHealthCareProjUITests;
-			productName = KHHealthCareProjUITests;
-			productReference = 7E9B49081C81A3C30067B403 /* KHHealthCareProjUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		7E9B48D91C81A3C30067B403 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "Ryan Lu";
-				TargetAttributes = {
-					7E9B48E01C81A3C30067B403 = {
-						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 34XCQNM8JN;
-					};
-					7E9B48FC1C81A3C30067B403 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = 7E9B48E01C81A3C30067B403;
-					};
-					7E9B49071C81A3C30067B403 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = 7E9B48E01C81A3C30067B403;
-					};
-				};
-			};
-			buildConfigurationList = 7E9B48DC1C81A3C30067B403 /* Build configuration list for PBXProject "KHHealthCareProj" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 7E9B48D81C81A3C30067B403;
-			productRefGroup = 7E9B48E21C81A3C30067B403 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				7E9B48E01C81A3C30067B403 /* KHHealthCareProj */,
-				7E9B48FC1C81A3C30067B403 /* KHHealthCareProjTests */,
-				7E9B49071C81A3C30067B403 /* KHHealthCareProjUITests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		7E9B48DF1C81A3C30067B403 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E9B48F71C81A3C30067B403 /* LaunchScreen.storyboard in Resources */,
-				7E0637841CFE6C1000866D07 /* GoogleService-Info.plist in Resources */,
-				7E9B48F41C81A3C30067B403 /* Assets.xcassets in Resources */,
-				7E9B48EF1C81A3C30067B403 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E9B48FB1C81A3C30067B403 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E9B49061C81A3C30067B403 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5B56A7310E8D834829F4A704 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		960984A3219888CD3D660A0F /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		99615C9615F017F5D388E103 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		7E9B48DD1C81A3C30067B403 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				630569CA1C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m in Sources */,
-				637AA21A1C8BD1A1005107AC /* KHRiskFactorModel.m in Sources */,
-				7E9B48F21C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld in Sources */,
-				637AA20E1C8B9348005107AC /* KHCancerListModel.m in Sources */,
-				630569BB1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m in Sources */,
-				EAD7BC4C1C86A320002AEBC8 /* KHVaccineRiskFactor.m in Sources */,
-				EAD7BC461C869D26002AEBC8 /* KHPatient.m in Sources */,
-				637AA2141C8B9530005107AC /* KHCancerRiskFactor.m in Sources */,
-				63926AC91CAE4375003A0C86 /* (null) in Sources */,
-				630569C71C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m in Sources */,
-				7E5AD0221CF90C6600368E69 /* KHCancerEFLQuestionViewController.m in Sources */,
-				EAD7BC491C86A26B002AEBC8 /* KHVaccine.m in Sources */,
-				637AA2011C8B8BDD005107AC /* KHHomePageViewController.m in Sources */,
-				7E7614141D06A20500B1E6E0 /* KHCardiometabolicScreeningResultsTableViewController.m in Sources */,
-				637AA2271C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m in Sources */,
-				637AA2041C8B8E77005107AC /* KHVaccineListModel.m in Sources */,
-				7E9B48E91C81A3C30067B403 /* KHAppDelegate.m in Sources */,
-				637AA2211C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m in Sources */,
-				7E5AD01F1CF90C5000368E69 /* KHCancerMedQuestionViewController.m in Sources */,
-				7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */,
-				7E9B48E61C81A3C30067B403 /* main.m in Sources */,
-				637AA2111C8B93A9005107AC /* KHCancer.m in Sources */,
-				7E067DD11D0529800095BE71 /* KHTabBarViewController.m in Sources */,
-				7E4484A81C8BE61200850E58 /* KHSignInViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E9B48F91C81A3C30067B403 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7EDBB60C1CC61D2400407498 /* KHBasicQuestionViewController.m in Sources */,
-				7E9B49021C81A3C30067B403 /* KHHealthCareProjTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E9B49041C81A3C30067B403 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E9B490D1C81A3C30067B403 /* KHHealthCareProjUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7E9B48FF1C81A3C30067B403 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7E9B48E01C81A3C30067B403 /* KHHealthCareProj */;
-			targetProxy = 7E9B48FE1C81A3C30067B403 /* PBXContainerItemProxy */;
-		};
-		7E9B490A1C81A3C30067B403 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7E9B48E01C81A3C30067B403 /* KHHealthCareProj */;
-			targetProxy = 7E9B49091C81A3C30067B403 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		7E9B48ED1C81A3C30067B403 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7E9B48EE1C81A3C30067B403 /* Base */,
-			);
-			name = Main.storyboard;
-			path = KHHealthCareProj;
-			sourceTree = "<group>";
-		};
-		7E9B48F51C81A3C30067B403 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7E9B48F61C81A3C30067B403 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		7E9B490F1C81A3C30067B403 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		7E9B49101C81A3C30067B403 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		7E9B49121C81A3C30067B403 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BB90ACF2BBBB12D060234F3 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = KHHealthCareProj/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProj;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		7E9B49131C81A3C30067B403 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F436FCC6A7280DC2F9723567 /* Pods.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = KHHealthCareProj/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProj;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		7E9B49151C81A3C30067B403 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = KHHealthCareProjTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProjTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KHHealthCareProj.app/KHHealthCareProj";
-			};
-			name = Debug;
-		};
-		7E9B49161C81A3C30067B403 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = KHHealthCareProjTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProjTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KHHealthCareProj.app/KHHealthCareProj";
-			};
-			name = Release;
-		};
-		7E9B49181C81A3C30067B403 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = KHHealthCareProjUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProjUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = KHHealthCareProj;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		7E9B49191C81A3C30067B403 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = KHHealthCareProjUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProjUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = KHHealthCareProj;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		7E9B48DC1C81A3C30067B403 /* Build configuration list for PBXProject "KHHealthCareProj" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7E9B490F1C81A3C30067B403 /* Debug */,
-				7E9B49101C81A3C30067B403 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7E9B49111C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProj" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7E9B49121C81A3C30067B403 /* Debug */,
-				7E9B49131C81A3C30067B403 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7E9B49141C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProjTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7E9B49151C81A3C30067B403 /* Debug */,
-				7E9B49161C81A3C30067B403 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7E9B49171C81A3C30067B403 /* Build configuration list for PBXNativeTarget "KHHealthCareProjUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7E9B49181C81A3C30067B403 /* Debug */,
-				7E9B49191C81A3C30067B403 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		7E9B48F01C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				7E9B48F11C81A3C30067B403 /* KHHealthCareProj.xcdatamodel */,
-			);
-			currentVersion = 7E9B48F11C81A3C30067B403 /* KHHealthCareProj.xcdatamodel */;
-			path = KHHealthCareProj.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
-	};
-	rootObject = 7E9B48D91C81A3C30067B403 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>024F7B701C5A43A2ACF26E0D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F21FDB519DB6150C52EFE6F4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>21B0CE185325FC28741DD30A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C076BF6CF45518781B147688</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>28F7CD2DBCFC3E34BC4AAB9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AB3C300B2C61D0E74582C2F7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>40B7BDF22C3EF756D74F5D09</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D925CAC3C0E2943DBB8CEE00</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>42620321EE9D70996C1CB63C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>BuddyBuildSDK.framework</string>
+			<key>path</key>
+			<string>BuddyBuildSDK.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>43B9C46921FDA10E81CF5F7A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>42620321EE9D70996C1CB63C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4FDC2515A8130A96CE1DCB24</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreMedia.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreMedia.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>5B56A7310E8D834829F4A704</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>630569B91C8C03B2001E8CB5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHCancerScreeningResultsViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>630569BA1C8C03B2001E8CB5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHCancerScreeningResultsViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>630569BB1C8C03B2001E8CB5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>630569BA1C8C03B2001E8CB5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>630569C51C8C045B001E8CB5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHVaccinationScreeningResultsTableViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>630569C61C8C045B001E8CB5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHVaccinationScreeningResultsTableViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>630569C71C8C045B001E8CB5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>630569C61C8C045B001E8CB5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>630569C81C8C0492001E8CB5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHNutritionSuggestionResultsTableViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>630569C91C8C0492001E8CB5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHNutritionSuggestionResultsTableViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>630569CA1C8C0492001E8CB5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>630569C91C8C0492001E8CB5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>637AA1FF1C8B8BDD005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>KHHomePageViewController.h</string>
+			<key>path</key>
+			<string>KHHealthCareProj/KHHomePageViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2001C8B8BDD005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>KHHomePageViewController.m</string>
+			<key>path</key>
+			<string>KHHealthCareProj/KHHomePageViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2011C8B8BDD005107AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>637AA2001C8B8BDD005107AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>637AA2021C8B8E77005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHVaccineListModel.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2031C8B8E77005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHVaccineListModel.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2041C8B8E77005107AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>637AA2031C8B8E77005107AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>637AA2051C8B9218005107AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EAD7BC471C86A26B002AEBC8</string>
+				<string>EAD7BC481C86A26B002AEBC8</string>
+				<string>637AA2021C8B8E77005107AC</string>
+				<string>637AA2031C8B8E77005107AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Vaccine</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2061C8B9221005107AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EAD7BC441C869D26002AEBC8</string>
+				<string>EAD7BC451C869D26002AEBC8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Patient</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2071C8B922A005107AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EAD7BC4A1C86A320002AEBC8</string>
+				<string>EAD7BC4B1C86A320002AEBC8</string>
+				<string>637AA2121C8B9530005107AC</string>
+				<string>637AA2131C8B9530005107AC</string>
+				<string>637AA2181C8BD1A1005107AC</string>
+				<string>637AA2191C8BD1A1005107AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>RiskFactor</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2081C8B9250005107AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>637AA20C1C8B9348005107AC</string>
+				<string>637AA20D1C8B9348005107AC</string>
+				<string>637AA20F1C8B93A9005107AC</string>
+				<string>637AA2101C8B93A9005107AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Cancer</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA20C1C8B9348005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHCancerListModel.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA20D1C8B9348005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHCancerListModel.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA20E1C8B9348005107AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>637AA20D1C8B9348005107AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>637AA20F1C8B93A9005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHCancer.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2101C8B93A9005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHCancer.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2111C8B93A9005107AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>637AA2101C8B93A9005107AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>637AA2121C8B9530005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHCancerRiskFactor.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2131C8B9530005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHCancerRiskFactor.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2141C8B9530005107AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>637AA2131C8B9530005107AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>637AA2181C8BD1A1005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHRiskFactorModel.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2191C8BD1A1005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHRiskFactorModel.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA21A1C8BD1A1005107AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>637AA2191C8BD1A1005107AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>637AA21B1C8BFD38005107AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>637AA1FF1C8B8BDD005107AC</string>
+				<string>637AA2001C8B8BDD005107AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Home Page</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA21C1C8BFD47005107AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E067DCF1D0529800095BE71</string>
+				<string>7E067DD01D0529800095BE71</string>
+				<string>630569C51C8C045B001E8CB5</string>
+				<string>630569C61C8C045B001E8CB5</string>
+				<string>630569B91C8C03B2001E8CB5</string>
+				<string>630569BA1C8C03B2001E8CB5</string>
+				<string>7E7614121D06A20500B1E6E0</string>
+				<string>7E7614131D06A20500B1E6E0</string>
+				<string>630569C81C8C0492001E8CB5</string>
+				<string>630569C91C8C0492001E8CB5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Results</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA21D1C8BFD51005107AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E4484A61C8BE61200850E58</string>
+				<string>7E4484A71C8BE61200850E58</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Sign In Page</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA21E1C8BFDAD005107AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E76140E1D06A11E00B1E6E0</string>
+				<string>7E76140D1D06A10D00B1E6E0</string>
+				<string>7E4484AC1C8BEB4B00850E58</string>
+				<string>7E4484AD1C8BEB4B00850E58</string>
+				<string>7E5AD0191CF90C0700368E69</string>
+				<string>7E5AD0181CF90C0100368E69</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Questions</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA21F1C8BFE04005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHOccupationalLifestyleQuestionsViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2201C8BFE04005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHOccupationalLifestyleQuestionsViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2211C8BFE04005107AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>637AA2201C8BFE04005107AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>637AA2251C8BFE59005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHMedicalConditionQuestionsViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2261C8BFE59005107AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHMedicalConditionQuestionsViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>637AA2271C8BFE59005107AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>637AA2261C8BFE59005107AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>63926AC91CAE4375003A0C86</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>769CBE6E65ADD54891A594A1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FCC2700DDC84D5A1A9A56060</string>
+				<string>42620321EE9D70996C1CB63C</string>
+				<string>AB3C300B2C61D0E74582C2F7</string>
+				<string>D925CAC3C0E2943DBB8CEE00</string>
+				<string>7CAE75FB675FAA6AFB8E57D8</string>
+				<string>BFF2FFB0DA55197299280944</string>
+				<string>F21FDB519DB6150C52EFE6F4</string>
+				<string>7BBDC4B93B7C0669E117E7CF</string>
+				<string>4FDC2515A8130A96CE1DCB24</string>
+				<string>C076BF6CF45518781B147688</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7BB90ACF2BBBB12D060234F3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods/Pods.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7BBDC4B93B7C0669E117E7CF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>AVFoundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/AVFoundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>7CAE75FB675FAA6AFB8E57D8</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreTelephony.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreTelephony.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>7E0637831CFE6C1000866D07</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>GoogleService-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E0637841CFE6C1000866D07</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E0637831CFE6C1000866D07</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E067DCF1D0529800095BE71</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHTabBarViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E067DD01D0529800095BE71</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHTabBarViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E067DD11D0529800095BE71</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E067DD01D0529800095BE71</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E2E90C91C83FCF700BB92E9</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>637AA2081C8B9250005107AC</string>
+				<string>637AA2071C8B922A005107AC</string>
+				<string>637AA2061C8B9221005107AC</string>
+				<string>637AA2051C8B9218005107AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Models</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E2E90CA1C83FD0900BB92E9</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E9B48ED1C81A3C30067B403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Views</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E2E90CB1C83FD0F00BB92E9</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>637AA21E1C8BFDAD005107AC</string>
+				<string>637AA21D1C8BFD51005107AC</string>
+				<string>637AA21C1C8BFD47005107AC</string>
+				<string>637AA21B1C8BFD38005107AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Controllers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E4484A61C8BE61200850E58</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHSignInViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E4484A71C8BE61200850E58</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHSignInViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E4484A81C8BE61200850E58</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E4484A71C8BE61200850E58</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E4484AC1C8BEB4B00850E58</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHBasicQuestionViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E4484AD1C8BEB4B00850E58</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHBasicQuestionViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E4484AE1C8BEB4B00850E58</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E4484AD1C8BEB4B00850E58</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E5AD0181CF90C0100368E69</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>637AA21F1C8BFE04005107AC</string>
+				<string>637AA2201C8BFE04005107AC</string>
+				<string>637AA2251C8BFE59005107AC</string>
+				<string>637AA2261C8BFE59005107AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Vaccine Flow</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E5AD0191CF90C0700368E69</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E5AD01D1CF90C5000368E69</string>
+				<string>7E5AD01E1CF90C5000368E69</string>
+				<string>7E5AD0201CF90C6600368E69</string>
+				<string>7E5AD0211CF90C6600368E69</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Cancer Flow</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E5AD01D1CF90C5000368E69</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHCancerMedQuestionViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E5AD01E1CF90C5000368E69</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHCancerMedQuestionViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E5AD01F1CF90C5000368E69</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E5AD01E1CF90C5000368E69</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E5AD0201CF90C6600368E69</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHCancerEFLQuestionViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E5AD0211CF90C6600368E69</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHCancerEFLQuestionViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E5AD0221CF90C6600368E69</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E5AD0211CF90C6600368E69</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E76140D1D06A10D00B1E6E0</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Cardiometabolic Flow</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E76140E1D06A11E00B1E6E0</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Nutrition Flow</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E7614121D06A20500B1E6E0</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHCardiometabolicScreeningResultsTableViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E7614131D06A20500B1E6E0</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHCardiometabolicScreeningResultsTableViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E7614141D06A20500B1E6E0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E7614131D06A20500B1E6E0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E9B48D81C81A3C30067B403</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E2E90CB1C83FD0F00BB92E9</string>
+				<string>7E2E90CA1C83FD0900BB92E9</string>
+				<string>7E2E90C91C83FCF700BB92E9</string>
+				<string>7E9B48E31C81A3C30067B403</string>
+				<string>7E9B49001C81A3C30067B403</string>
+				<string>7E9B490B1C81A3C30067B403</string>
+				<string>7E9B48E21C81A3C30067B403</string>
+				<string>FC36CCF84935F1F547BBD6F6</string>
+				<string>769CBE6E65ADD54891A594A1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48D91C81A3C30067B403</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0720</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Ryan Lu</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>7E9B48E01C81A3C30067B403</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.2.1</string>
+						<key>DevelopmentTeam</key>
+						<string>34XCQNM8JN</string>
+					</dict>
+					<key>7E9B48FC1C81A3C30067B403</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.2.1</string>
+						<key>TestTargetID</key>
+						<string>7E9B48E01C81A3C30067B403</string>
+					</dict>
+					<key>7E9B49071C81A3C30067B403</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.2.1</string>
+						<key>TestTargetID</key>
+						<string>7E9B48E01C81A3C30067B403</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>7E9B48DC1C81A3C30067B403</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>7E9B48D81C81A3C30067B403</string>
+			<key>productRefGroup</key>
+			<string>7E9B48E21C81A3C30067B403</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>7E9B48E01C81A3C30067B403</string>
+				<string>7E9B48FC1C81A3C30067B403</string>
+				<string>7E9B49071C81A3C30067B403</string>
+			</array>
+		</dict>
+		<key>7E9B48DC1C81A3C30067B403</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>7E9B490F1C81A3C30067B403</string>
+				<string>7E9B49101C81A3C30067B403</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>7E9B48DD1C81A3C30067B403</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>630569CA1C8C0492001E8CB5</string>
+				<string>637AA21A1C8BD1A1005107AC</string>
+				<string>7E9B48F21C81A3C30067B403</string>
+				<string>637AA20E1C8B9348005107AC</string>
+				<string>630569BB1C8C03B2001E8CB5</string>
+				<string>EAD7BC4C1C86A320002AEBC8</string>
+				<string>EAD7BC461C869D26002AEBC8</string>
+				<string>637AA2141C8B9530005107AC</string>
+				<string>63926AC91CAE4375003A0C86</string>
+				<string>630569C71C8C045B001E8CB5</string>
+				<string>7E5AD0221CF90C6600368E69</string>
+				<string>EAD7BC491C86A26B002AEBC8</string>
+				<string>637AA2011C8B8BDD005107AC</string>
+				<string>7E7614141D06A20500B1E6E0</string>
+				<string>637AA2271C8BFE59005107AC</string>
+				<string>637AA2041C8B8E77005107AC</string>
+				<string>7E9B48E91C81A3C30067B403</string>
+				<string>637AA2211C8BFE04005107AC</string>
+				<string>7E5AD01F1CF90C5000368E69</string>
+				<string>7E4484AE1C8BEB4B00850E58</string>
+				<string>7E9B48E61C81A3C30067B403</string>
+				<string>637AA2111C8B93A9005107AC</string>
+				<string>7E067DD11D0529800095BE71</string>
+				<string>7E4484A81C8BE61200850E58</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7E9B48DE1C81A3C30067B403</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8E20E945F6139522147C66A6</string>
+				<string>43B9C46921FDA10E81CF5F7A</string>
+				<string>28F7CD2DBCFC3E34BC4AAB9F</string>
+				<string>40B7BDF22C3EF756D74F5D09</string>
+				<string>BAD817B937324419DC5855E7</string>
+				<string>DCC963A770212F9371CBC790</string>
+				<string>024F7B701C5A43A2ACF26E0D</string>
+				<string>DA41ED6E9FF4A97C9FD75692</string>
+				<string>CB45010646C25C31448EA890</string>
+				<string>21B0CE185325FC28741DD30A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7E9B48DF1C81A3C30067B403</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>7E9B48F71C81A3C30067B403</string>
+				<string>7E0637841CFE6C1000866D07</string>
+				<string>7E9B48F41C81A3C30067B403</string>
+				<string>7E9B48EF1C81A3C30067B403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7E9B48E01C81A3C30067B403</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>7E9B49111C81A3C30067B403</string>
+			<key>buildPhases</key>
+			<array>
+				<string>5B56A7310E8D834829F4A704</string>
+				<string>7E9B48DD1C81A3C30067B403</string>
+				<string>7E9B48DE1C81A3C30067B403</string>
+				<string>7E9B48DF1C81A3C30067B403</string>
+				<string>99615C9615F017F5D388E103</string>
+				<string>960984A3219888CD3D660A0F</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>KHHealthCareProj</string>
+			<key>productName</key>
+			<string>KHHealthCareProj</string>
+			<key>productReference</key>
+			<string>7E9B48E11C81A3C30067B403</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>7E9B48E11C81A3C30067B403</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>KHHealthCareProj.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>7E9B48E21C81A3C30067B403</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E9B48E11C81A3C30067B403</string>
+				<string>7E9B48FD1C81A3C30067B403</string>
+				<string>7E9B49081C81A3C30067B403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48E31C81A3C30067B403</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E9B48F51C81A3C30067B403</string>
+				<string>7E9B48E71C81A3C30067B403</string>
+				<string>7E9B48E81C81A3C30067B403</string>
+				<string>7E9B48F31C81A3C30067B403</string>
+				<string>7E9B48F81C81A3C30067B403</string>
+				<string>7E9B48F01C81A3C30067B403</string>
+				<string>7E0637831CFE6C1000866D07</string>
+				<string>7E9B48E41C81A3C30067B403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>KHHealthCareProj</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48E41C81A3C30067B403</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E9B48E51C81A3C30067B403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48E51C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48E61C81A3C30067B403</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E9B48E51C81A3C30067B403</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E9B48E71C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KHAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48E81C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHAppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48E91C81A3C30067B403</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E9B48E81C81A3C30067B403</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E9B48ED1C81A3C30067B403</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E9B48EE1C81A3C30067B403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>path</key>
+			<string>KHHealthCareProj</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48EE1C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48EF1C81A3C30067B403</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E9B48ED1C81A3C30067B403</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E9B48F01C81A3C30067B403</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E9B48F11C81A3C30067B403</string>
+			</array>
+			<key>currentVersion</key>
+			<string>7E9B48F11C81A3C30067B403</string>
+			<key>isa</key>
+			<string>XCVersionGroup</string>
+			<key>path</key>
+			<string>KHHealthCareProj.xcdatamodeld</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+			<key>versionGroupType</key>
+			<string>wrapper.xcdatamodel</string>
+		</dict>
+		<key>7E9B48F11C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.xcdatamodel</string>
+			<key>path</key>
+			<string>KHHealthCareProj.xcdatamodel</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48F21C81A3C30067B403</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E9B48F01C81A3C30067B403</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E9B48F31C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Assets.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48F41C81A3C30067B403</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E9B48F31C81A3C30067B403</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E9B48F51C81A3C30067B403</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E9B48F61C81A3C30067B403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48F61C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48F71C81A3C30067B403</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E9B48F51C81A3C30067B403</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E9B48F81C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B48F91C81A3C30067B403</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>7EDBB60C1CC61D2400407498</string>
+				<string>7E9B49021C81A3C30067B403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7E9B48FA1C81A3C30067B403</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7E9B48FB1C81A3C30067B403</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7E9B48FC1C81A3C30067B403</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>7E9B49141C81A3C30067B403</string>
+			<key>buildPhases</key>
+			<array>
+				<string>7E9B48F91C81A3C30067B403</string>
+				<string>7E9B48FA1C81A3C30067B403</string>
+				<string>7E9B48FB1C81A3C30067B403</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>7E9B48FF1C81A3C30067B403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>KHHealthCareProjTests</string>
+			<key>productName</key>
+			<string>KHHealthCareProjTests</string>
+			<key>productReference</key>
+			<string>7E9B48FD1C81A3C30067B403</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>7E9B48FD1C81A3C30067B403</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>KHHealthCareProjTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>7E9B48FE1C81A3C30067B403</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>7E9B48D91C81A3C30067B403</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>7E9B48E01C81A3C30067B403</string>
+			<key>remoteInfo</key>
+			<string>KHHealthCareProj</string>
+		</dict>
+		<key>7E9B48FF1C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>7E9B48E01C81A3C30067B403</string>
+			<key>targetProxy</key>
+			<string>7E9B48FE1C81A3C30067B403</string>
+		</dict>
+		<key>7E9B49001C81A3C30067B403</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E9B49011C81A3C30067B403</string>
+				<string>7E9B49031C81A3C30067B403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>KHHealthCareProjTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B49011C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHHealthCareProjTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B49021C81A3C30067B403</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E9B49011C81A3C30067B403</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E9B49031C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B49041C81A3C30067B403</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>7E9B490D1C81A3C30067B403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7E9B49051C81A3C30067B403</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7E9B49061C81A3C30067B403</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7E9B49071C81A3C30067B403</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>7E9B49171C81A3C30067B403</string>
+			<key>buildPhases</key>
+			<array>
+				<string>7E9B49041C81A3C30067B403</string>
+				<string>7E9B49051C81A3C30067B403</string>
+				<string>7E9B49061C81A3C30067B403</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>7E9B490A1C81A3C30067B403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>KHHealthCareProjUITests</string>
+			<key>productName</key>
+			<string>KHHealthCareProjUITests</string>
+			<key>productReference</key>
+			<string>7E9B49081C81A3C30067B403</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.ui-testing</string>
+		</dict>
+		<key>7E9B49081C81A3C30067B403</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>KHHealthCareProjUITests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>7E9B49091C81A3C30067B403</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>7E9B48D91C81A3C30067B403</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>7E9B48E01C81A3C30067B403</string>
+			<key>remoteInfo</key>
+			<string>KHHealthCareProj</string>
+		</dict>
+		<key>7E9B490A1C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>7E9B48E01C81A3C30067B403</string>
+			<key>targetProxy</key>
+			<string>7E9B49091C81A3C30067B403</string>
+		</dict>
+		<key>7E9B490B1C81A3C30067B403</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E9B490C1C81A3C30067B403</string>
+				<string>7E9B490E1C81A3C30067B403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>KHHealthCareProjUITests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B490C1C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KHHealthCareProjUITests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B490D1C81A3C30067B403</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E9B490C1C81A3C30067B403</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E9B490E1C81A3C30067B403</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E9B490F1C81A3C30067B403</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.2</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>7E9B49101C81A3C30067B403</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.2</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>7E9B49111C81A3C30067B403</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>7E9B49121C81A3C30067B403</string>
+				<string>7E9B49131C81A3C30067B403</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>7E9B49121C81A3C30067B403</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>7BB90ACF2BBBB12D060234F3</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>KHHealthCareProj/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>edu.usc.KHHealthCareProj</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PROVISIONING_PROFILE</key>
+				<string></string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>7E9B49131C81A3C30067B403</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>F436FCC6A7280DC2F9723567</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>KHHealthCareProj/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>edu.usc.KHHealthCareProj</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PROVISIONING_PROFILE</key>
+				<string></string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>7E9B49141C81A3C30067B403</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>7E9B49151C81A3C30067B403</string>
+				<string>7E9B49161C81A3C30067B403</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>7E9B49151C81A3C30067B403</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>KHHealthCareProjTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>edu.usc.KHHealthCareProjTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/KHHealthCareProj.app/KHHealthCareProj</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>7E9B49161C81A3C30067B403</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>KHHealthCareProjTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>edu.usc.KHHealthCareProjTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/KHHealthCareProj.app/KHHealthCareProj</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>7E9B49171C81A3C30067B403</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>7E9B49181C81A3C30067B403</string>
+				<string>7E9B49191C81A3C30067B403</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>7E9B49181C81A3C30067B403</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>KHHealthCareProjUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>edu.usc.KHHealthCareProjUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>KHHealthCareProj</string>
+				<key>USES_XCTRUNNER</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>7E9B49191C81A3C30067B403</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>KHHealthCareProjUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>edu.usc.KHHealthCareProjUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>KHHealthCareProj</string>
+				<key>USES_XCTRUNNER</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>7EDBB60C1CC61D2400407498</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E4484AD1C8BEB4B00850E58</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8E20E945F6139522147C66A6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FCC2700DDC84D5A1A9A56060</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>960984A3219888CD3D660A0F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>99615C9615F017F5D388E103</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>AB3C300B2C61D0E74582C2F7</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>AssetsLibrary.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/AssetsLibrary.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>BAD817B937324419DC5855E7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7CAE75FB675FAA6AFB8E57D8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BFF2FFB0DA55197299280944</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>SystemConfiguration.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/SystemConfiguration.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>C076BF6CF45518781B147688</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreVideo.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreVideo.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>CB45010646C25C31448EA890</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4FDC2515A8130A96CE1DCB24</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D925CAC3C0E2943DBB8CEE00</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreText.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreText.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>DA41ED6E9FF4A97C9FD75692</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7BBDC4B93B7C0669E117E7CF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DCC963A770212F9371CBC790</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BFF2FFB0DA55197299280944</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>EAD7BC441C869D26002AEBC8</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>KHPatient.h</string>
+			<key>path</key>
+			<string>Models/KHPatient.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EAD7BC451C869D26002AEBC8</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>KHPatient.m</string>
+			<key>path</key>
+			<string>Models/KHPatient.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EAD7BC461C869D26002AEBC8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EAD7BC451C869D26002AEBC8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>EAD7BC471C86A26B002AEBC8</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>KHVaccine.h</string>
+			<key>path</key>
+			<string>Models/KHVaccine.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EAD7BC481C86A26B002AEBC8</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>KHVaccine.m</string>
+			<key>path</key>
+			<string>Models/KHVaccine.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EAD7BC491C86A26B002AEBC8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EAD7BC481C86A26B002AEBC8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>EAD7BC4A1C86A320002AEBC8</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>KHVaccineRiskFactor.h</string>
+			<key>path</key>
+			<string>Models/KHVaccineRiskFactor.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EAD7BC4B1C86A320002AEBC8</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>KHVaccineRiskFactor.m</string>
+			<key>path</key>
+			<string>Models/KHVaccineRiskFactor.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EAD7BC4C1C86A320002AEBC8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EAD7BC4B1C86A320002AEBC8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F21FDB519DB6150C52EFE6F4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>QuartzCore.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/QuartzCore.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>F436FCC6A7280DC2F9723567</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods/Pods.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FC36CCF84935F1F547BBD6F6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7BB90ACF2BBBB12D060234F3</string>
+				<string>F436FCC6A7280DC2F9723567</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FCC2700DDC84D5A1A9A56060</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>7E9B48D91C81A3C30067B403</string>
+</dict>
+</plist>
