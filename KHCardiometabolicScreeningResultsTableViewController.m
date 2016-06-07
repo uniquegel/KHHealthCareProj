@@ -22,6 +22,8 @@
     _patient = [KHPatient sharedModel];
     _rfModel = [KHRiskFactorModel sharedModel];
     
+    
+    //init
     _patient.completedCardiometabolicFlow = NO;
     if (!_patient.completedCardiometabolicFlow) {
         [self.view setHidden:YES];
