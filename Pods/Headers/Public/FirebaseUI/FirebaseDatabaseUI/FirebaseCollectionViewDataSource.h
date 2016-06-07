@@ -1,1 +1,0 @@
-../../../../FirebaseUI/FirebaseUIFrameworks/Database/Frameworks/FirebaseDatabaseUI.framework/Headers/FirebaseCollectionViewDataSource.h

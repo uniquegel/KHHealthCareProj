@@ -82,14 +82,3 @@ strip_invalid_archs() {
   fi
 }
 
-
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-KHHealthCareProj/Bolts.framework"
-  install_framework "Pods-KHHealthCareProj/FBSDKCoreKit.framework"
-  install_framework "Pods-KHHealthCareProj/FBSDKLoginKit.framework"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-KHHealthCareProj/Bolts.framework"
-  install_framework "Pods-KHHealthCareProj/FBSDKCoreKit.framework"
-  install_framework "Pods-KHHealthCareProj/FBSDKLoginKit.framework"
-fi
