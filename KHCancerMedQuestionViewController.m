@@ -12,6 +12,8 @@
 #import "KHRiskFactorModel.h"
 #import "KHCancerListModel.h"
 #import "KHCancerRiskFactor.h"
+#import "KHCancer.h"
+#import "KHTabBarViewController.h"
 
 @interface KHCancerMedQuestionViewController ()
 @property KHPatient *patient;
@@ -21,6 +23,9 @@
 @property NSMutableArray *checkBoxArray;
 @property NSMutableArray *MedRiskFactorArray;
 - (IBAction)backButtonAction:(id)sender;
+
+-(void)calculateResults;
+-(Status)getStatusWithCheckCancer:(KHCancer *)checkCancer andPatientCancer:(KHCancer *)patientCancer;
 @end
 
 @implementation KHCancerMedQuestionViewController
@@ -87,18 +92,27 @@
     
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
+//     Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"cancerMedQuestionToResults"])
+    {
+        // Get reference to the destination view controller
+        KHTabBarViewController *vc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+        vc.showTabNumber = 3;
+        
+    }
+    
+    
 }
-*/
 
-- (IBAction)nextButton:(id)sender {
-}
 
 
 -(void)calculateResults {
@@ -112,19 +126,33 @@
     NSLog(@"first, last name: %@ %@", _patient.firstName, _patient.lastName);
     
     
-    KHCancerRiskFactor *firstRF = [self.riskFactors.AllRFListForVaccine objectAtIndex:0];
-    
-    self.patient.vaccineList = firstRF.cancerList;
-    for (KHVaccine *vac in self.patient.vaccineList) {
-        vac->status = Nothing;
+    // FIXME: feed the list of cancers to Patient, and initialize them with NOTHING as stat
+    // Ideally change this to Homepage when pull info from user
+    KHCancerRiskFactor *firstRF = [self.riskFactors.AllRFListForCancer objectAtIndex:0];
+    /* for (KHCancerRiskFactor *crf in self.riskFactors.AllRFListForCancer) {
+        NSLog(@"risk factor name: %@", crf.name);
+        for (KHCancer *can in crf.cancerList) {
+            
+            NSLog(@"inside loop: %@", can.name);
+            //        NSLog(@"vac stat: %u", vac->status);
+        }
+        NSLog(@"----------------");
+    } */
+    NSLog(@"firstRF info: %@", firstRF.name);
+    self.patient.cancerList = firstRF.cancerList;
+    for (KHCancer *can in self.patient.cancerList) {
+        can->status = Nothing;
+        NSLog(@"can under patient: %@", can.name);
         //        NSLog(@"vac stat: %u", vac->status);
     }
     
+    
     // For each risk factor
-    for(int i = 0; i < _riskFactors.AllRFListForVaccine.count; i++) {
-        
+    NSLog(@"ALLRFLIST FOR CANCER: %lu", (unsigned long)_riskFactors.AllRFListForCancer.count);
+    for(int i = 0; i < _riskFactors.AllRFListForCancer.count; i++) {
+        NSLog(@"inside ALL RF for cancer!:");
         // get current vaccine risk factor
-        KHCancerRiskFactor *cancerRiskFactor = [self.riskFactors.AllRFListForVaccine objectAtIndex:i];
+        KHCancerRiskFactor *cancerRiskFactor = [self.riskFactors.AllRFListForCancer objectAtIndex:i];
         
         //        NSLog(@"Risk factor name = %@\n", accineRiskFactor.name);
         
@@ -133,40 +161,38 @@
         if(cancerRiskFactor.isActive) {
             NSLog(@"inside isAvtive!");
             
-            
             // increment numRiskFactors
             self.patient->numRiskFactors++;
             
             NSLog(@"A");
-            NSArray *checkVaccineList = cancerRiskFactor.cancerList;
-            NSArray *patientVaccineList = self.patient.vaccineList;
+            NSArray *checkCancerList = cancerRiskFactor.cancerList;
+            NSArray *patientCancerList = self.patient.cancerList;
             NSLog(@"B");
             
             // for each vaccine under this risk factor
-            for(int j = 0; j < checkVaccineList.count; j++) {
+            for(int j = 0; j < checkCancerList.count; j++) {
                 NSLog(@"C ");
                 
-                NSLog(@" patient count : %lu", (unsigned long)patientVaccineList.count);
-                NSLog(@" check count : %lu", (unsigned long)checkVaccineList.count);
+                NSLog(@" patient count : %lu", (unsigned long)patientCancerList.count);
+                NSLog(@" check count : %lu", (unsigned long)checkCancerList.count);
                 //get this risk factor vaccine
                 
                 // and its counterpart in patient
-                KHVaccine *checkVaccine = [checkVaccineList objectAtIndex:j];
-                KHVaccine *patientVaccine = [patientVaccineList objectAtIndex:j];
-                
+                KHCancer *checkCancer = [checkCancerList objectAtIndex:j];
+                KHCancer *patientCancer = [patientCancerList objectAtIndex:j];
                 
                 NSLog(@"E");
-                // compare vaccine values
-                Status newStatus = [self getStatusWithCheckVaccine:checkVaccine
-                                                 andPatientVaccine:patientVaccine];
+                // compare cancer values
+                Status newStatus = [self getStatusWithCheckCancer:checkCancer andPatientCancer:patientCancer];
                 
                 // update patient vaccine value
-                patientVaccine->status = newStatus;
+                patientCancer->status = newStatus;
                 NSLog(@"F");
-                NSMutableArray *array = [self.patient.vaccineList copy];
-                patientVaccine = array[j];
+                NSMutableArray *array = [self.patient.cancerList copy];
+                patientCancer = array[j];
                 
-                [self.patient.vaccineList replaceObjectAtIndex:j withObject:patientVaccine];
+                [self.patient.cancerList replaceObjectAtIndex:j withObject:patientCancer];
+                
                 NSLog(@"G");
                 //                NSLog(@"Active Riskfactor: Vaccine new status = %u\n", patientVaccine->status);
                 NSLog(@"D");
@@ -177,18 +203,18 @@
     NSLog(@"done calculating results!");
     
     
-    for (KHVaccine *vc in self.patient.vaccineList) {
-        NSLog(@"Final patient vaccine status: %u", vc->status);
+    for (KHCancer *can in self.patient.cancerList) {
+        NSLog(@"Final patient cancer status: %u", can->status);
     }
     
 }
 
--(Status)getStatusWithCheckVaccine:(KHVaccine *)checkVaccine andPatientVaccine:(KHVaccine *)patientVaccine {
+-(Status)getStatusWithCheckCancer:(KHCancer *)checkCancer andPatientCancer:(KHCancer *)patientCancer {
     
     Status newStatus = Nothing;
     
-    Status checkStatus = checkVaccine->status;
-    Status patientStatus = patientVaccine->status;
+    Status checkStatus = checkCancer->status;
+    Status patientStatus = patientCancer->status;
     
     NSLog(@"gettin new stat!");
     NSLog(@" check old vac stat: %u", checkStatus);
@@ -207,7 +233,8 @@
     if(checkStatus == Ask || patientStatus == Ask) {
         newStatus = Ask;
     }
-    if(checkStatus == Contraindicated || patientStatus == Contraindicated) {
+    if(checkStatus == Contraindicated || patientStatus == Contraindicated)
+    {
         newStatus = Contraindicated;
     }
     NSLog(@"got new stat!: %u", newStatus);
@@ -218,11 +245,11 @@
     for(int i=0; i<_checkBoxArray.count ; i++)
     {
         if ([_checkBoxArray[i] isOn]) {
-            //update riskfactor status
+            //update risnexkfactor status
             KHCancerRiskFactor *riskFactor = _MedRiskFactorArray[i];
             riskFactor.isActive = YES;
-            NSUInteger index = [_riskFactors.AllRFListForVaccine indexOfObject:riskFactor];
-            [_riskFactors.AllRFListForVaccine replaceObjectAtIndex:index withObject:riskFactor];
+            NSUInteger index = [_riskFactors.AllRFListForCancer indexOfObject:riskFactor];
+            [_riskFactors.AllRFListForCancer replaceObjectAtIndex:index withObject:riskFactor];
         }
     }
     
@@ -234,7 +261,7 @@
     
     NSLog(@"about to go get resultss!");
     //!!!: add segueid
-    [self performSegueWithIdentifier:@"" sender:self];
+    [self performSegueWithIdentifier:@"cancerMedQuestionToResults" sender:self];
 }
 - (IBAction)backButtonAction:(id)sender {
     

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KHCancerScreeningResultsViewController : UIViewController
+@interface KHCancerScreeningResultsViewController : UITableViewController
 
 @end

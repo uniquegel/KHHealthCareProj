@@ -26,6 +26,7 @@
 -(void)calculateResults;
 -(Status)getStatusWithCheckVaccine:(KHVaccine *)checkVaccine andPatientVaccine:(KHVaccine *)patientVaccine;
 
+
 @end
 
 
@@ -277,6 +278,6 @@
     [self calculateResults];
     
     NSLog(@"about to go get resultss!");
-    [self performSegueWithIdentifier:@"medQuestionToResults" sender:self];
+    [self performSegueWithIdentifier:@"vaccineMedQuestionToResults" sender:self];
 }
 @end

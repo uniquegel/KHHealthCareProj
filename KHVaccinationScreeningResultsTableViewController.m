@@ -18,6 +18,7 @@
 @property NSMutableArray *contraindicatedVacArray;
 @property NSMutableArray *consultPhyiscianVacArray;
 @property KHVaccine *vaccine;
+- (IBAction)barButtonTapped:(id)sender;
 
 @end
 
@@ -200,4 +201,8 @@
 
 
 
+- (IBAction)barButtonTapped:(id)sender {
+    [self performSegueWithIdentifier:@"vaccineResultToHome" sender:self];
+    
+}
 @end

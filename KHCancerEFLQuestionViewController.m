@@ -69,10 +69,10 @@
         riskFactorTitleLable.numberOfLines = 2;
         riskFactorTitleLable.lineBreakMode = NSLineBreakByWordWrapping;
         riskFactorTitleLable.textColor = [UIColor whiteColor];
-        KHCancerRiskFactor *vaccineRiskFactor=_EFLRiskFactorArray[i];
+        KHCancerRiskFactor *cancerRiskFactor=_EFLRiskFactorArray[i];
         NSLog(@"got vaccine!");
-        NSLog(@"name of riskfa: %@", vaccineRiskFactor.name);
-        riskFactorTitleLable.text = vaccineRiskFactor.name;
+        NSLog(@"name of riskfa: %@", cancerRiskFactor.name);
+        riskFactorTitleLable.text = cancerRiskFactor.name;
         
         //        riskFactorTitleLable.text = @"NEW RISK FACTOR";
         UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 60, 15, 30,30 )];

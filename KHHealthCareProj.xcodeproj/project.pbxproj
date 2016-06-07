@@ -22,6 +22,7 @@
 		637AA2271C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AA2261C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m */; };
 		63926AC91CAE4375003A0C86 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		7E0637841CFE6C1000866D07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E0637831CFE6C1000866D07 /* GoogleService-Info.plist */; };
+		7E067DD11D0529800095BE71 /* KHTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E067DD01D0529800095BE71 /* KHTabBarViewController.m */; };
 		7E4484A81C8BE61200850E58 /* KHSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484A71C8BE61200850E58 /* KHSignInViewController.m */; };
 		7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */; };
 		7E5AD01F1CF90C5000368E69 /* KHCancerMedQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5AD01E1CF90C5000368E69 /* KHCancerMedQuestionViewController.m */; };
@@ -87,6 +88,8 @@
 		637AA2261C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHMedicalConditionQuestionsViewController.m; sourceTree = "<group>"; };
 		7BB90ACF2BBBB12D060234F3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7E0637831CFE6C1000866D07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7E067DCF1D0529800095BE71 /* KHTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHTabBarViewController.h; sourceTree = "<group>"; };
+		7E067DD01D0529800095BE71 /* KHTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHTabBarViewController.m; sourceTree = "<group>"; };
 		7E4484A61C8BE61200850E58 /* KHSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignInViewController.h; sourceTree = "<group>"; };
 		7E4484A71C8BE61200850E58 /* KHSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignInViewController.m; sourceTree = "<group>"; };
 		7E4484AC1C8BEB4B00850E58 /* KHBasicQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBasicQuestionViewController.h; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 		637AA21C1C8BFD47005107AC /* Results */ = {
 			isa = PBXGroup;
 			children = (
+				7E067DCF1D0529800095BE71 /* KHTabBarViewController.h */,
+				7E067DD01D0529800095BE71 /* KHTabBarViewController.m */,
 				637AA2151C8B9F40005107AC /* KHResultsPageViewController.h */,
 				637AA2161C8B9F40005107AC /* KHResultsPageViewController.m */,
 				630569B91C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.h */,
@@ -577,6 +582,7 @@
 				7E9B48E61C81A3C30067B403 /* main.m in Sources */,
 				630569BE1C8C03D2001E8CB5 /* KHCardiometabolicScreeningResultsViewController.m in Sources */,
 				637AA2111C8B93A9005107AC /* KHCancer.m in Sources */,
+				7E067DD11D0529800095BE71 /* KHTabBarViewController.m in Sources */,
 				7E4484A81C8BE61200850E58 /* KHSignInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

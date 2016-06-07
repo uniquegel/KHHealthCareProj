@@ -10,6 +10,7 @@
 
 @interface KHCancerMedQuestionViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 - (IBAction)nextButton:(id)sender;
 
 @end

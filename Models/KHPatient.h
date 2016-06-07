@@ -28,7 +28,7 @@
 
 // lists
 @property (nonatomic, strong) NSMutableArray *vaccineList;
-@property (nonatomic, strong) NSArray *cancerList;
+@property (nonatomic, strong) NSMutableArray *cancerList;
 @property (nonatomic, strong) NSArray *riskFactorList;
 
 
