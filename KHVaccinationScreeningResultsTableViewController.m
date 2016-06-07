@@ -28,10 +28,21 @@
 
 
 - (void)viewDidLoad {
-    
-    [super viewDidLoad];
     _patient = [KHPatient sharedModel];
     _rfModel = [KHRiskFactorModel sharedModel];
+    NSLog(@"vaccine viewdidload");
+    if (!_patient.completedVaccineFlow) {
+//        UIView *coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+//        UIView *coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 800, 800)];
+//        coverView.backgroundColor = [UIColor whiteColor];
+//        [self.view addSubview:coverView];
+//        [self.view bringSubviewToFront:coverView];
+        [self.view setHidden:YES];
+        
+    }
+//    [self.tableView setHidden:YES];
+    [super viewDidLoad];
+    
     
     for (int i = 0; i<_rfModel.AllRFListForVaccine.count; i++) {
         KHVaccineRiskFactor *rf =_rfModel.AllRFListForVaccine[i];
@@ -80,6 +91,12 @@
 }
 
 
+- (void)viewDidAppear:(BOOL)animated {
+    
+    NSLog(@"vaccine viewdidappear!");
+//    [self.view removeFromSuperview];
+    
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"about to get rows in sec!");
@@ -202,7 +219,8 @@
 
 
 - (IBAction)barButtonTapped:(id)sender {
-    [self performSegueWithIdentifier:@"vaccineResultToHome" sender:self];
+    self.hidesBottomBarWhenPushed = YES;
+    [self performSegueWithIdentifier:@"vaccineResultToHomeSegue" sender:self];
     
 }
 @end

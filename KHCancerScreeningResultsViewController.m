@@ -30,10 +30,15 @@
 
 
 - (void)viewDidLoad {
+    NSLog(@"cancer viewdidload");
+    
     
     [super viewDidLoad];
     _patient = [KHPatient sharedModel];
     _rfModel = [KHRiskFactorModel sharedModel];
+    if (!_patient.completedCancerFlow) {
+        [self.view setHidden:YES];
+    }
     
     for (int i = 0; i<_rfModel.AllRFListForCancer.count; i++) {
         KHCancerRiskFactor *rf =_rfModel.AllRFListForCancer[i];
@@ -82,6 +87,11 @@
 }
 
 
+- (void)viewDidAppear:(BOOL)animated {
+ 
+    NSLog(@"cancer viewdidappear!");
+    
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"about to get rows in sec!");
@@ -206,8 +216,11 @@
 - (IBAction)backItemTapped:(id)sender {
     NSLog(@"button tapped!");
 //    NSLog(@"")
-    [self performSegueWithIdentifier:@"cancerResultToHome" sender:self];
+    self.hidesBottomBarWhenPushed = YES;
+    [self performSegueWithIdentifier:@"cancerResultToHomePageSegue" sender:self];
     
-//    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    
+    
 }
 @end

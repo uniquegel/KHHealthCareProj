@@ -12,6 +12,7 @@
 #import "KHRiskFactorModel.h"
 #import "KHVaccineRiskFactor.h"
 #import "KHVaccine.h"
+#import "KHTabBarViewController.h"
 
 @interface KHMedicalConditionQuestionsViewController()
 @property (nonatomic, strong) KHPatient *patient;
@@ -45,28 +46,6 @@
 
     
 }
-//
-//- (void)UISetup {
-//    
-//    _checkBoxArray = [[NSMutableArray alloc] init];
-//    for (int i = 0; i < [_riskFactors.vaccineMedRiskFactorList count] ; i++) {
-//        
-//        CGFloat width = self.view.frame.size.width;
-//        
-//        UIView *newSubView = [[UIView alloc] initWithFrame:CGRectMake(0, 200 + i*50, width, 50)];
-//        UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(40, 15, width - 80, 20)];
-//        KHVaccineRiskFactor *vaccineRiskFactor=_riskFactors.vaccineMedRiskFactorList[i];
-//        riskFactorTitleLable.text = vaccineRiskFactor.name;
-//        UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 80, 15, 30,30 )];
-//        
-//        [newSubView addSubview:mySwitch];
-//        [newSubView addSubview:riskFactorTitleLable];
-//        [_checkBoxArray addObject:mySwitch];
-//        
-//        [self.scrollView addSubview:newSubView];
-//        
-//    }
-//}
 
 - (void)UISetup {
     
@@ -90,8 +69,12 @@
         
         CGFloat width = self.view.frame.size.width;
         
+        
+        
         UIView *newSubView = [[UIView alloc] initWithFrame:CGRectMake(0, i*60, width, 60)];
-        UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, width - 110, 50)];
+        UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, width - 80, 50)];
+        riskFactorTitleLable.numberOfLines = 2;
+        
 //        newSubView.backgroundColor = [UIColor redColor];
 //        newSubView.layer.borderColor = [UIColor redColor].CGColor;
 //        newSubView.layer.borderWidth = 3.0f;
@@ -106,7 +89,7 @@
         riskFactorTitleLable.text = vaccineRiskFactor.name;
         
         //        riskFactorTitleLable.text = @"NEW RISK FACTOR";
-        UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 80, 15, 30,30 )];
+        UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 60, 15, 30,30 )];
         
         
         [newSubView addSubview:mySwitch];
@@ -116,6 +99,9 @@
         
         
     }
+    _scrollView.layer.masksToBounds=YES;
+    _scrollView.layer.borderColor=[[UIColor whiteColor]CGColor];
+    _scrollView.layer.borderWidth= 1.0f;
     [_scrollView addSubview:contentView];
     _scrollView.contentSize = contentView.frame.size;
     
@@ -252,11 +238,33 @@
 }
 
 
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //     Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"cancerMedQuestionToResults"])
+    {
+        // Get reference to the destination view controller
+        KHTabBarViewController *vc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+        vc.showTabNumber = 0;
+        
+    }
+    
+    
+}
+
+
 
 
 - (IBAction)backButtonAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 
 - (IBAction)nextPageButton:(id)sender {
@@ -276,8 +284,8 @@
     // begin calculating results
     NSLog(@"about to calculate results!");
     [self calculateResults];
-    
-    NSLog(@"about to go get resultss!");
+
+    _patient.completedVaccineFlow = YES;
     [self performSegueWithIdentifier:@"vaccineMedQuestionToResults" sender:self];
 }
 @end

@@ -20,6 +20,10 @@
     
     if (self) {
         
+        _collectedBasicInfo = NO;
+        _completedCancerFlow = NO;
+        _completedVaccineFlow = NO;
+        _completedCardiometabolicFlow = NO;
         // instantiate vaccine array
         KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];
         self.vaccineList = [NSMutableArray arrayWithArray:vaccineModel.vaccineList];

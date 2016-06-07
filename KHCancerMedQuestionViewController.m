@@ -67,7 +67,7 @@
         CGFloat width = self.view.frame.size.width;
         
         UIView *newSubView = [[UIView alloc] initWithFrame:CGRectMake(0, i*60, width, 60)];
-        UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, width - 80, 50)];
+        UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, width - 80, 50)];
         riskFactorTitleLable.numberOfLines = 2;
         riskFactorTitleLable.lineBreakMode = NSLineBreakByWordWrapping;
         riskFactorTitleLable.textColor = [UIColor whiteColor];
@@ -87,6 +87,9 @@
         
         
     }
+    _scrollView.layer.masksToBounds=YES;
+    _scrollView.layer.borderColor=[[UIColor whiteColor]CGColor];
+    _scrollView.layer.borderWidth= 1.0f;
     [_scrollView addSubview:contentView];
     _scrollView.contentSize = contentView.frame.size;
     
@@ -106,7 +109,7 @@
         KHTabBarViewController *vc = [segue destinationViewController];
         
         // Pass any objects to the view controller here, like...
-        vc.showTabNumber = 3;
+        vc.showTabNumber = 1;
         
     }
     
@@ -259,8 +262,7 @@
     NSLog(@"about to calculate results!");
     [self calculateResults];
     
-    NSLog(@"about to go get resultss!");
-    //!!!: add segueid
+    _patient.completedCancerFlow = YES;
     [self performSegueWithIdentifier:@"cancerMedQuestionToResults" sender:self];
 }
 - (IBAction)backButtonAction:(id)sender {

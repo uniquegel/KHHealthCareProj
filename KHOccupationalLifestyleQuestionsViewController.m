@@ -58,9 +58,12 @@
         
         CGFloat width = self.view.frame.size.width;
         
-        UIView *newSubView = [[UIView alloc] initWithFrame:CGRectMake(0, i*50, width, 100)];
-        UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(40, 15, width - 80, 40)];
+        
+        
+        UIView *newSubView = [[UIView alloc] initWithFrame:CGRectMake(0, i*60, width, 60)];
+        UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, width - 80, 50)];
         riskFactorTitleLable.numberOfLines = 2;
+        
         riskFactorTitleLable.textColor = [UIColor whiteColor];
         KHVaccineRiskFactor *vaccineRiskFactor=_occuRiskFactorArray[i];
         NSLog(@"got vaccine!");
@@ -68,7 +71,8 @@
         riskFactorTitleLable.text = vaccineRiskFactor.name;
         
 //        riskFactorTitleLable.text = @"NEW RISK FACTOR";
-        UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 80, 15, 30,30 )];
+        UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 60, 15, 30,30 )];
+        
         
         
         [newSubView addSubview:mySwitch];

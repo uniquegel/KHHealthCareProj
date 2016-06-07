@@ -24,6 +24,10 @@
 @property (nonatomic, strong) NSNumber *heightInch;
 @property (nonatomic, strong) NSNumber *heightFeet;
 @property (nonatomic, strong) NSNumber *weight;
+@property bool completedVaccineFlow;
+@property bool completedCancerFlow;
+@property bool completedCardiometabolicFlow;
+@property bool collectedBasicInfo;
 
 
 // lists
