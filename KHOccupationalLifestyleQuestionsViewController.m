@@ -18,6 +18,9 @@
 
 @property NSMutableArray *checkBoxArray;
 @property NSMutableArray *occuRiskFactorArray;
+
+- (void) adjustCheckboxToggle;
+
 - (IBAction)BackButtonAction:(id)sender;
 
 - (IBAction)nextButtonAction:(id)sender;
@@ -34,10 +37,16 @@
     
     [self UISetup];
     
+    
+}
+
+- (void) viewWillAppear:(BOOL)animated{
+    NSLog(@"view will appear!");
+    [self adjustCheckboxToggle];
 }
 
 - (void)UISetup {
-    
+    NSLog(@"setting up UI");
     UISwipeGestureRecognizer *gestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeHandler:)];
     [gestureRecognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
     [self.view addGestureRecognizer:gestureRecognizer];
@@ -91,6 +100,18 @@
     
 }
 
+- (void) adjustCheckboxToggle{
+    for(int i=0; i<_checkBoxArray.count ; i++)
+    {
+        KHVaccineRiskFactor *riskFactor = _occuRiskFactorArray[i];
+
+        if (riskFactor.isActive) {
+            [_checkBoxArray[i] setOn:YES];
+        }
+        
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -116,12 +137,19 @@
     //check which switch is on
     for(int i=0; i<_checkBoxArray.count ; i++)
     {
+        KHVaccineRiskFactor *riskFactor = _occuRiskFactorArray[i];
         if ([_checkBoxArray[i] isOn]) {
             //update riskfactor status
             
 //            NSMutableArray *tempMutableArray = [_riskFactors. mutableCopy];
-            KHVaccineRiskFactor *riskFactor = _occuRiskFactorArray[i];
+            
             riskFactor.isActive = YES;
+            NSUInteger index = [_riskFactors.AllRFListForVaccine indexOfObject:riskFactor];
+            
+            [_riskFactors.AllRFListForVaccine replaceObjectAtIndex:index withObject:riskFactor];
+        }
+        else{
+            riskFactor.isActive = NO;
             NSUInteger index = [_riskFactors.AllRFListForVaccine indexOfObject:riskFactor];
             
             [_riskFactors.AllRFListForVaccine replaceObjectAtIndex:index withObject:riskFactor];

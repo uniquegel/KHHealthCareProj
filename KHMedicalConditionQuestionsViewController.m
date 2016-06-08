@@ -25,6 +25,7 @@
 - (IBAction)backButtonAction:(id)sender;
 
 -(void)calculateResults;
+- (void) adjustAgeRiskFactorsActiveness;
 -(Status)getStatusWithCheckVaccine:(KHVaccine *)checkVaccine andPatientVaccine:(KHVaccine *)patientVaccine;
 
 
@@ -43,8 +44,13 @@
     _riskFactors = [KHRiskFactorModel sharedModel];
     
     [self UISetup];
-
     
+    
+}
+
+- (void) viewWillAppear:(BOOL)animated{
+    NSLog(@"view will appear!");
+    [self adjustCheckboxToggle];
 }
 
 - (void)UISetup {
@@ -53,7 +59,6 @@
     [gestureRecognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
     [self.view addGestureRecognizer:gestureRecognizer];
     
-    NSLog(@"vacctineRiskFactor list: %@", _riskFactors.AllRFListForVaccine);
     _medRiskFactorArray = [[NSMutableArray alloc] init];
     //get Occu risk factors only
     for (KHVaccineRiskFactor *rf in _riskFactors.AllRFListForVaccine) {
@@ -75,17 +80,15 @@
         UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, width - 80, 50)];
         riskFactorTitleLable.numberOfLines = 2;
         
-//        newSubView.backgroundColor = [UIColor redColor];
-//        newSubView.layer.borderColor = [UIColor redColor].CGColor;
-//        newSubView.layer.borderWidth = 3.0f;
-//        riskFactorTitleLable.backgroundColor = [UIColor blueColor];
+        //        newSubView.backgroundColor = [UIColor redColor];
+        //        newSubView.layer.borderColor = [UIColor redColor].CGColor;
+        //        newSubView.layer.borderWidth = 3.0f;
+        //        riskFactorTitleLable.backgroundColor = [UIColor blueColor];
         
         riskFactorTitleLable.numberOfLines = 2;
         riskFactorTitleLable.lineBreakMode = NSLineBreakByWordWrapping;
         riskFactorTitleLable.textColor = [UIColor whiteColor];
         KHVaccineRiskFactor *vaccineRiskFactor=_medRiskFactorArray[i];
-        NSLog(@"got vaccine!");
-        NSLog(@"name of riskfa: %@", vaccineRiskFactor.name);
         riskFactorTitleLable.text = vaccineRiskFactor.name;
         
         //        riskFactorTitleLable.text = @"NEW RISK FACTOR";
@@ -106,105 +109,90 @@
     _scrollView.contentSize = contentView.frame.size;
     
 }
-
-
--(void)initializing {
-    
-    self.patient = [KHPatient sharedModel];
-    
-//    KHRiskFactorModel *riskFactorModel = [KHRiskFactorModel sharedModel];
-    
-//    self.vaccineRiskFactorList = riskFactorModel.vaccineMedRiskFactorList;
-    //self.cancerRiskFactorList = riskFactorModel.cancerRiskFactorList;
-    
+- (void) adjustCheckboxToggle{
+    for(int i=0; i<_checkBoxArray.count ; i++)
+    {
+        KHVaccineRiskFactor *riskFactor = _medRiskFactorArray[i];
+        
+        if (riskFactor.isActive) {
+            [_checkBoxArray[i] setOn:YES];
+        }
+        
+    }
 }
 
 
 
 -(void)calculateResults {
-    
-    
-//    NSInteger numVaccineRiskFactors = [self.vaccineRiskFactorList count];
-//    NSLog(@"Num risk factors = %ld\n", (long)numVaccineRiskFactors);
-    NSLog(@"patien current info");
-    NSLog(@"num risk factors: %ld", (long)self.patient->numRiskFactors);
-    NSLog(@"age %ld", (long)self.patient.age);
-    NSLog(@"first, last name: %@ %@", _patient.firstName, _patient.lastName);
-    
-    
+    self.patient->numOfActiveRiskFactors = 0;
     KHVaccineRiskFactor *firstRF = [self.riskFactors.AllRFListForVaccine objectAtIndex:0];
     
     self.patient.vaccineList = firstRF.vaccineList;
     for (KHVaccine *vac in self.patient.vaccineList) {
         vac->status = Nothing;
-//        NSLog(@"vac stat: %u", vac->status);
+        //        NSLog(@"vac stat: %u", vac->status);
     }
     
-    // For each risk factor
-    for(int i = 0; i < _riskFactors.AllRFListForVaccine.count; i++) {
-        
-        // get current vaccine risk factor
-        KHVaccineRiskFactor *vaccineRiskFactor = [self.riskFactors.AllRFListForVaccine objectAtIndex:i];
-        
-//        NSLog(@"Risk factor name = %@\n", accineRiskFactor.name);
-        
-        // if vaccine risk factor is active, check it against  patient's current vaccine list
-        // if not active, patient's current vaccien list remains the same
-        if(vaccineRiskFactor.isActive) {
-            NSLog(@"inside isAvtive!");
-            
-            
+    for (KHVaccineRiskFactor *vrf in _riskFactors.AllRFListForVaccine) {
+        if (vrf.isActive) {
             // increment numRiskFactors
-            self.patient->numRiskFactors++;
-            
-            NSLog(@"A");
-            NSArray *checkVaccineList = vaccineRiskFactor.vaccineList;
+            self.patient->numOfActiveRiskFactors++;
+            NSArray *checkVaccineList = vrf.vaccineList;
             NSArray *patientVaccineList = self.patient.vaccineList;
-            NSLog(@"B");
             
             // for each vaccine under this risk factor
             for(int j = 0; j < checkVaccineList.count; j++) {
-                NSLog(@"C ");
-                
-                NSLog(@" patient count : %lu", (unsigned long)patientVaccineList.count);
-                NSLog(@" check count : %lu", (unsigned long)checkVaccineList.count);
                 //get this risk factor vaccine
-                
                 // and its counterpart in patient
                 KHVaccine *checkVaccine = [checkVaccineList objectAtIndex:j];
                 KHVaccine *patientVaccine = [patientVaccineList objectAtIndex:j];
                 
-                
-                NSLog(@"E");
                 // compare vaccine values
                 Status newStatus = [self getStatusWithCheckVaccine:checkVaccine
                                                  andPatientVaccine:patientVaccine];
                 
                 // update patient vaccine value
                 patientVaccine->status = newStatus;
-                NSLog(@"F");
                 NSMutableArray *array = [self.patient.vaccineList copy];
                 patientVaccine = array[j];
-                
                 [self.patient.vaccineList replaceObjectAtIndex:j withObject:patientVaccine];
-                NSLog(@"G");
-//                NSLog(@"Active Riskfactor: Vaccine new status = %u\n", patientVaccine->status);
-                NSLog(@"D");
             }
-            
-            
-            
         }
-        
     }
-    NSLog(@"done calculating results!");
-    
-    
-    for (KHVaccine *vc in self.patient.vaccineList) {
-        NSLog(@"Final patient vaccine status: %u", vc->status);
-    }
-    
 }
+
+- (void) adjustAgeRiskFactorsActiveness{
+    //set age risktor to active
+    for (KHVaccineRiskFactor *vrf in _riskFactors.AllRFListForVaccine) {
+        if ([vrf.type isEqualToString:@"Age"]) {
+            //parse key name
+            NSString *nameString = vrf.name;
+            if ([nameString containsString:@"-"]) {
+                NSString *lowerboundString;
+                NSString *upperboundString;
+                lowerboundString = [[nameString componentsSeparatedByString:@"-"] objectAtIndex:0];
+                upperboundString = [[nameString componentsSeparatedByString:@"-"] objectAtIndex:1];
+                if (self.patient.age>lowerboundString.integerValue && self.patient.age<upperboundString.integerValue) {
+                    vrf.isActive = YES;
+                }
+                else{
+                    vrf.isActive = NO;
+                }
+            }
+            else{
+                // FIXME: in the future change to generic method of parsing
+                NSString *ageString = [nameString substringFromIndex:1];
+                if (self.patient.age>ageString.integerValue) {
+                    vrf.isActive = YES;
+                }
+                else{
+                    vrf.isActive = NO;
+                }
+            }
+        }
+    }
+}
+
 
 -(Status)getStatusWithCheckVaccine:(KHVaccine *)checkVaccine andPatientVaccine:(KHVaccine *)patientVaccine {
     
@@ -212,14 +200,10 @@
     
     Status checkStatus = checkVaccine->status;
     Status patientStatus = patientVaccine->status;
-    
-    NSLog(@"gettin new stat!");
-    NSLog(@" check old vac stat: %u", checkStatus);
-    NSLog(@" patient old vac stat: %u", patientStatus);
     // Scenatio 1: recommended + recommended + numRF>1 = indicated
     if(checkStatus == Recommended || patientStatus == Recommended) {
         // check if recommended should become indicated
-        if(self.patient->numRiskFactors > 1)
+        if(self.patient->numOfActiveRiskFactors > 1)
             newStatus = Indicated;
     }
     // Scenatio 2: recommended + indicated = indicated
@@ -233,7 +217,6 @@
     if(checkStatus == Contraindicated || patientStatus == Contraindicated) {
         newStatus = Contraindicated;
     }
-    NSLog(@"got new stat!: %u", newStatus);
     return newStatus;
 }
 
@@ -270,21 +253,39 @@
 - (IBAction)nextPageButton:(id)sender {
     for(int i=0; i<_checkBoxArray.count ; i++)
     {
+        KHVaccineRiskFactor *riskFactor = _medRiskFactorArray[i];
         if ([_checkBoxArray[i] isOn]) {
             //update riskfactor status
-            KHVaccineRiskFactor *riskFactor = _medRiskFactorArray[i];
+            
             riskFactor.isActive = YES;
             NSUInteger index = [_riskFactors.AllRFListForVaccine indexOfObject:riskFactor];
+            [_riskFactors.AllRFListForVaccine replaceObjectAtIndex:index withObject:riskFactor];
+        }
+        else{
+            riskFactor.isActive = NO;
+            NSUInteger index = [_riskFactors.AllRFListForVaccine indexOfObject:riskFactor];
+            
             [_riskFactors.AllRFListForVaccine replaceObjectAtIndex:index withObject:riskFactor];
         }
     }
     
     
     
-    // begin calculating results
+    [self adjustAgeRiskFactorsActiveness];
     NSLog(@"about to calculate results!");
+    NSLog(@"age of patient: %ld",(long)self.patient.age );
+    for (KHVaccineRiskFactor *vrf in _riskFactors.AllRFListForVaccine) {
+        if (vrf.isActive) {
+            
+            NSLog(@"ACTIVE VACCINE RISKFACTOR:[%@] of type [%@]", vrf.name, vrf.type);
+        }
+    }
+    // begin calculating results
     [self calculateResults];
-
+    
+    
+    // output all active riskfactor!
+    
     _patient.completedVaccineFlow = YES;
     [self performSegueWithIdentifier:@"vaccineMedQuestionToResults" sender:self];
 }

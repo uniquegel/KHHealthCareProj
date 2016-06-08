@@ -10,7 +10,7 @@
 #import "KHVaccine.h"
 
 @interface KHPatient : NSObject{
-    @public NSInteger numRiskFactors;
+    @public NSInteger numOfActiveRiskFactors;
 }
 
 

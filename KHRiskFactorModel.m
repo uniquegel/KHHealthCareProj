@@ -16,6 +16,8 @@
 
 @interface KHRiskFactorModel ()
 @property NSDictionary *dict;
+@property NSMutableArray *cancerAgeRFKeyArray;
+@property NSMutableArray *vaccineAgeRFKeyArray;
 @property(strong, nonatomic) FIRDatabaseReference *ref;
 
 @end
@@ -43,6 +45,10 @@
             
             _AllRFListForVaccine = [[NSMutableArray alloc] init];
             _AllRFListForCancer = [[NSMutableArray alloc] init];
+            _vaccineAgeRFKeyArray = [[NSMutableArray alloc] init];
+            _cancerAgeRFKeyArray = [[NSMutableArray alloc] init];
+            
+            
             
             
             //Vaccine Risk factors
@@ -56,6 +62,7 @@
             
             //For Each Catagory:
             for (int k = 0; k< arrayForAllCateKeys.count; k++) {
+                
                 //getting all risk factors under this category
                 //                NSLog(@"Getting all rf under cate 1!");
                 
@@ -70,6 +77,9 @@
                 
                 //For each Risk Factor under this category
                 for (int i =0; i<RFKeysForOneCategoryArray.count; i++) {
+                    if ([arrayForAllCateKeys[k] isEqualToString:@"Age"]) {
+                        _vaccineAgeRFKeyArray = [RFKeysForOneCategoryArray mutableCopy];
+                    }
                     //instantiate risk factor then add to list
                     //                    NSLog(@"instantiate a risk factor 1!");
                     KHVaccineRiskFactor *rf= [[KHVaccineRiskFactor alloc] initWithName:RFKeysForOneCategoryArray[i] andType:arrayForAllCateKeys[k]];
@@ -157,6 +167,11 @@
                 
                 //                NSLog(@"Getting all rf under cate 2!");
                 for (int i =0; i<CancerRFKeysForOneCategoryArray.count; i++) {
+                    
+                    if ([arrayForAllCateKeys[k] isEqualToString:@"Age"]) {
+                        _cancerAgeRFKeyArray = [CancerRFKeysForOneCategoryArray mutableCopy];
+                    }
+                    
                     //instantiate risk factor then add to list
                     NSLog(@"instantiate a risk factor 1!");
                     KHCancerRiskFactor *rf= [[KHCancerRiskFactor alloc] initWithName:CancerRFKeysForOneCategoryArray[i] andType:arrayForAllCancerCateKeys[k]];

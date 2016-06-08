@@ -34,6 +34,10 @@
     // Do any additional setup after loading the view.
 }
 
+- (void) viewWillAppear:(BOOL)animated{
+    NSLog(@"view will appear!");
+    [self adjustCheckboxToggle];
+}
 
 
 
@@ -92,6 +96,19 @@
     _scrollView.contentSize = contentView.frame.size;
     
 }
+
+- (void) adjustCheckboxToggle{
+    for(int i=0; i<_checkBoxArray.count ; i++)
+    {
+        KHCancerRiskFactor *riskFactor = _EFLRiskFactorArray[i];
+        
+        if (riskFactor.isActive) {
+            [_checkBoxArray[i] setOn:YES];
+        }
+        
+    }
+}
+
 /*
 */
 
