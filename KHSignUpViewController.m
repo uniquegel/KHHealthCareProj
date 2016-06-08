@@ -9,8 +9,11 @@
 #import "KHSignUpViewController.h"
 #import "UIViewController+Alerts.h"
 @import FirebaseAuth;
+@import FirebaseDatabase;
 
-@interface KHSignUpViewController ()
+@interface KHSignUpViewController () {
+	FIRDatabaseReference *_FIRRef;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameOutlet;
 @property (weak, nonatomic) IBOutlet UITextField *emailOutlet;
@@ -25,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+	_FIRRef = [[FIRDatabase database] reference];
     // Do any additional setup after loading the view.
 }
 
@@ -57,7 +60,14 @@
         //We add buttons to the alert controller by creating UIAlertActions:
         UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
                                                            style:UIAlertActionStyleDefault
-                                                         handler:nil];
+								   
+														 handler:^(UIAlertAction * _Nonnull action) {
+															 [self dismissViewControllerAnimated:YES completion:^{
+																 [self dismissViewControllerAnimated:YES completion:nil];
+															 }];
+															 
+														 }];
+		
         [alertController addAction:actionOk];
         [self presentViewController:alertController animated:YES completion:nil];
         return;
@@ -69,19 +79,16 @@
         [[FIRAuth auth]
          createUserWithEmail:_emailOutlet.text
          password:_passwordOutlet.text
-         completion:^(FIRUser *_Nullable user,
-                      NSError *_Nullable error) {
+         completion:^(FIRUser *_Nullable user,NSError *_Nullable error) {
              // [START_EXCLUDE]
              [self hideSpinner:^{
                  if (error) {
-                     [self
-                      showMessagePrompt:
-                      error
-                      .localizedDescription];
+                     [self showMessagePrompt: error.localizedDescription];
                      return;
                  }
-                 NSString *msg = [NSString stringWithFormat:@"%@ created",
-                                  user.email];
+                 NSString *msg = [NSString stringWithFormat:@"%@ created", user.email];
+				 //create usernode
+				 [self createUserNode:user];
                  [self showMessagePrompt:msg];
              }];
              // [END_EXCLUDE]
@@ -89,6 +96,18 @@
         // [END create_user]
     }];
     
+}
+
+- (void)createUserNode:(FIRUser *)user {
+	[[[[_FIRRef child:@"users"] child:user.uid] child:@"userid"] setValue:user.uid withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+		if (error) {
+			NSLog(@"Error creating user node: %@", error.localizedDescription);
+		} else {
+			NSLog(@"Successfully created user node: %@", ref);
+			[[[[_FIRRef child:@"users"] child:user.uid] child:@"username"] setValue:_userNameOutlet.text];
+			[[[[_FIRRef child:@"users"] child:user.uid] child:@"email"] setValue:user.email];
+		}
+	}];
 }
 
 - (IBAction)bgButtonTapped:(id)sender {
