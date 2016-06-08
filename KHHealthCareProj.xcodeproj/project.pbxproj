@@ -12,6 +12,7 @@
 		28F7CD2DBCFC3E34BC4AAB9F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3C300B2C61D0E74582C2F7 /* AssetsLibrary.framework */; };
 		3C5D584B1D07BA1300E228A8 /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D584A1D07BA1300E228A8 /* MaterialView.m */; };
 		3C5D584E1D07BC6200E228A8 /* MaterialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D584D1D07BC6200E228A8 /* MaterialButton.m */; };
+		3C5D58511D07BF7D00E228A8 /* MaterialTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58501D07BF7D00E228A8 /* MaterialTextField.m */; };
 		40B7BDF22C3EF756D74F5D09 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D925CAC3C0E2943DBB8CEE00 /* CoreText.framework */; };
 		43B9C46921FDA10E81CF5F7A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42620321EE9D70996C1CB63C /* BuddyBuildSDK.framework */; };
 		630569BB1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */; };
@@ -76,6 +77,8 @@
 		3C5D584A1D07BA1300E228A8 /* MaterialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialView.m; sourceTree = "<group>"; };
 		3C5D584C1D07BC6200E228A8 /* MaterialButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialButton.h; sourceTree = "<group>"; };
 		3C5D584D1D07BC6200E228A8 /* MaterialButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialButton.m; sourceTree = "<group>"; };
+		3C5D584F1D07BF7D00E228A8 /* MaterialTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialTextField.h; sourceTree = "<group>"; };
+		3C5D58501D07BF7D00E228A8 /* MaterialTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialTextField.m; sourceTree = "<group>"; };
 		42620321EE9D70996C1CB63C /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		4FDC2515A8130A96CE1DCB24 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		630569B91C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerScreeningResultsViewController.h; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 				3C5D584A1D07BA1300E228A8 /* MaterialView.m */,
 				3C5D584C1D07BC6200E228A8 /* MaterialButton.h */,
 				3C5D584D1D07BC6200E228A8 /* MaterialButton.m */,
+				3C5D584F1D07BF7D00E228A8 /* MaterialTextField.h */,
+				3C5D58501D07BF7D00E228A8 /* MaterialTextField.m */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -636,6 +641,7 @@
 			files = (
 				630569CA1C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m in Sources */,
 				637AA21A1C8BD1A1005107AC /* KHRiskFactorModel.m in Sources */,
+				3C5D58511D07BF7D00E228A8 /* MaterialTextField.m in Sources */,
 				3C5D584E1D07BC6200E228A8 /* MaterialButton.m in Sources */,
 				7E9B48F21C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld in Sources */,
 				3C5D584B1D07BA1300E228A8 /* MaterialView.m in Sources */,
