@@ -2,7 +2,7 @@
 //  KHSignUpViewController.h
 //  KHHealthCareProj
 //
-//  Created by David Richardson on 3/31/16.
+//  Created by Ryan Lu on 6/7/16.
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
