@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024F7B701C5A43A2ACF26E0D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21FDB519DB6150C52EFE6F4 /* QuartzCore.framework */; };
+		21B0CE185325FC28741DD30A /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C076BF6CF45518781B147688 /* CoreVideo.framework */; };
+		28F7CD2DBCFC3E34BC4AAB9F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3C300B2C61D0E74582C2F7 /* AssetsLibrary.framework */; };
+		40B7BDF22C3EF756D74F5D09 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D925CAC3C0E2943DBB8CEE00 /* CoreText.framework */; };
+		43B9C46921FDA10E81CF5F7A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42620321EE9D70996C1CB63C /* BuddyBuildSDK.framework */; };
 		630569BB1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */; };
 		630569C71C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569C61C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m */; };
 		630569CA1C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569C91C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m */; };
@@ -21,6 +26,8 @@
 		63926AC91CAE4375003A0C86 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		7E0637841CFE6C1000866D07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E0637831CFE6C1000866D07 /* GoogleService-Info.plist */; };
 		7E067DD11D0529800095BE71 /* KHTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E067DD01D0529800095BE71 /* KHTabBarViewController.m */; };
+		7E0CD8401D07A7CC001CA147 /* KHSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CD83F1D07A7CC001CA147 /* KHSignUpViewController.m */; };
+		7E0CD8431D07A830001CA147 /* UIViewController+Alerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CD8421D07A830001CA147 /* UIViewController+Alerts.m */; };
 		7E4484A81C8BE61200850E58 /* KHSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484A71C8BE61200850E58 /* KHSignInViewController.m */; };
 		7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */; };
 		7E5AD01F1CF90C5000368E69 /* KHCancerMedQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5AD01E1CF90C5000368E69 /* KHCancerMedQuestionViewController.m */; };
@@ -36,6 +43,10 @@
 		7E9B490D1C81A3C30067B403 /* KHHealthCareProjUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B490C1C81A3C30067B403 /* KHHealthCareProjUITests.m */; };
 		7EDBB60C1CC61D2400407498 /* KHBasicQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */; };
 		8E20E945F6139522147C66A6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC2700DDC84D5A1A9A56060 /* Pods.framework */; };
+		BAD817B937324419DC5855E7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CAE75FB675FAA6AFB8E57D8 /* CoreTelephony.framework */; };
+		CB45010646C25C31448EA890 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDC2515A8130A96CE1DCB24 /* CoreMedia.framework */; };
+		DA41ED6E9FF4A97C9FD75692 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBDC4B93B7C0669E117E7CF /* AVFoundation.framework */; };
+		DCC963A770212F9371CBC790 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF2FFB0DA55197299280944 /* SystemConfiguration.framework */; };
 		EAD7BC461C869D26002AEBC8 /* KHPatient.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD7BC451C869D26002AEBC8 /* KHPatient.m */; };
 		EAD7BC491C86A26B002AEBC8 /* KHVaccine.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD7BC481C86A26B002AEBC8 /* KHVaccine.m */; };
 		EAD7BC4C1C86A320002AEBC8 /* KHVaccineRiskFactor.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD7BC4B1C86A320002AEBC8 /* KHVaccineRiskFactor.m */; };
@@ -59,6 +70,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42620321EE9D70996C1CB63C /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
+		4FDC2515A8130A96CE1DCB24 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		630569B91C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerScreeningResultsViewController.h; sourceTree = "<group>"; };
 		630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHCancerScreeningResultsViewController.m; sourceTree = "<group>"; };
 		630569C51C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHVaccinationScreeningResultsTableViewController.h; sourceTree = "<group>"; };
@@ -82,9 +95,15 @@
 		637AA2251C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHMedicalConditionQuestionsViewController.h; sourceTree = "<group>"; };
 		637AA2261C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHMedicalConditionQuestionsViewController.m; sourceTree = "<group>"; };
 		7BB90ACF2BBBB12D060234F3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7BBDC4B93B7C0669E117E7CF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7CAE75FB675FAA6AFB8E57D8 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		7E0637831CFE6C1000866D07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7E067DCF1D0529800095BE71 /* KHTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHTabBarViewController.h; sourceTree = "<group>"; };
 		7E067DD01D0529800095BE71 /* KHTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHTabBarViewController.m; sourceTree = "<group>"; };
+		7E0CD83E1D07A7CC001CA147 /* KHSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignUpViewController.h; sourceTree = "<group>"; };
+		7E0CD83F1D07A7CC001CA147 /* KHSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignUpViewController.m; sourceTree = "<group>"; };
+		7E0CD8411D07A830001CA147 /* UIViewController+Alerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alerts.h"; sourceTree = "<group>"; };
+		7E0CD8421D07A830001CA147 /* UIViewController+Alerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alerts.m"; sourceTree = "<group>"; };
 		7E4484A61C8BE61200850E58 /* KHSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignInViewController.h; sourceTree = "<group>"; };
 		7E4484A71C8BE61200850E58 /* KHSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignInViewController.m; sourceTree = "<group>"; };
 		7E4484AC1C8BEB4B00850E58 /* KHBasicQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBasicQuestionViewController.h; sourceTree = "<group>"; };
@@ -110,12 +129,17 @@
 		7E9B49081C81A3C30067B403 /* KHHealthCareProjUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KHHealthCareProjUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9B490C1C81A3C30067B403 /* KHHealthCareProjUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KHHealthCareProjUITests.m; sourceTree = "<group>"; };
 		7E9B490E1C81A3C30067B403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB3C300B2C61D0E74582C2F7 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		BFF2FFB0DA55197299280944 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C076BF6CF45518781B147688 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		D925CAC3C0E2943DBB8CEE00 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		EAD7BC441C869D26002AEBC8 /* KHPatient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHPatient.h; path = Models/KHPatient.h; sourceTree = "<group>"; };
 		EAD7BC451C869D26002AEBC8 /* KHPatient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHPatient.m; path = Models/KHPatient.m; sourceTree = "<group>"; };
 		EAD7BC471C86A26B002AEBC8 /* KHVaccine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHVaccine.h; path = Models/KHVaccine.h; sourceTree = "<group>"; };
 		EAD7BC481C86A26B002AEBC8 /* KHVaccine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHVaccine.m; path = Models/KHVaccine.m; sourceTree = "<group>"; };
 		EAD7BC4A1C86A320002AEBC8 /* KHVaccineRiskFactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHVaccineRiskFactor.h; path = Models/KHVaccineRiskFactor.h; sourceTree = "<group>"; };
 		EAD7BC4B1C86A320002AEBC8 /* KHVaccineRiskFactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHVaccineRiskFactor.m; path = Models/KHVaccineRiskFactor.m; sourceTree = "<group>"; };
+		F21FDB519DB6150C52EFE6F4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F436FCC6A7280DC2F9723567 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FCC2700DDC84D5A1A9A56060 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,6 +150,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E20E945F6139522147C66A6 /* Pods.framework in Frameworks */,
+				43B9C46921FDA10E81CF5F7A /* BuddyBuildSDK.framework in Frameworks */,
+				28F7CD2DBCFC3E34BC4AAB9F /* AssetsLibrary.framework in Frameworks */,
+				40B7BDF22C3EF756D74F5D09 /* CoreText.framework in Frameworks */,
+				BAD817B937324419DC5855E7 /* CoreTelephony.framework in Frameworks */,
+				DCC963A770212F9371CBC790 /* SystemConfiguration.framework in Frameworks */,
+				024F7B701C5A43A2ACF26E0D /* QuartzCore.framework in Frameworks */,
+				DA41ED6E9FF4A97C9FD75692 /* AVFoundation.framework in Frameworks */,
+				CB45010646C25C31448EA890 /* CoreMedia.framework in Frameworks */,
+				21B0CE185325FC28741DD30A /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +254,8 @@
 			children = (
 				7E4484A61C8BE61200850E58 /* KHSignInViewController.h */,
 				7E4484A71C8BE61200850E58 /* KHSignInViewController.m */,
+				7E0CD83E1D07A7CC001CA147 /* KHSignUpViewController.h */,
+				7E0CD83F1D07A7CC001CA147 /* KHSignUpViewController.m */,
 			);
 			name = "Sign In Page";
 			sourceTree = "<group>";
@@ -228,10 +263,10 @@
 		637AA21E1C8BFDAD005107AC /* Questions */ = {
 			isa = PBXGroup;
 			children = (
-				7E76140E1D06A11E00B1E6E0 /* Nutrition Flow */,
-				7E76140D1D06A10D00B1E6E0 /* Cardiometabolic Flow */,
 				7E4484AC1C8BEB4B00850E58 /* KHBasicQuestionViewController.h */,
 				7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */,
+				7E76140E1D06A11E00B1E6E0 /* Nutrition Flow */,
+				7E76140D1D06A10D00B1E6E0 /* Cardiometabolic Flow */,
 				7E5AD0191CF90C0700368E69 /* Cancer Flow */,
 				7E5AD0181CF90C0100368E69 /* Vaccine Flow */,
 			);
@@ -242,6 +277,15 @@
 			isa = PBXGroup;
 			children = (
 				FCC2700DDC84D5A1A9A56060 /* Pods.framework */,
+				42620321EE9D70996C1CB63C /* BuddyBuildSDK.framework */,
+				AB3C300B2C61D0E74582C2F7 /* AssetsLibrary.framework */,
+				D925CAC3C0E2943DBB8CEE00 /* CoreText.framework */,
+				7CAE75FB675FAA6AFB8E57D8 /* CoreTelephony.framework */,
+				BFF2FFB0DA55197299280944 /* SystemConfiguration.framework */,
+				F21FDB519DB6150C52EFE6F4 /* QuartzCore.framework */,
+				7BBDC4B93B7C0669E117E7CF /* AVFoundation.framework */,
+				4FDC2515A8130A96CE1DCB24 /* CoreMedia.framework */,
+				C076BF6CF45518781B147688 /* CoreVideo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -355,6 +399,8 @@
 		7E9B48E41C81A3C30067B403 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7E0CD8411D07A830001CA147 /* UIViewController+Alerts.h */,
+				7E0CD8421D07A830001CA147 /* UIViewController+Alerts.m */,
 				7E9B48E51C81A3C30067B403 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -577,6 +623,7 @@
 				630569BB1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m in Sources */,
 				EAD7BC4C1C86A320002AEBC8 /* KHVaccineRiskFactor.m in Sources */,
 				EAD7BC461C869D26002AEBC8 /* KHPatient.m in Sources */,
+				7E0CD8401D07A7CC001CA147 /* KHSignUpViewController.m in Sources */,
 				637AA2141C8B9530005107AC /* KHCancerRiskFactor.m in Sources */,
 				63926AC91CAE4375003A0C86 /* (null) in Sources */,
 				630569C71C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m in Sources */,
@@ -590,6 +637,7 @@
 				637AA2211C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m in Sources */,
 				7E5AD01F1CF90C5000368E69 /* KHCancerMedQuestionViewController.m in Sources */,
 				7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */,
+				7E0CD8431D07A830001CA147 /* UIViewController+Alerts.m in Sources */,
 				7E9B48E61C81A3C30067B403 /* main.m in Sources */,
 				637AA2111C8B93A9005107AC /* KHCancer.m in Sources */,
 				7E067DD11D0529800095BE71 /* KHTabBarViewController.m in Sources */,
@@ -737,6 +785,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = KHHealthCareProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProj;
@@ -753,6 +805,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = KHHealthCareProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProj;

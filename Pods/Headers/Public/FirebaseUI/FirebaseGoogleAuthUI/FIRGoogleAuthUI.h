@@ -1,1 +1,0 @@
-../../../../FirebaseUI/FirebaseUIFrameworks/Google/Frameworks/FirebaseGoogleAuthUI.framework/Headers/FIRGoogleAuthUI.h

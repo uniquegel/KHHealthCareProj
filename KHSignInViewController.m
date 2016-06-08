@@ -10,7 +10,8 @@
 #import <Foundation/Foundation.h>
 #import <Firebase/Firebase.h>
 #import "KHRiskFactorModel.h"
-@import Firebase;
+#import "UIViewController+Alerts.h"
+@import FirebaseAuth;
 
 @interface KHSignInViewController ()
 @property NSDictionary *dict;
@@ -19,6 +20,7 @@
 @property NSArray *ageRangeRiskFactors;
 @property KHRiskFactorModel *rfModel;
 @property(strong, nonatomic) FIRDatabaseReference *ref;
+- (IBAction)signupButtonTapped:(id)sender;
 
 @end
 
@@ -82,12 +84,23 @@ FIRDatabaseHandle _refHandle;
 }
 
 - (void)validateInformation {
-    
-    NSString *username = _usernameTF.text;
-    NSString *password = _passwordTF.text;
-    
-    // if valid
-    [self performSegueWithIdentifier:@"signInToHomePage" sender:self];
+    NSLog(@"about to siginin!");
+    [self showSpinner:^{
+    [[FIRAuth auth] signInWithEmail:_usernameTF.text
+                           password:_passwordTF.text
+                         completion:^(FIRUser *user, NSError *error) {
+                             // [START_EXCLUDE]
+                             [self hideSpinner:^{
+                                 if (error) {
+                                     [self showMessagePrompt:error.localizedDescription];
+                                     return;
+                                 }
+                                 [self performSegueWithIdentifier:@"signInToHomePage" sender:self];
+                             }];
+                             // [END_EXCLUDE]
+                         }];
+    // [END headless_email_auth]
+    }];
     
 }
 
@@ -98,12 +111,17 @@ FIRDatabaseHandle _refHandle;
 - (IBAction)loginButton:(id)sender {
     
     // validate information
+    NSLog(@"login tapped!");
     [self validateInformation];
     
 }
 
 - (IBAction)skipSigninButton:(id)sender {
     [self performSegueWithIdentifier:@"signInToHomePage" sender:self];
+    
+}
+- (IBAction)signupButtonTapped:(id)sender {
+    [self performSegueWithIdentifier:@"signIntoSignUpSegue" sender:self];
     
 }
 @end

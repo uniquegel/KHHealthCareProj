@@ -8,6 +8,7 @@
 
 #import "KHAppDelegate.h"
 #import "KHSignInViewController.h"
+#import <BuddyBuildSDK/BuddyBuildSDK.h>
 
 @import Firebase;
 
@@ -20,6 +21,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [BuddyBuildSDK setup];
+    
     // Override point for customization after application launch.
     
     //Firebase Configuration
