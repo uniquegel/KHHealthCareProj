@@ -69,13 +69,13 @@
         riskFactorTitleLable.numberOfLines = 2;
         riskFactorTitleLable.lineBreakMode = NSLineBreakByWordWrapping;
         riskFactorTitleLable.textColor = [UIColor whiteColor];
-        KHCancerRiskFactor *vaccineRiskFactor=_EFLRiskFactorArray[i];
+        KHCancerRiskFactor *cancerRiskFactor=_EFLRiskFactorArray[i];
         NSLog(@"got vaccine!");
-        NSLog(@"name of riskfa: %@", vaccineRiskFactor.name);
-        riskFactorTitleLable.text = vaccineRiskFactor.name;
+        NSLog(@"name of riskfa: %@", cancerRiskFactor.name);
+        riskFactorTitleLable.text = cancerRiskFactor.name;
         
         //        riskFactorTitleLable.text = @"NEW RISK FACTOR";
-        UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 60, 15, 30,30 )];
+        UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 60, 10, 30,30 )];
         
         
         [newSubView addSubview:mySwitch];
@@ -85,6 +85,9 @@
         
         
     }
+    _scrollView.layer.masksToBounds=YES;
+    _scrollView.layer.borderColor=[[UIColor whiteColor]CGColor];
+    _scrollView.layer.borderWidth= 1.0f;
     [_scrollView addSubview:contentView];
     _scrollView.contentSize = contentView.frame.size;
     
@@ -117,7 +120,7 @@
     
     
     //segue
-    [self performSegueWithIdentifier:@"CancerEFLRFToMedicalCondRFSegue" sender:self];
+    [self performSegueWithIdentifier:@"cancerEFLRFToMedicalCondRFSegue" sender:self];
     
 }
 - (IBAction)backButtonAction:(id)sender {

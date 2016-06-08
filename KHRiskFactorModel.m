@@ -107,6 +107,12 @@
                             //                            NSLog(@"ABOUT TO add to array! %@", vaccine.name);
                             [rf.vaccineList addObject:vaccine];
                         }
+                        else if([[perRFVaccinesDict[perRFAllValuesArray[l]] objectForKey:@"Value"] isEqualToString:@"B"]){
+                            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:perRFAllValuesArray[l] andStatus:Ask];
+                            //                            NSLog(@"ABOUT TO add to array! %@", vaccine.name);
+                            [rf.vaccineList addObject:vaccine];
+                        }
+                        
                         
                         
                         
@@ -152,7 +158,7 @@
                 //                NSLog(@"Getting all rf under cate 2!");
                 for (int i =0; i<CancerRFKeysForOneCategoryArray.count; i++) {
                     //instantiate risk factor then add to list
-                                        NSLog(@"instantiate a risk factor 1!");
+                    NSLog(@"instantiate a risk factor 1!");
                     KHCancerRiskFactor *rf= [[KHCancerRiskFactor alloc] initWithName:CancerRFKeysForOneCategoryArray[i] andType:arrayForAllCancerCateKeys[k]];
                     
                     
@@ -162,33 +168,41 @@
                     //                    NSLog(@"instantiate a risk factor 2!");
                     //add per risk factor list of vaccines
                     NSDictionary *perRFCancerDict = [[NSDictionary alloc] init];
-                    perRFCancerDict = _dict[@"Cancer"][@"RiskFactors"][arrayForAllCancerCateKeys[k]][CancerRFKeysForOneCategoryArray[i]];
+                    perRFCancerDict = _dict[@"Cancer"][@"RiskFactors"][arrayForAllCancerCateKeys[k]][CancerRFKeysForOneCategoryArray[i]][@"Cancers"];
+                    NSLog(@"perRFCAncerDict: %@", perRFCancerDict);
+                    NSLog(@"perRFCAncerDict count: %lu", (unsigned long)perRFCancerDict.count);
                     NSArray *perCancerRFAllKeyArray = [perRFCancerDict allKeys];
-                    //                    NSLog(@"just got all vaccines under risk factor!");
+                                        NSLog(@"just got all vaccines under risk factor!");
                     
                     for (int l = 0; l<perRFCancerDict.count; l++) {
                         //getting all vaccines under risk factor
-                        //                        NSLog(@"getting all vaccines and status!! %@", [perRFVaccinesDict[perRFAllValuesArray[l]] objectForKey:@"Value"]);
+                        NSLog(@"getting all vaccines and status!! For: %@, with value: %@",perCancerRFAllKeyArray[l] , [perRFCancerDict[perCancerRFAllKeyArray[l]] objectForKey:@"Value"]);
                         
                         if ([[perRFCancerDict[perCancerRFAllKeyArray[l]] objectForKey:@"Value"] isEqualToString:@"N"]) {
                             KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Nothing];
-                            //                            NSLog(@"ABOUT TO add to array! %@", vaccine.name);
+                            NSLog(@"ABOUT TO add to array! %@", cancer.name);
                             [rf.cancerList addObject:cancer];
                         }
                         else if([[perRFCancerDict[perCancerRFAllKeyArray[l]] objectForKey:@"Value"] isEqualToString:@"Y"]){
                             KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Indicated];
-                            //                            NSLog(@"ABOUT TO add to array! %@", vaccine.name);
+                            NSLog(@"ABOUT TO add to array! %@", cancer.name);
                             [rf.cancerList addObject:cancer];
                         }
                         else if([[perRFCancerDict[perCancerRFAllKeyArray[l]] objectForKey:@"Value"] isEqualToString:@"G"]){
                             KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Recommended];
-                            //                            NSLog(@"ABOUT TO add to array! %@", vaccine.name);
+                            NSLog(@"ABOUT TO add to array! %@", cancer.name);
                             [rf.cancerList addObject:cancer];
                         }
                         else if([[perRFCancerDict[perCancerRFAllKeyArray[l]] objectForKey:@"Value"] isEqualToString:@"R"]){
                             KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Contraindicated];
-                            //                            NSLog(@"ABOUT TO add to array! %@", vaccine.name);
-                            [rf.cancerList addObject:cancer];                        }
+                            NSLog(@"ABOUT TO add to array! %@", cancer.name);
+                            [rf.cancerList addObject:cancer];
+                        }
+                        else if([[perRFCancerDict[perCancerRFAllKeyArray[l]] objectForKey:@"Value"] isEqualToString:@"B"]){
+                            KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Ask];
+                            NSLog(@"ABOUT TO add to array! %@", cancer.name);
+                            [rf.cancerList addObject:cancer];
+                        }
                         
                         
                         
@@ -204,7 +218,18 @@
             NSLog(@"ALL risk factors for Vaccine: %@", _AllRFListForVaccine);
             NSLog(@"ALL risk factors for Cancer : %@", _AllRFListForCancer);
             NSLog(@"Done getting and sorting dict from FIREBASE!");
+            
+            for (KHCancerRiskFactor *crf in _AllRFListForCancer) {
+                NSLog(@"risk factor name: %@", crf.name);
+                for (KHCancer *can in crf.cancerList) {
+                    
+                    NSLog(@"inside loop: %@", can.name);
+                    //        NSLog(@"vac stat: %u", vac->status);
+                }
+                NSLog(@"----------------");
+            }
         }];
+        
     }
     
     return self;

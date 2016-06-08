@@ -22,7 +22,9 @@
     //pull from database, asynchrously
     KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];
     KHRiskFactorModel *rfModel = [KHRiskFactorModel sharedModel];
-
+    KHPatient *patient = [KHPatient sharedModel];
+    
+    
     NSLog(@"got vaccine rf in homepage view: %@", rfModel.vaccineMedRiskFactorList);
     
     

@@ -24,11 +24,15 @@
 @property (nonatomic, strong) NSNumber *heightInch;
 @property (nonatomic, strong) NSNumber *heightFeet;
 @property (nonatomic, strong) NSNumber *weight;
+@property bool completedVaccineFlow;
+@property bool completedCancerFlow;
+@property bool completedCardiometabolicFlow;
+@property bool collectedBasicInfo;
 
 
 // lists
 @property (nonatomic, strong) NSMutableArray *vaccineList;
-@property (nonatomic, strong) NSArray *cancerList;
+@property (nonatomic, strong) NSMutableArray *cancerList;
 @property (nonatomic, strong) NSArray *riskFactorList;
 
 
