@@ -13,6 +13,14 @@
 
 
 -(void)awakeFromNib {
+	[self setupView];
+}
+
+-(void)prepareForInterfaceBuilder {
+	[self setupView];
+}
+
+-(void)setupView {
 	self.layer.cornerRadius = 3.0;
 	self.clipsToBounds = YES;
 	self.layer.masksToBounds = NO;
