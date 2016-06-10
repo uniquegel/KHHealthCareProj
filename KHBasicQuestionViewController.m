@@ -10,6 +10,7 @@
 #import "KHPatient.h"
 #import "KHRiskFactorModel.h"
 
+@import FirebaseAnalytics;
 
 @interface KHBasicQuestionViewController ()
 @property KHPatient *patient;
@@ -251,12 +252,18 @@
         switch (_screeningType) {
             case kScreenTypeVaccine:
             {
+				//TEST
+				[FIRAnalytics setUserPropertyString:_patient.gender forName:@"sex"];
+				[FIRAnalytics setUserPropertyString:@"Poopie" forName:@"favorite_food"];
+				[FIRAnalytics logEventWithName:kFIREventUnlockAchievement parameters:@{@"Gender":@"Female"}];
                 [self performSegueWithIdentifier:@"basicQuestionToVacccineOccuRiskFactors" sender:self];
                 break;
             }
             case kScreenTypeCancer:
             {
+				
                 [self performSegueWithIdentifier:@"basicQuestionToCancerEFLQuestions" sender:self];
+				
                 break;
             }
             case kScreenTypeCardio:{
