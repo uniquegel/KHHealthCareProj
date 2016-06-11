@@ -15,6 +15,8 @@
 		3C5D58511D07BF7D00E228A8 /* MaterialTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58501D07BF7D00E228A8 /* MaterialTextField.m */; };
 		3C5D58641D0A4ACA00E228A8 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58631D0A4ACA00E228A8 /* UserSession.swift */; };
 		3C5D58671D0A54D600E228A8 /* FIRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58661D0A54D600E228A8 /* FIRService.swift */; };
+		3C5D58871D0B556B00E228A8 /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58861D0B556B00E228A8 /* BasicInfo.swift */; };
+		3C5D588A1D0BC2D200E228A8 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58891D0BC2D200E228A8 /* constants.swift */; };
 		40B7BDF22C3EF756D74F5D09 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D925CAC3C0E2943DBB8CEE00 /* CoreText.framework */; };
 		43B9C46921FDA10E81CF5F7A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42620321EE9D70996C1CB63C /* BuddyBuildSDK.framework */; };
 		630569BB1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */; };
@@ -84,6 +86,8 @@
 		3C5D58621D0A4ACA00E228A8 /* KHHealthCareProj-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KHHealthCareProj-Bridging-Header.h"; sourceTree = "<group>"; };
 		3C5D58631D0A4ACA00E228A8 /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		3C5D58661D0A54D600E228A8 /* FIRService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRService.swift; sourceTree = "<group>"; };
+		3C5D58861D0B556B00E228A8 /* BasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
+		3C5D58891D0BC2D200E228A8 /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		42620321EE9D70996C1CB63C /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		4FDC2515A8130A96CE1DCB24 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		630569B91C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerScreeningResultsViewController.h; sourceTree = "<group>"; };
@@ -230,6 +234,14 @@
 			name = Misc;
 			sourceTree = "<group>";
 		};
+		3C5D58881D0BC2B000E228A8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				3C5D58891D0BC2D200E228A8 /* constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		637AA2051C8B9218005107AC /* Vaccine */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +359,7 @@
 				637AA2081C8B9250005107AC /* Cancer */,
 				637AA2071C8B922A005107AC /* RiskFactor */,
 				637AA2051C8B9218005107AC /* Vaccine */,
+				3C5D58861D0B556B00E228A8 /* BasicInfo.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -414,6 +427,7 @@
 				7E2E90CB1C83FD0F00BB92E9 /* Controllers */,
 				7E2E90CA1C83FD0900BB92E9 /* Views */,
 				7E2E90C91C83FCF700BB92E9 /* Models */,
+				3C5D58881D0BC2B000E228A8 /* Util */,
 				3C5D58651D0A4ADD00E228A8 /* Misc */,
 			);
 			sourceTree = "<group>";
@@ -688,7 +702,9 @@
 				7E9B48E91C81A3C30067B403 /* KHAppDelegate.m in Sources */,
 				3C5D58641D0A4ACA00E228A8 /* UserSession.swift in Sources */,
 				637AA2211C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m in Sources */,
+				3C5D58871D0B556B00E228A8 /* BasicInfo.swift in Sources */,
 				7E5AD01F1CF90C5000368E69 /* KHCancerMedQuestionViewController.m in Sources */,
+				3C5D588A1D0BC2D200E228A8 /* constants.swift in Sources */,
 				7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */,
 				7E0CD8431D07A830001CA147 /* UIViewController+Alerts.m in Sources */,
 				7E9B48E61C81A3C30067B403 /* main.m in Sources */,

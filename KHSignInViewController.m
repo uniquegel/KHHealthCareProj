@@ -94,7 +94,7 @@ FIRDatabaseHandle _refHandle;
                                  if (error) {
                                      [self showMessagePrompt:error.localizedDescription];
                                      return;
-                                 }
+                                 } 
                                  [self performSegueWithIdentifier:@"signInToHomePage" sender:self];
                              }];
                              // [END_EXCLUDE]
