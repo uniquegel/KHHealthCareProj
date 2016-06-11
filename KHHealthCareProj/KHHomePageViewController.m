@@ -12,6 +12,7 @@
 #import "KHRiskFactorModel.h"
 #import "KHBasicQuestionViewController.h"
 #import "KHPatient.h"
+@import FirebaseAuth;
 
 @implementation KHHomePageViewController
 
@@ -34,6 +35,7 @@
 //    [self initializeDummyData];
     
 }
+
 
 -(void)initializing {
     
@@ -80,5 +82,15 @@
     _scrType = kScreenTypeCardio;
     NSLog(@"Screen type: %lu", (unsigned long)_scrType);
 //    [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
+}
+
+- (IBAction)logoutButtonPressed:(id)sender {
+	NSError *error;
+	[[FIRAuth auth] signOut:&error];
+	if (!error) {
+		NSLog(@"Log out success!");
+		[self dismissViewControllerAnimated:YES completion:nil];
+	}
+	
 }
 @end

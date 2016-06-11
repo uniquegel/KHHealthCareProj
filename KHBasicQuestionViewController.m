@@ -258,8 +258,8 @@
 		//create basic info object
 		BasicInfo *info = [[BasicInfo alloc] initWithFirstName:self.firstNameTF.text lastName:self.lastNameTF.text gender:gender birthday:birthday eth:ethnicity age:age];
 		
-		[UserSession currentUser].basicInfo = info;
-		[[UserSession currentUser] uploadPatientInfo];
+		[UserSession currentSession].basicInfo = info;
+		[[UserSession currentSession] uploadPatientInfo];
         
         NSLog(@"SCRTYPE: %lu", (unsigned long)_screeningType);
         

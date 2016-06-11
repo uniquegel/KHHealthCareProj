@@ -8,4 +8,10 @@
 
 import Foundation
 
+
+/* FIREBASE KEYS */
 let KEY_FIR_BASIC_INF = "basic_info"
+
+/** SEGUE IDs **/
+let SEGUE_SIGNIN_TO_HOME = "signInToHomePage"
+let SEGUE_SIGNIN_TO_SIGNUP = "signIntoSignUpSegue"

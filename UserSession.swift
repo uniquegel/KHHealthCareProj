@@ -12,7 +12,7 @@ import FirebaseDatabase
 import FirebaseAnalytics
 
 class UserSession: NSObject {
-	static let currentUser = UserSession()
+	static let currentSession = UserSession()
 	
 	var currentUser: FIRUser?
 	
@@ -63,6 +63,20 @@ class UserSession: NSObject {
 		self.logedIn = true
 	}
 	
+	func createUserNode(user: FIRUser, username: String, email: String) {
+		let node = ["userid":user.uid,
+		            "email":email,
+		            "username":username]
+		FIRService.sharedService.refUsers.child(user.uid).updateChildValues(node) { (error:NSError?, ref:FIRDatabaseReference?) in
+			if let error = error {
+				print("create user node failed with error: \(error.localizedDescription)")
+			} else {
+				print("Create user node success: \(ref!)")
+			}
+			
+		}
+	}
+	
 	func uploadPatientInfo() {
 		if let user = FIRAuth.auth()?.currentUser{
 			let ref = FIRService.sharedService.refUsers.child(user.uid).child(KEY_FIR_BASIC_INF)
@@ -83,7 +97,7 @@ class UserSession: NSObject {
 	}
 	
 	func dictWithBasicInfo() -> Dictionary<String, AnyObject> {
-		let info = UserSession.currentUser.basicInfo
+		let info = UserSession.currentSession.basicInfo
 		let dict: Dictionary<String,AnyObject> =
 			["firstName":info.firstName,
 			 "lastName":info.lastName,
@@ -95,7 +109,7 @@ class UserSession: NSObject {
 	}
 	
 	func logFIRProperties() {
-		let info = UserSession.currentUser.basicInfo
+		let info = UserSession.currentSession.basicInfo
 		//log user ethnicity
 		FIRAnalytics.setUserPropertyString(info.ethnicity, forName: "ethnicity")
 		
