@@ -26,6 +26,12 @@
 
 @implementation KHSignUpViewController
 
+
+-(void)viewDidAppear:(BOOL)animated {
+	[self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	_FIRRef = [[FIRDatabase database] reference];

@@ -9,7 +9,9 @@
 #import "KHBasicQuestionViewController.h"
 #import "KHPatient.h"
 #import "KHRiskFactorModel.h"
+#import "KHHealthCareProj-Swift.h"
 
+@import FirebaseAnalytics;
 
 @interface KHBasicQuestionViewController ()
 @property KHPatient *patient;
@@ -186,41 +188,53 @@
     
 }
 
+//Helper function to check fields
+- (bool)inputIsValid {
+	//check if all fields full, in not alert view
+	bool allFieldsFilled = true;
+	if ([self.firstNameTF.text isEqualToString:@""]) {
+		allFieldsFilled = false;
+	}
+	//    NSLog(@" firstName field: %@", self.firstNameTF.text);
+	if ([self.lastNameTF.text isEqualToString:@""]) {
+		allFieldsFilled = false;
+	}
+	if ([self.birthdayTF.text isEqualToString:@""]) {
+		allFieldsFilled = false;
+	}
+	if (self.maleButtonOutlet.selected != YES && self.femaleButtonOutlet.selected != YES) {
+		allFieldsFilled = false;
+	}
+	if ([self.ethnicityPicker selectedRowInComponent:0]==0) {
+		allFieldsFilled = false;
+	}
+	
+	return allFieldsFilled;
+}
+
+
+
 - (IBAction)startQuestionButtonAction:(id)sender {
-    //check if all fields full, in not alert view
-    bool allFieldsFilled = true;
-    if ([self.firstNameTF.text isEqualToString:@""]) {
-        allFieldsFilled = false;
-    }
-//    NSLog(@" firstName field: %@", self.firstNameTF.text);
-    if ([self.lastNameTF.text isEqualToString:@""]) {
-        allFieldsFilled = false;
-    }
-    if ([self.birthdayTF.text isEqualToString:@""]) {
-        allFieldsFilled = false;
-    }
-    if (self.maleButtonOutlet.selected != YES && self.femaleButtonOutlet.selected != YES) {
-        allFieldsFilled = false;
-    }
-    if ([self.ethnicityPicker selectedRowInComponent:0]==0) {
-        allFieldsFilled = false;
-    }
-    
-    if (allFieldsFilled) {
-        
+	
+    if ([self inputIsValid]) {
+		
         //name
         _patient.firstName = self.firstNameTF.text;
         _patient.lastName = self.lastNameTF.text;
-        
+
+		
         //gender
+		NSString *gender = @"";
         if (_femaleButtonOutlet.selected) {
-            _patient.gender = @"female";
+			gender = @"female";
         }
         else if (_maleButtonOutlet.selected){
-            _patient.gender = @"male";
+			gender = @"male";
         }
+		_patient.gender = gender;
         
         //ethnictiy
+		NSString *ethnicity =_pickerData[[self.ethnicityPicker selectedRowInComponent:0]];
         _patient.ethnicty = _pickerData[[self.ethnicityPicker selectedRowInComponent:0]];
         
         
@@ -240,23 +254,34 @@
         _patient.age = age;
         NSLog(@"patient age: %ld", (long)_patient.age);
         _patient.birthday = birthday;
-        
-        
-        
-        
+		
+		//create basic info object
+		BasicInfo *info = [[BasicInfo alloc] initWithFirstName:self.firstNameTF.text lastName:self.lastNameTF.text gender:gender birthday:birthday eth:ethnicity age:age];
+		
+		[UserSession currentSession].basicInfo = info;
+		[[UserSession currentSession] uploadPatientInfo];
         
         NSLog(@"SCRTYPE: %lu", (unsigned long)_screeningType);
         
         _patient.collectedBasicInfo = YES;
+		
+		
+		
         switch (_screeningType) {
             case kScreenTypeVaccine:
             {
+				//TEST
+				[FIRAnalytics setUserPropertyString:_patient.gender forName:@"sex"];
+				[FIRAnalytics setUserPropertyString:@"Poopie" forName:@"favorite_food"];
+				[FIRAnalytics logEventWithName:kFIREventUnlockAchievement parameters:@{@"Gender":@"Female"}];
                 [self performSegueWithIdentifier:@"basicQuestionToVacccineOccuRiskFactors" sender:self];
                 break;
             }
             case kScreenTypeCancer:
             {
+				
                 [self performSegueWithIdentifier:@"basicQuestionToCancerEFLQuestions" sender:self];
+				
                 break;
             }
             case kScreenTypeCardio:{

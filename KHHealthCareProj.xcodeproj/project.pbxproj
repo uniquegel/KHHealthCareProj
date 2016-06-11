@@ -13,6 +13,14 @@
 		3C5D584B1D07BA1300E228A8 /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D584A1D07BA1300E228A8 /* MaterialView.m */; };
 		3C5D584E1D07BC6200E228A8 /* MaterialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D584D1D07BC6200E228A8 /* MaterialButton.m */; };
 		3C5D58511D07BF7D00E228A8 /* MaterialTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58501D07BF7D00E228A8 /* MaterialTextField.m */; };
+		3C5D58641D0A4ACA00E228A8 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58631D0A4ACA00E228A8 /* UserSession.swift */; };
+		3C5D58671D0A54D600E228A8 /* FIRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58661D0A54D600E228A8 /* FIRService.swift */; };
+		3C5D58871D0B556B00E228A8 /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58861D0B556B00E228A8 /* BasicInfo.swift */; };
+		3C5D588A1D0BC2D200E228A8 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58891D0BC2D200E228A8 /* constants.swift */; };
+		3C5D588C1D0BC42900E228A8 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D588B1D0BC42900E228A8 /* SigninVC.swift */; };
+		3C5D588E1D0BC77100E228A8 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D588D1D0BC77100E228A8 /* UIViewControllerExtension.swift */; };
+		3C5D58AF1D0BD7D600E228A8 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58AE1D0BD7D600E228A8 /* SignupVC.swift */; };
+		3C5D58B21D0C671300E228A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C5D58B01D0C671300E228A8 /* Main.storyboard */; };
 		40B7BDF22C3EF756D74F5D09 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D925CAC3C0E2943DBB8CEE00 /* CoreText.framework */; };
 		43B9C46921FDA10E81CF5F7A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42620321EE9D70996C1CB63C /* BuddyBuildSDK.framework */; };
 		630569BB1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */; };
@@ -38,7 +46,6 @@
 		7E7614141D06A20500B1E6E0 /* KHCardiometabolicScreeningResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7614131D06A20500B1E6E0 /* KHCardiometabolicScreeningResultsTableViewController.m */; };
 		7E9B48E61C81A3C30067B403 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E51C81A3C30067B403 /* main.m */; };
 		7E9B48E91C81A3C30067B403 /* KHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48E81C81A3C30067B403 /* KHAppDelegate.m */; };
-		7E9B48EF1C81A3C30067B403 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B48ED1C81A3C30067B403 /* Main.storyboard */; };
 		7E9B48F21C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B48F01C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld */; };
 		7E9B48F41C81A3C30067B403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B48F31C81A3C30067B403 /* Assets.xcassets */; };
 		7E9B48F71C81A3C30067B403 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B48F51C81A3C30067B403 /* LaunchScreen.storyboard */; };
@@ -79,6 +86,15 @@
 		3C5D584D1D07BC6200E228A8 /* MaterialButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialButton.m; sourceTree = "<group>"; };
 		3C5D584F1D07BF7D00E228A8 /* MaterialTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialTextField.h; sourceTree = "<group>"; };
 		3C5D58501D07BF7D00E228A8 /* MaterialTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialTextField.m; sourceTree = "<group>"; };
+		3C5D58621D0A4ACA00E228A8 /* KHHealthCareProj-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KHHealthCareProj-Bridging-Header.h"; sourceTree = "<group>"; };
+		3C5D58631D0A4ACA00E228A8 /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		3C5D58661D0A54D600E228A8 /* FIRService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRService.swift; sourceTree = "<group>"; };
+		3C5D58861D0B556B00E228A8 /* BasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
+		3C5D58891D0BC2D200E228A8 /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		3C5D588B1D0BC42900E228A8 /* SigninVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
+		3C5D588D1D0BC77100E228A8 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		3C5D58AE1D0BD7D600E228A8 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		3C5D58B11D0C671300E228A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = KHHealthCareProj/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42620321EE9D70996C1CB63C /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		4FDC2515A8130A96CE1DCB24 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		630569B91C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerScreeningResultsViewController.h; sourceTree = "<group>"; };
@@ -127,7 +143,6 @@
 		7E9B48E51C81A3C30067B403 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7E9B48E71C81A3C30067B403 /* KHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KHAppDelegate.h; sourceTree = "<group>"; };
 		7E9B48E81C81A3C30067B403 /* KHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KHAppDelegate.m; sourceTree = "<group>"; };
-		7E9B48EE1C81A3C30067B403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E9B48F11C81A3C30067B403 /* KHHealthCareProj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KHHealthCareProj.xcdatamodel; sourceTree = "<group>"; };
 		7E9B48F31C81A3C30067B403 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E9B48F61C81A3C30067B403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -199,6 +214,52 @@
 				3C5D58501D07BF7D00E228A8 /* MaterialTextField.m */,
 			);
 			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		3C5D58611D0A499500E228A8 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				3C5D58631D0A4ACA00E228A8 /* UserSession.swift */,
+				3C5D58621D0A4ACA00E228A8 /* KHHealthCareProj-Bridging-Header.h */,
+				3C5D58661D0A54D600E228A8 /* FIRService.swift */,
+				637AA2061C8B9221005107AC /* Patient */,
+			);
+			name = Singleton;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3C5D58651D0A4ADD00E228A8 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				7E9B49001C81A3C30067B403 /* KHHealthCareProjTests */,
+				7E9B490B1C81A3C30067B403 /* KHHealthCareProjUITests */,
+				7E9B48E21C81A3C30067B403 /* Products */,
+				FC36CCF84935F1F547BBD6F6 /* Pods */,
+				769CBE6E65ADD54891A594A1 /* Frameworks */,
+			);
+			name = Misc;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3C5D58881D0BC2B000E228A8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				3C5D58891D0BC2D200E228A8 /* constants.swift */,
+				3C5D588D1D0BC77100E228A8 /* UIViewControllerExtension.swift */,
+			);
+			name = Util;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3C5D588F1D0BCC9100E228A8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7E9B48F81C81A3C30067B403 /* Info.plist */,
+				7E9B48F01C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld */,
+				7E0637831CFE6C1000866D07 /* GoogleService-Info.plist */,
+				7E9B48F31C81A3C30067B403 /* Assets.xcassets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		637AA2051C8B9218005107AC /* Vaccine */ = {
@@ -278,6 +339,8 @@
 				7E4484A71C8BE61200850E58 /* KHSignInViewController.m */,
 				7E0CD83E1D07A7CC001CA147 /* KHSignUpViewController.h */,
 				7E0CD83F1D07A7CC001CA147 /* KHSignUpViewController.m */,
+				3C5D588B1D0BC42900E228A8 /* SigninVC.swift */,
+				3C5D58AE1D0BD7D600E228A8 /* SignupVC.swift */,
 			);
 			name = "Sign In Page";
 			sourceTree = "<group>";
@@ -317,19 +380,20 @@
 			children = (
 				637AA2081C8B9250005107AC /* Cancer */,
 				637AA2071C8B922A005107AC /* RiskFactor */,
-				637AA2061C8B9221005107AC /* Patient */,
 				637AA2051C8B9218005107AC /* Vaccine */,
+				3C5D58861D0B556B00E228A8 /* BasicInfo.swift */,
 			);
 			name = Models;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		7E2E90CA1C83FD0900BB92E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				3C5D58481D07B9E900E228A8 /* Custom Views */,
-				7E9B48ED1C81A3C30067B403 /* Main.storyboard */,
 			);
 			name = Views;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		7E2E90CB1C83FD0F00BB92E9 /* Controllers */ = {
@@ -341,6 +405,7 @@
 				637AA21B1C8BFD38005107AC /* Home Page */,
 			);
 			name = Controllers;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		7E5AD0181CF90C0100368E69 /* Vaccine Flow */ = {
@@ -382,15 +447,7 @@
 		7E9B48D81C81A3C30067B403 = {
 			isa = PBXGroup;
 			children = (
-				7E2E90CB1C83FD0F00BB92E9 /* Controllers */,
-				7E2E90CA1C83FD0900BB92E9 /* Views */,
-				7E2E90C91C83FCF700BB92E9 /* Models */,
 				7E9B48E31C81A3C30067B403 /* KHHealthCareProj */,
-				7E9B49001C81A3C30067B403 /* KHHealthCareProjTests */,
-				7E9B490B1C81A3C30067B403 /* KHHealthCareProjUITests */,
-				7E9B48E21C81A3C30067B403 /* Products */,
-				FC36CCF84935F1F547BBD6F6 /* Pods */,
-				769CBE6E65ADD54891A594A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -407,13 +464,17 @@
 		7E9B48E31C81A3C30067B403 /* KHHealthCareProj */ = {
 			isa = PBXGroup;
 			children = (
+				3C5D58611D0A499500E228A8 /* Singleton */,
+				7E2E90CB1C83FD0F00BB92E9 /* Controllers */,
+				7E2E90CA1C83FD0900BB92E9 /* Views */,
+				7E2E90C91C83FCF700BB92E9 /* Models */,
+				3C5D58881D0BC2B000E228A8 /* Util */,
 				7E9B48F51C81A3C30067B403 /* LaunchScreen.storyboard */,
+				3C5D58B01D0C671300E228A8 /* Main.storyboard */,
+				3C5D588F1D0BCC9100E228A8 /* Resources */,
 				7E9B48E71C81A3C30067B403 /* KHAppDelegate.h */,
 				7E9B48E81C81A3C30067B403 /* KHAppDelegate.m */,
-				7E9B48F31C81A3C30067B403 /* Assets.xcassets */,
-				7E9B48F81C81A3C30067B403 /* Info.plist */,
-				7E9B48F01C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld */,
-				7E0637831CFE6C1000866D07 /* GoogleService-Info.plist */,
+				3C5D58651D0A4ADD00E228A8 /* Misc */,
 				7E9B48E41C81A3C30067B403 /* Supporting Files */,
 			);
 			path = KHHealthCareProj;
@@ -521,6 +582,7 @@
 		7E9B48D91C81A3C30067B403 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Ryan Lu";
 				TargetAttributes = {
@@ -566,7 +628,7 @@
 				7E9B48F71C81A3C30067B403 /* LaunchScreen.storyboard in Resources */,
 				7E0637841CFE6C1000866D07 /* GoogleService-Info.plist in Resources */,
 				7E9B48F41C81A3C30067B403 /* Assets.xcassets in Resources */,
-				7E9B48EF1C81A3C30067B403 /* Main.storyboard in Resources */,
+				3C5D58B21D0C671300E228A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				630569CA1C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m in Sources */,
+				3C5D58671D0A54D600E228A8 /* FIRService.swift in Sources */,
 				637AA21A1C8BD1A1005107AC /* KHRiskFactorModel.m in Sources */,
 				3C5D58511D07BF7D00E228A8 /* MaterialTextField.m in Sources */,
 				3C5D584E1D07BC6200E228A8 /* MaterialButton.m in Sources */,
@@ -650,6 +713,8 @@
 				EAD7BC4C1C86A320002AEBC8 /* KHVaccineRiskFactor.m in Sources */,
 				EAD7BC461C869D26002AEBC8 /* KHPatient.m in Sources */,
 				7E0CD8401D07A7CC001CA147 /* KHSignUpViewController.m in Sources */,
+				3C5D58AF1D0BD7D600E228A8 /* SignupVC.swift in Sources */,
+				3C5D588E1D0BC77100E228A8 /* UIViewControllerExtension.swift in Sources */,
 				637AA2141C8B9530005107AC /* KHCancerRiskFactor.m in Sources */,
 				63926AC91CAE4375003A0C86 /* (null) in Sources */,
 				630569C71C8C045B001E8CB5 /* KHVaccinationScreeningResultsTableViewController.m in Sources */,
@@ -660,11 +725,15 @@
 				637AA2271C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m in Sources */,
 				637AA2041C8B8E77005107AC /* KHVaccineListModel.m in Sources */,
 				7E9B48E91C81A3C30067B403 /* KHAppDelegate.m in Sources */,
+				3C5D58641D0A4ACA00E228A8 /* UserSession.swift in Sources */,
 				637AA2211C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m in Sources */,
+				3C5D58871D0B556B00E228A8 /* BasicInfo.swift in Sources */,
 				7E5AD01F1CF90C5000368E69 /* KHCancerMedQuestionViewController.m in Sources */,
+				3C5D588A1D0BC2D200E228A8 /* constants.swift in Sources */,
 				7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */,
 				7E0CD8431D07A830001CA147 /* UIViewController+Alerts.m in Sources */,
 				7E9B48E61C81A3C30067B403 /* main.m in Sources */,
+				3C5D588C1D0BC42900E228A8 /* SigninVC.swift in Sources */,
 				637AA2111C8B93A9005107AC /* KHCancer.m in Sources */,
 				7E067DD11D0529800095BE71 /* KHTabBarViewController.m in Sources */,
 				7E4484A81C8BE61200850E58 /* KHSignInViewController.m in Sources */,
@@ -704,13 +773,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7E9B48ED1C81A3C30067B403 /* Main.storyboard */ = {
+		3C5D58B01D0C671300E228A8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7E9B48EE1C81A3C30067B403 /* Base */,
+				3C5D58B11D0C671300E228A8 /* Base */,
 			);
 			name = Main.storyboard;
-			path = KHHealthCareProj;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		7E9B48F51C81A3C30067B403 /* LaunchScreen.storyboard */ = {
@@ -809,6 +878,7 @@
 			baseConfigurationReference = 7BB90ACF2BBBB12D060234F3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -820,6 +890,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KHHealthCareProj-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -829,6 +901,7 @@
 			baseConfigurationReference = F436FCC6A7280DC2F9723567 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -840,6 +913,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KHHealthCareProj-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
