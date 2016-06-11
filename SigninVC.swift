@@ -56,6 +56,16 @@ class SigninVC: UIViewController {
 		self.performSegueWithIdentifier(SEGUE_SIGNIN_TO_HOME, sender: self)
 	}
 	
+	//show alert to tell user to sign up
+	func showAnynomousSigninAlert() {
+		let alert = UIAlertController(title: "Temporary account", message: "We created an temporary account for you, if you decide to sign up, simply add your password and email!", preferredStyle: .Alert)
+		let okAction = UIAlertAction(title: "Ok", style: .Default) { (action:UIAlertAction) in
+			self.dismissViewControllerAnimated(true, completion:nil)
+		}
+		alert.addAction(okAction)
+		self.presentViewController(alert, animated: true, completion: nil)
+		
+	}
 	
 	/** IB ACTIONS  **/
 	@IBAction func singinButtonPressed(sender: AnyObject) {
@@ -83,7 +93,22 @@ class SigninVC: UIViewController {
 	}
 	
 	@IBAction func skipButtonPressed(sender: AnyObject) {
+		//sign in anonymously
+		FIRAuth.auth()?.signInAnonymouslyWithCompletion({ (user:FIRUser?, error:NSError?) in
+			if let user = user {
+				print("Anonymous sign in success with user: \(user.uid)")
+				UserSession.currentSession.currentUser = user
+				UserSession.currentSession.createAnonymousUserNode(user)
+				self.moveonAfterLogin()
+			} else {
+				print("Anonymous sign in failed \(error?.localizedDescription)")
+				self.showAlertView("Sorry!", message: "We are sorry but there is some internal error, please come back later!", target: self)
+			}
+		})
+		
 		
 	}
+	
+
 	
 }

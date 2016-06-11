@@ -11,7 +11,10 @@ import Foundation
 
 /* FIREBASE KEYS */
 let KEY_FIR_BASIC_INF = "basic_info"
-
+let KEY_FIR_USERNAME = "username"
+let KEY_FIR_USER_ID = "userid"
+let KEY_FIR_USER_EMAIL = "email"
+let KEY_FIR_PROVIDER = "provider"
 /** SEGUE IDs **/
 let SEGUE_SIGNIN_TO_HOME = "signInToHomePage"
 let SEGUE_SIGNIN_TO_SIGNUP = "signIntoSignUpSegue"

@@ -63,10 +63,11 @@ class UserSession: NSObject {
 		self.logedIn = true
 	}
 	
-	func createUserNode(user: FIRUser, username: String, email: String) {
-		let node = ["userid":user.uid,
-		            "email":email,
-		            "username":username]
+	func createEmailUserNode(user: FIRUser, username: String, email: String) {
+		let node = [KEY_FIR_USER_ID:user.uid,
+		            KEY_FIR_USER_EMAIL:email,
+		            KEY_FIR_USERNAME:username,
+		            KEY_FIR_PROVIDER:"email"]
 		FIRService.sharedService.refUsers.child(user.uid).updateChildValues(node) { (error:NSError?, ref:FIRDatabaseReference?) in
 			if let error = error {
 				print("create user node failed with error: \(error.localizedDescription)")
@@ -74,6 +75,18 @@ class UserSession: NSObject {
 				print("Create user node success: \(ref!)")
 			}
 			
+		}
+	}
+	
+	func createAnonymousUserNode(user: FIRUser) {
+		let node = [KEY_FIR_USER_ID:user.uid,
+		            KEY_FIR_PROVIDER:"anonymous"]
+		FIRService.sharedService.refUsers.child(user.uid).updateChildValues(node) { (error:NSError?, ref:FIRDatabaseReference) in
+			if let error = error  {
+				print("Create anynomous user failed: \(error.localizedDescription)")
+			} else {
+				print("Craete anynomous user success: \(ref)")
+			}
 		}
 	}
 	

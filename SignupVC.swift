@@ -91,7 +91,7 @@ class SignupVC: UIViewController {
 				
 			} else {
 				UserSession.currentSession.currentUser = user!
-				UserSession.currentSession.createUserNode(user!, username: username, email: email)
+				UserSession.currentSession.createEmailUserNode(user!, username: username, email: email)
 				self.dismissViewControllerAnimated(true, completion: nil)
 				
 			}
