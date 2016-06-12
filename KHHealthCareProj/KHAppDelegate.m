@@ -27,12 +27,12 @@
     //Firebase Configuration
     [FIRApp configure];
     
-    _navController=[[UINavigationController alloc] init];
-    SigninVC *firstController=[[SigninVC alloc] init];
-    [_navController pushViewController:firstController animated:NO];
-    [self.window addSubview: _navController.view];
-    
-    
+//    _navController=[[UINavigationController alloc] init];
+//    SigninVC *firstController=[[SigninVC alloc] init];
+//    [_navController pushViewController:firstController animated:NO];
+//    [self.window addSubview: _navController.view];
+//    
+	
     
     return YES;
 }
