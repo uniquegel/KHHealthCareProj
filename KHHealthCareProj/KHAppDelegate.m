@@ -7,9 +7,8 @@
 //
 
 #import "KHAppDelegate.h"
-#import "KHSignInViewController.h"
 #import <BuddyBuildSDK/BuddyBuildSDK.h>
-
+#import "KHHealthCareProj-Swift.h"
 @import Firebase;
 
 @interface KHAppDelegate ()
@@ -29,7 +28,7 @@
     [FIRApp configure];
     
     _navController=[[UINavigationController alloc] init];
-    KHSignInViewController *firstController=[[KHSignInViewController alloc] init];
+    SigninVC *firstController=[[SigninVC alloc] init];
     [_navController pushViewController:firstController animated:NO];
     [self.window addSubview: _navController.view];
     

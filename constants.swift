@@ -16,5 +16,5 @@ let KEY_FIR_USER_ID = "userid"
 let KEY_FIR_USER_EMAIL = "email"
 let KEY_FIR_PROVIDER = "provider"
 /** SEGUE IDs **/
-let SEGUE_SIGNIN_TO_HOME = "signInToHomePage"
+let SEGUE_SIGNIN_TO_HOME = "signInToHomePageSegue"
 let SEGUE_SIGNIN_TO_SIGNUP = "signIntoSignUpSegue"

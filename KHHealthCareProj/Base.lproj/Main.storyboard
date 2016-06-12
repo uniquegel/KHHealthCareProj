@@ -171,8 +171,8 @@
                     <connections>
                         <outlet property="emailText" destination="q6J-2K-Lxr" id="JSF-ku-Ido"/>
                         <outlet property="passwordText" destination="4je-tq-sB3" id="b2I-fr-m7M"/>
-                        <segue destination="vsD-oA-sJc" kind="show" identifier="signInToHomePage" id="cQt-NJ-bIY"/>
                         <segue destination="jCJ-AV-ktd" kind="presentation" identifier="signIntoSignUpSegue" id="cu5-oo-1EW"/>
+                        <segue destination="vsD-oA-sJc" kind="show" identifier="signInToHomePageSegue" id="JSx-JG-I8P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1825,6 +1825,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="e3o-l2-4Ca"/>
-        <segue reference="cQt-NJ-bIY"/>
+        <segue reference="JSx-JG-I8P"/>
     </inferredMetricsTieBreakers>
 </document>

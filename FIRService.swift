@@ -16,6 +16,6 @@ class FIRService: NSObject {
 	var refUsers = FIRDatabase.database().reference().child("users")
 //	var refCancers = FIRDatabase.database().reference().child("cancers")
 	var refVaccines = FIRDatabase.database().reference().child("vaccines")
-	var refRiskfactor = FIRDatabase.database().reference().child("riskfactors")
+	var refRiskfactorGen = FIRDatabase.database().reference().child("riskfactors-general")
 	
 }

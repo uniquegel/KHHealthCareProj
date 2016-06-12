@@ -12,6 +12,8 @@
 #import "KHRiskFactorModel.h"
 #import "KHBasicQuestionViewController.h"
 #import "KHPatient.h"
+#import "KHHealthCareProj-Swift.h"
+
 @import FirebaseAuth;
 
 @implementation KHHomePageViewController
@@ -34,6 +36,10 @@
     
 //    [self initializeDummyData];
     
+}
+
+-(void) viewDidAppear:(BOOL)animated {
+	[[RiskFactor sharedInstance] downloadRiskFactors];
 }
 
 

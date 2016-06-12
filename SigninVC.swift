@@ -51,9 +51,10 @@ class SigninVC: UIViewController {
 	
 	func moveonAfterLogin() {
 		//Clear the log in fields
-		self.emailText.text = ""
-		self.passwordText.text = ""
-		self.performSegueWithIdentifier(SEGUE_SIGNIN_TO_HOME, sender: self)
+		let homevc = KHHomePageViewController()
+		self.navigationController?.pushViewController(homevc, animated: true)
+//		self.performSegueWithIdentifier(homevc, sender: nil)
+//		self.performSegueWithIdentifier(SEGUE_SIGNIN_TO_HOME, sender: self)
 	}
 	
 	//show alert to tell user to sign up
@@ -78,6 +79,10 @@ class SigninVC: UIViewController {
 			if let user = user {
 				print("Sign in successful with user: \(user.uid)")
 				UserSession.currentSession.currentUser = user
+				
+					self.emailText.text = ""
+					self.passwordText.text = ""
+				
 				self.moveonAfterLogin()
 				
 			} else {

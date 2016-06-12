@@ -21,6 +21,7 @@
 		3C5D588E1D0BC77100E228A8 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D588D1D0BC77100E228A8 /* UIViewControllerExtension.swift */; };
 		3C5D58AF1D0BD7D600E228A8 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58AE1D0BD7D600E228A8 /* SignupVC.swift */; };
 		3C5D58B21D0C671300E228A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C5D58B01D0C671300E228A8 /* Main.storyboard */; };
+		3C5D58B41D0CCF1A00E228A8 /* RiskFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58B31D0CCF1A00E228A8 /* RiskFactor.swift */; };
 		40B7BDF22C3EF756D74F5D09 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D925CAC3C0E2943DBB8CEE00 /* CoreText.framework */; };
 		43B9C46921FDA10E81CF5F7A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42620321EE9D70996C1CB63C /* BuddyBuildSDK.framework */; };
 		630569BB1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */; };
@@ -37,9 +38,7 @@
 		63926AC91CAE4375003A0C86 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		7E0637841CFE6C1000866D07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E0637831CFE6C1000866D07 /* GoogleService-Info.plist */; };
 		7E067DD11D0529800095BE71 /* KHTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E067DD01D0529800095BE71 /* KHTabBarViewController.m */; };
-		7E0CD8401D07A7CC001CA147 /* KHSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CD83F1D07A7CC001CA147 /* KHSignUpViewController.m */; };
 		7E0CD8431D07A830001CA147 /* UIViewController+Alerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CD8421D07A830001CA147 /* UIViewController+Alerts.m */; };
-		7E4484A81C8BE61200850E58 /* KHSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484A71C8BE61200850E58 /* KHSignInViewController.m */; };
 		7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */; };
 		7E5AD01F1CF90C5000368E69 /* KHCancerMedQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5AD01E1CF90C5000368E69 /* KHCancerMedQuestionViewController.m */; };
 		7E5AD0221CF90C6600368E69 /* KHCancerEFLQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5AD0211CF90C6600368E69 /* KHCancerEFLQuestionViewController.m */; };
@@ -95,6 +94,7 @@
 		3C5D588D1D0BC77100E228A8 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		3C5D58AE1D0BD7D600E228A8 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		3C5D58B11D0C671300E228A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = KHHealthCareProj/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3C5D58B31D0CCF1A00E228A8 /* RiskFactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskFactor.swift; sourceTree = "<group>"; };
 		42620321EE9D70996C1CB63C /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		4FDC2515A8130A96CE1DCB24 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		630569B91C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerScreeningResultsViewController.h; sourceTree = "<group>"; };
@@ -125,12 +125,8 @@
 		7E0637831CFE6C1000866D07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7E067DCF1D0529800095BE71 /* KHTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHTabBarViewController.h; sourceTree = "<group>"; };
 		7E067DD01D0529800095BE71 /* KHTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHTabBarViewController.m; sourceTree = "<group>"; };
-		7E0CD83E1D07A7CC001CA147 /* KHSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignUpViewController.h; sourceTree = "<group>"; };
-		7E0CD83F1D07A7CC001CA147 /* KHSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignUpViewController.m; sourceTree = "<group>"; };
 		7E0CD8411D07A830001CA147 /* UIViewController+Alerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alerts.h"; sourceTree = "<group>"; };
 		7E0CD8421D07A830001CA147 /* UIViewController+Alerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alerts.m"; sourceTree = "<group>"; };
-		7E4484A61C8BE61200850E58 /* KHSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignInViewController.h; sourceTree = "<group>"; };
-		7E4484A71C8BE61200850E58 /* KHSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignInViewController.m; sourceTree = "<group>"; };
 		7E4484AC1C8BEB4B00850E58 /* KHBasicQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBasicQuestionViewController.h; sourceTree = "<group>"; };
 		7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHBasicQuestionViewController.m; sourceTree = "<group>"; };
 		7E5AD01D1CF90C5000368E69 /* KHCancerMedQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerMedQuestionViewController.h; sourceTree = "<group>"; };
@@ -291,6 +287,7 @@
 				637AA2131C8B9530005107AC /* KHCancerRiskFactor.m */,
 				637AA2181C8BD1A1005107AC /* KHRiskFactorModel.h */,
 				637AA2191C8BD1A1005107AC /* KHRiskFactorModel.m */,
+				3C5D58B31D0CCF1A00E228A8 /* RiskFactor.swift */,
 			);
 			name = RiskFactor;
 			sourceTree = "<group>";
@@ -335,10 +332,6 @@
 		637AA21D1C8BFD51005107AC /* Sign In Page */ = {
 			isa = PBXGroup;
 			children = (
-				7E4484A61C8BE61200850E58 /* KHSignInViewController.h */,
-				7E4484A71C8BE61200850E58 /* KHSignInViewController.m */,
-				7E0CD83E1D07A7CC001CA147 /* KHSignUpViewController.h */,
-				7E0CD83F1D07A7CC001CA147 /* KHSignUpViewController.m */,
 				3C5D588B1D0BC42900E228A8 /* SigninVC.swift */,
 				3C5D58AE1D0BD7D600E228A8 /* SignupVC.swift */,
 			);
@@ -712,7 +705,6 @@
 				630569BB1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m in Sources */,
 				EAD7BC4C1C86A320002AEBC8 /* KHVaccineRiskFactor.m in Sources */,
 				EAD7BC461C869D26002AEBC8 /* KHPatient.m in Sources */,
-				7E0CD8401D07A7CC001CA147 /* KHSignUpViewController.m in Sources */,
 				3C5D58AF1D0BD7D600E228A8 /* SignupVC.swift in Sources */,
 				3C5D588E1D0BC77100E228A8 /* UIViewControllerExtension.swift in Sources */,
 				637AA2141C8B9530005107AC /* KHCancerRiskFactor.m in Sources */,
@@ -728,6 +720,7 @@
 				3C5D58641D0A4ACA00E228A8 /* UserSession.swift in Sources */,
 				637AA2211C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m in Sources */,
 				3C5D58871D0B556B00E228A8 /* BasicInfo.swift in Sources */,
+				3C5D58B41D0CCF1A00E228A8 /* RiskFactor.swift in Sources */,
 				7E5AD01F1CF90C5000368E69 /* KHCancerMedQuestionViewController.m in Sources */,
 				3C5D588A1D0BC2D200E228A8 /* constants.swift in Sources */,
 				7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */,
@@ -736,7 +729,6 @@
 				3C5D588C1D0BC42900E228A8 /* SigninVC.swift in Sources */,
 				637AA2111C8B93A9005107AC /* KHCancer.m in Sources */,
 				7E067DD11D0529800095BE71 /* KHTabBarViewController.m in Sources */,
-				7E4484A81C8BE61200850E58 /* KHSignInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
