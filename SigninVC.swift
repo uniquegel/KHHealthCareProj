@@ -98,8 +98,12 @@ class SigninVC: UIViewController {
 	}
 	
 	@IBAction func skipButtonPressed(sender: AnyObject) {
+        
+        // !!!: call segue directly
+        self .performSegueWithIdentifier("signInToHomePageSegue", sender: self)
+        
 		//sign in anonymously
-		FIRAuth.auth()?.signInAnonymouslyWithCompletion({ (user:FIRUser?, error:NSError?) in
+		/* FIRAuth.auth()?.signInAnonymouslyWithCompletion({ (user:FIRUser?, error:NSError?) in
 			if let user = user {
 				print("Anonymous sign in success with user: \(user.uid)")
 				UserSession.currentSession.currentUser = user
@@ -109,7 +113,7 @@ class SigninVC: UIViewController {
 				print("Anonymous sign in failed \(error?.localizedDescription)")
 				self.showAlertView("Sorry!", message: "We are sorry but there is some internal error, please come back later!", target: self)
 			}
-		})
+		}) */
 		
 		
 	}
