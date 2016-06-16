@@ -49,8 +49,14 @@ class KHRiskFactorManager: NSObject {
 		
 		ref.observeSingleEventOfType(.Value) { (snapshot:FIRDataSnapshot) in
 			if let riskFactors = snapshot.value as? Dictionary<String,AnyObject> {
-				for riskFactor in riskFactors {
-					print(riskFactor)
+				for (rfKey,rfValue) in riskFactors {
+					
+					let rfValueDict = rfValue as! [String:AnyObject]
+					
+					for (key,value) in rfValueDict {
+						print(key)
+						print(value)
+					}
 				}
 			}
 		}
