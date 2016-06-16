@@ -39,7 +39,8 @@
 }
 
 -(void) viewDidAppear:(BOOL)animated {
-	[[RiskFactor sharedInstance] downloadRiskFactors];
+	[[KHRiskFactorManager sharedManager] downloadAllRiskFactors];
+	
 }
 
 

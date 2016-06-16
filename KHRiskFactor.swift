@@ -10,19 +10,51 @@
 import Foundation
 import FirebaseDatabase
 
-class KHRiskFactor: NSObject {
-    
+class KHRiskFactor {
+	static let sharedInstance = KHRiskFactor()
     
     // class varibales 
     private var _name: String!
-    private var _type: String!
-    private var _isActive: Bool!
-    private var _cancerRFList
-    private var _vaccineRFList
-    
-    
-    
-	static let sharedInstance = RiskFactor()
+	private var _category: String!
+	private var _id: String!
+	private var _subcategory: String!
+	
+	private var _generalList:Dictionary<String,String>?
+	private var _cancerList:Dictionary<String,String>?
+	private var _vaccineList:Dictionary<String,String>?
+	
+	
+	//GETTERS & SETTERS
+	var name: String {
+		return _name
+	}
+	var category: String {
+		return _category
+	}
+	var id:String {
+		return _id
+	}
+	var subcategory:String {
+		return _category
+	}
+	var generalList:Dictionary<String,String>? {
+		return _generalList
+	}
+	var cancerList:Dictionary<String,String>? {
+		return _cancerList
+	}
+	var vaccineList:Dictionary<String,String>? {
+		return _vaccineList
+	}
+
+	init() {
+		_name = ""
+		_category = ""
+		_id = ""
+		_category = ""
+		
+	}
+	
 	
 	
 	func downloadRiskFactors() {

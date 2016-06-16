@@ -39,7 +39,7 @@
 		7E0637841CFE6C1000866D07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E0637831CFE6C1000866D07 /* GoogleService-Info.plist */; };
 		7E067DD11D0529800095BE71 /* KHTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E067DD01D0529800095BE71 /* KHTabBarViewController.m */; };
 		7E0CD8431D07A830001CA147 /* UIViewController+Alerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CD8421D07A830001CA147 /* UIViewController+Alerts.m */; };
-		7E2ADD201D1100CF00CF74C0 /* KHRiskFactorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2ADD1F1D1100CF00CF74C0 /* KHRiskFactorModel.swift */; };
+		7E2ADD201D1100CF00CF74C0 /* KHRiskFactorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2ADD1F1D1100CF00CF74C0 /* KHRiskFactorManager.swift */; };
 		7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */; };
 		7E5AD01F1CF90C5000368E69 /* KHCancerMedQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5AD01E1CF90C5000368E69 /* KHCancerMedQuestionViewController.m */; };
 		7E5AD0221CF90C6600368E69 /* KHCancerEFLQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5AD0211CF90C6600368E69 /* KHCancerEFLQuestionViewController.m */; };
@@ -128,7 +128,7 @@
 		7E067DD01D0529800095BE71 /* KHTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHTabBarViewController.m; sourceTree = "<group>"; };
 		7E0CD8411D07A830001CA147 /* UIViewController+Alerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alerts.h"; sourceTree = "<group>"; };
 		7E0CD8421D07A830001CA147 /* UIViewController+Alerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alerts.m"; sourceTree = "<group>"; };
-		7E2ADD1F1D1100CF00CF74C0 /* KHRiskFactorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KHRiskFactorModel.swift; sourceTree = "<group>"; };
+		7E2ADD1F1D1100CF00CF74C0 /* KHRiskFactorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KHRiskFactorManager.swift; sourceTree = "<group>"; };
 		7E4484AC1C8BEB4B00850E58 /* KHBasicQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBasicQuestionViewController.h; sourceTree = "<group>"; };
 		7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHBasicQuestionViewController.m; sourceTree = "<group>"; };
 		7E5AD01D1CF90C5000368E69 /* KHCancerMedQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerMedQuestionViewController.h; sourceTree = "<group>"; };
@@ -290,7 +290,7 @@
 				637AA2181C8BD1A1005107AC /* KHRiskFactorModel.h */,
 				637AA2191C8BD1A1005107AC /* KHRiskFactorModel.m */,
 				3C5D58B31D0CCF1A00E228A8 /* KHRiskFactor.swift */,
-				7E2ADD1F1D1100CF00CF74C0 /* KHRiskFactorModel.swift */,
+				7E2ADD1F1D1100CF00CF74C0 /* KHRiskFactorManager.swift */,
 			);
 			name = RiskFactor;
 			sourceTree = "<group>";
@@ -699,7 +699,7 @@
 			files = (
 				630569CA1C8C0492001E8CB5 /* KHNutritionSuggestionResultsTableViewController.m in Sources */,
 				3C5D58671D0A54D600E228A8 /* FIRService.swift in Sources */,
-				7E2ADD201D1100CF00CF74C0 /* KHRiskFactorModel.swift in Sources */,
+				7E2ADD201D1100CF00CF74C0 /* KHRiskFactorManager.swift in Sources */,
 				637AA21A1C8BD1A1005107AC /* KHRiskFactorModel.m in Sources */,
 				3C5D58511D07BF7D00E228A8 /* MaterialTextField.m in Sources */,
 				3C5D584E1D07BC6200E228A8 /* MaterialButton.m in Sources */,
