@@ -28,6 +28,12 @@ class SigninVC: UIViewController {
 	}
 	
 	override func viewDidAppear(animated: Bool) {
+		//TEST
+		KHRiskFactorManager.sharedManager.downloadAllRiskFactors { (completed) in
+			print(KHRiskFactorManager.sharedManager.allRiskFactors)
+		}
+		
+		
 		//CHECK IF USER IS LOGGED IN
 		if let user = FIRAuth.auth()?.currentUser {
 			//user is logged in

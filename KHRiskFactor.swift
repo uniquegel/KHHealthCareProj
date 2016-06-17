@@ -52,8 +52,30 @@ class KHRiskFactor {
 		_category = ""
 		_id = ""
 		_category = ""
-		
+
 	}
+	
+	init(name: String, category: String, id: String, subcategory: String, generalList:[String:String]?, vaccineList: [String:String]?, cancerList: [String:String]?) {
+		
+		self._name = name
+		self._id = id
+		self._category = category
+		self._subcategory = subcategory
+		if let generalList = generalList {
+			self._generalList = generalList
+		}
+		if let cancerList = cancerList {
+			self._cancerList = cancerList
+		}
+		if let vaccineList = vaccineList {
+			self._vaccineList = vaccineList
+		}
+		
+
+	}
+	
+	
+	
 	
 	
 	

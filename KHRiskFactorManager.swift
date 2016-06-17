@@ -25,13 +25,13 @@ class KHRiskFactorManager: NSObject {
 	private var _RFSubCategories:Dictionary<String,String> = [:]
 	
 	/** GETTER & SETTER**/
-	var allRiskFactors:[KHRiskFactor] {
+	internal var allRiskFactors:[KHRiskFactor] {
 		return _allRiskFactors
 	}
-	var ageRiskFactors:[KHRiskFactor] {
+	internal var ageRiskFactors:[KHRiskFactor] {
 		return _ageRiskFactors
 	}
-	var MDRiskFactors:[KHRiskFactor]  {
+	 var MDRiskFactors:[KHRiskFactor]  {
 		return _MDRiskFactors
 	}
 	var EFLRiskFactors:[KHRiskFactor] {
@@ -44,19 +44,33 @@ class KHRiskFactorManager: NSObject {
 	}
 	
 	/** DOWNLOAD DATA FUNCS**/
-	func downloadAllRiskFactors() {
+	func downloadAllRiskFactors( completion:(completed:Bool) -> Void){
 		let ref = FIRService.sharedService.refRiskfactorGen
-		
+	
 		ref.observeSingleEventOfType(.Value) { (snapshot:FIRDataSnapshot) in
 			if let riskFactors = snapshot.value as? Dictionary<String,AnyObject> {
+				var count = 0;
+				print(riskFactors.count)
 				for (rfKey,rfValue) in riskFactors {
 					
 					let rfValueDict = rfValue as! [String:AnyObject]
 					
-					for (key,value) in rfValueDict {
-						print(key)
-						print(value)
+					let name = rfValueDict["name"] as! String
+					let id = rfValueDict["id"] as! String
+					let category = rfValueDict["category"] as! String
+					let subcat = rfValueDict["sub-category"] as! String
+					print(name,id,category, subcat)
+					
+					let riskfactor = KHRiskFactor(name: name, category: category, id: id, subcategory: subcat, generalList: nil, vaccineList: nil, cancerList: nil)
+					
+					self._allRiskFactors.append(riskfactor)
+					
+					count += 1
+					
+					if (count >= riskFactors.count) {
+						completion(completed: true)
 					}
+					
 				}
 			}
 		}

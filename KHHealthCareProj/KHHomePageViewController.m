@@ -28,8 +28,7 @@
     KHPatient *patient = [KHPatient sharedModel];
     
     
-    NSLog(@"got vaccine rf in homepage view: %@", rfModel.vaccineMedRiskFactorList);
-    
+	
     
     
 //    [self initializing];
@@ -39,7 +38,12 @@
 }
 
 -(void) viewDidAppear:(BOOL)animated {
-	[[KHRiskFactorManager sharedManager] downloadAllRiskFactors];
+	[[KHRiskFactorManager sharedManager] downloadAllRiskFactors:^(BOOL completed) {
+		if (completed) {
+			KHRiskFactorManager *manager = [KHRiskFactorManager sharedManager];
+			
+		}
+	}];
 	
 }
 
