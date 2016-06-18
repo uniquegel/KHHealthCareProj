@@ -8,6 +8,7 @@
 
 #import "KHCardiometabolicScreeningResultsTableViewController.h"
 #import "KHPatient.h"
+#import "KHHealthCareProj-Swift.h"
 
 #import "KHRiskFactorModel.h"
 @interface KHCardiometabolicScreeningResultsTableViewController ()

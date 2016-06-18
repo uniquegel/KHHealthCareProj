@@ -256,11 +256,13 @@
         _patient.birthday = birthday;
 		
 		//create basic info object
-		BasicInfo *info = [[BasicInfo alloc] initWithFirstName:self.firstNameTF.text lastName:self.lastNameTF.text gender:gender birthday:birthday eth:ethnicity age:age];
+		KHUser *user = [[KHUser alloc] initWithFirstName:self.firstNameTF.text lastName:self.lastNameTF.text gender:gender birthday:birthday eth:ethnicity age:age];
 		
-		[UserSession currentSession].basicInfo = info;
-		[[UserSession currentSession] uploadPatientInfo];
-        
+		[KHUserManager sharedManager].patient = user;
+		[[KHUserManager sharedManager] uploadPatientInfo];
+		
+
+
         NSLog(@"SCRTYPE: %lu", (unsigned long)_screeningType);
         
         _patient.collectedBasicInfo = YES;

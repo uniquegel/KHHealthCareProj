@@ -24,16 +24,7 @@
     
     //pull from database, asynchrously
     KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];
-    KHRiskFactorModel *rfModel = [KHRiskFactorModel sharedModel];
-    KHPatient *patient = [KHPatient sharedModel];
-    
-    
 	
-    
-    
-//    [self initializing];
-    
-//    [self initializeDummyData];
     
 }
 

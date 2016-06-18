@@ -6,13 +6,15 @@
 //  Copyright © 2016 Ryan Lu. All rights reserved.
 //
 
+/* User manages manages and stores a */
+
 import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseAnalytics
 
-class UserSession: NSObject {
-	static let currentSession = UserSession()
+class KHUserManager :NSObject {
+	static let sharedManager = KHUserManager()
 	
 	var currentUser: FIRUser?
 	
@@ -23,34 +25,18 @@ class UserSession: NSObject {
 	 var email: String!
 	 var uid: String!
 
-	//patient info
-	var birthday: NSDate!
-	var ethnicity: String!
-	var heightCM: Double!
-	var heightFeet: Int!
-	var heightInches: Int!
-	var weightKg: Double!
-	var gender: String!
+
 	
 	//Config info
-	var completedBasicQuestions: Bool = false
 	
-	var basicInfo:BasicInfo!
+	var patient = KHUser()
 	
 	override init() {
 		logedIn = false
 		username = ""
 		email = ""
 		uid = ""
-		birthday = NSDate(timeIntervalSince1970: 0)
-		ethnicity = ""
-		heightCM = 0
-		heightFeet = 0
-		heightInches = 0
-		weightKg = 0
-		gender = ""
-		
-		basicInfo = BasicInfo()
+
 	}
 	
 	
@@ -110,7 +96,8 @@ class UserSession: NSObject {
 	}
 	
 	func dictWithBasicInfo() -> Dictionary<String, AnyObject> {
-		let info = UserSession.currentSession.basicInfo
+		let info = KHUserManager.sharedManager.patient
+		
 		let dict: Dictionary<String,AnyObject> =
 			["firstName":info.firstName,
 			 "lastName":info.lastName,
@@ -122,7 +109,7 @@ class UserSession: NSObject {
 	}
 	
 	func logFIRProperties() {
-		let info = UserSession.currentSession.basicInfo
+		let info = KHUserManager.sharedManager.patient
 		//log user ethnicity
 		FIRAnalytics.setUserPropertyString(info.ethnicity, forName: "ethnicity")
 		

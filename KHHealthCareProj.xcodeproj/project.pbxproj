@@ -13,9 +13,9 @@
 		3C5D584B1D07BA1300E228A8 /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D584A1D07BA1300E228A8 /* MaterialView.m */; };
 		3C5D584E1D07BC6200E228A8 /* MaterialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D584D1D07BC6200E228A8 /* MaterialButton.m */; };
 		3C5D58511D07BF7D00E228A8 /* MaterialTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58501D07BF7D00E228A8 /* MaterialTextField.m */; };
-		3C5D58641D0A4ACA00E228A8 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58631D0A4ACA00E228A8 /* UserSession.swift */; };
+		3C5D58641D0A4ACA00E228A8 /* KHUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58631D0A4ACA00E228A8 /* KHUserManager.swift */; };
 		3C5D58671D0A54D600E228A8 /* FIRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58661D0A54D600E228A8 /* FIRService.swift */; };
-		3C5D58871D0B556B00E228A8 /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58861D0B556B00E228A8 /* BasicInfo.swift */; };
+		3C5D58871D0B556B00E228A8 /* KHUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58861D0B556B00E228A8 /* KHUser.swift */; };
 		3C5D588A1D0BC2D200E228A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58891D0BC2D200E228A8 /* Constants.swift */; };
 		3C5D588C1D0BC42900E228A8 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D588B1D0BC42900E228A8 /* SigninVC.swift */; };
 		3C5D588E1D0BC77100E228A8 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D588D1D0BC77100E228A8 /* UIViewControllerExtension.swift */; };
@@ -87,9 +87,9 @@
 		3C5D584F1D07BF7D00E228A8 /* MaterialTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialTextField.h; sourceTree = "<group>"; };
 		3C5D58501D07BF7D00E228A8 /* MaterialTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialTextField.m; sourceTree = "<group>"; };
 		3C5D58621D0A4ACA00E228A8 /* KHHealthCareProj-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KHHealthCareProj-Bridging-Header.h"; sourceTree = "<group>"; };
-		3C5D58631D0A4ACA00E228A8 /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		3C5D58631D0A4ACA00E228A8 /* KHUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KHUserManager.swift; sourceTree = "<group>"; };
 		3C5D58661D0A54D600E228A8 /* FIRService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRService.swift; sourceTree = "<group>"; };
-		3C5D58861D0B556B00E228A8 /* BasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
+		3C5D58861D0B556B00E228A8 /* KHUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KHUser.swift; sourceTree = "<group>"; };
 		3C5D58891D0BC2D200E228A8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3C5D588B1D0BC42900E228A8 /* SigninVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		3C5D588D1D0BC77100E228A8 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -217,9 +217,10 @@
 		3C5D58611D0A499500E228A8 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
-				3C5D58631D0A4ACA00E228A8 /* UserSession.swift */,
+				3C5D58631D0A4ACA00E228A8 /* KHUserManager.swift */,
 				3C5D58621D0A4ACA00E228A8 /* KHHealthCareProj-Bridging-Header.h */,
 				3C5D58661D0A54D600E228A8 /* FIRService.swift */,
+				7E2ADD1F1D1100CF00CF74C0 /* KHRiskFactorManager.swift */,
 				637AA2061C8B9221005107AC /* Patient */,
 			);
 			name = Singleton;
@@ -290,7 +291,6 @@
 				637AA2181C8BD1A1005107AC /* KHRiskFactorModel.h */,
 				637AA2191C8BD1A1005107AC /* KHRiskFactorModel.m */,
 				3C5D58B31D0CCF1A00E228A8 /* KHRiskFactor.swift */,
-				7E2ADD1F1D1100CF00CF74C0 /* KHRiskFactorManager.swift */,
 			);
 			name = RiskFactor;
 			sourceTree = "<group>";
@@ -377,7 +377,7 @@
 				637AA2081C8B9250005107AC /* Cancer */,
 				637AA2071C8B922A005107AC /* RiskFactor */,
 				637AA2051C8B9218005107AC /* Vaccine */,
-				3C5D58861D0B556B00E228A8 /* BasicInfo.swift */,
+				3C5D58861D0B556B00E228A8 /* KHUser.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -721,9 +721,9 @@
 				637AA2271C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m in Sources */,
 				637AA2041C8B8E77005107AC /* KHVaccineListModel.m in Sources */,
 				7E9B48E91C81A3C30067B403 /* KHAppDelegate.m in Sources */,
-				3C5D58641D0A4ACA00E228A8 /* UserSession.swift in Sources */,
+				3C5D58641D0A4ACA00E228A8 /* KHUserManager.swift in Sources */,
 				637AA2211C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m in Sources */,
-				3C5D58871D0B556B00E228A8 /* BasicInfo.swift in Sources */,
+				3C5D58871D0B556B00E228A8 /* KHUser.swift in Sources */,
 				3C5D58B41D0CCF1A00E228A8 /* KHRiskFactor.swift in Sources */,
 				7E5AD01F1CF90C5000368E69 /* KHCancerMedQuestionViewController.m in Sources */,
 				3C5D588A1D0BC2D200E228A8 /* Constants.swift in Sources */,
@@ -882,6 +882,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = KHHealthCareProj/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -905,6 +906,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = KHHealthCareProj/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.KHHealthCareProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";

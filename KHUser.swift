@@ -7,8 +7,8 @@
 //
 
 import Foundation
-@objc
-class BasicInfo :NSObject {
+
+class KHUser :NSObject {
 	
 	private var _firstName:String!
 	private var _lastName:String!

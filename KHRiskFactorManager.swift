@@ -10,40 +10,42 @@
 import Foundation
 import FirebaseDatabase
 
-@objc
+
 class KHRiskFactorManager: NSObject {
     static let sharedManager = KHRiskFactorManager()
 	
-	//RISK FACTORS
+	//MARK: - Properties
 	private var _allRiskFactors:[KHRiskFactor] = []
 	private var _ageRiskFactors:[KHRiskFactor] = []
 	private var _MDRiskFactors:[KHRiskFactor] = []
 	private var _EFLRiskFactors:[KHRiskFactor] = []
 	
-	//CATEGORIES
+	//TODO: Parse and save categories
 	private var _RFCategories:Dictionary<String,String> = [:]
 	private var _RFSubCategories:Dictionary<String,String> = [:]
 	
-	/** GETTER & SETTER**/
-	internal var allRiskFactors:[KHRiskFactor] {
-		return _allRiskFactors
+	//MARK: - GETTER & SETTER
+	var allRiskFactors:[KHRiskFactor] {
+		get {return _allRiskFactors}
 	}
-	internal var ageRiskFactors:[KHRiskFactor] {
-		return _ageRiskFactors
+	var ageRiskFactors:[KHRiskFactor] {
+		get {return _ageRiskFactors}
 	}
-	internal var MDRiskFactors:[KHRiskFactor]  {
-		return _MDRiskFactors
+	var MDRiskFactors:[KHRiskFactor]  {
+		get {return _MDRiskFactors}
 	}
-	internal var EFLRiskFactors:[KHRiskFactor] {
-		return _EFLRiskFactors
+	var EFLRiskFactors:[KHRiskFactor] {
+		get {
+			return _EFLRiskFactors
+		}
 	}
 	
-	
+	//MARK: - INIT
 	override init() {
 		
 	}
 	
-	/** DOWNLOAD DATA FUNCS**/
+	// MARK: - DOWNLOAD DATA FUNCS
 	func downloadAllRiskFactors( completion:(completed:Bool) -> Void){
 		let ref = FIRService.sharedService.refRiskfactorGen
 	
@@ -73,7 +75,7 @@ class KHRiskFactorManager: NSObject {
 					
 					self._allRiskFactors.append(riskfactor)
 					
-					//append the risk factor to the list seperated by categories
+					//MARK: append rf to category lists
 					switch riskfactor.category {
 					case "rf-ct1":
 						self._EFLRiskFactors.append(riskfactor)
@@ -96,8 +98,8 @@ class KHRiskFactorManager: NSObject {
 		}
 	}
 	
-	//helper function to parse the general list
-	func parseGeneralListDict(valueDict:[String:AnyObject]) -> [String:String] {
+	//MARK:  - Helper Functions
+	private func parseGeneralListDict(valueDict:[String:AnyObject]) -> [String:String] {
 		var generalDict:[String:String] = [:]
 		
 		for (key,value) in valueDict {
@@ -111,7 +113,7 @@ class KHRiskFactorManager: NSObject {
 		return generalDict
 	}
 	
-	func parseVaccineListDict(valueDict:[String:AnyObject]) -> [String:String] {
+	private func parseVaccineListDict(valueDict:[String:AnyObject]) -> [String:String] {
 		var vacDict:[String:String] = [:]
 		
 		for (key,value) in valueDict {
@@ -120,9 +122,7 @@ class KHRiskFactorManager: NSObject {
 			}
 			vacDict.updateValue(val, forKey: key)
 		}
-		
-		print(vacDict)
-		
+
 		return vacDict
 	}
 	
