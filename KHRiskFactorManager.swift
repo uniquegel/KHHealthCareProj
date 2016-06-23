@@ -47,84 +47,147 @@ class KHRiskFactorManager: NSObject {
 	
 	// MARK: - DOWNLOAD DATA FUNCS
 	func downloadAllRiskFactors( completion:(completed:Bool) -> Void){
-		let ref = FIRService.sharedService.refRiskfactorGen
+		let ref = FIRService.sharedService.refBase
 	
 		ref.observeSingleEventOfType(.Value) { (snapshot:FIRDataSnapshot) in
-			if let riskFactors = snapshot.value as? Dictionary<String,AnyObject> {
-
-				for (rfKey,rfValue) in riskFactors {
+			if let base = snapshot.value as? Dictionary<String, AnyObject> {
+                
+                print("base: \(base)")
+                let rfDict = base["riskfactors-general"]
+//                print("rfdict: \(rfDict)")
+                let cateDict = base["rf-categories"]
+                let subCateDict = base["rf-sub-categories"]
+                let gsDict = base["general screening"] as! [String:AnyObject]
+                let gsCateDict = base["general screening-categories"]
+                
+                for (rfKey,rfValue) in rfDict as! [String:AnyObject] {
 					
+//                    print("riskfactor key: \(rfKey) , value: \(rfValue)")
 					let rfValueDict = rfValue as! [String:AnyObject]
+                    
+                    
+                    //get name
 					
 					let name = rfValueDict["name"] as! String
+                    
+                    //get id
 					let id = rfValueDict["id"] as! String
-					let category = rfValueDict["category"] as! String
-					let subcat = rfValueDict["sub-category"] as! String
-					
+                    
+                    //get category
+					let categoryIndex = rfValueDict["category"] as! String
+                    var category:String = ""
+                    for (cateKey, cateValue) in cateDict as! [String:String] {
+//                        print("cate key and cate value: \(cateKey) , \(cateValue)")
+                        if (categoryIndex == cateKey ) {
+                            category = cateValue
+                        }
+                    }
+//                    print("done getting category")
+                    
+                    //get sub-category
+					let subcatIndex = rfValueDict["sub-category"] as! String
+                    var subCate:String = ""
+//                    print("here: \(subCateDict)")
+                    for (subCateKey, subCateValue) in subCateDict as! [String:AnyObject] {
+//                        print("subcate key and subcate value: \(subCateKey), \(subCateValue)")
+                        
+                        if (subcatIndex == subCateKey ) {
+                            let subCateValueDict = subCateValue as! [String:String]
+                            subCate = subCateValueDict["name"]!
+                            
+                        }
+                    }
+//					print("done getting subcategory")
+                    
+                    //get general list
 					var general_list:[String:String]?
 					if let list = rfValueDict["general-list"] as? [String:AnyObject] {
-						general_list = self.parseGeneralListDict(list)
+						general_list = self.parseListDict(list, listDefDict:gsDict)
 					}
 					
+                    //get vaccine list
 					var vaccine_list:[String:String]?
 					if let list = rfValueDict["vaccine-list"] as? [String:AnyObject] {
-						vaccine_list = self.parseVaccineListDict(list)
+						vaccine_list = self.parseListDict(list, listDefDict: gsDict)
 					}
 					
-					let riskfactor = KHRiskFactor(name: name, category: category, id: id, subcategory: subcat, generalList: general_list, vaccineList: vaccine_list, cancerList: nil)
-					
+                    //get cancer list
+                    
+                    
+                    
+                    //declare riskfactor
+					let riskfactor = KHRiskFactor(name: name, category: category, id: id, subcategory: subCate, generalList: general_list, vaccineList: vaccine_list, cancerList: nil)
+                    
+                    
+                    //add riskfactor to list
 					self._allRiskFactors.append(riskfactor)
 					
-					//MARK: append rf to category lists
-					switch riskfactor.category {
-					case "rf-ct1":
-						self._EFLRiskFactors.append(riskfactor)
-						break
-					case "rf-ct2":
-						self._MDRiskFactors.append(riskfactor)
-						break
-					case "rf-ct3":
-						self._ageRiskFactors.append(riskfactor)
-						break
-					default:
-						break
-					}
+	
 					
 				}
+                
+                
 				
+                print("all riskfactors added: \(self._allRiskFactors.count)")
+                print("category one (efl): \(self._EFLRiskFactors.count)")
+                for rf in self._allRiskFactors {
+                    print("rf name: \(rf.name)")
+                    print("rf category: \(rf.category)")
+                    print("rf id: \(rf.id)")
+                    print("rf sub-category: \(rf.subcategory)")
+                    print("general dict: \(rf.generalList)")
+                    print("vaccine dict: \(rf.vaccineList)")
+                    print("-------------------------------")
+                }
+//                for i in 1 ..< self._EFLRiskFactors.count {
+//                    self._EFLRiskFactors
+//                }
 				completion(completed: true)
+                
 				
 			}
 		}
 	}
 	
 	//MARK:  - Helper Functions
-	private func parseGeneralListDict(valueDict:[String:AnyObject]) -> [String:String] {
-		var generalDict:[String:String] = [:]
-		
+    private func parseListDict(valueDict:[String:AnyObject], listDefDict:[String:AnyObject]) -> [String:String] {
+		var listDict:[String:String] = [:]
+		/* var name
+        var category
+        var info
+        var id =
+        var value = */
+        
+        
 		for (key,value) in valueDict {
+            //for key index for definition
+            /* for (defKey, defValue) in listDefDict {
+//                let defVaueDict =
+                if key == defKey {
+                    let name = defValue["name"] as! String
+                    let category = defValue["category"] as! String
+                    let info = defValue["info"] as! String
+                    let id = defValue["id"] as! String
+                    let screening = KHScreening(name: name, category: category, id: id, info: info)
+                    listDict[
+                }
+            } */
+            
+            
+            //get value for that index
 			guard let dict = value as? [String:String], let val = dict["value"]  else {
 				continue
 			}
 			
-			generalDict[key] = val
+            
+            
+            
+			listDict[key] = val
 		}
 
-		return generalDict
+		return listDict
 	}
-	
-	private func parseVaccineListDict(valueDict:[String:AnyObject]) -> [String:String] {
-		var vacDict:[String:String] = [:]
-		
-		for (key,value) in valueDict {
-			guard let dict = value as? [String:String], let val = dict["value"]  else {
-				continue
-			}
-			vacDict.updateValue(val, forKey: key)
-		}
 
-		return vacDict
-	}
 	
 	
 }

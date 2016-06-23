@@ -611,6 +611,7 @@
                         <outlet property="maleButtonOutlet" destination="mj7-zF-x9B" id="a2z-mQ-RXm"/>
                         <segue destination="SiX-59-6vV" kind="show" identifier="basicQuestionToVacccineOccuRiskFactors" id="f6g-2R-gEo"/>
                         <segue destination="Bw5-Ry-ajC" kind="show" identifier="basicQuestionToCancerEFLQuestions" id="SuT-OP-FF9"/>
+                        <segue destination="Wcn-f5-cs1" kind="show" identifier="basicQuestionToGeneralEFLSegue" id="iiq-KB-E1n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggs-1E-AMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -744,7 +745,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNm-Yz-jGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3883.5" y="-673"/>
+            <point key="canvasLocation" x="4694.25" y="-703.5"/>
         </scene>
         <!--Medical Condition Questions View Controller-->
         <scene sceneID="bGJ-df-Mje">
@@ -912,7 +913,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5I-o5-yNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4502.5" y="-673.5"/>
+            <point key="canvasLocation" x="5354.25" y="-703.5"/>
         </scene>
         <!--Vaccination Screen-->
         <scene sceneID="nI0-yi-VLT">
@@ -1124,9 +1125,6 @@
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPB-dY-0NU">
                                 <rect key="frame" x="0.0" y="100" width="375" height="467"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="100" width="400" height="400"/>
-                                </variation>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mj-9q-wdq">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1289,10 +1287,10 @@
             </objects>
             <point key="canvasLocation" x="5314.5" y="93.5"/>
         </scene>
-        <!--View Controller-->
+        <!--GeneralEFL Question View Controller-->
         <scene sceneID="vV8-Bn-Eni">
             <objects>
-                <viewController id="Wcn-f5-cs1" sceneMemberID="viewController">
+                <viewController id="Wcn-f5-cs1" customClass="KHGeneralEFLQuestionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MTN-l3-W6m"/>
                         <viewControllerLayoutGuide type="bottom" id="XZT-a3-L7W"/>
@@ -1400,17 +1398,17 @@
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="3w2-b2-ItU" id="Cu4-gk-RU8"/>
-                        <segue destination="G7Q-TD-Ugq" kind="showDetail" id="4QW-MI-2hj"/>
+                        <segue destination="G7Q-TD-Ugq" kind="showDetail" identifier="GeneralEFLtoMedicalSegue" id="4QW-MI-2hj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFu-xn-eXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4704" y="864"/>
+            <point key="canvasLocation" x="4665" y="838"/>
         </scene>
-        <!--View Controller-->
+        <!--General Med Question View Controller-->
         <scene sceneID="VkC-ce-1wM">
             <objects>
-                <viewController id="G7Q-TD-Ugq" sceneMemberID="viewController">
+                <viewController id="G7Q-TD-Ugq" customClass="KHGeneralMedQuestionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iPG-PD-VVB"/>
                         <viewControllerLayoutGuide type="bottom" id="S2j-p2-jEa"/>
@@ -1496,12 +1494,12 @@
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="eXF-rj-4Nd" id="4yr-cd-gtz"/>
-                        <segue destination="KKC-WH-LqC" kind="showDetail" identifier="cardioMedQuestionToResults" id="VcJ-jx-WiK"/>
+                        <segue destination="KKC-WH-LqC" kind="showDetail" identifier="GeneralMedicalToResultsSegue" id="VcJ-jx-WiK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pu2-54-hc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5495" y="864"/>
+            <point key="canvasLocation" x="5353.5" y="832"/>
         </scene>
         <!--Vaccine-->
         <scene sceneID="dhs-hZ-TM5">
@@ -1824,7 +1822,7 @@
         <image name="Vaccine Drop-30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e3o-l2-4Ca"/>
-        <segue reference="JSx-JG-I8P"/>
+        <segue reference="VcJ-jx-WiK"/>
+        <segue reference="kk7-Ha-2RV"/>
     </inferredMetricsTieBreakers>
 </document>

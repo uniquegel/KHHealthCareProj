@@ -214,20 +214,7 @@
                     
                 }
             }
-            
-            NSLog(@"ALL risk factors for Vaccine: %@", _AllRFListForVaccine);
-            NSLog(@"ALL risk factors for Cancer : %@", _AllRFListForCancer);
-            NSLog(@"Done getting and sorting dict from FIREBASE!");
-            
-            for (KHCancerRiskFactor *crf in _AllRFListForCancer) {
-                NSLog(@"risk factor name: %@", crf.name);
-                for (KHCancer *can in crf.cancerList) {
-                    
-                    NSLog(@"inside loop: %@", can.name);
-                    //        NSLog(@"vac stat: %u", vac->status);
-                }
-                NSLog(@"----------------");
-            }
+        
         }];
         
     }

@@ -35,7 +35,7 @@ class KHRiskFactor :NSObject {
 		return _id
 	}
 	var subcategory:String {
-		return _category
+		return _subcategory
 	}
 	var generalList:Dictionary<String,String>? {
 		return _generalList
