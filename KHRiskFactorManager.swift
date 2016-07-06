@@ -104,6 +104,8 @@ class KHRiskFactorManager: NSObject {
 					if let list = rfValueDict["general-list"] as? [String:AnyObject] {
 						general_list = self.parseListDict(list, listDefDict:gsDict)
 					}
+                    print("general list for rf: \(name), list: \(general_list)")
+                    
 					
                     //get vaccine list
 					var vaccine_list:[String:String]?
@@ -123,22 +125,22 @@ class KHRiskFactorManager: NSObject {
 					self._allRiskFactors.append(riskfactor)
 					
 	
-					
+                
 				}
                 
                 
 				
-                print("all riskfactors added: \(self._allRiskFactors.count)")
-                print("category one (efl): \(self._EFLRiskFactors.count)")
-                for rf in self._allRiskFactors {
-                    print("rf name: \(rf.name)")
-                    print("rf category: \(rf.category)")
-                    print("rf id: \(rf.id)")
-                    print("rf sub-category: \(rf.subcategory)")
-                    print("general dict: \(rf.generalList)")
-                    print("vaccine dict: \(rf.vaccineList)")
-                    print("-------------------------------")
-                }
+//                print("all riskfactors added: \(self._allRiskFactors.count)")
+//                print("category one (efl): \(self._EFLRiskFactors.count)")
+//                for rf in self._allRiskFactors {
+//                    print("rf name: \(rf.name)")
+//                    print("rf category: \(rf.category)")
+//                    print("rf id: \(rf.id)")
+//                    print("rf sub-category: \(rf.subcategory)")
+//                    print("general dict: \(rf.generalList)")
+//                    print("vaccine dict: \(rf.vaccineList)")
+//                    print("-------------------------------")
+//                }
 //                for i in 1 ..< self._EFLRiskFactors.count {
 //                    self._EFLRiskFactors
 //                }

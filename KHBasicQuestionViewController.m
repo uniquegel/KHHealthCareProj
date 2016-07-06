@@ -282,8 +282,8 @@
 				
                 break;
             }
-            case kScreenTypeCardio:{
-                
+            case kScreenTypeGeneral:{
+                [self performSegueWithIdentifier:@"basicQuestionToGeneralEFLSegue" sender:self];
                 
                 
                 break;

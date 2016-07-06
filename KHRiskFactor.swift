@@ -18,13 +18,19 @@ class KHRiskFactor :NSObject {
 	private var _category: String!
 	private var _id: String!
 	private var _subcategory: String!
+    
 	
 	private var _generalList:Dictionary<String,String>?
 	private var _cancerList:Dictionary<String,String>?
 	private var _vaccineList:Dictionary<String,String>?
+    
+    private var _isActive: Bool!
+    private var _isInVaccine: Bool!
+    private var _isInCancer: Bool!
+    private var _isInGeneral: Bool!
 	
-	
-	//GETTERS & SETTERS
+	 
+	//GETTERS, SETTERS
 	var name: String {
 		return _name
 	}
@@ -37,6 +43,8 @@ class KHRiskFactor :NSObject {
 	var subcategory:String {
 		return _subcategory
 	}
+    
+    
 	var generalList:Dictionary<String,String>? {
 		return _generalList
 	}
@@ -47,6 +55,34 @@ class KHRiskFactor :NSObject {
 		return _vaccineList
 	}
 
+    var isActive:Bool {
+        get{
+            return _isActive
+        }
+        set(ifIsActive){
+            _isActive = ifIsActive
+        }
+        
+    }
+    
+    var isInVaccine:Bool {
+        get {
+            return _isInVaccine
+        }
+    }
+    
+    var isInCancer:Bool {
+        get {
+            return _isInCancer
+        }
+    }
+    
+    var isInGeneral:Bool {
+        get {
+            return _isInGeneral
+        }
+    }
+    
 	override init() {
 		_name = ""
 		_category = ""
@@ -54,6 +90,7 @@ class KHRiskFactor :NSObject {
 		_category = ""
 
 	}
+
 	
 	init(name: String, category: String, id: String, subcategory: String, generalList:[String:String]?, vaccineList: [String:String]?, cancerList: [String:String]?) {
 		
@@ -70,6 +107,17 @@ class KHRiskFactor :NSObject {
 		if let vaccineList = vaccineList {
 			self._vaccineList = vaccineList
 		}
+        
+        self._isInVaccine = self._vaccineList != nil ? true:false
+        self._isInCancer = self._cancerList != nil ? true:false
+        self._isInGeneral = self._generalList != nil ? true:false
+//        print("is rf in vaccine? \(self._isInVaccine) , in general? \(self._isInGeneral)")
+        
+//        if self._vaccineList == nil {
+//            self._isInVaccine = false
+//        }
+        
+        self._isActive = false;
 		
 
 	}

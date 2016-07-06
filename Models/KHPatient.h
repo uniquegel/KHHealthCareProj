@@ -33,6 +33,7 @@
 // lists
 @property (nonatomic, strong) NSMutableArray *vaccineList;
 @property (nonatomic, strong) NSMutableArray *cancerList;
+@property (nonatomic, strong) NSMutableDictionary *generalList;
 @property (nonatomic, strong) NSArray *riskFactorList;
 
 

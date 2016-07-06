@@ -15,8 +15,14 @@
 #import "KHHealthCareProj-Swift.h"
 
 @import FirebaseAuth;
+@interface KHHomePageViewController ()
+- (IBAction)genScreenBtnTapped:(id)sender;
+
+
+@end
 
 @implementation KHHomePageViewController
+
 
 -(void)viewDidLoad {
     
@@ -80,10 +86,14 @@
     [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
 }
 
-- (IBAction)cardDisScreenButtonAction:(id)sender {
-    _scrType = kScreenTypeCardio;
+- (IBAction)genScreenBtnTapped:(id)sender {
+    _scrType = kScreenTypeGeneral;
     NSLog(@"Screen type: %lu", (unsigned long)_scrType);
-//    [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
+        [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
+}
+
+- (IBAction)cardDisScreenButtonAction:(id)sender {
+    
 }
 
 - (IBAction)logoutButtonPressed:(id)sender {
@@ -95,4 +105,5 @@
 	}
 	
 }
+
 @end

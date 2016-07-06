@@ -25,14 +25,14 @@
         _completedVaccineFlow = NO;
         _completedCardiometabolicFlow = NO;
         // instantiate vaccine array
-        KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];
-        self.vaccineList = [NSMutableArray arrayWithArray:vaccineModel.vaccineList];
-        
-        // instantiate cancer array
-        KHCancerListModel *cancerModel = [KHCancerListModel sharedModel];
-        self.cancerList = [NSArray arrayWithArray:cancerModel.cancerList];
-        
-        //
+//        KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];
+//        self.vaccineList = [NSMutableArray arrayWithArray:vaccineModel.vaccineList];
+//        
+//        // instantiate cancer array
+//        KHCancerListModel *cancerModel = [KHCancerListModel sharedModel];
+//        self.cancerList = [NSArray arrayWithArray:cancerModel.cancerList];
+//        
+//        //
         
                 
     }

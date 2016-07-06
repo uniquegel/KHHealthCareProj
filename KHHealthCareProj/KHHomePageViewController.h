@@ -12,14 +12,12 @@
 typedef enum ScreeningType : NSUInteger {
     kScreenTypeVaccine,
     kScreenTypeCancer,
-    kScreenTypeCardio
+    kScreenTypeGeneral
 } ScreeningType;
 
 @property (nonatomic, strong) NSArray *vaccineList;
 @property (nonatomic, readwrite) ScreeningType scrType;
 - (IBAction)vacScreenButtonAction:(id)sender;
 
-- (IBAction)cancerScreenButtonAction:(id)sender;
-- (IBAction)cardDisScreenButtonAction:(id)sender;
 
 @end
