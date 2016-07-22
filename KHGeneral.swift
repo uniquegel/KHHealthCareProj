@@ -10,14 +10,15 @@ import Foundation
 
 import FirebaseDatabase
 
-class KHScreening :NSObject {
-    static let sharedInstance = KHScreening()
+class KHGeneral :NSObject {
+    static let sharedInstance = KHGeneral()
     
     // class varibales
     private var _name: String!
     private var _category: String!
     private var _id: String!
     private var _info: String!
+    
     
     
     

@@ -97,8 +97,7 @@
     _scrollView.contentSize = contentView.frame.size;
     
 }
-/*
- */
+
 
 
 #pragma mark - Navigation
@@ -122,47 +121,43 @@
 }
 
 
-
 -(void)calculateResults {
-    
-    
-    //    NSInteger numVaccineRiskFactors = [self.vaccineRiskFactorList count];
-    //    NSLog(@"Num risk factors = %ld\n", (long)numVaccineRiskFactors);
     NSLog(@"patien current info");
     NSLog(@"num risk factors: %ld", (long)self.patient->numRiskFactors);
     NSLog(@"age %ld", (long)self.patient.age);
     NSLog(@"first, last name: %@ %@", _patient.firstName, _patient.lastName);
     
     
-    // FIXME: feed the list of cancers to Patient, and initialize them with NOTHING as stat
-    // Ideally change this to Homepage when pull info from user
+    // FIXME: feed the list of cancers to Patient, and initialize them with NOTHING as stat, Ideally change this to Homepage when pull info from user
     KHRiskFactor *firstRF;
     for (KHRiskFactor *rf in _allRiskFactors) {
+        // traverse tje list of allRFs, and find the first RF that is a general screening riskfactor
         if (rf.isInGeneral ) {
             firstRF = rf;
         }
     }
     
-    /* for (KHCancerRiskFactor *crf in self.riskFactors.AllRFListForCancer) {
-     NSLog(@"risk factor name: %@", crf.name);
-     for (KHCancer *can in crf.cancerList) {
-     
-     NSLog(@"inside loop: %@", can.name);
-     //        NSLog(@"vac stat: %u", vac->status);
-     }
-     NSLog(@"----------------");
-     } */
+    
+    // set the status of all general rfs for the patient to be WHITE
     NSLog(@"firstRF info: %@", firstRF.name);
-    self.patient.generalList = firstRF.generalList;
-    for (KHCancer *can in self.patient.cancerList) {
-        can->status = Nothing;
+    self.patient.generalList = [firstRF.generalList mutableCopy];
+    // each user carry an array of KHGeneralScreening objects, seek out each one of the KHGeneralScreening objects and set its 'status' to White
+    /* for (id key in self.patient.generalList) {
+        can->status = White;
         NSLog(@"can under patient: %@", can.name);
         //        NSLog(@"vac stat: %u", vac->status);
-    }
+    } */
     
+    
+    
+    /* DEV COMMENT:
+        the following chunk of code seek out each RF as long as it has GeneralScreening as its category.
+        Then if this RF is active, we use the general_list that it carries to check against the patient's current list of general_list (general_list is a list of general screenings with status (Blue, Green, Yellow, Red, White))
+     
+     */
     
     // For each risk factor
-    NSLog(@"ALLRFLIST FOR CANCER: %lu", (unsigned long)_riskFactors.AllRFListForCancer.count);
+    /*
     for(int i = 0; i < _riskFactors.AllRFListForCancer.count; i++) {
         NSLog(@"inside ALL RF for cancer!:");
         // get current vaccine risk factor
@@ -213,17 +208,20 @@
             }
         }
         
-    }
+    } */
     NSLog(@"done calculating results!");
     
     
-    for (KHCancer *can in self.patient.cancerList) {
-        NSLog(@"Final patient cancer status: %u", can->status);
-    }
+//    for (KHCancer *can in self.patient.cancerList) {
+//        NSLog(@"Final patient cancer status: %u", can->status);
+//    }
     
 }
 
--(Status)getStatusWithCheckCancer:(KHCancer *)checkCancer andPatientCancer:(KHCancer *)patientCancer {
+
+
+
+/* -(Status)getStatusWithCheckCancer:(KHCancer *)checkCancer andPatientCancer:(KHCancer *)patientCancer {
     
     Status newStatus = Nothing;
     
@@ -253,17 +251,21 @@
     }
     NSLog(@"got new stat!: %u", newStatus);
     return newStatus;
-}
+} */
+
+
+
+
 
 - (IBAction)nextPageButton:(id)sender {
     for(int i=0; i<_checkBoxArray.count ; i++)
     {
         if ([_checkBoxArray[i] isOn]) {
             //update risnexkfactor status
-            KHCancerRiskFactor *riskFactor = _MedRiskFactorArray[i];
-            riskFactor.isActive = YES;
-            NSUInteger index = [_riskFactors.AllRFListForCancer indexOfObject:riskFactor];
-            [_riskFactors.AllRFListForCancer replaceObjectAtIndex:index withObject:riskFactor];
+//            KHCancerRiskFactor *riskFactor = _MedRiskFactorArray[i];
+//            riskFactor.isActive = YES;
+//            NSUInteger index = [_riskFactors.AllRFListForCancer indexOfObject:riskFactor];
+//            [_riskFactors.AllRFListForCancer replaceObjectAtIndex:index withObject:riskFactor];
         }
     }
     
@@ -276,6 +278,9 @@
     _patient.completedCancerFlow = YES;
     [self performSegueWithIdentifier:@"cancerMedQuestionToResults" sender:self];
 }
+
+
+
 
 - (void) switchSelector: (UISwitch*)sender {
     
@@ -336,4 +341,4 @@
 @end
 
 
-@end
+

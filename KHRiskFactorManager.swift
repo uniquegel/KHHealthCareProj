@@ -118,11 +118,11 @@ class KHRiskFactorManager: NSObject {
                     
                     
                     //declare riskfactor
-					let riskfactor = KHRiskFactor(name: name, category: category, id: id, subcategory: subCate, generalList: general_list, vaccineList: vaccine_list, cancerList: nil)
+//					let riskfactor = KHRiskFactor(name: name, category: category, id: id, subcategory: subCate, generalList: general_list, vaccineList: vaccine_list, cancerList: nil)
                     
                     
                     //add riskfactor to list
-					self._allRiskFactors.append(riskfactor)
+//					self._allRiskFactors.append(riskfactor)
 					
 	
                 

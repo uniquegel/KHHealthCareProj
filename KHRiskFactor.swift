@@ -20,7 +20,7 @@ class KHRiskFactor :NSObject {
 	private var _subcategory: String!
     
 	
-	private var _generalList:Dictionary<String,String>?
+	private var _generalList:NSMutableArray?
 	private var _cancerList:Dictionary<String,String>?
 	private var _vaccineList:Dictionary<String,String>?
     
@@ -45,7 +45,7 @@ class KHRiskFactor :NSObject {
 	}
     
     
-	var generalList:Dictionary<String,String>? {
+	var generalList:NSMutableArray? {
 		return _generalList
 	}
 	var cancerList:Dictionary<String,String>? {
@@ -92,7 +92,7 @@ class KHRiskFactor :NSObject {
 	}
 
 	
-	init(name: String, category: String, id: String, subcategory: String, generalList:[String:String]?, vaccineList: [String:String]?, cancerList: [String:String]?) {
+	init(name: String, category: String, id: String, subcategory: String, generalList:NSMutableArray?, vaccineList: [String:String]?, cancerList: [String:String]?) {
 		
 		self._name = name
 		self._id = id
