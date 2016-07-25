@@ -13,6 +13,7 @@
 #import "KHBasicQuestionViewController.h"
 #import "KHPatient.h"
 #import "KHHealthCareProj-Swift.h"
+#import "KHRiskFactorManager.h"
 
 @import FirebaseAuth;
 @interface KHHomePageViewController ()
@@ -35,13 +36,13 @@
 }
 
 -(void) viewDidAppear:(BOOL)animated {
-	[[KHRiskFactorManager sharedManager] downloadAllRiskFactors:^(BOOL completed) {
-		if (completed) {
-			KHRiskFactorManager *manager = [KHRiskFactorManager sharedManager];
-			
-		}
-	}];
-	
+//	[[KHRiskFactorManager sharedManager] downloadAllRiskFactors:^(BOOL completed) {
+//		if (completed) {
+//			KHRiskFactorManager *manager = [KHRiskFactorManager sharedManager];
+//			
+//		}
+//	}];
+	[[KHRiskFactorManager sharedManager] downloadAllRiskFactors];
 }
 
 

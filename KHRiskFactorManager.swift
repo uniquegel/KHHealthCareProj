@@ -11,8 +11,8 @@ import Foundation
 import FirebaseDatabase
 
 
-class KHRiskFactorManager: NSObject {
-    static let sharedManager = KHRiskFactorManager()
+class KHRiskFactorManagerSwift: NSObject {
+    static let sharedManager = KHRiskFactorManagerSwift()
 	
 	//MARK: - Properties
 	private var _allRiskFactors:[KHRiskFactor] = []

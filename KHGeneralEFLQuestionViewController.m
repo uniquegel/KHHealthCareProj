@@ -9,6 +9,7 @@
 #import "KHGeneralEFLQuestionViewController.h"
 #import "KHPatient.h"
 #import "KHHealthcareProj-Swift.h"
+#import "KHRiskFactorManager.h"
 
 @interface KHGeneralEFLQuestionViewController ()
 @property KHPatient *patient;
@@ -32,8 +33,8 @@
     [super viewDidLoad];
     _patient = [KHPatient sharedModel];
 //    _riskFactors = [KHRiskFactorModel sharedModel];
-    _allRiskFactors = [KHRiskFactorManager sharedManager].allRiskFactors;
-    
+//    _allRiskFactors = [KHRiskFactorManager sharedManager].allRiskFactors;
+	
     
     [self UISetup];
     // Do any additional setup after loading the view.

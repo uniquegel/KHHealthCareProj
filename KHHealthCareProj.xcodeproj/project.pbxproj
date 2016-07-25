@@ -22,6 +22,7 @@
 		3C5D58AF1D0BD7D600E228A8 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58AE1D0BD7D600E228A8 /* SignupVC.swift */; };
 		3C5D58B21D0C671300E228A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C5D58B01D0C671300E228A8 /* Main.storyboard */; };
 		3C5D58B41D0CCF1A00E228A8 /* KHRiskFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58B31D0CCF1A00E228A8 /* KHRiskFactor.swift */; };
+		3C9BEFC91D42BE9300E81220 /* KHRiskFactorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BEFC81D42BE9300E81220 /* KHRiskFactorManager.m */; };
 		40B7BDF22C3EF756D74F5D09 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D925CAC3C0E2943DBB8CEE00 /* CoreText.framework */; };
 		43B9C46921FDA10E81CF5F7A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42620321EE9D70996C1CB63C /* BuddyBuildSDK.framework */; };
 		630569BB1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630569BA1C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.m */; };
@@ -100,6 +101,8 @@
 		3C5D58AE1D0BD7D600E228A8 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		3C5D58B11D0C671300E228A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = KHHealthCareProj/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C5D58B31D0CCF1A00E228A8 /* KHRiskFactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KHRiskFactor.swift; sourceTree = "<group>"; };
+		3C9BEFC71D42BE9300E81220 /* KHRiskFactorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHRiskFactorManager.h; sourceTree = "<group>"; };
+		3C9BEFC81D42BE9300E81220 /* KHRiskFactorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHRiskFactorManager.m; sourceTree = "<group>"; };
 		42620321EE9D70996C1CB63C /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		4FDC2515A8130A96CE1DCB24 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		630569B91C8C03B2001E8CB5 /* KHCancerScreeningResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCancerScreeningResultsViewController.h; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 				3C5D58661D0A54D600E228A8 /* FIRService.swift */,
 				7E2ADD1F1D1100CF00CF74C0 /* KHRiskFactorManager.swift */,
 				637AA2061C8B9221005107AC /* Patient */,
+				3C9BEFC71D42BE9300E81220 /* KHRiskFactorManager.h */,
+				3C9BEFC81D42BE9300E81220 /* KHRiskFactorManager.m */,
 			);
 			name = "Singleton Service";
 			path = ..;
@@ -756,6 +761,7 @@
 				7E32061A1D1B585E0015DA33 /* KHGeneral.swift in Sources */,
 				637AA2271C8BFE59005107AC /* KHMedicalConditionQuestionsViewController.m in Sources */,
 				637AA2041C8B8E77005107AC /* KHVaccineListModel.m in Sources */,
+				3C9BEFC91D42BE9300E81220 /* KHRiskFactorManager.m in Sources */,
 				7E9B48E91C81A3C30067B403 /* KHAppDelegate.m in Sources */,
 				3C5D58641D0A4ACA00E228A8 /* KHUserManager.swift in Sources */,
 				637AA2211C8BFE04005107AC /* KHOccupationalLifestyleQuestionsViewController.m in Sources */,
