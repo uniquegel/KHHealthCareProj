@@ -35,6 +35,7 @@
 //		NSLog(@"%@", subCateDict);
 //		NSLog(@"%@", gsDict);
 		
+		//Parse the risk factors 
 		[rfDict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
 			NSDictionary *rfValueDict = [rfDict objectForKey:key];
 			NSLog(@"%@", rfValueDict);
@@ -44,13 +45,15 @@
 			NSString *categoryIndex = rfValueDict[@"category"];
 			__block NSMutableString *category;
 			
+			//Find the category names for this risk factor
 			[cateDict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
 				if ([categoryIndex isEqualToString: (NSString *)key]) {
-					category = [NSMutableString stringWithString: cateDict[@"key"]] ;
+					category = [NSMutableString stringWithString: cateDict[key]] ;
 					
 				}
 			}];
 			
+			//Find the sub-category name
 			NSString *subcatIndex = rfValueDict[@"sub-category"];
 			__block NSMutableString *subCate;
 			
