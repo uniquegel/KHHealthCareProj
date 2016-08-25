@@ -15,30 +15,30 @@ class KHRiskFactorManagerSwift: NSObject {
     static let sharedManager = KHRiskFactorManagerSwift()
 	
 	//MARK: - Properties
-	private var _allRiskFactors:[KHRiskFactor] = []
-	private var _ageRiskFactors:[KHRiskFactor] = []
-	private var _MDRiskFactors:[KHRiskFactor] = []
-	private var _EFLRiskFactors:[KHRiskFactor] = []
-	
-	//TODO: Parse and save categories
-	private var _RFCategories:Dictionary<String,String> = [:]
-	private var _RFSubCategories:Dictionary<String,String> = [:]
-	
-	//MARK: - GETTER & SETTER
-	var allRiskFactors:[KHRiskFactor] {
-		get {return _allRiskFactors}
-	}
-	var ageRiskFactors:[KHRiskFactor] {
-		get {return _ageRiskFactors}
-	}
-	var MDRiskFactors:[KHRiskFactor]  {
-		get {return _MDRiskFactors}
-	}
-	var EFLRiskFactors:[KHRiskFactor] {
-		get {
-			return _EFLRiskFactors
-		}
-	}
+//	private var _allRiskFactors:[KHRiskFactor] = []
+//	private var _ageRiskFactors:[KHRiskFactor] = []
+//	private var _MDRiskFactors:[KHRiskFactor] = []
+//	private var _EFLRiskFactors:[KHRiskFactor] = []
+//	
+//	//TODO: Parse and save categories
+//	private var _RFCategories:Dictionary<String,String> = [:]
+//	private var _RFSubCategories:Dictionary<String,String> = [:]
+//	
+//	//MARK: - GETTER & SETTER
+//	var allRiskFactors:[KHRiskFactor] {
+//		get {return _allRiskFactors}
+//	}
+//	var ageRiskFactors:[KHRiskFactor] {
+//		get {return _ageRiskFactors}
+//	}
+//	var MDRiskFactors:[KHRiskFactor]  {
+//		get {return _MDRiskFactors}
+//	}
+//	var EFLRiskFactors:[KHRiskFactor] {
+//		get {
+//			return _EFLRiskFactors
+//		}
+//	}
 	
 	//MARK: - INIT
 	override init() {

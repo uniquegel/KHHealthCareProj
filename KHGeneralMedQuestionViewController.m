@@ -11,6 +11,7 @@
 #import "KHHealthcareProj-Swift.h"
 #import "KHTabBarViewController.h"
 #import "KHRiskFactorManager.h"
+#import "KHRiskFactor.h"
 
 @interface KHGeneralMedQuestionViewController ()
 @property KHPatient *patient;
@@ -72,7 +73,7 @@
             NSLog(@"rf name: %@,  cate: %@", rf.name, rf.category);
             UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(width - 60, 10, 30,30 )];
             
-            NSString *rfID = rf.id;
+            NSString *rfID = rf.ID;
             NSString *rfTag = [rfID substringFromIndex:2];
             mySwitch.tag = rfTag.integerValue;
             
@@ -288,7 +289,7 @@
     
     for (KHRiskFactor *rf in _allRiskFactors) {
         NSString *rfID = [NSString stringWithFormat:@"rf%ld", (long)sender.tag];
-        if ([rfID isEqualToString:rf.id]) {
+        if ([rfID isEqualToString:rf.ID]) {
             rf.isActive = [sender isOn];
         }
         

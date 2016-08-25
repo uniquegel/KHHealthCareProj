@@ -20,6 +20,9 @@
 }
 
 - (void)downloadAllRiskFactors {
+	
+	NSMutableArray *allRiskFactors = [[NSMutableArray alloc] init];
+	
 	FIRDatabaseReference *ref = [[FIRDatabase database] reference];
 	[ref observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
 		NSDictionary *base = snapshot.value;
@@ -53,6 +56,8 @@
 				}
 			}];
 			
+			
+			
 			//Find the sub-category name
 			NSString *subcatIndex = rfValueDict[@"sub-category"];
 			__block NSMutableString *subCate;
@@ -63,6 +68,8 @@
 					subCate = subCateValueDict[@"name"];
 				}
 			}];
+			
+			NSLog(@"%@   %@", category, subCate);
 			
 			//general list
 			NSDictionary *general_list = [NSDictionary dictionary];
@@ -80,8 +87,22 @@
 			if (list != nil) {
 				vaccine_list = [self parseListDictWithDict:list andListDefDict:gsDict];
 			}
+			
+			//declare riskfactor
+			//					let riskfactor = KHRiskFactor(name: name, category: category, id: id, subcategory: subCate, generalList: general_list, vaccineList: vaccine_list, cancerList: nil)
+			
+			
+			//add riskfactor to list
+			//					self._allRiskFactors.append(riskfactor)
+			
+			
+			
 		}];
 	}];
+	
+//	NSLog(@"%@", )
+	
+	
 }
 
 - (NSDictionary*) parseListDictWithDict:(NSDictionary*)valueDict andListDefDict:(NSDictionary *)listDefDict {

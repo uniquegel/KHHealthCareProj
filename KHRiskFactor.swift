@@ -10,9 +10,9 @@
 import Foundation
 import FirebaseDatabase
 
-class KHRiskFactor :NSObject {
-	static let sharedInstance = KHRiskFactor()
-    
+class KHRiskFactorSwift :NSObject {
+//	static let sharedInstance = KHRiskFactor()
+	
     // class varibales 
     private var _name: String!
 	private var _category: String!

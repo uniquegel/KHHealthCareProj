@@ -10,6 +10,7 @@
 		024F7B701C5A43A2ACF26E0D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21FDB519DB6150C52EFE6F4 /* QuartzCore.framework */; };
 		21B0CE185325FC28741DD30A /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C076BF6CF45518781B147688 /* CoreVideo.framework */; };
 		28F7CD2DBCFC3E34BC4AAB9F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3C300B2C61D0E74582C2F7 /* AssetsLibrary.framework */; };
+		3C10917E1D6F7EA6007E46E1 /* KHRiskFactor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C10917D1D6F7EA6007E46E1 /* KHRiskFactor.m */; };
 		3C5D584B1D07BA1300E228A8 /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D584A1D07BA1300E228A8 /* MaterialView.m */; };
 		3C5D584E1D07BC6200E228A8 /* MaterialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D584D1D07BC6200E228A8 /* MaterialButton.m */; };
 		3C5D58511D07BF7D00E228A8 /* MaterialTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D58501D07BF7D00E228A8 /* MaterialTextField.m */; };
@@ -85,6 +86,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C10917C1D6F7EA6007E46E1 /* KHRiskFactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHRiskFactor.h; sourceTree = "<group>"; };
+		3C10917D1D6F7EA6007E46E1 /* KHRiskFactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHRiskFactor.m; sourceTree = "<group>"; };
 		3C5D58491D07BA1300E228A8 /* MaterialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialView.h; sourceTree = "<group>"; };
 		3C5D584A1D07BA1300E228A8 /* MaterialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialView.m; sourceTree = "<group>"; };
 		3C5D584C1D07BC6200E228A8 /* MaterialButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialButton.h; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 				637AA2131C8B9530005107AC /* KHCancerRiskFactor.m */,
 				637AA2181C8BD1A1005107AC /* KHRiskFactorModel.h */,
 				637AA2191C8BD1A1005107AC /* KHRiskFactorModel.m */,
+				3C10917C1D6F7EA6007E46E1 /* KHRiskFactor.h */,
+				3C10917D1D6F7EA6007E46E1 /* KHRiskFactor.m */,
 			);
 			name = RiskFactor;
 			sourceTree = "<group>";
@@ -742,6 +747,7 @@
 				637AA21A1C8BD1A1005107AC /* KHRiskFactorModel.m in Sources */,
 				3C5D58511D07BF7D00E228A8 /* MaterialTextField.m in Sources */,
 				3C5D584E1D07BC6200E228A8 /* MaterialButton.m in Sources */,
+				3C10917E1D6F7EA6007E46E1 /* KHRiskFactor.m in Sources */,
 				7E90ACB71D42132B006D21CD /* KHGeneralScreening.m in Sources */,
 				7E9B48F21C81A3C30067B403 /* KHHealthCareProj.xcdatamodeld in Sources */,
 				3C5D584B1D07BA1300E228A8 /* MaterialView.m in Sources */,

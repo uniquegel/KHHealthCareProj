@@ -39,39 +39,32 @@
     self.ethnicityPicker.dataSource = self;
     self.ethnicityPicker.delegate = self;
     self.birthdayTF.enabled=NO;
-    
-    
-    //initialize based on patient info
-    if (_patient.collectedBasicInfo) {
-        _firstNameTF.text = _patient.firstName;
-        _lastNameTF.text = _patient.lastName;
-        if ([_patient.gender isEqualToString:@"female"]) {
-            [_femaleButtonOutlet setSelected:YES];
-        }
-        else if ([_patient.gender isEqualToString:@"male"]){
-            [_maleButtonOutlet setSelected:YES];
-        }
-        
-        _datePicker.date = _patient.birthday;
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-        NSString *strDate = [dateFormatter stringFromDate:_patient.birthday];
-        _birthdayTF.text = strDate;
-        [_ethnicityPicker selectRow:[_pickerData indexOfObject:_patient.ethnicty ]  inComponent:0 animated:YES];
-    }
-    
-    
-    
-    
-    
-    
+	
+	[self loadCurrentPatientData];
+	
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+- (void)loadCurrentPatientData {
+	//initialize based on patient info
+	if (_patient.collectedBasicInfo) {
+		_firstNameTF.text = _patient.firstName;
+		_lastNameTF.text = _patient.lastName;
+		if ([_patient.gender isEqualToString:@"female"]) {
+			[_femaleButtonOutlet setSelected:YES];
+		}
+		else if ([_patient.gender isEqualToString:@"male"]){
+			[_maleButtonOutlet setSelected:YES];
+		}
+		
+		_datePicker.date = _patient.birthday;
+		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+		[dateFormatter setDateFormat:@"yyyy-MM-dd"];
+		NSString *strDate = [dateFormatter stringFromDate:_patient.birthday];
+		_birthdayTF.text = strDate;
+		[_ethnicityPicker selectRow:[_pickerData indexOfObject:_patient.ethnicty ]  inComponent:0 animated:YES];
+	}
 
+}
 
 
 -(void)swipeHandler:(UISwipeGestureRecognizer *)recognizer {
@@ -135,16 +128,14 @@
 }
 
 
-
-
 //Pickerview components
-- (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
 }
 
 // The number of rows of data
-- (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return _pickerData.count;
 }
@@ -294,9 +285,11 @@
     }
     else{
 
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Oops"
-                                                                                 message:@"Please fill out all the blanks!"
-                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertController = [UIAlertController
+		 alertControllerWithTitle:@"Oops"
+		 message:@"Please fill out all the blanks!"
+		 preferredStyle:UIAlertControllerStyleAlert];
+		
         //We add buttons to the alert controller by creating UIAlertActions:
         UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
                                                            style:UIAlertActionStyleDefault
