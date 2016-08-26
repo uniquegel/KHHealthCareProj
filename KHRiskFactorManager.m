@@ -29,6 +29,10 @@
 	NSMutableArray *EFLRiskFactorsCopy = [[NSMutableArray alloc] init];
 	NSMutableArray *MCRiskFactorsCopy = [[NSMutableArray alloc] init];
 	
+	NSMutableArray *generalRiskFactorsCopy = [[NSMutableArray alloc] init];
+	NSMutableArray *cancerRiskFactorsCopy = [[NSMutableArray alloc] init];
+	NSMutableArray *vaccineRiskFactorsCopy = [[NSMutableArray alloc] init];
+	
 	FIRDatabaseReference *ref = [[FIRDatabase database] reference];
 	
 	
@@ -96,8 +100,15 @@
 				vaccine_list = [self parseListDictWithDict:list andListDefDict:gsDict];
 			}
 			
+			//cancer list
+			NSDictionary *cancer_list;
+			list = rfValueDict[@"cancer-list"];
+			if (list != nil) {
+				cancer_list = [self parseListDictWithDict:list andListDefDict:gsDict];
+			}
+			
 			//init risk factor object
-			KHRiskFactor* riskfactor = [[KHRiskFactor alloc] initWithName:name category:category ID:ID subCategory:subCate generalList:general_list vaccineList:vaccine_list cancerList:nil];
+			KHRiskFactor* riskfactor = [[KHRiskFactor alloc] initWithName:name category:category ID:ID subCategory:subCate generalList:general_list vaccineList:vaccine_list cancerList:cancer_list];
 			
 			//All Riskfactors mutable copy
 			[allRiskFactorsCopy addObject:riskfactor];
@@ -109,6 +120,13 @@
 			else if ([category isEqualToString:@"Ethnicity, Family, Lifestyle"])		//EFL risk factor mutable copy
 				[EFLRiskFactorsCopy addObject:riskfactor];
 			
+			if (riskfactor.generalList != nil)
+				[generalRiskFactorsCopy addObject:riskfactor];
+			if (riskfactor.vaccineList != nil)
+				[vaccineRiskFactorsCopy addObject:riskfactor];
+			if (riskfactor.cancerList != nil)
+				[cancerRiskFactorsCopy addObject:riskfactor];
+			
 //			NSLog(@"%@", riskfactor.name);
 //			NSLog(@"%lu %lu", allRiskFactorsCopy.count, rfDict.count);
 			
@@ -117,7 +135,12 @@
 				self.allRiskFactors = [NSArray arrayWithArray:allRiskFactorsCopy];
 				self.EFLRiskFactors = [NSArray arrayWithArray:EFLRiskFactorsCopy];
 				self.MedicalCondRiskFactors = [NSArray arrayWithArray:MCRiskFactorsCopy];
-				NSLog(@"%lu", self.EFLRiskFactors.count);
+				
+				self.generalRiskFactors = [NSArray arrayWithArray:generalRiskFactorsCopy];
+				self.vaccineRiskFactors = [NSArray arrayWithArray:vaccineRiskFactorsCopy];
+				self.cancerRiskFactors = [NSArray arrayWithArray:cancerRiskFactorsCopy];
+				
+//				NSLog(@"%lu", self.EFLRiskFactors.count);
 			}
 		}];
 	}];

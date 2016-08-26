@@ -16,6 +16,10 @@
 @property (strong, nonatomic) NSArray *MedicalCondRiskFactors;
 @property (strong, nonatomic) NSArray *EFLRiskFactors;
 
+@property (strong, nonatomic) NSArray *generalRiskFactors;
+@property (strong, nonatomic) NSArray *cancerRiskFactors;
+@property (strong, nonatomic) NSArray *vaccineRiskFactors;
+
 @property (strong, nonatomic) NSDictionary *RFCategories;
 @property (strong, nonatomic) NSDictionary *RFSubCategor;
 
