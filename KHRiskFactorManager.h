@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) NSArray *allRiskFactors;
 @property (strong, nonatomic) NSArray *ageRiskFactors;
-@property (strong, nonatomic) NSArray *MDRiskFactors;
+@property (strong, nonatomic) NSArray *MedicalCondRiskFactors;
 @property (strong, nonatomic) NSArray *EFLRiskFactors;
 
 @property (strong, nonatomic) NSDictionary *RFCategories;

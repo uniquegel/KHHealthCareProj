@@ -24,6 +24,8 @@
 @property (nonatomic) BOOL isInCancer;
 @property (nonatomic) BOOL isInGeneral;
 
+- (instancetype)initWithName:(NSString *)name category:(NSString *)category ID:(NSString *)ID subCategory:(NSString *)subcate generalList:(NSDictionary *)generalList vaccineList:(NSDictionary *)vaccineList cancerList:(NSDictionary *)cancerList;
+
 @end
 
 

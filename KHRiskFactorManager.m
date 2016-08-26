@@ -8,6 +8,8 @@
 
 #import "KHRiskFactorManager.h"
 #import "KHHealthCareProj-Swift.h"
+#import "KHRiskFactor.h"
+
 @implementation KHRiskFactorManager
 
 + (id)sharedManager {
@@ -21,9 +23,15 @@
 
 - (void)downloadAllRiskFactors {
 	
-	NSMutableArray *allRiskFactors = [[NSMutableArray alloc] init];
+	//declare the mutable copies of the risk factors
+	NSMutableArray *allRiskFactorsCopy = [[NSMutableArray alloc] init];
+	NSMutableArray *ageRiskFactorsCopy = [[NSMutableArray alloc] init];
+	NSMutableArray *EFLRiskFactorsCopy = [[NSMutableArray alloc] init];
+	NSMutableArray *MCRiskFactorsCopy = [[NSMutableArray alloc] init];
 	
 	FIRDatabaseReference *ref = [[FIRDatabase database] reference];
+	
+	
 	[ref observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
 		NSDictionary *base = snapshot.value;
 
@@ -41,11 +49,12 @@
 		//Parse the risk factors 
 		[rfDict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
 			NSDictionary *rfValueDict = [rfDict objectForKey:key];
-			NSLog(@"%@", rfValueDict);
+//			NSLog(@"%@", rfValueDict);
 			
 			NSString *name = [rfValueDict objectForKey:@"name"];
 			NSString *ID = [rfValueDict objectForKey:@"id"];
 			NSString *categoryIndex = rfValueDict[@"category"];
+			
 			__block NSMutableString *category;
 			
 			//Find the category names for this risk factor
@@ -55,7 +64,6 @@
 					
 				}
 			}];
-			
 			
 			
 			//Find the sub-category name
@@ -69,7 +77,7 @@
 				}
 			}];
 			
-			NSLog(@"%@   %@", category, subCate);
+//			NSLog(@"%@   %@", category, subCate);
 			
 			//general list
 			NSDictionary *general_list = [NSDictionary dictionary];
@@ -78,7 +86,7 @@
 				
 				general_list = [NSDictionary dictionaryWithDictionary:[self parseListDictWithDict:list  andListDefDict:gsDict]];
 			}
-			NSLog(@"general list for rf: %@ list: %@", name, general_list);
+//			NSLog(@"general list for rf: %@ list: %@", name, general_list);
 			
 			//vaccine list
 			NSDictionary *vaccine_list;
@@ -88,20 +96,31 @@
 				vaccine_list = [self parseListDictWithDict:list andListDefDict:gsDict];
 			}
 			
-			//declare riskfactor
-			//					let riskfactor = KHRiskFactor(name: name, category: category, id: id, subcategory: subCate, generalList: general_list, vaccineList: vaccine_list, cancerList: nil)
+			//init risk factor object
+			KHRiskFactor* riskfactor = [[KHRiskFactor alloc] initWithName:name category:category ID:ID subCategory:subCate generalList:general_list vaccineList:vaccine_list cancerList:nil];
 			
+			//All Riskfactors mutable copy
+			[allRiskFactorsCopy addObject:riskfactor];
 			
-			//add riskfactor to list
-			//					self._allRiskFactors.append(riskfactor)
+			if ([category isEqualToString:@"Age"])										//Age riskfactor mutable copy
+				[ageRiskFactorsCopy addObject:riskfactor];
+			else if ([category isEqualToString:@"Medical Condition"])					//MD riskfactor mutable copy
+				[MCRiskFactorsCopy addObject:riskfactor];
+			else if ([category isEqualToString:@"Ethnicity, Family, Lifestyle"])		//EFL risk factor mutable copy
+				[EFLRiskFactorsCopy addObject:riskfactor];
 			
+//			NSLog(@"%@", riskfactor.name);
+//			NSLog(@"%lu %lu", allRiskFactorsCopy.count, rfDict.count);
 			
-			
+			//after all the risk factors are parsed save them into riskfactors
+			if (allRiskFactorsCopy.count >= rfDict.count) {
+				self.allRiskFactors = [NSArray arrayWithArray:allRiskFactorsCopy];
+				self.EFLRiskFactors = [NSArray arrayWithArray:EFLRiskFactorsCopy];
+				self.MedicalCondRiskFactors = [NSArray arrayWithArray:MCRiskFactorsCopy];
+				NSLog(@"%lu", self.EFLRiskFactors.count);
+			}
 		}];
 	}];
-	
-//	NSLog(@"%@", )
-	
 	
 }
 
