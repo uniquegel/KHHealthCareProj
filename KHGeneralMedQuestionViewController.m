@@ -12,18 +12,24 @@
 #import "KHTabBarViewController.h"
 #import "KHRiskFactorManager.h"
 #import "KHRiskFactor.h"
+#import "KHGeneralScreening.h"
+#import "KHRiskFactorManager.h"
 
 @interface KHGeneralMedQuestionViewController ()
 @property KHPatient *patient;
 //@property KHRiskFactorModel *riskFactors;
 
 @property (nonnull) NSArray  *allRiskFactors;
+@property (nonnull) NSArray  *generalRiskFactors;
 @property NSMutableArray *checkBoxArray;
 @property NSMutableArray *EFLRiskFactorArray;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 - (IBAction)backButtonAction:(id)sender;
 - (IBAction)nextButton:(id)sender;
+
+
+-(Status)getStatusWithCheckGeneralScreening:(KHGeneralScreening *)checkCancer andPatientGeneralScreening:(KHGeneralScreening *)patientCancer;
 
 @end
 
@@ -32,8 +38,10 @@
     [super viewDidLoad];
     _patient = [KHPatient sharedModel];
     //    _riskFactors = [KHRiskFactorModel sharedModel];
-//    _allRiskFactors = [KHRiskFactorManager sharedManager].allRiskFactors;
-	
+    KHRiskFactorManager *manager = [KHRiskFactorManager sharedManager];
+    _allRiskFactors = manager.allRiskFactors;
+    _generalRiskFactors = manager.generalRiskFactors;
+    
     
     [self UISetup];
     // Do any additional setup after loading the view.
@@ -125,7 +133,7 @@
 
 -(void)calculateResults {
     NSLog(@"patien current info");
-    NSLog(@"num risk factors: %ld", (long)self.patient->numRiskFactors);
+    NSLog(@"num risk factors: %ld", (long)self.patient.numRiskFactors);
     NSLog(@"age %ld", (long)self.patient.age);
     NSLog(@"first, last name: %@ %@", _patient.firstName, _patient.lastName);
     
@@ -144,11 +152,14 @@
     NSLog(@"firstRF info: %@", firstRF.name);
     self.patient.generalList = [firstRF.generalList mutableCopy];
     // each user carry an array of KHGeneralScreening objects, seek out each one of the KHGeneralScreening objects and set its 'status' to White
-    /* for (id key in self.patient.generalList) {
-        can->status = White;
-        NSLog(@"can under patient: %@", can.name);
-        //        NSLog(@"vac stat: %u", vac->status);
-    } */
+    for (id key in self.patient.generalList) {
+        
+        
+        
+        KHGeneralScreening *gen = [self.patient.generalList objectForKey:key];
+        gen->status = White;
+        [self.patient.generalList setObject:gen forKey:key];
+    }
     
     
     
@@ -158,102 +169,65 @@
      
      */
     
-    // For each risk factor
-    /*
-    for(int i = 0; i < _riskFactors.AllRFListForCancer.count; i++) {
-        NSLog(@"inside ALL RF for cancer!:");
-        // get current vaccine risk factor
-        KHCancerRiskFactor *cancerRiskFactor = [self.riskFactors.AllRFListForCancer objectAtIndex:i];
-        
-        //        NSLog(@"Risk factor name = %@\n", accineRiskFactor.name);
-        
-        // if vaccine risk factor is active, check it against  patient's current vaccine list
-        // if not active, patient's current vaccien list remains the same
-        if(cancerRiskFactor.isActive) {
-            NSLog(@"inside isAvtive!");
+    // For each general risk factor
+    for (KHRiskFactor *rf in _generalRiskFactors) {
+        if (rf.isActive) {
+            self.patient.numRiskFactors++;
             
-            // increment numRiskFactors
-            self.patient->numRiskFactors++;
+            NSArray *checkGeneralScreeningsList = rf.generalList;
+            NSArray *patientGeneralScreeningsList = self.patient.generalList;
             
-            NSLog(@"A");
-            NSArray *checkCancerList = cancerRiskFactor.cancerList;
-            NSArray *patientCancerList = self.patient.cancerList;
-            NSLog(@"B");
             
-            // for each vaccine under this risk factor
-            for(int j = 0; j < checkCancerList.count; j++) {
-                NSLog(@"C ");
+            for (id key in rf.generalList) {
+                KHGeneralScreening *checkGS = [rf.generalList objectForKey:key];
+                KHGeneralScreening *patientGS = [self.patient.generalList objectForKey:key];
+                Status newStatus = [self getStatusWithCheckGeneralScreening:checkGS  andPatientGeneralScreening:patientGS];
+                patientGS->status = newStatus;
+                [self.patient.generalList setObject:patientGS forKey:key];
                 
-                NSLog(@" patient count : %lu", (unsigned long)patientCancerList.count);
-                NSLog(@" check count : %lu", (unsigned long)checkCancerList.count);
-                //get this risk factor vaccine
-                
-                // and its counterpart in patient
-                KHCancer *checkCancer = [checkCancerList objectAtIndex:j];
-                KHCancer *patientCancer = [patientCancerList objectAtIndex:j];
-                
-                NSLog(@"E");
-                // compare cancer values
-                Status newStatus = [self getStatusWithCheckCancer:checkCancer andPatientCancer:patientCancer];
-                
-                // update patient vaccine value
-                patientCancer->status = newStatus;
-                NSLog(@"F");
-                NSMutableArray *array = [self.patient.cancerList copy];
-                patientCancer = array[j];
-                
-                [self.patient.cancerList replaceObjectAtIndex:j withObject:patientCancer];
-                
-                NSLog(@"G");
-                //                NSLog(@"Active Riskfactor: Vaccine new status = %u\n", patientVaccine->status);
-                NSLog(@"D");
             }
         }
-        
-    } */
+    }
+    
     NSLog(@"done calculating results!");
-    
-    
-//    for (KHCancer *can in self.patient.cancerList) {
-//        NSLog(@"Final patient cancer status: %u", can->status);
-//    }
     
 }
 
 
 
 
-/* -(Status)getStatusWithCheckCancer:(KHCancer *)checkCancer andPatientCancer:(KHCancer *)patientCancer {
+-(Status)getStatusWithCheckGeneralScreening:(KHGeneralScreening *)checkGS andPatientGeneralScreening:(KHGeneralScreening *)patientGS {
     
-    Status newStatus = Nothing;
+    Status newStatus = White;
     
-    Status checkStatus = checkCancer->status;
-    Status patientStatus = patientCancer->status;
+    Status checkStatus = checkGS->status;
+    Status patientStatus = patientGS->status;
     
     NSLog(@"gettin new stat!");
     NSLog(@" check old vac stat: %u", checkStatus);
     NSLog(@" patient old vac stat: %u", patientStatus);
-    // Scenatio 1: recommended + recommended + numRF>1 = indicated
-    if(checkStatus == Recommended || patientStatus == Recommended) {
-        // check if recommended should become indicated
-        if(self.patient->numRiskFactors > 1)
-            newStatus = Indicated;
+    
+    // FIXIT: Logic has problem
+    // Scenario 1: numOfRF > 1 and either of the general screening status is Recommended
+    if((checkStatus == Green || patientStatus == Green) && self.patient.numRiskFactors > 1) {
+        newStatus = Yellow;
     }
-    // Scenatio 2: recommended + indicated = indicated
-    if(checkStatus == Indicated || patientStatus == Indicated) {
-        newStatus = Indicated;
+    // Scenario 2: either of the general screening status is Indicated
+    if(checkStatus == Yellow || patientStatus == Yellow) {
+        newStatus = Yellow;
     }
-    // Scenatio 3: contra + recommended
-    if(checkStatus == Ask || patientStatus == Ask) {
-        newStatus = Ask;
+    // Scenario 3: either is ask, overwrites Indicated
+    if(checkStatus == Blue || patientStatus == Blue) {
+        newStatus = Blue;
     }
-    if(checkStatus == Contraindicated || patientStatus == Contraindicated)
+    // Scenario 4: either is contra, overwrites everything else
+    if(checkStatus == Red || patientStatus == Red)
     {
-        newStatus = Contraindicated;
+        newStatus = Red;
     }
     NSLog(@"got new stat!: %u", newStatus);
     return newStatus;
-} */
+}
 
 
 

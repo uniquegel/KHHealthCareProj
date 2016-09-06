@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 @import FirebaseDatabase;
 
+typedef enum {
+    Red, //0, contraindicated
+    Blue, //1, Ask
+    Yellow,//2, indicated
+    Green, //3, recommended
+    White  //4, empty
+} Status;
+
 @interface KHRiskFactorManager : NSObject
 
 @property (strong, nonatomic) NSArray *allRiskFactors;

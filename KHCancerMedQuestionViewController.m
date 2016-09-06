@@ -14,6 +14,7 @@
 #import "KHCancerRiskFactor.h"
 #import "KHCancer.h"
 #import "KHTabBarViewController.h"
+#import "KHRiskFactorManager.h"
 
 @interface KHCancerMedQuestionViewController ()
 @property KHPatient *patient;
@@ -124,7 +125,7 @@
     //    NSInteger numVaccineRiskFactors = [self.vaccineRiskFactorList count];
     //    NSLog(@"Num risk factors = %ld\n", (long)numVaccineRiskFactors);
     NSLog(@"patien current info");
-    NSLog(@"num risk factors: %ld", (long)self.patient->numRiskFactors);
+    NSLog(@"num risk factors: %ld", (long)self.patient.numRiskFactors);
     NSLog(@"age %ld", (long)self.patient.age);
     NSLog(@"first, last name: %@ %@", _patient.firstName, _patient.lastName);
     
@@ -144,7 +145,7 @@
     NSLog(@"firstRF info: %@", firstRF.name);
     self.patient.cancerList = firstRF.cancerList;
     for (KHCancer *can in self.patient.cancerList) {
-        can->status = Nothing;
+        can->status = White;
         NSLog(@"can under patient: %@", can.name);
         //        NSLog(@"vac stat: %u", vac->status);
     }
@@ -165,7 +166,7 @@
             NSLog(@"inside isAvtive!");
             
             // increment numRiskFactors
-            self.patient->numRiskFactors++;
+            self.patient.numRiskFactors++;
             
             NSLog(@"A");
             NSArray *checkCancerList = cancerRiskFactor.cancerList;
@@ -214,7 +215,7 @@
 
 -(Status)getStatusWithCheckCancer:(KHCancer *)checkCancer andPatientCancer:(KHCancer *)patientCancer {
     
-    Status newStatus = Nothing;
+    Status newStatus = White;
     
     Status checkStatus = checkCancer->status;
     Status patientStatus = patientCancer->status;
@@ -222,23 +223,24 @@
     NSLog(@"gettin new stat!");
     NSLog(@" check old vac stat: %u", checkStatus);
     NSLog(@" patient old vac stat: %u", patientStatus);
-    // Scenatio 1: recommended + recommended + numRF>1 = indicated
-    if(checkStatus == Recommended || patientStatus == Recommended) {
-        // check if recommended should become indicated
-        if(self.patient->numRiskFactors > 1)
-            newStatus = Indicated;
+    
+    // FIXIT: Logic has problem
+    // Scenario 1: numOfRF > 1 and either of the general screening status is Recommended
+    if((checkStatus == Green || patientStatus == Green) && self.patient.numRiskFactors > 1) {
+        newStatus = Yellow;
     }
-    // Scenatio 2: recommended + indicated = indicated
-    if(checkStatus == Indicated || patientStatus == Indicated) {
-        newStatus = Indicated;
+    // Scenario 2: either of the general screening status is Indicated
+    if(checkStatus == Yellow || patientStatus == Yellow) {
+        newStatus = Yellow;
     }
-    // Scenatio 3: contra + recommended
-    if(checkStatus == Ask || patientStatus == Ask) {
-        newStatus = Ask;
+    // Scenario 3: either is ask, overwrites Indicated
+    if(checkStatus == Blue || patientStatus == Blue) {
+        newStatus = Blue;
     }
-    if(checkStatus == Contraindicated || patientStatus == Contraindicated)
+    // Scenario 4: either is contra, overwrites everything else
+    if(checkStatus == Red || patientStatus == Red)
     {
-        newStatus = Contraindicated;
+        newStatus = Red;
     }
     NSLog(@"got new stat!: %u", newStatus);
     return newStatus;

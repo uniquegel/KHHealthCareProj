@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KHVaccine.h"
+#import "KHRiskFactorManager.h"
 
 @interface KHGeneralScreening : NSObject{
     @public Status status;

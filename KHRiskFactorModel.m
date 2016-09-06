@@ -11,6 +11,7 @@
 #import "KHCancerRiskFactor.h"
 #import "KHvaccine.h"
 #import "KHCancer.h"
+#import "KHRiskFactorManager.h"
 #import <Firebase/Firebase.h>
 @import Firebase;
 
@@ -88,27 +89,27 @@
                         NSLog(@"getting all vaccines and status!! %@", [perRFVaccinesDict[perRFAllValuesArray[l]] objectForKey:@"Value"]);
                         
                         if ([[perRFVaccinesDict[perRFAllValuesArray[l]] objectForKey:@"Value"] isEqualToString:@"N"]) {
-                            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:perRFAllValuesArray[l] andStatus:Nothing];
+                            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:perRFAllValuesArray[l] andStatus:White];
                             //                            NSLog(@"ABOUT TO add to array! %@", vaccine.name);
                             [rf.vaccineList addObject:vaccine];
                         }
                         else if([[perRFVaccinesDict[perRFAllValuesArray[l]] objectForKey:@"Value"] isEqualToString:@"Y"]){
-                            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:perRFAllValuesArray[l] andStatus:Indicated];
+                            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:perRFAllValuesArray[l] andStatus:Yellow];
                             //                            NSLog(@"ABOUT TO add to array! %@", vaccine.name);
                             [rf.vaccineList addObject:vaccine];
                         }
                         else if([[perRFVaccinesDict[perRFAllValuesArray[l]] objectForKey:@"Value"] isEqualToString:@"G"]){
-                            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:perRFAllValuesArray[l] andStatus:Recommended];
+                            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:perRFAllValuesArray[l] andStatus:Green];
                             //                            NSLog(@"ABOUT TO add to array! %@", vaccine.name);
                             [rf.vaccineList addObject:vaccine];
                         }
                         else if([[perRFVaccinesDict[perRFAllValuesArray[l]] objectForKey:@"Value"] isEqualToString:@"R"]){
-                            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:perRFAllValuesArray[l] andStatus:Contraindicated];
+                            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:perRFAllValuesArray[l] andStatus:Red];
                             //                            NSLog(@"ABOUT TO add to array! %@", vaccine.name);
                             [rf.vaccineList addObject:vaccine];
                         }
                         else if([[perRFVaccinesDict[perRFAllValuesArray[l]] objectForKey:@"Value"] isEqualToString:@"B"]){
-                            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:perRFAllValuesArray[l] andStatus:Ask];
+                            KHVaccine *vaccine = [[KHVaccine alloc] initWithName:perRFAllValuesArray[l] andStatus:Blue];
                             //                            NSLog(@"ABOUT TO add to array! %@", vaccine.name);
                             [rf.vaccineList addObject:vaccine];
                         }
@@ -179,27 +180,27 @@
                         NSLog(@"getting all vaccines and status!! For: %@, with value: %@",perCancerRFAllKeyArray[l] , [perRFCancerDict[perCancerRFAllKeyArray[l]] objectForKey:@"Value"]);
                         
                         if ([[perRFCancerDict[perCancerRFAllKeyArray[l]] objectForKey:@"Value"] isEqualToString:@"N"]) {
-                            KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Nothing];
+                            KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:White];
                             NSLog(@"ABOUT TO add to array! %@", cancer.name);
                             [rf.cancerList addObject:cancer];
                         }
                         else if([[perRFCancerDict[perCancerRFAllKeyArray[l]] objectForKey:@"Value"] isEqualToString:@"Y"]){
-                            KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Indicated];
+                            KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Yellow];
                             NSLog(@"ABOUT TO add to array! %@", cancer.name);
                             [rf.cancerList addObject:cancer];
                         }
                         else if([[perRFCancerDict[perCancerRFAllKeyArray[l]] objectForKey:@"Value"] isEqualToString:@"G"]){
-                            KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Recommended];
+                            KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Green];
                             NSLog(@"ABOUT TO add to array! %@", cancer.name);
                             [rf.cancerList addObject:cancer];
                         }
                         else if([[perRFCancerDict[perCancerRFAllKeyArray[l]] objectForKey:@"Value"] isEqualToString:@"R"]){
-                            KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Contraindicated];
+                            KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Red];
                             NSLog(@"ABOUT TO add to array! %@", cancer.name);
                             [rf.cancerList addObject:cancer];
                         }
                         else if([[perRFCancerDict[perCancerRFAllKeyArray[l]] objectForKey:@"Value"] isEqualToString:@"B"]){
-                            KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Ask];
+                            KHCancer *cancer = [[KHCancer alloc] initWithName:perCancerRFAllKeyArray[l] andStatus:Blue];
                             NSLog(@"ABOUT TO add to array! %@", cancer.name);
                             [rf.cancerList addObject:cancer];
                         }
