@@ -27,7 +27,7 @@
 @property (nonatomic, strong) NSNumber *weight;
 @property bool completedVaccineFlow;
 @property bool completedCancerFlow;
-@property bool completedCardiometabolicFlow;
+@property bool completedGeneralFlow;
 @property bool collectedBasicInfo;
 
 
