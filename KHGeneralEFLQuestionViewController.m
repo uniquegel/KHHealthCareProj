@@ -78,7 +78,7 @@
             UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, width - 80, 50)];
             riskFactorTitleLable.numberOfLines = 2;
             riskFactorTitleLable.lineBreakMode = NSLineBreakByWordWrapping;
-            riskFactorTitleLable.textColor = [UIColor whiteColor];
+            riskFactorTitleLable.textColor = [UIColor blackColor];
             riskFactorTitleLable.text = rf.name;
             
             NSLog(@"rf name: %@,  cate: %@", rf.name, rf.category);

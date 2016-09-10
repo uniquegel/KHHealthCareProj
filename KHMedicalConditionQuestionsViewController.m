@@ -82,7 +82,7 @@
         
         riskFactorTitleLable.numberOfLines = 2;
         riskFactorTitleLable.lineBreakMode = NSLineBreakByWordWrapping;
-        riskFactorTitleLable.textColor = [UIColor whiteColor];
+        riskFactorTitleLable.textColor = [UIColor blackColor];
         KHVaccineRiskFactor *vaccineRiskFactor=_medRiskFactorArray[i];
         NSLog(@"got vaccine!");
         NSLog(@"name of riskfa: %@", vaccineRiskFactor.name);
