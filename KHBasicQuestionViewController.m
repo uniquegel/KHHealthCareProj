@@ -28,7 +28,7 @@
     // Do any additional setup after loading the view.
     _patient = [KHPatient sharedModel];
     
-    KHRiskFactorModel *rfModel = [KHRiskFactorModel sharedModel];
+//    KHRiskFactorModel *rfModel = [KHRiskFactorModel sharedModel];
     
 //    NSLog(@"got vaccine rf in homepage view: %@", rfModel.vaccineMedRiskFactorList);
     

@@ -23,7 +23,7 @@
         _collectedBasicInfo = NO;
         _completedCancerFlow = NO;
         _completedVaccineFlow = NO;
-        _completedCardiometabolicFlow = NO;
+        _completedGeneralFlow = NO;
         // instantiate vaccine array
 //        KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];
 //        self.vaccineList = [NSMutableArray arrayWithArray:vaccineModel.vaccineList];

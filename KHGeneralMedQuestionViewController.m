@@ -66,10 +66,11 @@
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 600)];
     
     
+    
     CGFloat width = self.view.frame.size.width;
     NSInteger i = 0;
-    for (KHRiskFactor *rf in _allRiskFactors) {
-        if (rf.isInGeneral && [rf.category isEqualToString:@"Ethnicity, Family, Lifestyle"]) {
+    for (KHRiskFactor *rf in self.generalRiskFactors) {
+        if ([rf.category isEqualToString:@"Ethnicity, Family, Lifestyle"]) {
             UIView *newSubView = [[UIView alloc] initWithFrame:CGRectMake(0, i*60, width, 60)];
             
             UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, width - 80, 50)];
@@ -94,8 +95,6 @@
             [contentView addSubview:newSubView];
             i++;
         }
-        
-        
     }
     contentView.frame = CGRectMake(0, 0, self.view.frame.size.width, i*60);
     
@@ -234,25 +233,13 @@
 
 
 - (IBAction)nextPageButton:(id)sender {
-    for(int i=0; i<_checkBoxArray.count ; i++)
-    {
-        if ([_checkBoxArray[i] isOn]) {
-            //update risnexkfactor status
-//            KHCancerRiskFactor *riskFactor = _MedRiskFactorArray[i];
-//            riskFactor.isActive = YES;
-//            NSUInteger index = [_riskFactors.AllRFListForCancer indexOfObject:riskFactor];
-//            [_riskFactors.AllRFListForCancer replaceObjectAtIndex:index withObject:riskFactor];
-        }
-    }
-    
-    
-    
-    // begin calculating results
     NSLog(@"about to calculate results!");
     [self calculateResults];
     
-    _patient.completedCancerFlow = YES;
-    [self performSegueWithIdentifier:@"cancerMedQuestionToResults" sender:self];
+        _patient.completedGeneralFlow = YES;
+    NSLog(@"about to perform segue");
+    //segue
+        [self performSegueWithIdentifier:@"GeneralMedicalToResultsSegue" sender:self];
 }
 
 
@@ -276,39 +263,6 @@
     
 }
 
-
-- (IBAction)nextButton:(id)sender {
-    //check which switch is on
-    //    for(int i=0; i<_checkBoxArray.count ; i++)
-    //    {
-    //        if ([_checkBoxArray[i] isOn]) {
-    //            //update riskfactor status
-    //
-    //            //            NSMutableArray *tempMutableArray = [_riskFactors. mutableCopy];
-    //            KHCancerRiskFactor *riskFactor = _EFLRiskFactorArray[i];
-    //            riskFactor.isActive = YES;
-    //            NSUInteger index = [_riskFactors.AllRFListForCancer indexOfObject:riskFactor];
-    //
-    //            [_riskFactors.AllRFListForCancer replaceObjectAtIndex:index withObject:riskFactor];
-    //        }
-    //    }
-    //
-    //    for (int i = 0; i<_riskFactors.AllRFListForCancer.count; i++) {
-    //        KHCancerRiskFactor *rf =_riskFactors.AllRFListForCancer[i];
-    //        if (rf.isActive == YES) {
-    //            NSLog(@"active occu rf: %@", rf.name);
-    //        }
-    //    }
-    for (KHRiskFactor *rf in _allRiskFactors) {
-        NSLog(@"checking rf value: %@", rf.isActive);
-        
-    }
-    
-    
-    //segue
-    [self performSegueWithIdentifier:@"cancerEFLRFToMedicalCondRFSegue" sender:self];
-    
-}
 - (IBAction)backButtonAction:(id)sender {
     
     

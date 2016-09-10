@@ -143,6 +143,13 @@
 //				NSLog(@"%lu", self.EFLRiskFactors.count);
 			}
 		}];
+        NSLog(@"all riskf factors: %@", allRiskFactorsCopy);
+        for (KHRiskFactor *rf in allRiskFactorsCopy) {
+            NSLog(@"------------------------------");
+            NSLog(@"riskfactor name: %@", rf.name);
+            NSLog(@"category: %@", rf.category);
+            
+        }
 	}];
 	
 }
