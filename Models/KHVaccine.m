@@ -7,6 +7,7 @@
 //
 
 #import "KHVaccine.h"
+#import "KHRiskFactorManager.h"
 
 @implementation KHVaccine
 
@@ -18,7 +19,7 @@
         
         self.name = newName;
         
-        self->status = Nothing;
+        self->status = White;
 
     }
     

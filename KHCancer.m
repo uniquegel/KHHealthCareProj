@@ -18,7 +18,7 @@
         
         self.name = newName;
         
-        self->status = Nothing;
+        self->status = White;
         
     }
     

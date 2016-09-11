@@ -20,13 +20,15 @@ class SignupVC: UIViewController {
 	
 	@IBOutlet weak var confPasswordField: UITextField!
 	
+	let userManager = KHUserManager.sharedManager
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
     }
 	
-	/* HELPER FUNCTIONS*/
+	//MARK:- Helper Function
 	
 	func signupInputIsValid() -> Bool {
 		let username = usernameField.text
@@ -69,7 +71,7 @@ class SignupVC: UIViewController {
 		}
 	}
 	
-	/* IB ACTION FUNC*/
+	//MARK: - IB ACTION FUNC
 	@IBAction func cancelButtonPressed(sender: AnyObject) {
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
@@ -90,8 +92,8 @@ class SignupVC: UIViewController {
 				self.showAlertView("Sign up failed", message: error.localizedDescription, target: self)
 				
 			} else {
-				UserSession.currentSession.currentUser = user!
-				UserSession.currentSession.createEmailUserNode(user!, username: username, email: email)
+				self.userManager.currentUser = user!
+				self.userManager.createEmailUserNode(user!, username: username, email: email)
 				self.dismissViewControllerAnimated(true, completion: nil)
 				
 			}

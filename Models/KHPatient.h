@@ -10,7 +10,7 @@
 #import "KHVaccine.h"
 
 @interface KHPatient : NSObject{
-    @public NSInteger numOfActiveRiskFactors;
+    @public
 }
 
 
@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *gender;
 @property  NSInteger age;
+@property NSInteger numRiskFactors;
 @property (nonatomic, strong) NSDate *birthday;
 @property (nonatomic, strong) NSString *ethnicty;
 @property (nonatomic, strong) NSNumber *heightInch;
@@ -26,13 +27,14 @@
 @property (nonatomic, strong) NSNumber *weight;
 @property bool completedVaccineFlow;
 @property bool completedCancerFlow;
-@property bool completedCardiometabolicFlow;
+@property bool completedGeneralFlow;
 @property bool collectedBasicInfo;
 
 
 // lists
 @property (nonatomic, strong) NSMutableArray *vaccineList;
 @property (nonatomic, strong) NSMutableArray *cancerList;
+@property (nonatomic, strong) NSMutableDictionary *generalList;
 @property (nonatomic, strong) NSArray *riskFactorList;
 
 

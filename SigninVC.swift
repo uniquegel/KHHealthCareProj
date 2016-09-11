@@ -17,6 +17,7 @@ class SigninVC: UIViewController {
 	@IBOutlet weak var emailText: UITextField!
 	@IBOutlet weak var passwordText: UITextField!
 	
+	let userManager = KHUserManager.sharedManager
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +29,17 @@ class SigninVC: UIViewController {
 	}
 	
 	override func viewDidAppear(animated: Bool) {
+		
 		//CHECK IF USER IS LOGGED IN
 		if let user = FIRAuth.auth()?.currentUser {
 			//user is logged in
-			UserSession.currentSession.currentUser = user
+			userManager.currentUser = user
 			moveonAfterLogin()
 		}
 
 	}
 	
-	/** HELPER FUNCTIONS**/
+	//MARK: - HELPER FUNCTIONS
 	func loginInputIsValid() -> Bool {
 		let usrname = emailText.text
 		let pwd = passwordText.text
@@ -51,9 +53,9 @@ class SigninVC: UIViewController {
 	
 	func moveonAfterLogin() {
 		//Clear the log in fields
-		self.emailText.text = ""
-		self.passwordText.text = ""
-		self.performSegueWithIdentifier(SEGUE_SIGNIN_TO_HOME, sender: self)
+		let homevc = KHHomePageViewController()
+		self.navigationController?.pushViewController(homevc, animated: true)
+
 	}
 	
 	//show alert to tell user to sign up
@@ -67,7 +69,7 @@ class SigninVC: UIViewController {
 		
 	}
 	
-	/** IB ACTIONS  **/
+	//MARK: - IB Actions
 	@IBAction func singinButtonPressed(sender: AnyObject) {
 		guard loginInputIsValid() else  {
 			showAlertView("Invalid", message: "Please fill in both fields", target: self)
@@ -77,7 +79,11 @@ class SigninVC: UIViewController {
 		FIRAuth.auth()?.signInWithEmail(emailText.text!, password: passwordText.text!, completion: { (user:FIRUser?, error:NSError?) in
 			if let user = user {
 				print("Sign in successful with user: \(user.uid)")
-				UserSession.currentSession.currentUser = user
+				self.userManager.currentUser = user
+				
+					self.emailText.text = ""
+					self.passwordText.text = ""
+				
 				self.moveonAfterLogin()
 				
 			} else {
@@ -93,12 +99,15 @@ class SigninVC: UIViewController {
 	}
 	
 	@IBAction func skipButtonPressed(sender: AnyObject) {
+        
+        self .performSegueWithIdentifier("signInToHomePageSegue", sender: self)
+        
 		//sign in anonymously
 		FIRAuth.auth()?.signInAnonymouslyWithCompletion({ (user:FIRUser?, error:NSError?) in
 			if let user = user {
 				print("Anonymous sign in success with user: \(user.uid)")
-				UserSession.currentSession.currentUser = user
-				UserSession.currentSession.createAnonymousUserNode(user)
+				self.userManager.currentUser = user
+				self.userManager.createAnonymousUserNode(user)
 				self.moveonAfterLogin()
 			} else {
 				print("Anonymous sign in failed \(error?.localizedDescription)")

@@ -12,9 +12,18 @@
 #import "KHRiskFactorModel.h"
 #import "KHBasicQuestionViewController.h"
 #import "KHPatient.h"
+#import "KHHealthCareProj-Swift.h"
+#import "KHRiskFactorManager.h"
+
 @import FirebaseAuth;
+@interface KHHomePageViewController ()
+- (IBAction)genScreenBtnTapped:(id)sender;
+
+
+@end
 
 @implementation KHHomePageViewController
+
 
 -(void)viewDidLoad {
     
@@ -22,18 +31,18 @@
     
     //pull from database, asynchrously
     KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];
-    KHRiskFactorModel *rfModel = [KHRiskFactorModel sharedModel];
-    KHPatient *patient = [KHPatient sharedModel];
+	
     
-    
-    NSLog(@"got vaccine rf in homepage view: %@", rfModel.vaccineMedRiskFactorList);
-    
-    
-    
-//    [self initializing];
-    
-//    [self initializeDummyData];
-    
+}
+
+-(void) viewDidAppear:(BOOL)animated {
+//	[[KHRiskFactorManager sharedManager] downloadAllRiskFactors:^(BOOL completed) {
+//		if (completed) {
+//			KHRiskFactorManager *manager = [KHRiskFactorManager sharedManager];
+//			
+//		}
+//	}];
+	[[KHRiskFactorManager sharedManager] downloadAllRiskFactors];
 }
 
 
@@ -78,10 +87,14 @@
     [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
 }
 
-- (IBAction)cardDisScreenButtonAction:(id)sender {
-    _scrType = kScreenTypeCardio;
+- (IBAction)genScreenBtnTapped:(id)sender {
+    _scrType = kScreenTypeGeneral;
     NSLog(@"Screen type: %lu", (unsigned long)_scrType);
-//    [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
+        [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
+}
+
+- (IBAction)cardDisScreenButtonAction:(id)sender {
+    
 }
 
 - (IBAction)logoutButtonPressed:(id)sender {
@@ -93,4 +106,5 @@
 	}
 	
 }
+
 @end

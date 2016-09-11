@@ -7,14 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KHRiskFactorManager.h"
 
-typedef enum {
-    Contraindicated, //0
-    Ask, //1
-    Indicated,//2
-    Recommended, //3
-    Nothing  //4
-} Status;
+
 
 @interface KHVaccine : NSObject{
     @public Status status;

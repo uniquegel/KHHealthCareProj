@@ -14,6 +14,7 @@
 #import "KHCancerRiskFactor.h"
 #import "KHCancer.h"
 #import "KHTabBarViewController.h"
+#import "KHRiskFactorManager.h"
 
 @interface KHCancerMedQuestionViewController ()
 @property KHPatient *patient;
@@ -25,7 +26,6 @@
 - (IBAction)backButtonAction:(id)sender;
 
 -(void)calculateResults;
-- (void) adjustAgeRiskFactorsActiveness;
 -(Status)getStatusWithCheckCancer:(KHCancer *)checkCancer andPatientCancer:(KHCancer *)patientCancer;
 @end
 
@@ -43,11 +43,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void) viewWillAppear:(BOOL)animated{
-    NSLog(@"view will appear!");
-    [self adjustCheckboxToggle];
 }
 
 - (void)UISetup {
@@ -101,17 +96,6 @@
     
 }
 
-- (void) adjustCheckboxToggle{
-    for(int i=0; i<_checkBoxArray.count ; i++)
-    {
-        KHCancerRiskFactor *riskFactor = _MedRiskFactorArray[i];
-        
-        if (riskFactor.isActive) {
-            [_checkBoxArray[i] setOn:YES];
-        }
-        
-    }
-}
 
 #pragma mark - Navigation
 
@@ -136,78 +120,102 @@
 
 
 -(void)calculateResults {
- 
-    self.patient->numOfActiveRiskFactors = 0;
+    
+    
+    //    NSInteger numVaccineRiskFactors = [self.vaccineRiskFactorList count];
+    //    NSLog(@"Num risk factors = %ld\n", (long)numVaccineRiskFactors);
+    NSLog(@"patien current info");
+    NSLog(@"num risk factors: %ld", (long)self.patient.numRiskFactors);
+    NSLog(@"age %ld", (long)self.patient.age);
+    NSLog(@"first, last name: %@ %@", _patient.firstName, _patient.lastName);
+    
     
     // FIXME: feed the list of cancers to Patient, and initialize them with NOTHING as stat
     // Ideally change this to Homepage when pull info from user
     KHCancerRiskFactor *firstRF = [self.riskFactors.AllRFListForCancer objectAtIndex:0];
-    
+    /* for (KHCancerRiskFactor *crf in self.riskFactors.AllRFListForCancer) {
+        NSLog(@"risk factor name: %@", crf.name);
+        for (KHCancer *can in crf.cancerList) {
+            
+            NSLog(@"inside loop: %@", can.name);
+            //        NSLog(@"vac stat: %u", vac->status);
+        }
+        NSLog(@"----------------");
+    } */
     NSLog(@"firstRF info: %@", firstRF.name);
     self.patient.cancerList = firstRF.cancerList;
     for (KHCancer *can in self.patient.cancerList) {
-        can->status = Nothing;
+        can->status = White;
         NSLog(@"can under patient: %@", can.name);
         //        NSLog(@"vac stat: %u", vac->status);
     }
     
-    for (KHCancerRiskFactor *crf in _riskFactors.AllRFListForCancer) {
-        if (crf.isActive) {
-            // increment numRiskFactors
-            self.patient->numOfActiveRiskFactors++;
-            NSArray *checkCancerList= crf.cancerList;
-            NSArray *patientCancerList = self.patient.cancerList;
+    
+    // For each risk factor
+    NSLog(@"ALLRFLIST FOR CANCER: %lu", (unsigned long)_riskFactors.AllRFListForCancer.count);
+    for(int i = 0; i < _riskFactors.AllRFListForCancer.count; i++) {
+        NSLog(@"inside ALL RF for cancer!:");
+        // get current vaccine risk factor
+        KHCancerRiskFactor *cancerRiskFactor = [self.riskFactors.AllRFListForCancer objectAtIndex:i];
+        
+        //        NSLog(@"Risk factor name = %@\n", accineRiskFactor.name);
+        
+        // if vaccine risk factor is active, check it against  patient's current vaccine list
+        // if not active, patient's current vaccien list remains the same
+        if(cancerRiskFactor.isActive) {
+            NSLog(@"inside isAvtive!");
             
-            // for each cancer under this risk factor
+            // increment numRiskFactors
+            self.patient.numRiskFactors++;
+            
+            NSLog(@"A");
+            NSArray *checkCancerList = cancerRiskFactor.cancerList;
+            NSArray *patientCancerList = self.patient.cancerList;
+            NSLog(@"B");
+            
+            // for each vaccine under this risk factor
             for(int j = 0; j < checkCancerList.count; j++) {
-                //get this risk factor cancer
+                NSLog(@"C ");
+                
+                NSLog(@" patient count : %lu", (unsigned long)patientCancerList.count);
+                NSLog(@" check count : %lu", (unsigned long)checkCancerList.count);
+                //get this risk factor vaccine
+                
                 // and its counterpart in patient
                 KHCancer *checkCancer = [checkCancerList objectAtIndex:j];
                 KHCancer *patientCancer = [patientCancerList objectAtIndex:j];
                 
+                NSLog(@"E");
                 // compare cancer values
-                Status newStatus = [self getStatusWithCheckCancer:checkCancer
-                                                 andPatientCancer:patientCancer];
+                Status newStatus = [self getStatusWithCheckCancer:checkCancer andPatientCancer:patientCancer];
                 
-                // update patient cancer list
+                // update patient vaccine value
                 patientCancer->status = newStatus;
+                NSLog(@"F");
                 NSMutableArray *array = [self.patient.cancerList copy];
                 patientCancer = array[j];
+                
                 [self.patient.cancerList replaceObjectAtIndex:j withObject:patientCancer];
+                
+                NSLog(@"G");
+                //                NSLog(@"Active Riskfactor: Vaccine new status = %u\n", patientVaccine->status);
+                NSLog(@"D");
             }
         }
+        
+    }
+    NSLog(@"done calculating results!");
+    
+    
+    for (KHCancer *can in self.patient.cancerList) {
+        NSLog(@"Final patient cancer status: %u", can->status);
     }
     
 }
 
-- (void) adjustAgeRiskFactorsActiveness {
-    //set age risktor to active
-    for (KHCancerRiskFactor *crf in _riskFactors.AllRFListForCancer) {
-        if ([crf.type isEqualToString:@"Age"]) {
-            //parse key name
-            NSString *nameString = crf.name;
-            if ([nameString containsString:@"-"]) {
-                NSString *lowerboundString;
-                NSString *upperboundString;
-                lowerboundString = [[nameString componentsSeparatedByString:@"-"] objectAtIndex:0];
-                upperboundString = [[nameString componentsSeparatedByString:@"-"] objectAtIndex:1];
-                if (self.patient.age>lowerboundString.integerValue && self.patient.age<upperboundString.integerValue) {
-                    crf.isActive = YES;
-                }
-            }
-            else{
-                NSString *ageString = [nameString substringFromIndex:2];
-                if (self.patient.age>ageString.integerValue) {
-                    crf.isActive = YES;
-                }
-            }
-        }
-    }
-
-}
 -(Status)getStatusWithCheckCancer:(KHCancer *)checkCancer andPatientCancer:(KHCancer *)patientCancer {
     
-    Status newStatus = Nothing;
+    Status newStatus = White;
     
     Status checkStatus = checkCancer->status;
     Status patientStatus = patientCancer->status;
@@ -215,23 +223,24 @@
     NSLog(@"gettin new stat!");
     NSLog(@" check old vac stat: %u", checkStatus);
     NSLog(@" patient old vac stat: %u", patientStatus);
-    // Scenatio 1: recommended + recommended + numRF>1 = indicated
-    if(checkStatus == Recommended || patientStatus == Recommended) {
-        // check if recommended should become indicated
-        if(self.patient->numOfActiveRiskFactors > 1)
-            newStatus = Indicated;
+    
+    // FIXIT: Logic has problem
+    // Scenario 1: numOfRF > 1 and either of the general screening status is Recommended
+    if((checkStatus == Green || patientStatus == Green) && self.patient.numRiskFactors > 1) {
+        newStatus = Yellow;
     }
-    // Scenatio 2: recommended + indicated = indicated
-    if(checkStatus == Indicated || patientStatus == Indicated) {
-        newStatus = Indicated;
+    // Scenario 2: either of the general screening status is Indicated
+    if(checkStatus == Yellow || patientStatus == Yellow) {
+        newStatus = Yellow;
     }
-    // Scenatio 3: contra + recommended
-    if(checkStatus == Ask || patientStatus == Ask) {
-        newStatus = Ask;
+    // Scenario 3: either is ask, overwrites Indicated
+    if(checkStatus == Blue || patientStatus == Blue) {
+        newStatus = Blue;
     }
-    if(checkStatus == Contraindicated || patientStatus == Contraindicated)
+    // Scenario 4: either is contra, overwrites everything else
+    if(checkStatus == Red || patientStatus == Red)
     {
-        newStatus = Contraindicated;
+        newStatus = Red;
     }
     NSLog(@"got new stat!: %u", newStatus);
     return newStatus;
@@ -240,23 +249,19 @@
 - (IBAction)nextPageButton:(id)sender {
     for(int i=0; i<_checkBoxArray.count ; i++)
     {
-        KHCancerRiskFactor *riskFactor = _MedRiskFactorArray[i];
         if ([_checkBoxArray[i] isOn]) {
             //update risnexkfactor status
-            
+            KHCancerRiskFactor *riskFactor = _MedRiskFactorArray[i];
             riskFactor.isActive = YES;
-            NSUInteger index = [_riskFactors.AllRFListForCancer indexOfObject:riskFactor];
-            [_riskFactors.AllRFListForCancer replaceObjectAtIndex:index withObject:riskFactor];
-        }
-        else{
-            riskFactor.isActive = NO;
             NSUInteger index = [_riskFactors.AllRFListForCancer indexOfObject:riskFactor];
             [_riskFactors.AllRFListForCancer replaceObjectAtIndex:index withObject:riskFactor];
         }
     }
     
     
-    [self adjustAgeRiskFactorsActiveness];
+    
+    // begin calculating results
+    NSLog(@"about to calculate results!");
     [self calculateResults];
     
     _patient.completedCancerFlow = YES;
