@@ -7,6 +7,7 @@
 //
 
 #import "KHTabBarViewController.h"
+#import "KHPatient.h"
 
 @interface KHTabBarViewController ()
 
@@ -16,10 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    [self.tabBar setSelectedItem:[self.tabBar.items objectAtIndex:_showTabNumber]];
-    NSLog(@"IN VIEWDIDLOAD");
-    self.selectedIndex = _showTabNumber;
+    
+    KHPatient *patient = [KHPatient sharedModel];
+    
+    
+    self.selectedIndex = patient.curScreeningType ;
     
 //    [(UITabBarController*)self.navigationController.topViewController setSelectedIndex:1];
     

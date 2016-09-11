@@ -53,7 +53,7 @@
 		//Parse the risk factors 
 		[rfDict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
 			NSDictionary *rfValueDict = [rfDict objectForKey:key];
-//			NSLog(@"%@", rfValueDict);
+			NSLog(@"value dict: %@", [rfValueDict description]);
 			
 			NSString *name = [rfValueDict objectForKey:@"name"];
 			NSString *ID = [rfValueDict objectForKey:@"id"];
@@ -63,6 +63,7 @@
 			
 			//Find the category names for this risk factor
 			[cateDict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+                
 				if ([categoryIndex isEqualToString: (NSString *)key]) {
 					category = [NSMutableString stringWithString: cateDict[key]] ;
 					
@@ -93,6 +94,8 @@
 				NSDictionary *list = rfValueDict[@"general-list"];
 				
 				general_list = [NSDictionary dictionaryWithDictionary:[self parseListDictWithDict:list  andDefDict:gsDict]];
+			}else {
+				NSLog(@"empty general list for RF");
 			}
 			NSLog(@"general list for rf: %@ list: %@", name, general_list);
 			

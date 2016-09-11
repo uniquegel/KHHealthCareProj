@@ -72,7 +72,7 @@
         UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, width - 80, 50)];
         riskFactorTitleLable.numberOfLines = 2;
         riskFactorTitleLable.lineBreakMode = NSLineBreakByWordWrapping;
-        riskFactorTitleLable.textColor = [UIColor whiteColor];
+        riskFactorTitleLable.textColor = [UIColor blackColor];
         KHCancerRiskFactor *cancerRiskFactor=_EFLRiskFactorArray[i];
         NSLog(@"got vaccine!");
         NSLog(@"name of riskfa: %@", cancerRiskFactor.name);

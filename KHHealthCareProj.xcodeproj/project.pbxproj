@@ -40,6 +40,7 @@
 		7E0637841CFE6C1000866D07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E0637831CFE6C1000866D07 /* GoogleService-Info.plist */; };
 		7E067DD11D0529800095BE71 /* KHTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E067DD01D0529800095BE71 /* KHTabBarViewController.m */; };
 		7E0CD8431D07A830001CA147 /* UIViewController+Alerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CD8421D07A830001CA147 /* UIViewController+Alerts.m */; };
+		7E182DFA1D85374600A134E9 /* KHReusableRFQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E182DF91D85374600A134E9 /* KHReusableRFQuestionViewController.m */; };
 		7E3206241D1B61E90015DA33 /* KHGeneralEFLQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3206231D1B61E90015DA33 /* KHGeneralEFLQuestionViewController.m */; };
 		7E3206271D1B623A0015DA33 /* KHGeneralMedQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3206261D1B623A0015DA33 /* KHGeneralMedQuestionViewController.m */; };
 		7E4484AE1C8BEB4B00850E58 /* KHBasicQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */; };
@@ -134,6 +135,8 @@
 		7E067DD01D0529800095BE71 /* KHTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHTabBarViewController.m; sourceTree = "<group>"; };
 		7E0CD8411D07A830001CA147 /* UIViewController+Alerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alerts.h"; sourceTree = "<group>"; };
 		7E0CD8421D07A830001CA147 /* UIViewController+Alerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alerts.m"; sourceTree = "<group>"; };
+		7E182DF81D85374600A134E9 /* KHReusableRFQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHReusableRFQuestionViewController.h; sourceTree = "<group>"; };
+		7E182DF91D85374600A134E9 /* KHReusableRFQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHReusableRFQuestionViewController.m; sourceTree = "<group>"; };
 		7E3206221D1B61E90015DA33 /* KHGeneralEFLQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHGeneralEFLQuestionViewController.h; sourceTree = "<group>"; };
 		7E3206231D1B61E90015DA33 /* KHGeneralEFLQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHGeneralEFLQuestionViewController.m; sourceTree = "<group>"; };
 		7E3206251D1B623A0015DA33 /* KHGeneralMedQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHGeneralMedQuestionViewController.h; sourceTree = "<group>"; };
@@ -354,10 +357,9 @@
 			children = (
 				7E4484AC1C8BEB4B00850E58 /* KHBasicQuestionViewController.h */,
 				7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */,
-				7E76140E1D06A11E00B1E6E0 /* Nutrition Flow */,
-				7E5AD0181CF90C0100368E69 /* Vaccine Flow */,
-				7E5AD0191CF90C0700368E69 /* Cancer Flow */,
-				7E76140D1D06A10D00B1E6E0 /* General Flow */,
+				7E182DF81D85374600A134E9 /* KHReusableRFQuestionViewController.h */,
+				7E182DF91D85374600A134E9 /* KHReusableRFQuestionViewController.m */,
+				7E2A7AF01D856DDA002429A2 /* Deprecated */,
 			);
 			name = Questions;
 			sourceTree = "<group>";
@@ -377,6 +379,17 @@
 				C076BF6CF45518781B147688 /* CoreVideo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E2A7AF01D856DDA002429A2 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				7E76140E1D06A11E00B1E6E0 /* Nutrition Flow */,
+				7E5AD0181CF90C0100368E69 /* Vaccine Flow */,
+				7E5AD0191CF90C0700368E69 /* Cancer Flow */,
+				7E76140D1D06A10D00B1E6E0 /* General Flow */,
+			);
+			name = Deprecated;
 			sourceTree = "<group>";
 		};
 		7E2E90C91C83FCF700BB92E9 /* Models */ = {
@@ -405,8 +418,8 @@
 			isa = PBXGroup;
 			children = (
 				637AA21E1C8BFDAD005107AC /* Questions */,
-				637AA21D1C8BFD51005107AC /* Sign In Page */,
 				637AA21C1C8BFD47005107AC /* Results */,
+				637AA21D1C8BFD51005107AC /* Sign In Page */,
 				637AA21B1C8BFD38005107AC /* Home Page */,
 			);
 			name = Controllers;
@@ -808,6 +821,7 @@
 				7E9B48E61C81A3C30067B403 /* main.m in Sources */,
 				7E3206241D1B61E90015DA33 /* KHGeneralEFLQuestionViewController.m in Sources */,
 				3C5D588C1D0BC42900E228A8 /* SigninVC.swift in Sources */,
+				7E182DFA1D85374600A134E9 /* KHReusableRFQuestionViewController.m in Sources */,
 				7E3206271D1B623A0015DA33 /* KHGeneralMedQuestionViewController.m in Sources */,
 				637AA2111C8B93A9005107AC /* KHCancer.m in Sources */,
 				7E067DD11D0529800095BE71 /* KHTabBarViewController.m in Sources */,

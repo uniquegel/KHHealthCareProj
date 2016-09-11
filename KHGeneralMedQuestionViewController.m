@@ -19,8 +19,9 @@
 @property KHPatient *patient;
 //@property KHRiskFactorModel *riskFactors;
 
-@property (nonnull) NSArray  *allRiskFactors;
-@property (nonnull) NSArray  *generalRiskFactors;
+@property (nonnull) NSMutableArray  *allRiskFactors;
+@property (nonnull) NSMutableArray  *generalRiskFactors;
+@property KHRiskFactorManager *rfManager;
 @property NSMutableArray *checkBoxArray;
 @property NSMutableArray *EFLRiskFactorArray;
 
@@ -38,9 +39,15 @@
     [super viewDidLoad];
     _patient = [KHPatient sharedModel];
     //    _riskFactors = [KHRiskFactorModel sharedModel];
-    KHRiskFactorManager *manager = [KHRiskFactorManager sharedManager];
-    _allRiskFactors = manager.allRiskFactors;
-    _generalRiskFactors = manager.generalRiskFactors;
+     _rfManager = [KHRiskFactorManager sharedManager];
+    _allRiskFactors = [_rfManager.allRiskFactors mutableCopy];
+    self.generalRiskFactors = [NSMutableArray new];
+    for (KHRiskFactor *rf in self.allRiskFactors) {
+        if (rf.generalList != nil) {
+            [self.generalRiskFactors addObject:rf];
+        }
+    }
+    
     
     
     [self UISetup];
@@ -70,13 +77,13 @@
     CGFloat width = self.view.frame.size.width;
     NSInteger i = 0;
     for (KHRiskFactor *rf in self.generalRiskFactors) {
-        if ([rf.category isEqualToString:@"Ethnicity, Family, Lifestyle"]) {
+        if ([rf.category isEqualToString:@"Medical Condition"]) {
             UIView *newSubView = [[UIView alloc] initWithFrame:CGRectMake(0, i*60, width, 60)];
             
             UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, width - 80, 50)];
             riskFactorTitleLable.numberOfLines = 2;
             riskFactorTitleLable.lineBreakMode = NSLineBreakByWordWrapping;
-            riskFactorTitleLable.textColor = [UIColor whiteColor];
+            riskFactorTitleLable.textColor = [UIColor blackColor];
             riskFactorTitleLable.text = rf.name;
             
             NSLog(@"rf name: %@,  cate: %@", rf.name, rf.category);
@@ -152,9 +159,6 @@
     self.patient.generalList = [firstRF.generalList mutableCopy];
     // each user carry an array of KHGeneralScreening objects, seek out each one of the KHGeneralScreening objects and set its 'status' to White
     for (id key in self.patient.generalList) {
-        
-        
-        
         KHGeneralScreening *gen = [self.patient.generalList objectForKey:key];
         gen->status = White;
         [self.patient.generalList setObject:gen forKey:key];
@@ -171,15 +175,21 @@
     // For each general risk factor
     for (KHRiskFactor *rf in _generalRiskFactors) {
         if (rf.isActive) {
+            NSLog(@"found one active rf: %@", rf.name);
             self.patient.numRiskFactors++;
             
             NSArray *checkGeneralScreeningsList = rf.generalList;
             NSArray *patientGeneralScreeningsList = self.patient.generalList;
             
-            
+            NSLog(@"risk factor generallist: %@", [rf.generalList description]);
             for (id key in rf.generalList) {
+                
+                
                 KHGeneralScreening *checkGS = [rf.generalList objectForKey:key];
                 KHGeneralScreening *patientGS = [self.patient.generalList objectForKey:key];
+                NSLog(@"checking status for GS: %@, %u", checkGS.name, checkGS->status);
+                
+                
                 Status newStatus = [self getStatusWithCheckGeneralScreening:checkGS  andPatientGeneralScreening:patientGS];
                 patientGS->status = newStatus;
                 [self.patient.generalList setObject:patientGS forKey:key];
@@ -247,16 +257,17 @@
 
 - (void) switchSelector: (UISwitch*)sender {
     
-    
-    for (KHRiskFactor *rf in _allRiskFactors) {
-        NSString *rfID = [NSString stringWithFormat:@"rf%ld", (long)sender.tag];
-        if ([rfID isEqualToString:rf.ID]) {
+    for (KHRiskFactor *rf in self.allRiskFactors) {
+        NSString *rfID = [NSString stringWithFormat:@"rf%li", (long)sender.tag];
+        if ([rf.ID isEqualToString:rfID]) {
             rf.isActive = [sender isOn];
+            _rfManager.allRiskFactors = self.allRiskFactors;
+            
         }
-        
     }
+    
     NSLog(@"switch selector triggered");
-    for (KHRiskFactor *rf in _allRiskFactors) {
+    for (KHRiskFactor *rf in _rfManager.allRiskFactors) {
         NSLog(@" rf active status: %@,  %d", rf.name, rf.isActive);
         
     }

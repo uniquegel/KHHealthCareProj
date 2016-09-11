@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
     _patient = [KHPatient sharedModel];
     _rfModel = [KHRiskFactorModel sharedModel];
+    NSLog(@"vaccine viewdidload");
     if (!_patient.completedVaccineFlow) {
 //        UIView *coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 //        UIView *coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 800, 800)];
@@ -43,18 +44,31 @@
     [super viewDidLoad];
     
     
+    for (int i = 0; i<_rfModel.AllRFListForVaccine.count; i++) {
+        KHVaccineRiskFactor *rf =_rfModel.AllRFListForVaccine[i];
+        if (rf.isActive == YES) {
+            NSLog(@"AAA: active rf: %@", rf.name);
+        }
+        else if (rf.isActive == NO) {
+            NSLog(@"III: Inavtive rf: %@", rf.name);
+        }
+    }
+    
     
     _indicatedVacArray = [[NSMutableArray alloc] init];
     _consultPhyiscianVacArray = [[NSMutableArray alloc] init];
     _contraindicatedVacArray = [[NSMutableArray alloc] init];
 
     
+    NSLog(@"ABOUT TO DIVIDE INTO CATE");
+    NSLog(@"patient vac count: %lu", _patient.vaccineListArray.count);
     
     
-    for (int i  =0; i< [_patient.vaccineList count]; i++) {
+    for (int i  =0; i< [_patient.vaccineListArray count]; i++) {
         
-        _vaccine = _patient.vaccineList[i];
+        _vaccine = _patient.vaccineListArray[i];
         
+        NSLog(@" vaccine status: %u",  _vaccine->status);
         //indicated
         if (_vaccine->status == 2) {
             [_indicatedVacArray addObject:_vaccine];
@@ -79,6 +93,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     
+    NSLog(@"vaccine viewdidappear!");
 //    [self.view removeFromSuperview];
     
 }
@@ -105,6 +120,7 @@
 
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSLog(@"about to get header");
     switch (section) {
         case 0:
         {
@@ -162,6 +178,7 @@
     
     // Configure the cell.
     
+    NSLog(@"about to configure cells!");
     switch (indexPath.section) {
 
         case 0:

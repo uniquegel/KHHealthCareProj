@@ -109,7 +109,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"about to get rows in sec!");
     switch (section) {
         case 0:
         {

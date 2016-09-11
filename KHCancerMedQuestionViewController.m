@@ -71,7 +71,7 @@
         UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, width - 80, 50)];
         riskFactorTitleLable.numberOfLines = 2;
         riskFactorTitleLable.lineBreakMode = NSLineBreakByWordWrapping;
-        riskFactorTitleLable.textColor = [UIColor whiteColor];
+        riskFactorTitleLable.textColor = [UIColor blackColor];
         KHCancerRiskFactor *cancerRiskFactor=_MedRiskFactorArray[i];
 //        NSLog(@"got !");
         NSLog(@"name of riskfa: %@", cancerRiskFactor.name);
@@ -143,8 +143,8 @@
         NSLog(@"----------------");
     } */
     NSLog(@"firstRF info: %@", firstRF.name);
-    self.patient.cancerList = firstRF.cancerList;
-    for (KHCancer *can in self.patient.cancerList) {
+    self.patient.cancerListArray = firstRF.cancerList;
+    for (KHCancer *can in self.patient.cancerListArray) {
         can->status = White;
         NSLog(@"can under patient: %@", can.name);
         //        NSLog(@"vac stat: %u", vac->status);
@@ -170,7 +170,7 @@
             
             NSLog(@"A");
             NSArray *checkCancerList = cancerRiskFactor.cancerList;
-            NSArray *patientCancerList = self.patient.cancerList;
+            NSArray *patientCancerList = self.patient.cancerListArray;
             NSLog(@"B");
             
             // for each vaccine under this risk factor
@@ -192,10 +192,10 @@
                 // update patient vaccine value
                 patientCancer->status = newStatus;
                 NSLog(@"F");
-                NSMutableArray *array = [self.patient.cancerList copy];
+                NSMutableArray *array = [self.patient.cancerListArray copy];
                 patientCancer = array[j];
                 
-                [self.patient.cancerList replaceObjectAtIndex:j withObject:patientCancer];
+                [self.patient.cancerListArray replaceObjectAtIndex:j withObject:patientCancer];
                 
                 NSLog(@"G");
                 //                NSLog(@"Active Riskfactor: Vaccine new status = %u\n", patientVaccine->status);
@@ -207,7 +207,7 @@
     NSLog(@"done calculating results!");
     
     
-    for (KHCancer *can in self.patient.cancerList) {
+    for (KHCancer *can in self.patient.cancerListArray) {
         NSLog(@"Final patient cancer status: %u", can->status);
     }
     

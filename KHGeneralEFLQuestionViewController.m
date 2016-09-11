@@ -16,9 +16,10 @@
 @property KHPatient *patient;
 //@property KHRiskFactorModel *riskFactors;
 
-@property (nonnull) NSArray  *allRiskFactors;
-@property (nonnull) NSArray  *generalRiskFactors;
-@property NSMutableArray *checkBoxArray;
+@property (nonnull) NSMutableArray  *allRiskFactors;
+@property (nonnull) NSMutableArray  *generalRiskFactors;
+@property KHRiskFactorManager *rfManager;
+@property NSMutableArray *switchArray;
 @property NSMutableArray *EFLRiskFactorArray;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -34,13 +35,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _patient = [KHPatient sharedModel];
-    KHRiskFactorManager *manager = [KHRiskFactorManager sharedManager];
-    _allRiskFactors = manager.allRiskFactors;
-    _generalRiskFactors = manager.generalRiskFactors;
+    self.rfManager = [KHRiskFactorManager sharedManager];
+    _allRiskFactors = [_rfManager.allRiskFactors mutableCopy];
+    
+    self.generalRiskFactors = [NSMutableArray new];
+    for (KHRiskFactor *rf in self.allRiskFactors) {
+        if (rf.generalList != nil) {
+            [self.generalRiskFactors addObject:rf];
+        }
+    }
 	
     
     [self UISetup];
 }
+
 
 
 
@@ -57,7 +65,7 @@
     [self.view addGestureRecognizer:gestureRecognizer];
     
     
-    _checkBoxArray = [[NSMutableArray alloc] init];
+    _switchArray = [[NSMutableArray alloc] init];
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 600)];
     
     
@@ -70,7 +78,7 @@
             UILabel *riskFactorTitleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, width - 80, 50)];
             riskFactorTitleLable.numberOfLines = 2;
             riskFactorTitleLable.lineBreakMode = NSLineBreakByWordWrapping;
-            riskFactorTitleLable.textColor = [UIColor whiteColor];
+            riskFactorTitleLable.textColor = [UIColor blackColor];
             riskFactorTitleLable.text = rf.name;
             
             NSLog(@"rf name: %@,  cate: %@", rf.name, rf.category);
@@ -85,7 +93,7 @@
             
             [newSubView addSubview:mySwitch];
             [newSubView addSubview:riskFactorTitleLable];
-//            [_checkBoxArray addObject:mySwitch];
+            [self.switchArray addObject:mySwitch];
             [contentView addSubview:newSubView];
             i++;
         }
@@ -105,17 +113,20 @@
 
 - (void) switchSelector: (UISwitch*)sender {
     
-//    
-//        if ([rfID isEqualToString:rf.ID]) {
-//            rf.isActive = [sender isOn];
-//        }
-//        
-//    
-//    NSLog(@"switch selector triggered");
-//    for (KHRiskFactor *rf in _allRiskFactors) {
-//        NSLog(@" rf active status: %@,  %d", rf.name, rf.isActive);
-//        
-//    }
+    for (KHRiskFactor *rf in self.allRiskFactors) {
+        NSString *rfID = [NSString stringWithFormat:@"rf%li", (long)sender.tag];
+        if ([rf.ID isEqualToString:rfID]) {
+            rf.isActive = [sender isOn];
+            _rfManager.allRiskFactors = self.allRiskFactors;
+            
+        }
+    }
+    
+    NSLog(@"switch selector triggered");
+    for (KHRiskFactor *rf in _rfManager.allRiskFactors) {
+        NSLog(@" rf active status: %@,  %d", rf.name, rf.isActive);
+        
+    }
     
 }
 

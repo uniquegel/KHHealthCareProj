@@ -11,13 +11,17 @@
 #import "KHCancerListModel.h"
 #import "KHRiskFactorModel.h"
 #import "KHBasicQuestionViewController.h"
-#import "KHPatient.h"
 #import "KHHealthCareProj-Swift.h"
 #import "KHRiskFactorManager.h"
 
 @import FirebaseAuth;
 @interface KHHomePageViewController ()
+@property KHPatient *patient;
+@property ScreeningType scrType;
+
+- (IBAction)vacScreenButtonAction:(id)sender;
 - (IBAction)genScreenBtnTapped:(id)sender;
+- (IBAction)cancerScreenButtonAction:(id)sender;
 
 
 @end
@@ -29,8 +33,12 @@
     
     [super viewDidLoad];
     
+    
+    self.patient = [KHPatient sharedModel];
+    
     //pull from database, asynchrously
-    KHVaccineListModel *vaccineModel = [KHVaccineListModel sharedModel];
+    
+    
 	
     
 }
@@ -42,6 +50,8 @@
 //			
 //		}
 //	}];
+    
+    
 	[[KHRiskFactorManager sharedManager] downloadAllRiskFactors];
 }
 
@@ -77,27 +87,34 @@
 
 - (IBAction)vacScreenButtonAction:(id)sender {
     _scrType = kScreenTypeVaccine;
+    
+    self.patient.curScreeningType = kScreenTypeVaccine;
+    
     NSLog(@"Screen type: %lu", (unsigned long)_scrType);
     [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
 }
 
 - (IBAction)cancerScreenButtonAction:(id)sender {
     _scrType = kScreenTypeCancer;
+    
+    self.patient.curScreeningType = kScreenTypeCancer;
+    
     NSLog(@"Screen type: %lu", (unsigned long)_scrType);
     [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
 }
 
 - (IBAction)genScreenBtnTapped:(id)sender {
     _scrType = kScreenTypeGeneral;
+    
+    self.patient.curScreeningType = kScreenTypeGeneral;
     NSLog(@"Screen type: %lu", (unsigned long)_scrType);
         [self performSegueWithIdentifier:@"basicQuestionSegue" sender:self];
 }
 
-- (IBAction)cardDisScreenButtonAction:(id)sender {
-    
-}
 
 - (IBAction)logoutButtonPressed:(id)sender {
+    return ;
+    
 	NSError *error;
 	[[FIRAuth auth] signOut:&error];
 	if (!error) {
