@@ -100,21 +100,13 @@
     
         [self.tableView setDelegate:self];
         [self.tableView setDataSource:self];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     self.patient = [KHPatient sharedModel];
     
     [self initializeDataForScreeningType:self.patient.curScreeningType andScreeningStep:(self.patient.curScreeningStep+1)];
     //    self.navigationController.toolbarHidden = NO;
     
-    
-    
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -608,6 +600,7 @@
     [switchview addTarget:self action:@selector(switchSelector:) forControlEvents:UIControlEventValueChanged];
     
     cell.accessoryView = switchview;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     
     //    if (cell == nil) {
