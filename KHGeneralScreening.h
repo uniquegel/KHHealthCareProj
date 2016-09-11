@@ -14,11 +14,13 @@
 }
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *condition;
-@property (nonatomic, strong) NSString *frequency;
+@property (nonatomic, strong) NSString *info;
+@property (nonatomic, strong) NSString *value;
+@property (nonatomic, strong) NSString *ID;
+@property (nonatomic, strong) NSString *category;
 
 // methods
--(instancetype)initWithName:(NSString *)newName;
+-(instancetype)initWithName:(NSString *)name andValue:(NSString *)value andID:(NSString *)ID andInfo:(NSString *)info andCategory:(NSString *)cate;
 -(instancetype)initWithName:(NSString *)newName andStatus:(Status)newStatus;
 
 @end

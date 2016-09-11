@@ -83,31 +83,40 @@
 			
 //			NSLog(@"%@   %@", category, subCate);
 			
-			//general list
+			//========================== general list =======================
+			
+			//TODO: Fix parser function
 			NSDictionary *general_list = [NSDictionary dictionary];
-			if (rfValueDict[@"general_list"] != nil) {
+			
+			if (rfValueDict[@"general-list"] != nil) {
+				
 				NSDictionary *list = rfValueDict[@"general-list"];
 				
-				general_list = [NSDictionary dictionaryWithDictionary:[self parseListDictWithDict:list  andListDefDict:gsDict]];
+				general_list = [NSDictionary dictionaryWithDictionary:[self parseListDictWithDict:list  andDefDict:gsDict]];
 			}
-//			NSLog(@"general list for rf: %@ list: %@", name, general_list);
+			NSLog(@"general list for rf: %@ list: %@", name, general_list);
 			
-			//vaccine list
+			
+			//======================= vaccine list ========================
 			NSDictionary *vaccine_list;
 			NSDictionary *list = rfValueDict[@"vaccine-list"];
 			
 			if (list != nil) {
-				vaccine_list = [self parseListDictWithDict:list andListDefDict:gsDict];
+//				vaccine_list = [self parseListDictWithDict:list andListDefDict:gsDict];
 			}
+			NSLog(@"Vaccine List: %@", vaccine_list);
 			
-			//cancer list
+			
+			//======================== cancer list ===========================
 			NSDictionary *cancer_list;
 			list = rfValueDict[@"cancer-list"];
 			if (list != nil) {
-				cancer_list = [self parseListDictWithDict:list andListDefDict:gsDict];
+//				cancer_list = [self parseListDictWithDict:list andListDefDict:gsDict];
 			}
+			NSLog(@"Cancer List: %@", vaccine_list);
 			
-			//init risk factor object
+			
+			//=================== init risk factor object ====================
 			KHRiskFactor* riskfactor = [[KHRiskFactor alloc] initWithName:name category:category ID:ID subCategory:subCate generalList:general_list vaccineList:vaccine_list cancerList:cancer_list];
 			
 			//All Riskfactors mutable copy
@@ -153,19 +162,34 @@
 	}];
 	
 }
-
-- (NSDictionary*) parseListDictWithDict:(NSDictionary*)valueDict andListDefDict:(NSDictionary *)listDefDict {
-	NSMutableDictionary *listDict = [NSMutableDictionary dictionary];
+/* 
+ * Helper function to parse the list
+ */
+- (NSDictionary*) parseListDictWithDict:(NSDictionary*)valueDict andDefDict:(NSDictionary *)defDict {
+	
+	NSLog(@"%@  \n\n %@", valueDict, defDict);
+	
+	NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
+	
+	
 	for (NSString *key in valueDict) {
-		NSDictionary *dict = valueDict[key];
-		if (dict == nil || dict[@"value"] == nil) {
+		NSMutableDictionary *screeningDict =[NSMutableDictionary dictionaryWithDictionary:defDict[key]];
+		NSLog(@"%@", screeningDict);
+		if (screeningDict == nil || screeningDict[@"name"] == nil) {
 			continue;
 		}
+
+		NSLog(@"%@",[valueDict[key] objectForKey:@"value"]);
+		[screeningDict setObject:[valueDict[key] objectForKey:@"value"] forKey:@"value"];
 		
-		listDict[key] = dict[key];
+		NSString *screeningName = screeningDict[@"name"];
+		
+		[result setObject:screeningDict forKey:screeningName];
 	}
 	
-	return listDict;
+	
+	NSLog(@"%@",result);
+	return result;
 }
 
 
