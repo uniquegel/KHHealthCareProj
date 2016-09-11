@@ -361,10 +361,7 @@
 				7E4484AD1C8BEB4B00850E58 /* KHBasicQuestionViewController.m */,
 				7E182DF81D85374600A134E9 /* KHReusableRFQuestionViewController.h */,
 				7E182DF91D85374600A134E9 /* KHReusableRFQuestionViewController.m */,
-				7E76140E1D06A11E00B1E6E0 /* Nutrition Flow */,
-				7E5AD0181CF90C0100368E69 /* Vaccine Flow */,
-				7E5AD0191CF90C0700368E69 /* Cancer Flow */,
-				7E76140D1D06A10D00B1E6E0 /* General Flow */,
+				7E2A7AF01D856DDA002429A2 /* Deprecated */,
 			);
 			name = Questions;
 			sourceTree = "<group>";
@@ -384,6 +381,17 @@
 				C076BF6CF45518781B147688 /* CoreVideo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E2A7AF01D856DDA002429A2 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				7E76140E1D06A11E00B1E6E0 /* Nutrition Flow */,
+				7E5AD0181CF90C0100368E69 /* Vaccine Flow */,
+				7E5AD0191CF90C0700368E69 /* Cancer Flow */,
+				7E76140D1D06A10D00B1E6E0 /* General Flow */,
+			);
+			name = Deprecated;
 			sourceTree = "<group>";
 		};
 		7E2E90C91C83FCF700BB92E9 /* Models */ = {

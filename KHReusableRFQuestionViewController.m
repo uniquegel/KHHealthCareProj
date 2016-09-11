@@ -602,26 +602,6 @@
     cell.accessoryView = switchview;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    
-    //    if (cell == nil) {
-    //        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID] ;
-    //
-    //
-    //
-    //
-    //
-    //
-    //    }
-    
-    //    if (cellRF.name != nil) {
-    //
-    //    }
-    //    else {
-    //        NSLog(@"cell name: '%@'",cellRF.name);
-    //    }
-    //
-    
-    
     return cell;
 }
 
