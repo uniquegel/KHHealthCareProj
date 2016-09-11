@@ -57,12 +57,12 @@
     
     
     NSLog(@"ABOUT TO DIVIDE INTO CATE");
-    NSLog(@"patient cancer count: %lu", _patient.cancerList.count);
+    NSLog(@"patient cancer count: %lu", _patient.cancerListArray.count);
     
     
-    for (int i  =0; i< [_patient.cancerList count]; i++) {
+    for (int i  =0; i< [_patient.cancerListArray count]; i++) {
         
-        _cancer = _patient.cancerList[i];
+        _cancer = _patient.cancerListArray[i];
         
         NSLog(@" cancer status: %u",  _cancer->status);
         //indicated
@@ -94,7 +94,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"about to get rows in sec!");
     switch (section) {
         case 0:
         {

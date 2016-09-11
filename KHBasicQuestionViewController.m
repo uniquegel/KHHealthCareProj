@@ -11,6 +11,8 @@
 #import "KHRiskFactorModel.h"
 #import "KHHealthCareProj-Swift.h"
 
+#import "KHReusableRFQuestionViewController.h"
+
 @import FirebaseAnalytics;
 
 @interface KHBasicQuestionViewController ()
@@ -24,6 +26,7 @@
 @implementation KHBasicQuestionViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _patient = [KHPatient sharedModel];
@@ -42,6 +45,14 @@
 	
 	[self loadCurrentPatientData];
 	
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    
+    self.patient.curScreeningStep = 0;
 }
 
 - (void)loadCurrentPatientData {
@@ -259,8 +270,27 @@
         _patient.collectedBasicInfo = YES;
 		
 		
+//        KHReusableRiskFactorQuestionTableViewController *controller = [[KHReusableRiskFactorQuestionTableViewController alloc ] initControllerForScreeningType:_screeningType andScreeningStep:1];
+        
+//        controller = [KHReusableRiskFactorQuestionTableViewController new];
+        
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        
+//        KHReusableRFQuestionViewController *ctrl = [storyboard instantiateViewControllerWithIdentifier:@"KHReusableRFQuestionViewControllerID"];
+//        ctrl.view.backgroundColor = [UIColor clearColor];
+        
+        
+        
+//        [self presentViewController:ctrl animated:NO completion:nil];
+        NSLog(@"about to perform segue!");
+        [self performSegueWithIdentifier:@"basicQuestionToRFQuestionSegue" sender:self];
+        
+        
+//        KHReusableRFQuestionViewController *ctrl = [[KHReusableRFQuestionViewController alloc] init];
+//        [self presentViewController:ctrl animated:YES completion:nil];
+        
 		
-        switch (_screeningType) {
+        /* switch (_screeningType) {
             case kScreenTypeVaccine:
             {
                 [self performSegueWithIdentifier:@"basicQuestionToVacccineOccuRiskFactors" sender:self];
@@ -281,7 +311,7 @@
             }
             default:
                 break;
-        }
+        } */
     }
     else{
 
@@ -301,7 +331,9 @@
 
 - (IBAction)bgButtonAction:(id)sender {
 //    [self.view endEditing:YES];
+    NSLog(@"bg button tapped ");
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+    
 }
 
 - (IBAction)backButton:(id)sender {

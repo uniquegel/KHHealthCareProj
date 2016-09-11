@@ -7,17 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KHPatient.h"
 
 @interface KHHomePageViewController : UIViewController
-typedef enum ScreeningType : NSUInteger {
-    kScreenTypeVaccine,
-    kScreenTypeCancer,
-    kScreenTypeGeneral
-} ScreeningType;
+
 
 @property (nonatomic, strong) NSArray *vaccineList;
-@property (nonatomic, readwrite) ScreeningType scrType;
-- (IBAction)vacScreenButtonAction:(id)sender;
+
+
+
 
 
 @end

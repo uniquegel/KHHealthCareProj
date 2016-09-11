@@ -134,8 +134,8 @@
     
     KHVaccineRiskFactor *firstRF = [self.riskFactors.AllRFListForVaccine objectAtIndex:0];
     
-    self.patient.vaccineList = firstRF.vaccineList;
-    for (KHVaccine *vac in self.patient.vaccineList) {
+    self.patient.vaccineListArray = firstRF.vaccineList;
+    for (KHVaccine *vac in self.patient.vaccineListArray) {
         vac->status = White;
 //        NSLog(@"vac stat: %u", vac->status);
     }
@@ -159,7 +159,7 @@
             
             NSLog(@"A");
             NSArray *checkVaccineList = vaccineRiskFactor.vaccineList;
-            NSArray *patientVaccineList = self.patient.vaccineList;
+            NSArray *patientVaccineList = self.patient.vaccineListArray;
             NSLog(@"B");
             
             // for each vaccine under this risk factor
@@ -183,10 +183,10 @@
                 // update patient vaccine value
                 patientVaccine->status = newStatus;
                 NSLog(@"F");
-                NSMutableArray *array = [self.patient.vaccineList copy];
+                NSMutableArray *array = [self.patient.vaccineListArray copy];
                 patientVaccine = array[j];
                 
-                [self.patient.vaccineList replaceObjectAtIndex:j withObject:patientVaccine];
+                [self.patient.vaccineListArray replaceObjectAtIndex:j withObject:patientVaccine];
                 NSLog(@"G");
 //                NSLog(@"Active Riskfactor: Vaccine new status = %u\n", patientVaccine->status);
                 NSLog(@"D");
@@ -200,7 +200,7 @@
     NSLog(@"done calculating results!");
     
     
-    for (KHVaccine *vc in self.patient.vaccineList) {
+    for (KHVaccine *vc in self.patient.vaccineListArray) {
         NSLog(@"Final patient vaccine status: %u", vc->status);
     }
     

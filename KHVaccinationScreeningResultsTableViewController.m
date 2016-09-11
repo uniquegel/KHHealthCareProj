@@ -61,12 +61,12 @@
 
     
     NSLog(@"ABOUT TO DIVIDE INTO CATE");
-    NSLog(@"patient vac count: %lu", _patient.vaccineList.count);
+    NSLog(@"patient vac count: %lu", _patient.vaccineListArray.count);
     
     
-    for (int i  =0; i< [_patient.vaccineList count]; i++) {
+    for (int i  =0; i< [_patient.vaccineListArray count]; i++) {
         
-        _vaccine = _patient.vaccineList[i];
+        _vaccine = _patient.vaccineListArray[i];
         
         NSLog(@" vaccine status: %u",  _vaccine->status);
         //indicated
@@ -99,7 +99,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"about to get rows in sec!");
     switch (section) {
         case 0:
         {

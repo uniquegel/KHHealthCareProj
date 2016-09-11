@@ -8,11 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "KHVaccine.h"
+#import "KHRiskFactorManager.h"
+#import "KHHomePageViewController.h"
 
 @interface KHPatient : NSObject{
     @public
 }
 
+typedef enum ScreeningType : NSUInteger {
+    kScreenTypeVaccine,
+    kScreenTypeCancer,
+    kScreenTypeGeneral
+} ScreeningType;
 
 // info
 @property (nonatomic, strong) NSString *firstName;
@@ -30,10 +37,14 @@
 @property bool completedGeneralFlow;
 @property bool collectedBasicInfo;
 
+@property ScreeningType curScreeningType;
+@property NSInteger curScreeningStep;
 
 // lists
-@property (nonatomic, strong) NSMutableArray *vaccineList;
-@property (nonatomic, strong) NSMutableArray *cancerList;
+@property (nonatomic, strong) NSMutableArray *vaccineListArray;
+@property (nonatomic, strong) NSMutableArray *cancerListArray;
+@property (nonatomic, strong) NSMutableDictionary *vaccineList;
+@property (nonatomic, strong) NSMutableDictionary *cancerList;
 @property (nonatomic, strong) NSMutableDictionary *generalList;
 @property (nonatomic, strong) NSArray *riskFactorList;
 
