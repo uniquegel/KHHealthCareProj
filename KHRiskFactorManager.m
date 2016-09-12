@@ -53,7 +53,7 @@
 		//Parse the risk factors 
 		[rfDict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
 			NSDictionary *rfValueDict = [rfDict objectForKey:key];
-			NSLog(@"value dict: %@", [rfValueDict description]);
+//			NSLog(@"value dict: %@", [rfValueDict description]);
 			
 			NSString *name = [rfValueDict objectForKey:@"name"];
 			NSString *ID = [rfValueDict objectForKey:@"id"];
@@ -97,7 +97,7 @@
 			}else {
 				NSLog(@"empty general list for RF");
 			}
-			NSLog(@"general list for rf: %@ list: %@", name, general_list);
+//			NSLog(@"general list for rf: %@ list: %@", name, general_list);
 			
 			
 			//======================= vaccine list ========================
@@ -107,7 +107,7 @@
 			if (list != nil) {
 //				vaccine_list = [self parseListDictWithDict:list andListDefDict:gsDict];
 			}
-			NSLog(@"Vaccine List: %@", vaccine_list);
+//			NSLog(@"Vaccine List: %@", vaccine_list);
 			
 			
 			//======================== cancer list ===========================
@@ -116,7 +116,7 @@
 			if (list != nil) {
 //				cancer_list = [self parseListDictWithDict:list andListDefDict:gsDict];
 			}
-			NSLog(@"Cancer List: %@", vaccine_list);
+//			NSLog(@"Cancer List: %@", cancer_list);
 			
 			
 			//=================== init risk factor object ====================
@@ -155,13 +155,13 @@
 //				NSLog(@"%lu", self.EFLRiskFactors.count);
 			}
 		}];
-        NSLog(@"all riskf factors: %@", allRiskFactorsCopy);
-        for (KHRiskFactor *rf in allRiskFactorsCopy) {
-            NSLog(@"------------------------------");
-            NSLog(@"riskfactor name: %@", rf.name);
-            NSLog(@"category: %@", rf.category);
-            
-        }
+//        NSLog(@"all riskf factors: %@", allRiskFactorsCopy);
+//        for (KHRiskFactor *rf in allRiskFactorsCopy) {
+//            NSLog(@"------------------------------");
+//            NSLog(@"riskfactor name: %@", rf.name);
+//            NSLog(@"category: %@", rf.category);
+//            
+//        }
 	}];
 	
 }
@@ -170,19 +170,19 @@
  */
 - (NSDictionary*) parseListDictWithDict:(NSDictionary*)valueDict andDefDict:(NSDictionary *)defDict {
 	
-	NSLog(@"%@  \n\n %@", valueDict, defDict);
+//	NSLog(@"%@  \n\n %@", valueDict, defDict);
 	
 	NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
 	
 	
 	for (NSString *key in valueDict) {
 		NSMutableDictionary *screeningDict =[NSMutableDictionary dictionaryWithDictionary:defDict[key]];
-		NSLog(@"%@", screeningDict);
+//		NSLog(@"%@", screeningDict);
 		if (screeningDict == nil || screeningDict[@"name"] == nil) {
 			continue;
 		}
 
-		NSLog(@"%@",[valueDict[key] objectForKey:@"value"]);
+//		NSLog(@"%@",[valueDict[key] objectForKey:@"value"]);
 		[screeningDict setObject:[valueDict[key] objectForKey:@"value"] forKey:@"value"];
 		
 		NSString *screeningName = screeningDict[@"name"];
@@ -191,7 +191,7 @@
 	}
 	
 	
-	NSLog(@"%@",result);
+//	NSLog(@"%@",result);
 	return result;
 }
 

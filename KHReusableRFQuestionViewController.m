@@ -40,6 +40,11 @@
 -(void)prepareContentForScreeningType:(ScreeningType)type  andStep:(NSInteger)step;
 
 - (void) switchSelector: (UISwitch*)sender;
+
+-(void)calculateResultsForScreeningType:(ScreeningType)type;
+-(Status)getNewStatusWithCheckObj:(id)checkObj andPatientObject:(id )patientObj;
+-(Status)getStatusFromString:(NSString*)statusString;
+-(NSString *)getStringFromStatus:(Status)status;
 @end
 
 @implementation KHReusableRFQuestionViewController
@@ -352,7 +357,7 @@
                         KHVaccine *patientObj = [self.patient.vaccineList objectForKey:key];
                         NSLog(@"checking status for GS: %@, %u", checkObj.name, checkObj->status);
                         
-                        Status newStatus = [self getStatusWithCheckObj:checkObj andPatientObject:patientObj];
+                        Status newStatus = [self getNewStatusWithCheckObj:checkObj andPatientObject:patientObj];
                         patientObj->status = newStatus;
                         [self.patient.vaccineList setObject:patientObj forKey:key];
                         
@@ -403,7 +408,7 @@
                         KHVaccine *patientObj = [self.patient.cancerList objectForKey:key];
                         NSLog(@"checking status for GS: %@, %u", checkObj.name, checkObj->status);
                         
-                        Status newStatus = [self getStatusWithCheckObj:checkObj andPatientObject:patientObj];
+                        Status newStatus = [self getNewStatusWithCheckObj:checkObj andPatientObject:patientObj];
                         patientObj->status = newStatus;
                         [self.patient.cancerList setObject:patientObj forKey:key];
                         
@@ -429,10 +434,20 @@
             self.patient.generalList = [firstRF.generalList mutableCopy];
             // each user carry an array of KHGeneralScreening objects, seek out each one of the KHGeneralScreening objects and set its 'status' to White
             for (id key in self.patient.generalList) {
+                NSMutableDictionary *dict = [self.patient.generalList objectForKey:key];
+                NSLog(@"in here");
+                NSLog(@"dict: %@", [dict description]);
+                dict[@"value"] = @"W";
+                
+            }
+            NSLog(@"done clearing");
+            /* for (id key in self.patient.generalList) {
                 KHGeneralScreening *gen = [self.patient.generalList objectForKey:key];
                 gen->status = White;
                 [self.patient.generalList setObject:gen forKey:key];
-            }
+            }*/
+            
+            NSLog(@"cleared patient generallist: %@", [self.patient.generalList description]);
             
             
             
@@ -450,14 +465,29 @@
                     
                     NSLog(@"risk factor generallist: %@", [rf.generalList description]);
                     for (id key in rf.generalList) {
-                        KHGeneralScreening *checkGS = [rf.generalList objectForKey:key];
+                        NSMutableDictionary *checkDict = [rf.generalList objectForKey:key];
+                        NSMutableDictionary *patientDict = [self.patient.generalList objectForKey:key];
+                        
+                        KHGeneralScreening *checkObj = [[KHGeneralScreening alloc] initWithName:checkDict[@"name"] andStatus: [self getStatusFromString:checkDict[@"value"]]];
+                        KHGeneralScreening *patientObj = [[KHGeneralScreening alloc] initWithName:patientDict[@"name"] andStatus: [self getStatusFromString:patientDict[@"value"]]];
+                        
+                        NSLog(@"checkObj status: ");
+                    
+                        Status newStatus = [self getNewStatusWithCheckObj:checkObj andPatientObject:patientObj];
+                        
+                        patientObj->status = newStatus;
+                        
+                        patientDict[@"value"] = [self getStringFromStatus:patientObj->status];
+                        [self.patient.generalList setObject:patientDict forKey:key];
+                        
+                        /* KHGeneralScreening *checkGS = [rf.generalList objectForKey:key];
                         KHGeneralScreening *patientGS = [self.patient.generalList objectForKey:key];
                         NSLog(@"checking status for GS: %@, %u", checkGS.name, checkGS->status);
                         
-                        Status newStatus = [self getStatusWithCheckObj:checkGS andPatientObject:patientGS];
+                        Status newStatus = [self getNewStatusWithCheckObj:checkGS andPatientObject:patientGS];
                         
                         patientGS->status = newStatus;
-                        [self.patient.generalList setObject:patientGS forKey:key];
+                        [self.patient.generalList setObject:patientGS forKey:key]; */
                         
                     }
                 }
@@ -473,14 +503,73 @@
     
     
     NSLog(@"done calculating results!");
-    NSLog(@"");
+    NSLog(@"%@", [self.patient.generalList description]);
     
+}
+
+-(Status)getStatusFromString:(NSString*)statusString {
+    Status status;
+    if ([statusString isEqualToString:@"W"]) {
+        status = White;
+    }
+    else if ([statusString isEqualToString:@"Y"]){
+        status = Yellow;
+    }
+    else if ([statusString isEqualToString:@"G"]){
+        status = Green;
+    }
+    else if ([statusString isEqualToString:@"B"]){
+        status = Blue;
+    }
+    else if ([statusString isEqualToString:@"R"]){
+        status = Red;
+    }
+    else{
+        NSLog(@"Status String invalid: %@", statusString);
+        return nil;
+    }
+    return status;
+}
+
+-(NSString *)getStringFromStatus:(Status)status {
+    NSString *statusString;
+    switch (status) {
+        case White:
+        {
+            statusString = @"W";
+            break;
+        }
+        case Red:
+        {
+            statusString = @"R";
+            break;
+        }
+        case Blue:
+        {
+            statusString = @"B";
+            break;
+        }
+        case Green:
+        {
+            statusString = @"G";
+            break;
+        }
+        case Yellow:
+        {
+            statusString = @"Y";
+            break;
+        }
+        default:
+            return nil;
+            break;
+    }
+    return statusString;
+
 }
 
 
 
-
--(Status)getStatusWithCheckObj:(id)checkObj andPatientObject:(id )patientObj {
+-(Status)getNewStatusWithCheckObj:(id)checkObj andPatientObject:(id )patientObj {
     
     Status newStatus = White;
     

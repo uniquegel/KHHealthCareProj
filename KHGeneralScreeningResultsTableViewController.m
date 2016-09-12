@@ -58,27 +58,49 @@
     
     
     NSLog(@"ABOUT TO DIVIDE INTO CATE");
-    NSLog(@"patient vac count: %lu", _patient.vaccineList.count);
+    NSLog(@"patient vac count: %lu", [_patient.generalList count]);
     
     
-    for (KHGeneralScreening *gs in self.patient.generalList) {
-        NSLog(@"general screening name: %@, status: %u", gs.name, gs->status);
-        switch (gs->status) {
-            case 0:{
-                [_contraindicatedArray addObject:gs];
-                break;
-            }
-            case 1:{
-                [_askArray addObject:gs];
-                break;
-            }
-            case 2:{
-                [_indicatedArray addObject:gs];
-                break;
-            }
-            default:
-                break;
+    for (id key in self.patient.generalList) {
+        NSDictionary *dict = [self.patient.generalList objectForKey:key];
+        NSString *statusString = dict[@"value"];
+        NSLog(@"general screening name: %@, status: %@", dict[@"name"], dict[@"value"]);
+
+        if ([statusString isEqualToString:@"W"]) {
         }
+        else if ([statusString isEqualToString:@"Y"]){
+            [_indicatedArray addObject:dict];
+        }
+        else if ([statusString isEqualToString:@"G"]){
+        }
+        else if ([statusString isEqualToString:@"B"]){
+            [_askArray addObject:dict];
+        }
+        else if ([statusString isEqualToString:@"R"]){
+            [_contraindicatedArray addObject:dict];
+        }
+        else{
+            NSLog(@"General Screening status invalid: %@", statusString);
+        }
+        
+        
+        
+//        switch (gs->status) {
+//            case 0:{
+//                [_contraindicatedArray addObject:gs];
+//                break;
+//            }
+//            case 1:{
+//                [_askArray addObject:gs];
+//                break;
+//            }
+//            case 2:{
+//                [_indicatedArray addObject:gs];
+//                break;
+//            }
+//            default:
+//                break;
+//        }
     }
 
     NSLog(@" ask Count: %lu ", (unsigned long)_askArray.count);
@@ -187,25 +209,26 @@
         case 0:
         {
             //indicated
-            KHVaccine *vaccine = _indicatedArray[indexPath.row];
+            NSDictionary *dict = self.indicatedArray[indexPath.row];
             
-            cell.textLabel.text = vaccine.name;
+            cell.textLabel.text = dict[@"name"];
             break;
         }
         case 1:
         {
             //contraindicated
-            KHVaccine *vaccine = _contraindicatedArray[indexPath.row];
-            cell.textLabel.text = vaccine.name;
+            NSDictionary *dict = self.contraindicatedArray[indexPath.row];
+            
+            cell.textLabel.text = dict[@"name"];
             
             break;
         }
         case 2:
         {
             //ask
-            KHVaccine *vaccine = _askArray[indexPath.row];
+            NSDictionary *dict = self.askArray[indexPath.row];
             
-            cell.textLabel.text = vaccine.name;
+            cell.textLabel.text = dict[@"name"];
             break;
         }
             
