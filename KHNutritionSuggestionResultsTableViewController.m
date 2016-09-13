@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _patient = [KHPatient sharedModel];
-    _rfModel = [KHRiskFactorModel sharedModel];
+//    _rfModel = [KHRiskFactorModel sharedModel];
     // FIXME: change to nutrition bool
     if (YES) {
         [self.view setHidden:YES];

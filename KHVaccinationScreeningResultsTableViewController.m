@@ -9,14 +9,14 @@
 #import "KHVaccinationScreeningResultsTableViewController.h"
 #import "KHPatient.h"
 #import "KHVaccine.h"
-#import "KHRiskFactorModel.h"
 #import "KHVaccineRiskFactor.h"
+#import "KHRiskFactorManager.h"
 @interface KHVaccinationScreeningResultsTableViewController()
 @property KHPatient *patient;
-@property KHRiskFactorModel *rfModel;
-@property NSMutableArray *indicatedVacArray;
-@property NSMutableArray *contraindicatedVacArray;
-@property NSMutableArray *consultPhyiscianVacArray;
+@property KHRiskFactorManager *rfManager;
+@property NSMutableArray *indicatedArray;
+@property NSMutableArray *contraindicatedArray;
+@property NSMutableArray *askArray;
 @property KHVaccine *vaccine;
 - (IBAction)barButtonTapped:(id)sender;
 
@@ -29,14 +29,10 @@
 
 - (void)viewDidLoad {
     _patient = [KHPatient sharedModel];
-    _rfModel = [KHRiskFactorModel sharedModel];
+    
+    self.rfManager = [KHRiskFactorManager sharedManager];
     NSLog(@"vaccine viewdidload");
     if (!_patient.completedVaccineFlow) {
-//        UIView *coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-//        UIView *coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 800, 800)];
-//        coverView.backgroundColor = [UIColor whiteColor];
-//        [self.view addSubview:coverView];
-//        [self.view bringSubviewToFront:coverView];
         [self.view setHidden:YES];
         
     }
@@ -44,50 +40,77 @@
     [super viewDidLoad];
     
     
-    for (int i = 0; i<_rfModel.AllRFListForVaccine.count; i++) {
-        KHVaccineRiskFactor *rf =_rfModel.AllRFListForVaccine[i];
-        if (rf.isActive == YES) {
-            NSLog(@"AAA: active rf: %@", rf.name);
-        }
-        else if (rf.isActive == NO) {
-            NSLog(@"III: Inavtive rf: %@", rf.name);
-        }
-    }
+//    for (int i = 0; i<_rfModel.AllRFListForVaccine.count; i++) {
+//        KHVaccineRiskFactor *rf =_rfModel.AllRFListForVaccine[i];
+//        if (rf.isActive == YES) {
+//            NSLog(@"AAA: active rf: %@", rf.name);
+//        }
+//        else if (rf.isActive == NO) {
+//            NSLog(@"III: Inavtive rf: %@", rf.name);
+//        }
+//    }
     
+    self.indicatedArray = [[NSMutableArray alloc] init];
+    self.contraindicatedArray = [[NSMutableArray alloc] init];
+    self.askArray = [[NSMutableArray alloc] init];
     
-    _indicatedVacArray = [[NSMutableArray alloc] init];
-    _consultPhyiscianVacArray = [[NSMutableArray alloc] init];
-    _contraindicatedVacArray = [[NSMutableArray alloc] init];
-
     
     NSLog(@"ABOUT TO DIVIDE INTO CATE");
-    NSLog(@"patient vac count: %lu", _patient.vaccineListArray.count);
+    NSLog(@"patient vac count: %lu", [_patient.vaccineList count]);
     
     
-    for (int i  =0; i< [_patient.vaccineListArray count]; i++) {
+    for (id key in self.patient.vaccineList) {
+        NSDictionary *dict = [self.patient.vaccineList objectForKey:key];
+        NSString *statusString = dict[@"value"];
+        NSLog(@"vaccine name: %@, status: %@", dict[@"name"], dict[@"value"]);
         
-        _vaccine = _patient.vaccineListArray[i];
+        if ([statusString isEqualToString:@"W"]) {
+        }
+        else if ([statusString isEqualToString:@"Y"]){
+            [_indicatedArray addObject:dict];
+        }
+        else if ([statusString isEqualToString:@"G"]){
+        }
+        else if ([statusString isEqualToString:@"B"]){
+            [_askArray addObject:dict];
+        }
+        else if ([statusString isEqualToString:@"R"]){
+            [_contraindicatedArray addObject:dict];
+        }
+        else{
+            NSLog(@"Vaccine status invalid: %@", statusString);
+        }
         
-        NSLog(@" vaccine status: %u",  _vaccine->status);
-        //indicated
-        if (_vaccine->status == 2) {
-            [_indicatedVacArray addObject:_vaccine];
-        }
-        //contra indicated
-        else if (_vaccine->status == 0) {
-            [_contraindicatedVacArray addObject:_vaccine];
-        }
-        //consult
-        else if (_vaccine->status == 1) {
-            [_consultPhyiscianVacArray addObject:_vaccine];
-        }
         
+        
+        //        switch (gs->status) {
+        //            case 0:{
+        //                [_contraindicatedArray addObject:gs];
+        //                break;
+        //            }
+        //            case 1:{
+        //                [_askArray addObject:gs];
+        //                break;
+        //            }
+        //            case 2:{
+        //                [_indicatedArray addObject:gs];
+        //                break;
+        //            }
+        //            default:
+        //                break;
+        //        }
     }
     
+    NSLog(@" ask Count: %lu ", (unsigned long)_askArray.count);
+    NSLog(@" contra Count: %lu /n", (unsigned long)_contraindicatedArray.count);
+    NSLog(@" indic Count: %lu /n", (unsigned long)_indicatedArray.count);
     
-    NSLog(@" ask Count: %lu ", (unsigned long)_consultPhyiscianVacArray.count);
-    NSLog(@" contra Count: %lu /n", (unsigned long)_contraindicatedVacArray.count);
-    NSLog(@" indic Count: %lu /n", (unsigned long)_indicatedVacArray.count);
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 
@@ -102,14 +125,14 @@
     switch (section) {
         case 0:
         {
-            return _indicatedVacArray.count;
+            return _indicatedArray.count;
             break;
         }
         case 1:
-            return _contraindicatedVacArray.count;
+            return _contraindicatedArray.count;
             break;
         case 2:
-            return _consultPhyiscianVacArray.count;
+            return _askArray.count;
             break;
         default:
             return 0;
@@ -180,30 +203,34 @@
     
     NSLog(@"about to configure cells!");
     switch (indexPath.section) {
-
+            
         case 0:
         {
-            KHVaccine *vaccine = _indicatedVacArray[indexPath.row];
+            //indicated
+            NSDictionary *dict = self.indicatedArray[indexPath.row];
             
-            cell.textLabel.text = vaccine.name;
+            cell.textLabel.text = dict[@"name"];
             break;
         }
         case 1:
         {
-            KHVaccine *vaccine = _contraindicatedVacArray[indexPath.row];
-            cell.textLabel.text = vaccine.name;
-
+            //contraindicated
+            NSDictionary *dict = self.contraindicatedArray[indexPath.row];
+            
+            cell.textLabel.text = dict[@"name"];
+            
             break;
         }
         case 2:
         {
-            KHVaccine *vaccine = _consultPhyiscianVacArray[indexPath.row];
+            //ask
+            NSDictionary *dict = self.askArray[indexPath.row];
             
-            cell.textLabel.text = vaccine.name;
+            cell.textLabel.text = dict[@"name"];
             break;
         }
-        
-
+            
+            
         default:
         {
             cell.textLabel.text = @"nil";
@@ -218,6 +245,7 @@
 
 
 - (IBAction)barButtonTapped:(id)sender {
+    NSLog(@"bar button tapped");
     self.hidesBottomBarWhenPushed = YES;
     [self performSegueWithIdentifier:@"vaccineResultToHomeSegue" sender:self];
     

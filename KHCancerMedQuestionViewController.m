@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _patient = [KHPatient sharedModel];
-    _riskFactors = [KHRiskFactorModel sharedModel];
+//    _riskFactors = [KHRiskFactorModel sharedModel];
     
     [self UISetup];
     // Do any additional setup after loading the view.

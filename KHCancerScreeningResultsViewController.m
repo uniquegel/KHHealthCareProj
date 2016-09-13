@@ -35,7 +35,7 @@
     
     [super viewDidLoad];
     _patient = [KHPatient sharedModel];
-    _rfModel = [KHRiskFactorModel sharedModel];
+//    _rfModel = [KHRiskFactorModel sharedModel];
     if (!_patient.completedCancerFlow) {
         [self.view setHidden:YES];
     }

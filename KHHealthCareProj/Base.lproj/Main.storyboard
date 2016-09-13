@@ -306,9 +306,9 @@
                                     <constraint firstAttribute="width" constant="93" id="p3c-iF-wiS"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4W-jU-2X4" customClass="MaterialButton">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4W-jU-2X4" customClass="MaterialButton">
                                 <rect key="frame" x="30" y="283" width="315" height="83"/>
-                                <color key="backgroundColor" red="0.20392156859999999" green="0.85882352939999995" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="339" id="b8d-ck-ZQT"/>
                                     <constraint firstAttribute="height" constant="82" id="o2h-bl-q4K"/>
@@ -1450,7 +1450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ntT-8x-xOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4622.25" y="539.5"/>
+            <point key="canvasLocation" x="4495.5" y="435"/>
         </scene>
         <!--GeneralEFL Question View Controller-->
         <scene sceneID="vV8-Bn-Eni">
@@ -1889,7 +1889,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkJ-Mu-Q9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5544.75" y="495.5"/>
+            <point key="canvasLocation" x="5400" y="435"/>
         </scene>
     </scenes>
     <resources>

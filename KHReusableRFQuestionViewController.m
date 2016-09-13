@@ -291,7 +291,21 @@
 - (IBAction)onNextBtnTap:(id)sender {
     if (self.curScreeningStep == 2) {
         // calculate results and display
-        self.patient.completedGeneralFlow = YES;
+        switch ([self.patient curScreeningType]) {
+            case kScreenTypeVaccine:
+                self.patient.completedVaccineFlow = YES;
+                break;
+            case kScreenTypeCancer:
+                self.patient.completedCancerFlow = YES;
+                break;
+            case kScreenTypeGeneral:
+                self.patient.completedGeneralFlow = YES;
+                break;
+                
+            default:
+                break;
+        }
+        
         [self calculateResultsForScreeningType:self.curScreeningType];
         [self performSegueWithIdentifier:@"RFQuestionToResultSegue" sender:self];
         
@@ -332,10 +346,20 @@
             self.patient.vaccineList = [firstRF.vaccineList mutableCopy];
             // each user carry an array of KHGeneralScreening objects, seek out each one of the KHGeneralScreening objects and set its 'status' to White
             for (id key in self.patient.vaccineList) {
-                KHVaccine *vac = [self.patient.vaccineList objectForKey:key];
-                vac->status = White;
-                [self.patient.vaccineList setObject:vac forKey:key];
+                NSMutableDictionary *dict = [self.patient.vaccineList objectForKey:key];
+                NSLog(@"in here");
+                NSLog(@"dict: %@", [dict description]);
+                dict[@"value"] = @"W";
+                
             }
+            NSLog(@"done clearing");
+            /* for (id key in self.patient.generalList) {
+             KHGeneralScreening *gen = [self.patient.generalList objectForKey:key];
+             gen->status = White;
+             [self.patient.generalList setObject:gen forKey:key];
+             }*/
+            
+            NSLog(@"cleared patient vaccinelist: %@", [self.patient.vaccineList description]);
             
             
             
@@ -353,19 +377,36 @@
                     
                     NSLog(@"risk factor generallist: %@", [rf.vaccineList description]);
                     for (id key in rf.vaccineList) {
-                        KHVaccine *checkObj = [rf.vaccineList objectForKey:key];
-                        KHVaccine *patientObj = [self.patient.vaccineList objectForKey:key];
-                        NSLog(@"checking status for GS: %@, %u", checkObj.name, checkObj->status);
+                        NSMutableDictionary *checkDict = [rf.vaccineList objectForKey:key];
+                        NSMutableDictionary *patientDict = [self.patient.vaccineList objectForKey:key];
+                        
+                        KHVaccine *checkObj = [[KHVaccine alloc] initWithName:checkDict[@"name"] andStatus: [self getStatusFromString:checkDict[@"value"]]];
+                        KHVaccine *patientObj = [[KHVaccine alloc] initWithName:patientDict[@"name"] andStatus: [self getStatusFromString:patientDict[@"value"]]];
+                        
+                        NSLog(@"checkObj status: ");
                         
                         Status newStatus = [self getNewStatusWithCheckObj:checkObj andPatientObject:patientObj];
+                        
                         patientObj->status = newStatus;
-                        [self.patient.vaccineList setObject:patientObj forKey:key];
+                        
+                        patientDict[@"value"] = [self getStringFromStatus:patientObj->status];
+                        [self.patient.vaccineList setObject:patientDict forKey:key];
+                        
+                        /* KHGeneralScreening *checkGS = [rf.generalList objectForKey:key];
+                         KHGeneralScreening *patientGS = [self.patient.generalList objectForKey:key];
+                         NSLog(@"checking status for GS: %@, %u", checkGS.name, checkGS->status);
+                         
+                         Status newStatus = [self getNewStatusWithCheckObj:checkGS andPatientObject:patientGS];
+                         
+                         patientGS->status = newStatus;
+                         [self.patient.generalList setObject:patientGS forKey:key]; */
                         
                     }
                 }
             }
             
             break;
+
         }
         case kScreenTypeCancer:{
             // FIXME: feed the list of cancers to Patient, and initialize them with NOTHING as stat, Ideally change this to Homepage when pull info from user

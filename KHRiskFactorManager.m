@@ -42,6 +42,7 @@
 		NSDictionary *rfDict = [base objectForKey: @"riskfactors-general"];
 		NSDictionary *cateDict = [base objectForKey:@"rf-categories"];
 		NSDictionary *subCateDict = [base objectForKey:@"rf-sub-categories"];
+        NSDictionary *vacDict = [base objectForKey:@"Vaccines"];
 		NSDictionary *gsDict = [base objectForKey:@"general screening"];
 		NSDictionary *gsCateDict = [base objectForKey:@"general screening-categories"];
 		
@@ -102,18 +103,23 @@
 			
 			//======================= vaccine list ========================
 			NSDictionary *vaccine_list;
-			NSDictionary *list = rfValueDict[@"vaccine-list"];
 			
-			if (list != nil) {
-//				vaccine_list = [self parseListDictWithDict:list andListDefDict:gsDict];
+			if (rfValueDict[@"vaccine-list"] != nil) {
+                NSDictionary *list = rfValueDict[@"vaccine-list"];
+                
+                vaccine_list = [NSDictionary dictionaryWithDictionary:[self parseListDictWithDict:list andDefDict:vacDict]];
+                
 			}
-//			NSLog(@"Vaccine List: %@", vaccine_list);
+			NSLog(@"Vaccine List: %@", vaccine_list);
 			
 			
 			//======================== cancer list ===========================
 			NSDictionary *cancer_list;
-			list = rfValueDict[@"cancer-list"];
-			if (list != nil) {
+			
+			if (rfValueDict[@"cancer-list"] != nil) {
+                
+                NSDictionary *list = rfValueDict[@"cancer-list"];
+                
 //				cancer_list = [self parseListDictWithDict:list andListDefDict:gsDict];
 			}
 //			NSLog(@"Cancer List: %@", cancer_list);
